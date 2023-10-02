@@ -1,0 +1,65 @@
+.about {
+    .landing {
+        & .head {
+            padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 0);
+        }
+    }
+
+    .main {
+        .bio-container {
+            gap: var(--desktop-parents-elements-gap, 104px);
+
+            .dol {
+                width: 40%;
+                height: auto;
+                align-self: stretch;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 528px;
+                }
+            }
+
+            .content {
+                width: 50%;
+                gap: var(--desktop-has-button-gap, 48px);
+            }
+        }
+        .scrolling-container {
+            padding: var(--desktop-paragraphs, 24px) 0;
+            background: var(--active-secondary, #002822);
+
+            .scrolling_text {
+                overflow: hidden;
+                white-space: nowrap;
+
+                .text {
+                    animation: animate_text 30s linear infinite;
+
+                    span {
+                        margin: 0 40px;
+                        color: var(--active-accent, #fefefe);
+                    }
+                }
+            }
+        }
+        .journey-container {
+            .title {
+                position: sticky;
+                align-self: flex-start;
+                top: 200px;
+            }
+
+            .lister {
+                padding-right: var(--desktop-padding-none, 0);
+                padding-top: var(--desktop-page-padding, 96px);
+
+                .clover {
+                    text-align: right;
+                    gap: var(--desktop-paragraphs, 24px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.contact {
+    .landing {
+        & .head {
+            padding: var(--desktop-body-top-padding, 160px)  0; //var(--desktop-page-padding, 96px);
+        }
+    }
+
+    .main {
+        .lister {
+
+            .listing {
+                p {
+                    margin-bottom: var(--desktop-buttons-links, 8px);
+                }
+
+                a {
+                    align-items: flex-center;
+                    gap: var(--desktop-paragraphs, 24px);
+                    transition: 0.5s ease;
+                    color: var(--active-secondary, #0D1D1A);
+
+                    svg {
+                        width: 16px;
+                        height: auto;
+                        color: var(--active-secondary, #0D1D1A);
+                    }
+
+                    &:hover,
+                    &:hover svg {
+                        color: var(--active-primary, #006a5d);
+                        fill: var(--active-primary, #006a5d);
+                    }
+                }
+            }
+        }
+    }
+}

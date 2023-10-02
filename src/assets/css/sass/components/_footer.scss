@@ -1,0 +1,45 @@
+footer {
+    color: var(--active-accent, #e5efee);
+    padding: var(--desktop-element-block-padding, 64px) var(--desktop-page-padding, 96px);
+    background: var(--active-secondary, #002822);
+    overflow: hidden;
+    gap: var(--desktop-page-padding, 96px);
+    margin-top: var(--desktop-main-gap, 200px);
+
+    & > * {
+        z-index: 2;
+    }
+
+    .partner-div {
+        padding: var(--desktop-header-gap, 128px) 0 var(--desktop-page-padding, 96px);
+        gap: var(--desktop-has-button-gap, 48px);
+
+        .title {
+            width: 50%;
+            gap: var(--desktop-paragraphs, 24px);
+        }
+    }
+
+    .slide-text {
+        width: 100%;
+        padding: var(--desktop-element-block-padding, 48px) 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        right: -30%;
+        top: -15%;
+        transform: rotate(-90deg);
+        z-index: 1;
+        left: unset;
+
+        .text {
+            animation: animate_text 20s linear infinite;
+
+            span {
+                margin: 0 40px;
+                color: var(--active-secondary-dark, #0d1d1a);
+                opacity: 0.6;
+            }
+        }
+    }
+}

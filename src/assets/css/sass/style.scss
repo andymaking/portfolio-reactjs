@@ -1,0 +1,171 @@
+@import "../../../../node_modules/tailwindcss/base";
+@import "../../../../node_modules/tailwindcss/components";
+@import "../../../../node_modules/tailwindcss/utilities";
+// @import "breakpoints";
+// @import "font";
+// @import "buttons";
+// @import "general";
+@import "./variables/spacings",
+        "./variables/colors",
+        "./variables/type",
+        "./pages/home",
+        "./pages/about",
+        "./pages/contact",
+        "./pages/work",
+        "./pages/pricing",
+        "./components/nav",
+        "./components/buttonlink",
+        "./components/tab",
+        "./components/footer";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--active-accent);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--active-secondary, #002822);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--active-secondary, #002822);
+}
+
+/*
+    T y p o g r a p h y
+*/
+
+.h1 {
+    @include h1;
+}
+
+.h2 {
+    @include h2;
+}
+
+.h3 {
+    @include h3;
+}
+
+.h4 {
+    @include h4;
+}
+
+.s1 {
+    @include s1;
+}
+
+.p1 {
+    @include p1;
+}
+
+.p2 {
+    @include p2;
+}
+
+.c1 {
+    @include c1;
+}
+
+.b1 {
+    @include b1;
+}
+
+body {
+    font-size: var(--font-size, 20px);
+    font-family: var(--font-family, "Mostica");
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    background-color: var(--active-neutral, #e5efee);
+    color: var(--active-secondary, #002822);
+    max-width: 1536px;
+    margin: 0 auto;
+    // padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 160px) 0;
+    overflow-x: hidden;
+}
+// .root{
+// gap: var(--desktop-main-gap, 200px);
+// }
+
+img {
+    pointer-events: none;
+}
+
+main {
+    gap: var(--desktop-box-elements-gap, 32px);
+    padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 160px) 0;
+    background-color: var(--active-neutral, #e5efee);
+}
+
+.liner {
+    width: 100%;
+    display: inline-block;
+    height: 1.6px;
+    flex: 1;
+    background-color: var(--active-secondary, #002822);
+
+    &.secondary {
+        background-color: var(---disabled-secondary, #8da7a4);
+        flex: auto;
+    }
+}
+
+.lister {
+    padding: 0px var(--desktop-page-padding, 96px);
+    gap: var(--desktop-header-gap, 128px);
+
+    .listing {
+        padding: var(--desktop-element-block-padding, 64px) 0px;
+        border-bottom: 1px solid var(--disabled-secondary, #8da7a4);
+
+        &:first-child {
+            padding-top: 0px;
+        }
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.social-media {
+    gap: var(--desktop-paragraphs, 24px);
+
+    svg {
+        width: 20px;
+        height: auto;
+        stroke: var(--active-accent, #e5efee);
+        fill: none !important;
+    }
+}
+
+@keyframes animate_text {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}

@@ -1,0 +1,9 @@
+Options -MultiViews
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Handle requests for static assets
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]

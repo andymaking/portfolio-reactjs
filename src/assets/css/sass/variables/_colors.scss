@@ -1,0 +1,37 @@
+:root {
+    /* Day */
+    /* colors */
+    --active-neutral: #e5efee;
+    --active-placeholder: #bdbdbd;
+    
+    --active-accent: #fefefe;
+    --active-primary: #006a5d;
+    --active-secondary: #002822;
+    --active-secondary-dark: #0D1D1A;
+
+    --active-accent-blur: #e5efee3d;
+    --active-secondary-blur: #0028223d;
+
+    --disabled-primary: #cbe0de;
+    --disabled-secondary: #8da7a4;
+    --disabled-secondary-dark: #092f2a;
+}
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --active-placeholder: #bdbdbd;
+//         --active-neutral: #002e27;
+        
+//         --active-accent: #022621;
+//         --active-primary: #e5efee;
+//         --active-secondary: #e5efee;
+//         --active-secondary-dark: #022621;
+
+//         --active-accent-blur: #0028223d;
+//         --active-secondary-blur: #e5efee3d;
+
+//         --disabled-primary: #cbe0de;
+//         --disabled-secondary: #8da7a4;
+//         --disabled-secondary-dark: #092f2a;
+//     }
+// }

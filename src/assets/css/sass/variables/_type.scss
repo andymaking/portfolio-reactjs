@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Fancyou";
+    src:
+        local("Fancyou"),
+        local("FancyouRegular"),
+        url("/src/assets/fonts/FancyouRegular.woff2") format("woff2"),
+        url("/src/assets/fonts/FancyouRegular.woff") format("woff"),
+        url("/src/assets/fonts/FancyouRegular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Vegur";
+    src:
+        url("/src/assets/fonts/Vegur-Regular.eot?#iefix") format("embedded-opentype"),
+        url("/src/assets/fonts/Vegur-Regular.woff2") format("woff2"),
+        url("/src/assets/fonts/Vegur-Regular.woff") format("woff"),
+        url("/src/assets/fonts/Vegur-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-size: 20px;
+    --font-family: "Vegur";
+}
+
+/*
+    H E A D I N G S
+*/
+
+@mixin h1 {
+    font-family: "Fancyou";
+    font-size: 96px;
+    line-height: 0.9;
+    font-weight: normal;
+}
+
+@mixin h2 {
+    font-family: "Fancyou";
+    font-size: 72px;
+    line-height: 80px;
+    font-weight: normal;
+}
+
+@mixin h3 {
+    font-family: "Fancyou";
+    font-size: 48px;
+    line-height: 46px;
+    font-weight: normal;
+}
+
+@mixin h4 {
+    font-family: "Fancyou";
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+@mixin s1 {
+    font-family: "Fancyou";
+    font-size: 480px;
+    line-height: 0.8;
+    font-weight: normal;
+}
+
+/*
+    C O P Y
+*/
+
+@mixin p1 {
+    font-family: "Vegur";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+@mixin p2 {
+    font-family: "Vegur";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+@mixin c1 {
+    font-family: "Vegur";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+@mixin b1 {
+    font-family: "Vegur";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 0.75;
+}

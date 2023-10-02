@@ -1,0 +1,22 @@
+.tab {
+    padding: var(--desktop-buttons-links, 8px) var(--desktop-elements-inline-padding, 48px);
+    gap: var(--desktop-buttons-links, 8px);
+    border-radius: 64px;
+    border: 2px solid var(--active-secondary, #002822);
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        border-color: var(--disabled-primary, #cbe0de);
+        background: var(--disabled-primary, #cbe0de);
+    }
+
+    &:focus,
+    &.active {
+        border-color: var(--new-portfolio-active-secondary, #002822);
+        background: var(--new-portfolio-active-secondary, #002822);
+        color: var(--active-accent, #fefefe);
+        cursor: default;
+    }
+
+}

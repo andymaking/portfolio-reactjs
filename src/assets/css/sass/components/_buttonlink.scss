@@ -1,0 +1,59 @@
+a, button {
+    @include p1;
+    color: var(--active-primary, #006a5d);
+    gap: var(--desktop-buttons-links, 8px);
+
+    .icon-hold {
+        border-radius: 1000px;
+        padding: var(--desktop-caption-columns, 4px);
+        color: var(--active-primary, #006a5d);
+        border: 2px solid var(--active-primary, #006a5d);
+        overflow: hidden;
+        transition: color 0.3s ease-in;
+
+        &::before {
+            content: "";
+            background-color: var(--active-primary, #006a5d);
+            width: 120%;
+            height: 120%;
+            transform: scale(0);
+            top: -10%;
+            left: -70%;
+            position: absolute;
+            border-radius: 1000px;
+            transition:
+                transform 0.2s ease-in-out,
+                left 0.2s ease-in-out;
+        }
+    }
+
+    &:hover {
+        .icon-hold {
+            color: var(--active-accent, #e5efee);
+
+            &::before {
+                left: 0;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &[type="secondary"] {
+        color: var(--active-accent, #e5efee);
+
+        .icon-hold {
+            color: var(--active-accent, #e5efee);
+            border: 2px solid var(--active-accent, #e5efee);
+    
+            &::before {
+                background-color: var(--active-accent, #e5efee);
+            }
+        }
+
+        &:hover {
+            .icon-hold {
+                color: var(--active-secondary-dark, #0D1D1A);
+            }
+        }
+    }
+}

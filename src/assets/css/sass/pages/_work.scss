@@ -1,0 +1,42 @@
+.portfolio {
+    .head {
+        padding-bottom: var(--desktop-page-padding, 96px);
+
+        &-text {
+            gap: var(--desktop-has-button-gap, 48px);
+
+            .tagger {
+                gap: var(--desktop-paragraphs, 24px);
+            }
+        }
+    }
+
+    .projekt-pair {
+        gap: var(--desktop-parents-elements-gap, 104px);
+
+        .projekt {
+            gap: var(--desktop-has-button-gap, 48px) !important;
+
+            &-image {
+                width: 100% !important;
+            }
+        }
+
+        $div-count: 20; 
+
+        @for $i from 1 through $div-count {
+            $number: if($i % 2 == 1, $i, $i + 1);
+            $width: if($number % 4 == 1, 60%, 40%);
+
+            &:nth-child(#{$number}) {
+
+                .projekt:nth-child(1){
+                    width: #{$width} !important;
+                }
+                .projekt:nth-child(2){
+                    width: calc(100% - #{$width}) !important;
+                }
+            }
+        }
+    }
+}
