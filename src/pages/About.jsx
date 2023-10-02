@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Lists from '../components/Lists';
+import Image from '../components/Image';
 
-import aboutImage from "../assets/images/about-2.jpg";
+import aboutImage from "../assets/images/about-2.webp";
 
 export default function Pricing() {
 
@@ -22,9 +23,10 @@ export default function Pricing() {
             <section className="main w-full flex flex-col items-center">
                 <article className="bio-container w-full flex flex-row justify-start items-start">
                     <div className="dol">
-                        <img
+                        <Image
                             src={aboutImage}
-                            alt="Jude Joshua smiling"
+                            hash={"LTHVVd.9u6Vr01NGkYnh_3RPVsf+"}
+                            alt={"Jude Joshua smiling"}
                         />
                     </div>
                     <div className="content flex flex-col items-start justify-start">

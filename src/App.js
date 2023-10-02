@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
+import Helmet from 'react-helmet';
 
 import { HomePageScroll } from './functions/scrollHandler';
 
@@ -63,7 +64,7 @@ const App = () => {
 
     return (
         <>
-            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu}/>
+            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} />
 
             <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
                 <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} isSecondary={isNavbarSecondary} />
@@ -73,19 +74,54 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Home />} />
+                        element={
+                            <>
+                                <Helmet>
+                                    <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
+                                </Helmet>
+                                <Home />
+                            </>
+                        } exact />
                     <Route
-                        path="about"
-                        element={<About />} />
+                        path="/about"
+                        element={
+                            <>
+                                <Helmet>
+                                    <title>About | Top Product Designer For Businesses And Brands.</title>
+                                </Helmet>
+                                <About />
+                            </>
+                        } />
                     <Route
-                        path="portfolio"
-                        element={<Work />} />
+                        path="/portfolio"
+                        element={
+                            <div>
+                                <Helmet>
+                                    <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
+                                </Helmet>
+                                <Work />
+                            </div>
+                        } />
                     <Route
-                        path="pricing"
-                        element={<Pricing />} />
+                        path="/pricing"
+                        element={
+                            <div>
+                                <Helmet>
+                                    <title>Pricing | Top Product Designer For Businesses And Brands.</title>
+                                </Helmet>
+                                <Pricing />
+                            </div>
+                        } />
                     <Route
-                        path="contact"
-                        element={<Contact />} />
+                        path="/contact"
+                        element={
+                            <div>
+                                <Helmet>
+                                    <title>Contact | Top Product Designer For Businesses And Brands.</title>
+                                </Helmet>
+                                <Contact />
+                            </div>
+                        } />
                     {/* <Route path="*" element={<NoPage />} /> */}
                 </Routes>
 
