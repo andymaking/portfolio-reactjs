@@ -4,7 +4,6 @@ footer {
     background: var(--active-secondary, #002822);
     overflow: hidden;
     gap: var(--desktop-page-padding, 96px);
-    margin-top: var(--desktop-main-gap, 200px);
 
     & > * {
         z-index: 2;

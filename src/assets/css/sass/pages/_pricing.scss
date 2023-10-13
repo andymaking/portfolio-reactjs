@@ -1,9 +1,15 @@
-.pricing{
+.pricing {
     .landing {
         padding: var(--desktop-padding-none, 0) var(--desktop-page-padding, 96px);
-    
-        & .head {
-            padding: var(--desktop-body-top-padding, 160px) 0;
+
+        .head {
+            padding-bottom: var(--desktop-header-gap, 128px);
+        }
+    }
+
+    .main {
+        article {
+            padding-top: var(--desktop-padding-none, 0px);
         }
     }
 }

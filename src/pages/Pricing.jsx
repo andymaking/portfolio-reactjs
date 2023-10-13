@@ -9,8 +9,8 @@ export default function Pricing() {
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
-                        <div className="head-text-top">
-                            <h1 className="h1">
+                        <div className="head-text-top w-full">
+                            <h1 className="h1 text-center">
                                 Pricing Guide
                             </h1>
                         </div>

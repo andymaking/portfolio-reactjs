@@ -1,6 +1,6 @@
 import React from "react";
-import { ArrowRight } from "@phosphor-icons/react";
 
+import { onLinkHover } from './Cursor';
 import Link from "./Links";
 
 const Project = ({ type }) => {
@@ -8,21 +8,26 @@ const Project = ({ type }) => {
     const projects = [
         {
             home: [
-                {
-                    // img: Pommo,
-                    name: "Pommo",
-                    description: "Minimizing distractions with a productivity desktop app built around focus.",
-                    id: 0,
-                },
+                // {
+                //     // img: Pommo,
+                //     name: "Pommo",
+                //     description: "Transforming the remote work experience for urban tech workers in Nigeria by mitigating distractions and empowering them to stay focused.",
+                //     id: 0,
+                // },
                 {
                     name: "FirstMedtrade",
-                    description: "A superhero’s quest to make medical products accessible and affordable for Nigerians.",
+                    description: "Streamlining access to medical supplies for African hospitals and patients through connectivity to international manufacturers and local vendors.",
                     id: 1,
                 },
                 {
-                    name: "LunarLuxury",
-                    description: "A web-based travel agent simplifying travel options for luxury Nomads.",
+                    name: "TGIT",
+                    description: "Adding life to IT programs for engineering professionals, making access to courses less confusing and easy to navigate through.",
                     id: 2,
+                },
+                {
+                    name: "LunarLuxury",
+                    description: "Simplifying the digital tavel solutions for luxury nomads, with a focus on facilitating seamless explorations of luxury destinations.",
+                    id: 3,
                 }
             ],
             work: [
@@ -82,21 +87,16 @@ const Project = ({ type }) => {
 
     if (type === "home") {
         const projectElements = projectsOfType.map((project, index) => (
-            <div className="projekt w-full flex flex-row content-end" key={index}>
-                <div className="projekt-image"></div>
-                <div className="projekt-details flex flex-col justify-end items-start">
-                    <div className="clave flex flex-col">
-                        <h3 className="h3">{project.name}</h3>
-                        <p className="p1">{project.description}</p>
-                    </div>
-                    <Link type={"primary"} href={"/cover"}>
-                        <div className="icon-hold flex items-center justify-center">
-                            <ArrowRight size={24} weight="regular" />
+            <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`} key={index}>
+                <div className={`projekt-container w-full flex`} key={index}>
+                    <div className="projekt-container-image"></div>
+                    <div className="projekt-container-details flex flex-col justify-end items-start">
+                        <div className="clave flex flex-col">
+                            <p className="p1">{project.description}</p>
                         </div>
-                        View Case Study
-                    </Link>
+                    </div>
                 </div>
-            </div>
+            </Link>
         ));
 
         return (
@@ -108,15 +108,17 @@ const Project = ({ type }) => {
         const projectElements = projectPairs.map((pair, index) => (
             <div className="projekt-pair w-full flex flex-row" key={index}>
                 {pair.map((project) => (
-                    <div className="projekt w-full flex flex-col content-end" >
-                        <div className="projekt-image"></div>
-                        <div className="projekt-details w-full flex flex-col justify-end items-start">
-                            <div className="clave flex w-full flex-row items-center justify-between">
-                                <h3 className="h3">{project.name}</h3>
-                                <p className="p1">{project.type}</p>
+                    <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`} key={index}>
+                        <div className={`projekt-container w-full flex flex-col`} key={index}>
+                            <div className="projekt-container-image"></div>
+                            <div className="projekt-container-details w-full flex flex-col justify-end items-start">
+                                <div className="clave flex w-full flex-row items-center justify-between">
+                                    <h3 className="h3">{project.name}</h3>
+                                    <p className="p1">{project.type}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         ));

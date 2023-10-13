@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom';
 
-const Links = ({type, href, children}) => {
+const Links = ({type, href, children,extra}) => {
 
-    const classNames = "flex flex-row content-end items-center justify-start";
+    const classNames = "flex flex-row content-end items-center justify-start "+ extra;
 
     return (
         <Link
@@ -21,7 +21,7 @@ const Links = ({type, href, children}) => {
 
 Links.propTypes = {
     href: PropTypes.string,
-    type: PropTypes.oneOf(["primary", "secondary"]),
+    type: PropTypes.oneOf(["primary", "secondary", "none"]),
     children: PropTypes.node,
 };
 

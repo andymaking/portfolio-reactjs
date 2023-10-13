@@ -38,7 +38,7 @@ const List = ({ type, linkText, link }) => {
             ],
             about: [
                 {
-                    hinge: '2020 - Present',
+                    hinge: '2020 - 2023',
                     title: "Product Designer",
                     copy: 'FirstMedtrade Africa',
                 },

@@ -1,22 +1,10 @@
 @import "../../../../node_modules/tailwindcss/base";
 @import "../../../../node_modules/tailwindcss/components";
 @import "../../../../node_modules/tailwindcss/utilities";
-// @import "breakpoints";
-// @import "font";
-// @import "buttons";
-// @import "general";
-@import "./variables/spacings",
-        "./variables/colors",
-        "./variables/type",
-        "./pages/home",
-        "./pages/about",
-        "./pages/contact",
-        "./pages/work",
-        "./pages/pricing",
-        "./components/nav",
-        "./components/buttonlink",
-        "./components/tab",
-        "./components/footer";
+
+@import "./variables/spacings", "./variables/breakpoints", "./variables/animations", "./variables/colors", "./variables/type", "./pages/home", "./pages/about",
+    "./pages/contact", "./pages/work", "./pages/pricing", "./components/nav", "./components/buttonlink",
+    "./components/tab", "./components/footer";
 
 *,
 *::before,
@@ -98,25 +86,22 @@ body {
     font-family: var(--font-family, "Mostica");
     scroll-behavior: smooth;
     min-height: 100vh;
-    background-color: var(--active-neutral, #e5efee);
+    background-color: var(---disabled-primary, #cbe0de);
     color: var(--active-secondary, #002822);
     max-width: 1536px;
     margin: 0 auto;
-    // padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 160px) 0;
     overflow-x: hidden;
 }
-// .root{
-// gap: var(--desktop-main-gap, 200px);
-// }
 
 img {
     pointer-events: none;
 }
 
 main {
-    gap: var(--desktop-box-elements-gap, 32px);
-    padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 160px) 0;
+    padding: var(--desktop-header-gap, 104px) var(--desktop-padding-none, 160px) 0;
     background-color: var(--active-neutral, #e5efee);
+    gap: var(--desktop-gap-none, 0px);
+    padding-top: 0;
 }
 
 .liner {
@@ -161,11 +146,43 @@ main {
     }
 }
 
-@keyframes animate_text {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
-    to {
-        transform: translate3d(-100%, 0, 0);
-    }
+.cursor {
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    position: fixed;
+    padding: 6px;
+    transform: translate(-50%, -50%);
+    // background-color: var(--active-neutral, #e5efee);
+    background-color: #ffd7dd;
+    color: var(--active-primary, #006a5d);
+    border-radius: 50%;
+    transition:
+        top 0.05s ease-in,
+        left 0.05s ease-in,
+        transform 0.05s linear,
+        background-color 0.3s ease,
+        color 0.5s ease,
+        opacity 0.1s linear;
+    z-index: 100000;
+    mix-blend-mode: difference;
+    opacity: 0;
 }
+
+// .cursor.c-project {
+//     padding: 16px 12px 15px;
+//     mix-blend-mode: unset;
+//     background-color: var(--active-primary, #006a5d);
+//     color: var(--active-neutral, #e5efee);
+// }
+
+// .cursor.c-balance {
+//     padding: 16px 19px 16px;
+//     mix-blend-mode: unset;
+//     background-color: var(--active-primary, #006a5d);
+//     color: var(--active-neutral, #e5efee);
+// }
+
+// a:hover ~ .cursor {
+//     transform: translate(-50%, -50%) scale(8);
+// }

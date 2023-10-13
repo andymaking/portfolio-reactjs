@@ -1,34 +1,40 @@
 .contact {
+    
     .landing {
-        & .head {
-            padding: var(--desktop-body-top-padding, 160px)  0; //var(--desktop-page-padding, 96px);
+        padding: var(--desktop-padding-none, 0) var(--desktop-page-padding, 96px);
+
+        .head {
+            padding-bottom: var(--desktop-header-gap, 128px);
         }
     }
 
     .main {
-        .lister {
+        article {
+            padding-top: var(--desktop-padding-none, 0px);
 
-            .listing {
-                p {
-                    margin-bottom: var(--desktop-buttons-links, 8px);
-                }
-
-                a {
-                    align-items: flex-center;
-                    gap: var(--desktop-paragraphs, 24px);
-                    transition: 0.5s ease;
-                    color: var(--active-secondary, #0D1D1A);
-
-                    svg {
-                        width: 16px;
-                        height: auto;
-                        color: var(--active-secondary, #0D1D1A);
+            .lister {
+                .listing {
+                    p {
+                        margin-bottom: var(--desktop-buttons-links, 8px);
                     }
 
-                    &:hover,
-                    &:hover svg {
-                        color: var(--active-primary, #006a5d);
-                        fill: var(--active-primary, #006a5d);
+                    a {
+                        align-items: flex-center;
+                        gap: var(--desktop-paragraphs, 24px);
+                        transition: 0.5s ease;
+                        color: var(--active-secondary, #002822);
+
+                        svg {
+                            width: 16px;
+                            height: auto;
+                            color: var(--active-secondary, #002822);
+                        }
+
+                        &:hover,
+                        &:hover svg {
+                            color: var(--active-primary, #006a5d);
+                            fill: var(--active-primary, #006a5d);
+                        }
                     }
                 }
             }

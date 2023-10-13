@@ -1,0 +1,27 @@
+// mixin for responsive design
+@mixin devices ($breakpoint) {
+    @if $breakpoint == "phone" {
+        @media only screen and (max-width: 480px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "tablet" {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "laptop" {
+        @media only screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "desktop" {
+        @media only screen and (max-width: 1440px) {
+            @content;
+        }
+    }
+
+}

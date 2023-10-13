@@ -15,13 +15,7 @@ import Reviewer01 from "../assets/images/review-1.webp";
 import Reviewer02 from "../assets/images/review-2.webp";
 
 
-
 export default function Home() {
-
-
-
-    // const testimonialsContainerRef = useRef(null);
-
 
     const reviews = [
         {
@@ -29,14 +23,14 @@ export default function Home() {
             hash: "L7B:dGxt0w4n00D%5A?vInyD~DMc",
             name: "Amina Ibrahim",
             position: "SEO Consultant, Prosple",
-            content: "I have worked with Jude on a number of occasions, and I can honestly say that he is an excellent product designer. He understands the product idea quickly, and then works to ensure that it meets with the needs of the users and requirements of the developers.\n\nJude is also very patient and willing to work with clients to make sure that their expectations are met. His work has always been of high quality, and his designs have always met the standards set by the clients.",
+            content: "I have worked with Jude on several occasions, and I can confidently say that he is an exceptional product designer. He has a remarkable ability to grasp the product idea quickly and then works diligently to ensure that it aligns with the users' needs and developers' requirements.\n\nJude is also highly patient and willing to collaborate with clients to guarantee that their expectations are met. His work is consistently of outstanding quality, and his designs have consistently met the clients' standards.",
         },
         {
             img: Reviewer02,
             hash: "LHD+e~n$00oe00oz_4e.x^RjRioz",
             name: "Victoria Oniyide",
             position: "Communications Manager, Paaira",
-            content: "I recently had the pleasure of working with Jude, a digital product designer who specializes in improving digital user experiences. I found him to be highly professional and knowledgeable about his field.\n\nHis work is meticulous and detailed, and he takes the time to test different versions of the product to ensure that it meets all of the requirements. His work has resulted in positive feedback from both users and developers, and I would recommend him without hesitation.",
+            content: "I recently had the pleasure of working with Jude, a digital product designer who specializes in improving digital user experiences. He is highly professional and knowledgeable about his field.\n\nJude's work is exceptionally meticulous and detailed. He takes the time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from both users and developers, and I would recommend him without hesitation.",
         }
     ];
 
@@ -46,17 +40,17 @@ export default function Home() {
                 <div className="head">
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top flex flex-col items-center justify-center">
-                            <h1 className="h1 text-center">
-                                Building experiences,<br />
+                            <h1 className="h1 w-full text-center">
+                                Designing experiences
                                 <span className="h4 lighter flex items-center justify-center">user</span>
                             </h1>
-                            <h1 className="h1 text-center">
-                                <span className="hightlight inline-flex">one design at a time.</span>
+                            <h1 className="h1 hightlight text-center flex flex-row justify-left">
+                                <span>for increased conversions.</span>
                             </h1>
                         </div>
-                        <div className="head-text-club w-full flex flex-row flex-wrap items-center justify-end">
-                            <svg className="more" xmlns="http://www.w3.org/2000/svg" width="198" height="214" viewBox="0 0 198 214" fill="none">
-                                <path d="M89.7699 40.7103L89.5485 39.7351L89.7699 40.7103ZM5.74629 213.289C6.08571 213.725 6.71405 213.803 7.14972 213.463L14.2495 207.932C14.6852 207.593 14.7632 206.964 14.4238 206.529C14.0844 206.093 13.456 206.015 13.0204 206.354L6.70945 211.271L1.79291 204.96C1.45349 204.524 0.825153 204.446 0.389476 204.786C-0.0462017 205.125 -0.124237 205.753 0.21518 206.189L5.74629 213.289ZM197.061 1.08202C130.516 -1.57981 98.0392 21.99 86.3181 47.5552C80.4763 60.2969 79.8326 73.4684 82.6756 83.9617C85.5073 94.4137 91.8754 102.412 100.229 104.388L100.69 102.442C93.3299 100.701 87.3352 93.5123 84.606 83.4387C81.888 73.4065 82.485 60.7146 88.1361 48.3887C99.4008 23.8191 130.919 0.437903 196.981 3.08042L197.061 1.08202ZM100.229 104.388C108.59 106.365 117.137 101.962 123.893 94.9191C130.675 87.8498 135.869 77.917 137.549 68.2862C139.227 58.6605 137.414 49.12 129.848 43.1891C122.327 37.2927 109.429 35.2214 89.5485 39.7351L89.9913 41.6855C109.663 37.2192 121.805 39.4249 128.614 44.7631C135.38 50.0668 137.187 58.7183 135.579 67.9426C133.971 77.1619 128.97 86.7372 122.45 93.5345C115.904 100.358 108.043 104.18 100.69 102.442L100.229 104.388ZM89.5485 39.7351C73.4178 43.3975 60.3828 54.0171 49.8537 68.2865C39.3267 82.5531 31.2537 100.534 25.05 119.067C12.6422 156.135 7.64511 195.623 5.54278 212.551L7.52753 212.798C9.62979 195.87 14.6088 156.56 26.9465 119.702C33.1156 101.272 41.1078 83.5077 51.463 69.4739C61.8162 55.443 74.4806 45.2071 89.9913 41.6855L89.5485 39.7351Z" />
+                        <div className="head-text-club w-full flex flex-row flex-wrap items-end justify-end content-center">
+                            <svg className='more' xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path d="M90.2523 32.2228L90.0309 31.2476L90.2523 32.2228ZM6.22871 204.801C6.56813 205.237 7.19647 205.315 7.63215 204.976L14.7319 199.444C15.1676 199.105 15.2456 198.477 14.9062 198.041C14.5668 197.605 13.9385 197.527 13.5028 197.867L7.19187 202.783L2.27533 196.472C1.93591 196.037 1.30758 195.959 0.871898 196.298C0.43622 196.638 0.358185 197.266 0.697602 197.702L6.22871 204.801ZM144.906 0.273531C116.324 0.665417 97.2461 26.8006 89.2617 53.312C85.2559 66.6131 83.9807 80.1724 85.7205 90.9259C87.4511 101.623 92.2496 109.899 100.712 111.9L101.172 109.954C93.9205 108.239 89.3839 101.047 87.6948 90.6065C86.0148 80.2228 87.2351 66.9766 91.1768 53.8888C99.0873 27.6225 117.712 2.64656 144.933 2.27334L144.906 0.273531ZM100.712 111.9C109.164 113.899 117.726 108.371 124.439 99.8586C131.201 91.2846 136.368 79.3654 138.036 67.7693C139.701 56.1972 137.905 44.7156 130.418 37.2791C122.904 29.8149 109.962 26.7224 90.0309 31.2476L90.4737 33.198C110.094 28.7432 122.193 31.9278 129.009 38.6981C135.853 45.4962 137.679 56.2067 136.056 67.4846C134.437 78.7386 129.409 90.3275 122.869 98.6201C116.28 106.974 108.433 111.671 101.172 109.954L100.712 111.9ZM90.0309 31.2476C73.9002 34.91 60.8652 45.5296 50.3361 59.799C39.8091 74.0656 31.7361 92.0462 25.5324 110.58C13.1246 147.647 8.12753 187.136 6.0252 204.063L8.00995 204.31C10.1122 187.383 15.0912 148.073 27.429 111.214C33.598 92.7847 41.5902 75.0202 51.9454 60.9864C62.2987 46.9555 74.963 36.7196 90.4737 33.198L90.0309 31.2476Z" />
                             </svg>
                             <div className="head-text-club-image">
                                 <Image
@@ -66,7 +60,7 @@ export default function Home() {
                                 />
                             </div>
                             <p className="p1 head-text-club-grab">
-                                Design generalist driving business growth by crafting experiences that users love to use.
+                                Design generalist driving business growth by crafting digital experiences that users love to use.
                             </p>
                         </div>
                     </div>
@@ -74,7 +68,7 @@ export default function Home() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    <div className="title">
+                    {/* <div className="title">
                         <h2 className="h2 flex flex-row">Designing
                             <span className="rolling-text">
                                 <span>People</span>
@@ -83,7 +77,7 @@ export default function Home() {
                                 <span>Actions</span>
                             </span>
                         </h2>
-                    </div>
+                    </div> */}
                     <Project type={"home"} />
                 </article>
                 <article className="process-container w-full flex flex-col items-start">

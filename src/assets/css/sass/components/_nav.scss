@@ -1,18 +1,24 @@
 .nav {
-    position: absolute;
-    top: 48px;
-    /* left: 64px; */
-    /* right: 64px; */
+    position: relative;
+    top: 0;
     max-width: calc(100vw - 0px);
-    // background-color: var(--active-accent-blur, #e5efee3d);
-    padding: var(--desktop-navigation-padding, 32px) 96px;
+    padding: var(--desktop-elements-inline-padding, 48px) 96px 0;
     z-index: 10000;
-    // -webkit-backdrop-filter: blur(24px);
-    // -moz-backdrop-filter: blur(24px);
-    // backdrop-filter: blur(24px);
     margin: 0 auto;
     transition: all 0.2s ease-in;
     width: 100%;
+
+    & .type {
+        p {
+            gap: 0;
+
+            span {
+                @include p2;
+                opacity: 0.8;
+                display: block;
+            }
+        }
+    }
 
     svg,
     svg g,
@@ -220,7 +226,7 @@
         box-shadow: -8px 20px 100px 8px #00282242;
         height: 100%;
 
-        .menu{
+        .menu {
             cursor: default;
         }
     }

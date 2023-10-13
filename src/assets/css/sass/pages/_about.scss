@@ -1,13 +1,15 @@
 .about {
     .landing {
         & .head {
-            padding: var(--desktop-body-top-padding, 160px) var(--desktop-padding-none, 0);
+            padding-left: var(--desktop-padding-none, 0);
+            padding-bottom: var(--desktop-header-gap, 128px);
         }
     }
 
     .main {
         .bio-container {
             gap: var(--desktop-parents-elements-gap, 104px);
+            padding-top: var(--desktop-padding-none, 0);
 
             .dol {
                 width: 40%;
@@ -26,25 +28,16 @@
                 gap: var(--desktop-has-button-gap, 48px);
             }
         }
+        
         .scrolling-container {
             padding: var(--desktop-paragraphs, 24px) 0;
             background: var(--active-secondary, #002822);
-
-            .scrolling_text {
-                overflow: hidden;
-                white-space: nowrap;
-
-                .text {
-                    animation: animate_text 30s linear infinite;
-
-                    span {
-                        margin: 0 40px;
-                        color: var(--active-accent, #fefefe);
-                    }
-                }
-            }
         }
+
         .journey-container {
+            padding-top: var(--desktop-main-gap, 200px);
+            border-radius: 0 0 128px 128px;
+
             .title {
                 position: sticky;
                 align-self: flex-start;
@@ -52,6 +45,7 @@
             }
 
             .lister {
+                padding-left: var(--desktop-padding-none, 0);
                 padding-right: var(--desktop-padding-none, 0);
                 padding-top: var(--desktop-page-padding, 96px);
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
-import Helmet from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import { HomePageScroll } from './functions/scrollHandler';
 
@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Nav from './components/NavBar';
 import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
+import Cursor from './components/Cursor';
 
 
 // import NoPage from "./pages/NoPage";
@@ -60,10 +61,12 @@ const App = () => {
     };
 
     const location = useLocation();
-    const pageClass = location.pathname.slice(1);
+    const pageClass = location.pathname === '/' ? 'home' : location.pathname.slice(1);
 
     return (
         <>
+            <Cursor />
+
             <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} />
 
             <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
@@ -76,9 +79,11 @@ const App = () => {
                         path="/"
                         element={
                             <>
-                                <Helmet>
-                                    <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
-                                </Helmet>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
+                                    </Helmet>
+                                </HelmetProvider>
                                 <Home />
                             </>
                         } exact />
@@ -86,41 +91,49 @@ const App = () => {
                         path="/about"
                         element={
                             <>
-                                <Helmet>
-                                    <title>About | Top Product Designer For Businesses And Brands.</title>
-                                </Helmet>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title>About | Top Product Designer For Businesses And Brands.</title>
+                                    </Helmet>
+                                </HelmetProvider>
                                 <About />
                             </>
                         } />
                     <Route
                         path="/portfolio"
                         element={
-                            <div>
-                                <Helmet>
-                                    <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
-                                </Helmet>
+                            <>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
+                                    </Helmet>
+                                </HelmetProvider>
                                 <Work />
-                            </div>
+                            </>
                         } />
                     <Route
                         path="/pricing"
                         element={
-                            <div>
-                                <Helmet>
-                                    <title>Pricing | Top Product Designer For Businesses And Brands.</title>
-                                </Helmet>
+                            <>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title>Pricing | Top Product Designer For Businesses And Brands.</title>
+                                    </Helmet>
+                                </HelmetProvider>
                                 <Pricing />
-                            </div>
+                            </>
                         } />
                     <Route
                         path="/contact"
                         element={
-                            <div>
-                                <Helmet>
-                                    <title>Contact | Top Product Designer For Businesses And Brands.</title>
-                                </Helmet>
+                            <>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title>Contact | Top Product Designer For Businesses And Brands.</title>
+                                    </Helmet>
+                                </HelmetProvider>
                                 <Contact />
-                            </div>
+                            </>
                         } />
                     {/* <Route path="*" element={<NoPage />} /> */}
                 </Routes>
