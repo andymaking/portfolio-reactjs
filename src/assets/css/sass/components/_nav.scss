@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     max-width: calc(100vw - 0px);
-    padding: var(--desktop-elements-inline-padding, 48px) 96px 0;
+    padding: var(--elements-inline-padding) var(--page-padding) 0;
     z-index: 10000;
     margin: 0 auto;
     transition: all 0.2s ease-in;
@@ -31,15 +31,23 @@
     }
 
     & .menu {
-        gap: var(--desktop-buttons-links, 8px);
+        gap: var(--buttons-links, 8px);
         flex-wrap: wrap;
         cursor: pointer;
         z-index: 1;
+
+        @include devices(phone) {
+            align-items: center;
+        }
 
         &-bars {
             width: 20px;
             height: 18px;
             gap: 6px;
+
+            @include devices(phone) {
+                gap: 4px;
+            }
 
             & span {
                 width: 100%;
@@ -64,6 +72,10 @@
                 &.last {
                     bottom: 0;
                     right: 0;
+                }
+
+                @include devices(phone) {
+                    height: 1.5px;
                 }
             }
         }
@@ -92,14 +104,12 @@
 
 .menu-links-holder {
     position: fixed;
-    width: 100vw;
+    width: 0px;
     height: 100vh;
     background-color: var(--active-secondary, #002822);
     right: -120vw;
     left: unset;
-    padding: var(--desktop-element-block-padding, 64px) var(--desktop-page-padding, 96px);
-    padding-left: var(--desktop-main-padding, 200px);
-    padding-right: 32vw;
+    padding: 0;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     top: 0;
@@ -107,9 +117,10 @@
     visibility: hidden;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    overflow: hidden;
 
     .menuLinks-list {
-        gap: var(--desktop-has-button-gap, 48px);
+        gap: var(--has-button-gap);
         align-self: flex-end;
 
         & .menuLink {
@@ -117,7 +128,7 @@
                 @include h2;
                 color: var(--active-accent, #e5efee);
                 align-items: flex-center;
-                gap: var(--desktop-has-button-gap, 48px);
+                gap: var(--has-button-gap);
                 transition: 0.5s ease;
 
                 svg,
@@ -152,6 +163,10 @@
     }
 
     &.menu-links-out {
+        width: 100vw;
+        padding: var(--element-block-padding) var(--page-padding);
+        padding-left: var(--main-gap);
+        padding-right: 32vw;
         right: -24vw;
         box-shadow: -38px 29px 100px 20px #00282296;
         visibility: visible;
@@ -159,12 +174,18 @@
         transition: transform 0.5s;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
+        
+        @include devices(phone) {
+            right: 0;
+            padding-left: 16vw;
+            padding-right: 16vw;
+        }
     }
 
     .menu-close {
         cursor: pointer;
-        gap: var(--desktop-buttons-links, 8px);
-        padding-top: var(--desktop-has-button-gap, 48px);
+        gap: var(--buttons-links);
+        padding-top: var(--has-button-gap);
 
         & .menu-bars {
             width: 20px;
@@ -198,9 +219,13 @@
 
 #root {
     position: relative;
+    height: 100vh;
     -webkit-perspective: 1500px;
     perspective: 1500px;
-    height: 100vh;
+
+    // @include devices(phone){
+    //     perspective: 320px;
+    // }
 }
 
 .body {

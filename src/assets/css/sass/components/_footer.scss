@@ -1,35 +1,58 @@
 footer {
     color: var(--active-accent, #e5efee);
-    padding: var(--desktop-element-block-padding, 64px) var(--desktop-page-padding, 96px);
+    padding: var(--element-block-padding) var(--page-padding);
     background: var(--active-secondary, #002822);
     overflow: hidden;
-    gap: var(--desktop-page-padding, 96px);
+    gap: var(--page-padding);
+
+    @include devices(phone) {
+        padding: var(--element-block-padding) var(--page-padding);
+    }
 
     & > * {
         z-index: 2;
     }
 
     .partner-div {
-        padding: var(--desktop-header-gap, 128px) 0 var(--desktop-page-padding, 96px);
-        gap: var(--desktop-has-button-gap, 48px);
+        padding: var(--header-gap) 0 var(--page-padding);
+        gap: var(--has-button-gap);
+
+        @include devices(phone) {
+            padding-bottom: var(--header-gap);
+        }
 
         .title {
             width: 50%;
-            gap: var(--desktop-paragraphs, 24px);
+            gap: var(--paragraphs);
+
+            @include devices(tablet) {
+                width: 72%;
+            }
+
+            @include devices(phone) {
+                width: 100%;
+            }
         }
     }
 
     .slide-text {
         width: 100%;
-        padding: var(--desktop-element-block-padding, 48px) 0;
+        padding: var(--element-block-padding) 0;
         overflow: hidden;
         white-space: nowrap;
         position: absolute;
         right: -30%;
-        top: -15%;
+        bottom: 0;
         transform: rotate(-90deg);
         z-index: 1;
         left: unset;
+
+        @include devices(phone) {
+            width: 560px;
+            bottom: -70px;
+            left: unset;
+            right: -90%;
+        }
 
         .text {
             animation: animate_text 20s linear infinite;

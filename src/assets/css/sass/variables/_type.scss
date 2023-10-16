@@ -10,7 +10,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "Vegur";
     src:
@@ -27,76 +26,229 @@
     --font-family: "Vegur";
 }
 
+$steps: 4;
+
+@function calculate-font-size($baseFontSize, $steps) {
+    $fontSize: $baseFontSize;
+    @for $i from 1 through $steps {
+        $fontSize: $fontSize / 1.2;
+    }
+    @return $fontSize;
+}
+
 /*
     H E A D I N G S
 */
-
-@mixin h1 {
+@mixin h1($baseFontSize: 96px) {
     font-family: "Fancyou";
-    font-size: 96px;
-    line-height: 0.9;
+    line-height: 1;
     font-weight: normal;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps);
+    }
 }
 
-@mixin h2 {
+@mixin h2($baseFontSize: 72px) {
     font-family: "Fancyou";
-    font-size: 72px;
-    line-height: 80px;
+    line-height: 1;
     font-weight: normal;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
 }
 
-@mixin h3 {
+@mixin h3($baseFontSize: 48px) {
     font-family: "Fancyou";
-    font-size: 48px;
-    line-height: 46px;
+    line-height: 1;
     font-weight: normal;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
 }
 
-@mixin h4 {
+@mixin h4($baseFontSize: 32px) {
     font-family: "Fancyou";
-    font-size: 32px;
     line-height: 1;
     font-weight: 500;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
 }
 
-@mixin s1 {
+@mixin s1($baseFontSize: 480px) {
     font-family: "Fancyou";
-    font-size: 480px;
     line-height: 0.8;
     font-weight: normal;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps);
+    }
 }
 
 /*
     C O P Y
 */
 
-@mixin p1 {
+@mixin p1($baseFontSize: 20px) {
     font-family: "Vegur";
-    font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
 }
 
-@mixin p2 {
+@mixin p2($baseFontSize: 16px) {
     font-family: "Vegur";
-    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
 }
 
-@mixin c1 {
+@mixin c1($baseFontSize: 14px) {
     font-family: "Vegur";
-    font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(tablet) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
 }
 
-@mixin b1 {
+@mixin b1($baseFontSize: 24px) {
     font-family: "Vegur";
-    font-size: 24px;
     font-weight: 400;
     line-height: 0.75;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
 }

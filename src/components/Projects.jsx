@@ -1,6 +1,5 @@
 import React from "react";
 
-import { onLinkHover } from './Cursor';
 import Link from "./Links";
 
 const Project = ({ type }) => {
@@ -106,10 +105,10 @@ const Project = ({ type }) => {
         )
     } else {
         const projectElements = projectPairs.map((pair, index) => (
-            <div className="projekt-pair w-full flex flex-row" key={index}>
+            <div className="projekt-pair w-full flex flex-row">
                 {pair.map((project) => (
-                    <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`} key={index}>
-                        <div className={`projekt-container w-full flex flex-col`} key={index}>
+                    <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`}>
+                        <div className={`projekt-container w-full flex flex-col`}>
                             <div className="projekt-container-image"></div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
                                 <div className="clave flex w-full flex-row items-center justify-between">

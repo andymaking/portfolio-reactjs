@@ -1,57 +1,94 @@
 .about {
     .landing {
         & .head {
-            padding-left: var(--desktop-padding-none, 0);
-            padding-bottom: var(--desktop-header-gap, 128px);
+            padding-left: var(--padding-none);
+            padding-bottom: var(--header-gap);
         }
     }
 
     .main {
         .bio-container {
-            gap: var(--desktop-parents-elements-gap, 104px);
-            padding-top: var(--desktop-padding-none, 0);
+            gap: var(--parents-elements-gap);
+            padding-top: var(--padding-none);
+
+            @include devices(tablet) {
+                flex-direction: column;
+            }
 
             .dol {
                 width: 40%;
                 height: auto;
                 align-self: stretch;
 
+                @include devices(tablet) {
+                    width: 100%;
+                }
+
                 img {
                     width: 100%;
                     object-fit: cover;
                     height: 528px;
+
+                    @include devices(phone) {
+                        height: 420px;
+                    }
                 }
             }
 
             .content {
                 width: 50%;
-                gap: var(--desktop-has-button-gap, 48px);
+                gap: var(--has-button-gap);
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
             }
         }
-        
+
         .scrolling-container {
-            padding: var(--desktop-paragraphs, 24px) 0;
+            padding: var(--paragraphs) 0;
             background: var(--active-secondary, #002822);
         }
 
         .journey-container {
-            padding-top: var(--desktop-main-gap, 200px);
+            padding-top: var(--main-gap);
             border-radius: 0 0 128px 128px;
+
+            @include devices(tablet) {
+                flex-direction: column;
+                border-radius: 0 0 72px 72px;
+            }
+
+            @include devices(phone){
+                border-radius: 0 0 56px 56px;
+            }
 
             .title {
                 position: sticky;
                 align-self: flex-start;
                 top: 200px;
+
+                @include devices(tablet) {
+                    top: 0;
+                    position: relative;
+                }
             }
 
             .lister {
-                padding-left: var(--desktop-padding-none, 0);
-                padding-right: var(--desktop-padding-none, 0);
-                padding-top: var(--desktop-page-padding, 96px);
+                padding-left: var(--padding-none);
+                padding-right: var(--padding-none);
+                padding-top: var(--page-padding);
+
+                .listing{
+                    @include devices(tablet) {
+                        flex-direction: row;
+                        align-items: flex-start;
+                    }
+                }
 
                 .clover {
                     text-align: right;
-                    gap: var(--desktop-paragraphs, 24px);
+                    gap: var(--paragraphs);
                 }
             }
         }

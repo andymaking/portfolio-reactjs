@@ -17,7 +17,7 @@ export default function Work() {
                                 Work
                             </h1>
                         </div>
-                        <div className="tagger w-100 flex justify-center items-start">
+                        <div className="tagger w-full flex justify-center items-start">
                             <Tab tabArray={designCategories} />
                         </div>
                     </div>

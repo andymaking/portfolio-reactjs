@@ -1,11 +1,11 @@
 a, button {
     @include p1;
     color: var(--active-primary, #006a5d);
-    gap: var(--desktop-buttons-links, 8px);
+    gap: var(--buttons-links, 8px);
 
     .icon-hold {
         border-radius: 1000px;
-        padding: var(--desktop-caption-columns, 4px);
+        padding: var(--caption-columns, 4px);
         color: var(--active-primary, #006a5d);
         border: 2px solid var(--active-primary, #006a5d);
         overflow: hidden;

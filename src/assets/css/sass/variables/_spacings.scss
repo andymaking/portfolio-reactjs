@@ -1,37 +1,61 @@
+
 :root {
-    /* Mode 1 */
-    /* numbers */
-    --desktop-gap-none: 0px;
-    --desktop-caption-columns: 4px;
-    --desktop-buttons-links: 8px;
-    --desktop-paragraphs: 24px;
-    --desktop-box-elements-gap: 32px;
-    --desktop-has-button-gap: 48px;
-    --desktop-parents-elements-gap: 104px;
-    --desktop-header-gap: 128px;
-    --desktop-main-gap: 200px;
+    --gap-none: 0px;
+    --caption-columns: 4px;
+    --buttons-links: 8px;
+    --paragraphs: 24px;
+    --box-elements-gap: 32px;
+    --has-button-gap: 48px;
+    --parents-elements-gap: 104px;
+    --header-gap: 128px;
+    --main-gap: 200px;
 
-    --desktop-padding-none: 0px;
-    --desktop-box-padding: 32px;
-    --desktop-elements-inline-padding: 48px;
-    --desktop-element-block-padding: 64px;
-    --desktop-page-padding: 96px;
-    --desktop-body-top-padding: 160px;
+    --padding-none: 0px;
+    --box-padding: 32px;
+    --elements-inline-padding: 48px;
+    --element-block-padding: 64px;
+    --page-padding: 96px;
+    --body-top-padding: 160px;
+}
 
-    --tablet-gap-gap-none: 0px;
-    --tablet-gap-caption-columns: 4px;
-    --tablet-gap-buttons-links: 8px;
-    --tablet-gap-paragraphs: 24px;
-    --tablet-gap-box-elements-gap: 32px;
-    --tablet-gap-has-button-gap: 48px;
-    --tablet-gap-parents-elements-gap: 96px;
-    --tablet-gap-header-gap: 104px;
-    --tablet-gap-main-gap: 160px;
+@include devices(tablet) {
+    :root {
+        --gap-none: 0px;
+        --caption-columns: 4px;
+        --buttons-links: 8px;
+        --paragraphs: 20px;
+        --box-elements-gap: 32px;
+        --has-button-gap: 48px;
+        --parents-elements-gap: 96px;
+        --header-gap: 104px;
+        --main-gap: 128px;
 
-    --tablet-padding-none: 0px;
-    --tablet-padding-elements-inline-padding: 24px;
-    --tablet-padding-box: 32px;
-    --tablet-padding-element-block-padding: 48px;
-    --tablet-padding-page-padding: 64px;
-    --tablet-padding-body-padding-top: 144px;
-  }
+        --padding-none: 0px;
+        --box-padding: 32px;
+        --elements-inline-padding: 32px;
+        --element-block-padding: 48px;
+        --page-padding: 64px;
+        --body-top-padding: 144px;
+    }
+}
+
+@include devices(phone) {
+    :root {
+        --gap-none: 0px;
+        --caption-columns: 4px;
+        --buttons-links: 8px;
+        --paragraphs: 16px;
+        --box-elements-gap: 24px;
+        --has-button-gap: 32px;
+        --parents-elements-gap: 64px;
+        --header-gap: 80px;
+        --main-gap: 104px;
+
+        --padding-none: 0px;
+        --box-padding: 24px;
+        --elements-inline-padding: 32px;
+        --element-block-padding: 48px;
+        --page-padding: 48px;
+        --body-top-padding: 96px;
+    }
+}

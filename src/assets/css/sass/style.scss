@@ -2,9 +2,9 @@
 @import "../../../../node_modules/tailwindcss/components";
 @import "../../../../node_modules/tailwindcss/utilities";
 
-@import "./variables/spacings", "./variables/breakpoints", "./variables/animations", "./variables/colors", "./variables/type", "./pages/home", "./pages/about",
-    "./pages/contact", "./pages/work", "./pages/pricing", "./components/nav", "./components/buttonlink",
-    "./components/tab", "./components/footer";
+@import "./variables/breakpoints", "./variables/general", "./variables/spacings", "./variables/animations",
+    "./variables/colors", "./variables/type", "./pages/home", "./pages/about", "./pages/contact", "./pages/work",
+    "./pages/pricing", "./components/nav", "./components/buttonlink", "./components/tab", "./components/footer";
 
 *,
 *::before,
@@ -25,6 +25,7 @@
 
 ::-webkit-scrollbar {
     width: 4px;
+    height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -82,13 +83,14 @@
 }
 
 body {
-    font-size: var(--font-size, 20px);
-    font-family: var(--font-family, "Mostica");
+    font-size: var(--font-size);
+    font-family: var(--font-family);
     scroll-behavior: smooth;
     min-height: 100vh;
     background-color: var(---disabled-primary, #cbe0de);
     color: var(--active-secondary, #002822);
     max-width: 1536px;
+    width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -98,9 +100,9 @@ img {
 }
 
 main {
-    padding: var(--desktop-header-gap, 104px) var(--desktop-padding-none, 160px) 0;
+    padding: var(--header-gap) var(--padding-none) 0;
     background-color: var(--active-neutral, #e5efee);
-    gap: var(--desktop-gap-none, 0px);
+    gap: var(--gap-none);
     padding-top: 0;
 }
 
@@ -118,12 +120,22 @@ main {
 }
 
 .lister {
-    padding: 0px var(--desktop-page-padding, 96px);
-    gap: var(--desktop-header-gap, 128px);
+    padding: 0px var(--page-padding);
+    gap: var(--header-gap);
+
+    @include devices(tablet) {
+        padding: 0;
+    }
 
     .listing {
-        padding: var(--desktop-element-block-padding, 64px) 0px;
+        padding: var(--element-block-padding) 0px;
         border-bottom: 1px solid var(--disabled-secondary, #8da7a4);
+
+        @include devices(phone) {
+            flex-direction: column;
+            gap: var(--paragraphs);
+            align-items: center;
+        }
 
         &:first-child {
             padding-top: 0px;
@@ -135,14 +147,26 @@ main {
     overflow: hidden;
 }
 
-.social-media {
-    gap: var(--desktop-paragraphs, 24px);
+.copyright {
+    @include devices(phone) {
+        flex-direction: column;
+        gap: var(--has-button-gap);
+        align-items: flex-start;
+    }
 
-    svg {
-        width: 20px;
-        height: auto;
-        stroke: var(--active-accent, #e5efee);
-        fill: none !important;
+    .social-media {
+        gap: var(--paragraphs);
+
+        @include devices(phone) {
+            gap: var(--has-button-gap);
+        }
+
+        svg {
+            width: 20px;
+            height: auto;
+            stroke: var(--active-accent, #e5efee);
+            fill: none !important;
+        }
     }
 }
 

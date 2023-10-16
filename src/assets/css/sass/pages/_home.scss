@@ -1,292 +1,52 @@
-.landing {
-    padding: var(--desktop-padding-none, 0) var(--desktop-page-padding, 96px) var(--desktop-caption-columns, 4px);
-    background-color: var(--active-neutral, #e5efee);
+.home {
+    .head-text {
+        padding-bottom: 200px;
 
-    & .head {
-        padding: var(--desktop-body-top-padding, 160px) 0 0;
-        width: 100%;
-
-        &-text {
-            gap: var(--desktop-box-elements-gap, 32px);
-
-            &-top {
-                gap: 16px;
-                width: 100%;
-
-                h1 {
-                    .lighter {
-                        position: absolute;
-                        border-radius: 48px;
-                        border: 2px solid var(--active-secondary, #002822);
-                        transform: rotate(-16deg);
-                        padding: 2px var(--desktop-box-elements-gap, 32px) 6px;
-                        left: 47%;
-                        top: -56%;
-                    }
-
-                    &.hightlight {
-                        border-radius: 160px;
-                        background: var(--active-secondary, #002822);
-                        padding: 16px var(--desktop-element-block-padding, 64px) 24px;
-                        color: var(--active-accent, #e5efee);
-                        overflow: hidden;
-                        white-space: nowrap;
-                    }
-                }
-            }
-
-            &-club {
-                padding: 0 var(--desktop-body-top-padding, 160px);
-                gap: var(--desktop-paragraphs, 24px);
-
-                .more {
-                    position: absolute;
-                    top: 50%;
-                    right: 49%;
-                    fill: var(--active-primary, #006a5d);
-                    height: 208px;
-                    width: 144px;
-                }
-
-                &-image {
-                    height: 90px;
-                    min-width: 90px;
-                    width: 90px;
-                    border-radius: 1000px;
-                    border: 2px solid var(--active-primary, #006a5d);
-                    overflow: hidden;
-
-                    img {
-                        object-fit: cover;
-                        object-position: center;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                &-grab {
-                    max-width: 34%;
-                }
-            }
-        }
-    }
-}
-
-.main {
-    background: var(--active-secondary, #002822);
-    // padding-top: var(--desktop-elements-inline-padding, 48px);
-
-    article {
-        padding: 0 var(--desktop-page-padding, 96px) var(--desktop-main-gap, 200px);
-        gap: var(--desktop-header-gap, 128px);
-        background: var(--active-neutral, #e5efee);
-        padding-top: var(--desktop-page-padding, 96px);
-
-        &.idea {
-            padding-top: var(--desktop-elements-block-padding, 64px);
+        @include devices(phone){
+            padding-bottom: 160px;
         }
 
-        h2 {
-            gap: var(--desktop-paragraphs, 24px);
-        }
-
-        .works {
-            gap: var(--desktop-parents-elements-gap, 104px);
-            flex-wrap: wrap;
-            flex-direction: row;
-
-            .projekt {
-                &-container {
-                    gap: var(--desktop-has-button-gap, 104px);
-                    width: 100%;
-
-                    &-image {
-                        background: var(--active-accent, #fefefe);
-                        width: 60%;
-                        height: 496px;
-                        border-radius: 24px;
-                    }
-
-                    &-details {
-                        gap: var(--desktop-has-button-gap, 48px);
-                        flex: 1 0 0;
-                        align-self: stretch;
-                        // padding-bottom: var(--desktop-box-padding, 32px);
-                        color: var(--active-secondary, #002822);
-
-                        .clave {
-                            gap: var(--desktop-paragraphs, 24px);
-                            width: 100%;
-                            padding: var(--desktop-padding-none, 0) var(--desktop-buttons-links, 8px);
-                        }
-                    }
-                }
-            }
+        h1{
+            line-height: 0.9;
         }
     }
 
     .process-container {
-        border-radius: 0 0 128px 128px;
-        padding-top: var(--desktop-element-block-padding, 64px);
+        // .liner {
+        //     @include devices(phone) {
+        //         display: none;
+        //     }
+        // }
+
+        .lister {
+            .listing {
+                @include devices(phone) {
+                    flex-direction: row;
+                }
+            }
+        }
     }
 
     .testimonials-container {
-        padding: var(--desktop-main-gap, 200px) var(--desktop-page-padding, 96px);
-        background: var(--active-secondary, #002822);
-        color: var(--active-accent, #e5efee);
+        .title {
+            @include devices(phone) {
+                display: flex;
+                flex-direction: column;
+                gap: var(--buttons-links);
+            }
 
-        & .title {
             .liner {
-                flex: 1;
-            }
-        }
-
-        .data {
-            gap: var(--desktop-header-gap, 128px);
-
-            &-results {
-                gap: var(--desktop-has-button-gap, 48px);
-                width: 100%;
-
-                &-left {
-                    width: 50%;
-
-                    &-plug {
-                        gap: var(--desktop-paragraphs, 24px);
-                        width: 44%;
-
-                        &-title {
-                            gap: var(--desktop-paragraphs, 24px);
-
-                            svg {
-                                width: 24px;
-                                height: auto;
-                            }
-                        }
-
-                        &-description {
-                            padding-left: var(--desktop-has-button-gap, 48px);
-                        }
-                    }
-                }
-
-                &-right {
-                    width: 50%;
-
-                    .questionsContainer {
-                        gap: var(--desktop-paragraphs, 24px);
-
-                        .questions {
-                            background-color: var(--active-accent, #e5efee);
-                            color: var(--active-secondary, #002822);
-                            border: 1px solid var(--active-secondary, #002822);
-                            box-shadow: 24px 16px 40px 0px rgba(0, 106, 93, 0.32);
-                            width: 256px;
-                            padding: var(--desktop-box-elements-gap, 32px);
-                            text-align: center;
-
-                            &:first-child {
-                                transform: rotate(-7deg);
-                                left: 144px;
-                                top: 56px;
-                            }
-                            &:nth-child(2) {
-                                transform: rotate(20deg);
-                                z-index: 1;
-                            }
-                        }
-
-                        img {
-                            pointer-events: none;
-                            width: 32px;
-                            height: auto;
-                            position: absolute;
-
-                            &.rocket {
-                                left: 20%;
-                                top: 65%;
-                                transform: rotate(-45deg);
-                            }
-
-                            &.smile {
-                                right: 16%;
-                                top: 50%;
-                            }
-
-                            &.smileHeart {
-                                transform: rotate(7deg);
-                                top: -28%;
-                            }
-
-                            &.smileTear {
-                                right: 7%;
-                                bottom: 17%;
-                            }
-                        }
-                    }
+                @include devices(phone) {
+                    display: none;
                 }
             }
         }
-
-        .client-responses {
-            gap: var(--desktop-parents-elements-gap, 104px);
-
-            & .title {
-                width: 40%;
-            }
-
-            .talk {
-                gap: var(--desktop-box-elements-gap, 32px);
-
-                .review {
-                    padding: var(--desktop-element-block-padding, 64px) var(--desktop-elements-inline-padding, 48px);
-                    gap: var(--gaps-element-block-padding, 64px);
-                    border-radius: 32px;
-                    border: 1px solid var(--active-accent, #e5efee);
-
-                    &-details {
-                        gap: var(--desktop-paragraphs, 8px);
-
-                        &-image {
-                            width: 56px;
-                            height: 56px;
-                            border-radius: 100px;
-                            overflow: hidden;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .sales-container {
-        padding-top: var(--desktop-main-gap, 200px);
-        border-radius: 0 128px;
-
-        &-call {
-            gap: var(--desktop-parents-elements-gap, 104px);
-
-            &-objects {
-                width: 28%;
-                gap: var(--gaps-paragraphs, 24px);
-
-                h4 {
-                    opacity: 0.24;
-                }
-            }
-        }
-    }
-}
-
-.home {
-    .head-text {
-        padding-bottom: 200px;
     }
 
     .projekt:nth-child(1) {
         .projekt-container {
             flex-direction: column;
-            gap: var(--desktop-has-button-gap, 48px);
+            gap: var(--has-button-gap);
 
             &-image {
                 width: 100%;
@@ -298,6 +58,10 @@
                 align-items: flex-end;
                 padding-bottom: 0;
                 width: 50%;
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -307,9 +71,14 @@
         width: 50%;
         flex: 0.5;
 
+        @include devices(tablet) {
+            width: 100%;
+            flex: unset;
+        }
+
         .projekt-container {
             flex-direction: column;
-            gap: var(--desktop-has-button-gap, 48px);
+            gap: var(--has-button-gap);
 
             &-image {
                 width: 100%;

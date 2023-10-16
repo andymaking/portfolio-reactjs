@@ -71,11 +71,11 @@ const List = ({ type, linkText, link }) => {
                 },
                 {
                     hinge: 'Static website',
-                    title: "$1,000 - $5,000",
+                    title: "$1,500 - $5,000",
                     copy: '',
                 },
                 {
-                    hinge: 'Website + admin',
+                    hinge: 'Dynamic website + admin',
                     title: "$5,500 - above",
                     copy: '',
                 },

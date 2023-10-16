@@ -1,26 +1,26 @@
 .contact {
     
     .landing {
-        padding: var(--desktop-padding-none, 0) var(--desktop-page-padding, 96px);
+        padding: var(--padding-none) var(--page-padding);
 
         .head {
-            padding-bottom: var(--desktop-header-gap, 128px);
+            padding-bottom: var(--header-gap);
         }
     }
 
     .main {
         article {
-            padding-top: var(--desktop-padding-none, 0px);
+            padding-top: var(--padding-none);
 
             .lister {
                 .listing {
                     p {
-                        margin-bottom: var(--desktop-buttons-links, 8px);
+                        margin-bottom: var(--buttons-links);
                     }
 
                     a {
                         align-items: flex-center;
-                        gap: var(--desktop-paragraphs, 24px);
+                        gap: var(--paragraphs);
                         transition: 0.5s ease;
                         color: var(--active-secondary, #002822);
 

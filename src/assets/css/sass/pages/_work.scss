@@ -1,12 +1,26 @@
 .portfolio {
     .head {
-        padding-bottom: var(--desktop-page-padding, 96px);
+        padding-bottom: var(--page-padding);
 
         &-text {
-            gap: var(--desktop-has-button-gap, 48px);
+            gap: var(--has-button-gap);
+
+            @include devices(tablet) {
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
 
             .tagger {
-                gap: var(--desktop-paragraphs, 24px);
+                gap: var(--paragraphs);
+
+                @include devices(tablet) {
+                    gap: var(--buttons-links);
+                    overflow-x: scroll;
+                    padding-bottom: var(--paragraphs);
+                }
+                @include devices(mobile) {
+                    justify-content: flex-start;
+                }
             }
         }
     }
@@ -14,17 +28,29 @@
     .main {
         article {
             border-radius: 0 0 128px 128px;
-            padding-top: var(--desktop-padding-none, 0);
+            padding-top: var(--padding-none);
+
+            @include devices(phone) {
+                border-radius: 0 0 56px 56px;
+            }
 
             .works {
                 .projekt-pair {
-                    gap: var(--desktop-parents-elements-gap, 104px);
+                    gap: var(--parents-elements-gap);
+
+                    @include devices(tablet) {
+                        flex-direction: column;
+                    }
 
                     .projekt-container {
-                        gap: var(--desktop-has-button-gap, 48px) !important;
+                        gap: var(--has-button-gap) !important;
 
                         &-image {
                             width: 100% !important;
+
+                            @include devices(phone) {
+                                height: 320px;
+                            }
                         }
 
                         &-details {
@@ -44,9 +70,17 @@
                         &:nth-child(#{$number}) {
                             .projekt:nth-child(1) {
                                 width: #{$width} !important;
+
+                                @include devices(tablet) {
+                                    width: 100% !important;
+                                }
                             }
                             .projekt:nth-child(2) {
                                 width: calc(100% - #{$width}) !important;
+
+                                @include devices(tablet) {
+                                    width: 100% !important;
+                                }
                             }
                         }
                     }

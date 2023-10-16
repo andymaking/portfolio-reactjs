@@ -14,11 +14,19 @@ const ImageContainer = ({ src, hash, alt }) => {
 
     return (
         <>
-            <div className={imageLoaded ? "hidden" : "inline "}>
+            <div
+                className={`blurred ` + `${imageLoaded ? "hidden" : "inline"}`}
+                style={{
+                    position: "absolute",
+                    zIndex: "1",
+                    width: "100%",
+                    height: "100%"
+                }}
+            >
                 <Blurhash
-                    hash={hash}
                     width="100%"
                     height="100%"
+                    hash={hash}
                     resolutionX={32}
                     resolutionY={32}
                     punch={1}
