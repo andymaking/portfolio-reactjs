@@ -75,7 +75,7 @@ const List = ({ type, linkText, link }) => {
                     copy: '',
                 },
                 {
-                    hinge: 'Dynamic website + admin',
+                    hinge: 'Website + admin',
                     title: "$5,500 - above",
                     copy: '',
                 },

@@ -3,7 +3,7 @@
     top: 0;
     max-width: calc(100vw - 0px);
     padding: var(--elements-inline-padding) var(--page-padding) 0;
-    z-index: 10000;
+    // z-index: 10000;
     margin: 0 auto;
     transition: all 0.2s ease-in;
     width: 100%;
@@ -103,7 +103,7 @@
 }
 
 .menu-links-holder {
-    position: fixed;
+    position: absolute;
     width: 0px;
     height: 100vh;
     background-color: var(--active-secondary, #002822);
@@ -119,9 +119,26 @@
     transition: all 0.5s;
     overflow: hidden;
 
+    @include devices(tablet) {
+        flex-direction: column-reverse;
+    }
+
+    @include devices(phone) {
+        right: 0;
+        overflow: hidden;
+    }
+
     .menuLinks-list {
         gap: var(--has-button-gap);
         align-self: flex-end;
+
+        @include devices(tablet) {
+            align-self: flex-start;
+        }
+
+        @include devices(phone) {
+            align-self: flex-start;
+        }
 
         & .menuLink {
             a {
@@ -164,7 +181,7 @@
 
     &.menu-links-out {
         width: 100vw;
-        padding: var(--element-block-padding) var(--page-padding);
+        padding: var(--element-block-padding) var(--page-padding) var(--body-top-padding);
         padding-left: var(--main-gap);
         padding-right: 32vw;
         right: -24vw;
@@ -174,11 +191,17 @@
         transition: transform 0.5s;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        
+
+        @include devices(tablet) {
+            right: -12vw;
+            padding-left: 12vw;
+            padding-right: 18vw;
+            padding-top: 24px;
+        }
+
         @include devices(phone) {
             right: 0;
-            padding-left: 16vw;
-            padding-right: 16vw;
+            padding-right: 12vw;
         }
     }
 
@@ -186,6 +209,17 @@
         cursor: pointer;
         gap: var(--buttons-links);
         padding-top: var(--has-button-gap);
+
+        @include devices(tablet) {
+            align-self: flex-end;
+            padding-top: var(--box-padding);
+        }
+
+        @include devices(phone) {
+            align-items: center;
+            align-self: flex-end;
+            padding-top: 24px;
+        }
 
         & .menu-bars {
             width: 20px;
@@ -215,17 +249,6 @@
             color: var(--active-accent, #e5efee);
         }
     }
-}
-
-#root {
-    position: relative;
-    height: 100vh;
-    -webkit-perspective: 1500px;
-    perspective: 1500px;
-
-    // @include devices(phone){
-    //     perspective: 320px;
-    // }
 }
 
 .body {

@@ -6,7 +6,8 @@ footer {
     gap: var(--page-padding);
 
     @include devices(phone) {
-        padding: var(--element-block-padding) var(--page-padding);
+        padding: var(--box-padding) var(--page-padding) var(--element-block-padding);
+        gap: var(--parents-elements-gap);
     }
 
     & > * {
@@ -18,7 +19,7 @@ footer {
         gap: var(--has-button-gap);
 
         @include devices(phone) {
-            padding-bottom: var(--header-gap);
+            padding-bottom: var(--parents-elements-gap);
         }
 
         .title {
@@ -49,9 +50,9 @@ footer {
 
         @include devices(phone) {
             width: 560px;
-            bottom: -70px;
+            bottom: 150px;
             left: unset;
-            right: -90%;
+            right: -44%;
         }
 
         .text {

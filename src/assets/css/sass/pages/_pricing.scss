@@ -10,6 +10,16 @@
     .main {
         article {
             padding-top: var(--padding-none, 0px);
+
+            .lister {
+                .listing {
+                    .clover{
+                        @include devices(phone) {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
         }
     }
 }

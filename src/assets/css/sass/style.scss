@@ -104,6 +104,10 @@ main {
     background-color: var(--active-neutral, #e5efee);
     gap: var(--gap-none);
     padding-top: 0;
+    position: relative;
+    height: 100vh;
+    -webkit-perspective: 1500px;
+    perspective: 1500px;
 }
 
 .liner {
@@ -132,9 +136,13 @@ main {
         border-bottom: 1px solid var(--disabled-secondary, #8da7a4);
 
         @include devices(phone) {
-            flex-direction: column;
+            flex-direction: row;
             gap: var(--paragraphs);
             align-items: center;
+        }
+
+        @media screen and(max-width: 320px) {
+            flex-direction: column;
         }
 
         &:first-child {

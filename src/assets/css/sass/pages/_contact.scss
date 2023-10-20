@@ -16,10 +16,14 @@
                 .listing {
                     p {
                         margin-bottom: var(--buttons-links);
+
+                        @include devices(tablet){
+                            margin-bottom: 0;
+                        }
                     }
 
                     a {
-                        align-items: flex-center;
+                        align-items: center;
                         gap: var(--paragraphs);
                         transition: 0.5s ease;
                         color: var(--active-secondary, #002822);

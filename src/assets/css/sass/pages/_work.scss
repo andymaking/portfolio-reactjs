@@ -18,7 +18,7 @@
                     overflow-x: scroll;
                     padding-bottom: var(--paragraphs);
                 }
-                @include devices(mobile) {
+                @include devices(phone) {
                     justify-content: flex-start;
                 }
             }
@@ -31,7 +31,7 @@
             padding-top: var(--padding-none);
 
             @include devices(phone) {
-                border-radius: 0 0 56px 56px;
+                border-radius: 0 0 48px 48px;
             }
 
             .works {
