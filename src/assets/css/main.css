@@ -938,6 +938,12 @@
     .nav.secondary svg path {
       fill: var(--active-accent, #e5efee); }
 
+.click-outside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1500; }
+
 .menu-links-holder {
   position: absolute;
   width: 0px;
@@ -953,7 +959,7 @@
   visibility: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  overflow: hidden; }
+  z-index: 2000; }
   @media only screen and (max-width: 1120px) {
     .menu-links-holder {
       flex-direction: column-reverse; } }
@@ -1016,7 +1022,7 @@
       display: none; }
   .menu-links-holder.menu-links-out {
     width: 100vw;
-    padding: var(--element-block-padding) var(--page-padding) var(--body-top-padding);
+    padding: var(--element-block-padding) var(--page-padding);
     padding-left: var(--main-gap);
     padding-right: 32vw;
     right: -24vw;
@@ -1031,7 +1037,8 @@
         right: -12vw;
         padding-left: 12vw;
         padding-right: 18vw;
-        padding-top: 24px; } }
+        padding-top: 24px;
+        padding-bottom: var(--body-top-padding); } }
     @media only screen and (max-width: 502px) {
       .menu-links-holder.menu-links-out {
         right: 0;
@@ -1430,7 +1437,9 @@ main {
   padding: var(--header-gap) var(--padding-none) 0;
   background-color: var(--active-neutral, #e5efee);
   gap: var(--gap-none);
-  padding-top: 0;
+  padding-top: 0; }
+
+#root {
   position: relative;
   height: 100vh;
   -webkit-perspective: 1500px;

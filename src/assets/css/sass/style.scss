@@ -104,6 +104,9 @@ main {
     background-color: var(--active-neutral, #e5efee);
     gap: var(--gap-none);
     padding-top: 0;
+}
+
+#root {
     position: relative;
     height: 100vh;
     -webkit-perspective: 1500px;
