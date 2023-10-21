@@ -16,7 +16,6 @@ import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 
-
 // import NoPage from "./pages/NoPage";
 
 function ScrollToTop() {
@@ -28,7 +27,6 @@ function ScrollToTop() {
 
     return null;
 }
-
 
 const App = () => {
 

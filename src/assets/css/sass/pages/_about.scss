@@ -23,24 +23,20 @@
                 width: 40%;
                 height: auto;
                 align-self: stretch;
+                height: 528px;
 
                 @include devices(tablet) {
                     width: 100%;
-                    height: 528px;
                 }
 
                 @include devices(phone) {
-                    height: 420pxa;
+                    height: 420px;
                 }
 
                 img {
                     width: 100%;
                     object-fit: cover;
-                    height: 528px;
-
-                    @include devices(phone) {
-                        height: 420px;
-                    }
+                    height: 100%;
                 }
             }
 

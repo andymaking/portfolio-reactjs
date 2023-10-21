@@ -125,6 +125,7 @@
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     z-index: 2000;
+    display: none;
 
     @include devices(tablet) {
         flex-direction: column-reverse;
@@ -192,6 +193,7 @@
     }
 
     &.menu-links-out {
+        display: inline-flex;
         width: 100vw;
         padding: var(--element-block-padding) var(--page-padding);
         padding-left: var(--main-gap);
@@ -209,12 +211,13 @@
             padding-left: 12vw;
             padding-right: 18vw;
             padding-top: 24px;
-            padding-bottom: var(--body-top-padding);
+            padding-bottom: var(--header-gap);
         }
-
+        
         @include devices(phone) {
             right: 0;
             padding-right: 12vw;
+            padding-bottom: var(--body-top-padding);
         }
     }
 

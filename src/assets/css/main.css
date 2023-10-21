@@ -132,6 +132,9 @@
       .scrolling-container .scrolling_text .text span {
         margin: 0 40px;
         color: var(--active-accent, #fefefe); }
+        @media only screen and (max-width: 502px) {
+          .scrolling-container .scrolling_text .text span {
+            margin: 0 24px; } }
 
 @keyframes animate_text {
   from {
@@ -531,21 +534,18 @@
   .about .main .bio-container .dol {
     width: 40%;
     height: auto;
-    align-self: stretch; }
+    align-self: stretch;
+    height: 528px; }
     @media only screen and (max-width: 1120px) {
       .about .main .bio-container .dol {
-        width: 100%;
-        height: 528px; } }
+        width: 100%; } }
     @media only screen and (max-width: 502px) {
       .about .main .bio-container .dol {
-        height: 420pxa; } }
+        height: 420px; } }
     .about .main .bio-container .dol img {
       width: 100%;
       object-fit: cover;
-      height: 528px; }
-      @media only screen and (max-width: 502px) {
-        .about .main .bio-container .dol img {
-          height: 420px; } }
+      height: 100%; }
   .about .main .bio-container .content {
     width: 50%;
     gap: var(--has-button-gap); }
@@ -970,7 +970,8 @@
   visibility: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  z-index: 2000; }
+  z-index: 2000;
+  display: none; }
   @media only screen and (max-width: 1120px) {
     .menu-links-holder {
       flex-direction: column-reverse; } }
@@ -1038,6 +1039,7 @@
     .menu-links-holder .menuLinks-list .menuLink.active {
       display: none; }
   .menu-links-holder.menu-links-out {
+    display: inline-flex;
     width: 100vw;
     padding: var(--element-block-padding) var(--page-padding);
     padding-left: var(--main-gap);
@@ -1055,11 +1057,12 @@
         padding-left: 12vw;
         padding-right: 18vw;
         padding-top: 24px;
-        padding-bottom: var(--body-top-padding); } }
+        padding-bottom: var(--header-gap); } }
     @media only screen and (max-width: 502px) {
       .menu-links-holder.menu-links-out {
         right: 0;
-        padding-right: 12vw; } }
+        padding-right: 12vw;
+        padding-bottom: var(--body-top-padding); } }
   .menu-links-holder .menu-close {
     cursor: pointer;
     gap: var(--buttons-links);
