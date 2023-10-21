@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-import { ArrowUpRight } from "@phosphor-icons/react";
+import ReactDOM from 'react-dom';
 
 export const useCursor = () => {
     const [mousePosition, setMousePosition] = useState({
@@ -8,38 +7,58 @@ export const useCursor = () => {
         y: 0
     });
 
-    const variants = {
-        default: {},
-        link: {}
-    };
-
     const [cursorVariant, setCursorVariant] = useState("default");
 
     useEffect(() => {
-        const mouseMove = (e) => {
-            setMousePosition({
-                x: e.pageX,
-                y: e.pageY
-            });
+        const updateMousePosition = (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            setMousePosition({ x, y });
         };
 
         const handleMouseEnter = () => {
             setCursorVariant("link");
         };
+
         const handleMouseLeave = () => {
             setCursorVariant("default");
         };
 
         const links = document.querySelectorAll('a');
+        const menuClose = document.querySelectorAll('.menu-close');
+        const menuOpen = document.querySelectorAll('.menu');
 
-        window.addEventListener("mousemove", mouseMove);
+        window.addEventListener("mousemove", updateMousePosition);
+
+        menuOpen.forEach(open => {
+            open.addEventListener("mouseover", handleMouseEnter);
+            open.addEventListener("mouseout", handleMouseLeave);
+        });
+
+        menuClose.forEach(close => {
+            close.addEventListener("mouseover", handleMouseEnter);
+            close.addEventListener("mouseout", handleMouseLeave);
+        });
+
         links.forEach(link => {
             link.addEventListener("mouseover", handleMouseEnter);
             link.addEventListener("mouseout", handleMouseLeave);
         });
 
         return () => {
-            window.removeEventListener("mousemove", mouseMove);
+            window.removeEventListener("mousemove", updateMousePosition);
+
+            menuOpen.forEach(open => {
+                open.removeEventListener("mouseover", handleMouseEnter);
+                open.removeEventListener("mouseout", handleMouseLeave);
+            });
+
+            menuClose.forEach(close => {
+                close.removeEventListener("mouseover", handleMouseEnter);
+                close.removeEventListener("mouseout", handleMouseLeave);
+            });
+
             links.forEach(link => {
                 link.removeEventListener("mouseover", handleMouseEnter);
                 link.removeEventListener("mouseout", handleMouseLeave);
@@ -50,18 +69,22 @@ export const useCursor = () => {
     return { mousePosition, cursorVariant };
 };
 
+
 const Cursor = () => {
     const { cursorVariant, mousePosition } = useCursor();
 
-    return (
-        <div
-            className={`cursor ` + `${cursorVariant === 'link' ? 'linked' : ''}`}
-            style={{
-                top: mousePosition.y,
-                left: mousePosition.x,
-            }}
-        >
-        </div>
+    return ReactDOM.createPortal(
+        (
+            <div
+                className={`cursor ` + `${cursorVariant === 'link' ? 'linked' : ''}`}
+                style={{
+                    top: mousePosition.y,
+                    left: mousePosition.x,
+                }}
+            >
+            </div>
+        ),
+        document.getElementById('cursor-root')
     );
 };
 

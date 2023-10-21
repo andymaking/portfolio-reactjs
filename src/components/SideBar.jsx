@@ -4,8 +4,12 @@ import { useLocation } from 'react-router-dom';
 import Link from "./Links";
 import { ArrowSquareIn } from "@phosphor-icons/react";
 
+import { useCursor } from "./Cursor";
+
 
 const SideBar = ({ isMenuClicked, closeMenu }) => {
+
+    const { handleMouseEnter } = useCursor();
 
     const location = useLocation();
     const currentPage = location.pathname;
@@ -39,7 +43,11 @@ const SideBar = ({ isMenuClicked, closeMenu }) => {
                     </span>
                 </div>
 
-                <div onClick={closeMenu} className="menu-close flex flex-row content-center justify-center">
+                <div
+                    onClick={closeMenu}
+                    onMouseOver={handleMouseEnter}
+                    className="menu-close flex flex-row content-center justify-center"
+                >
                     <div className="menu-bars">
                         <span className="menu-bars-span top"></span>
                         <span className="menu-bars-span last"></span>

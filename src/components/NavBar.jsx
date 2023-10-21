@@ -1,6 +1,10 @@
 import React from "react";
 
+import { useCursor } from "./Cursor";
+
 const NavBar = ({ isMenuClicked, openMenu, isSecondary }) => {
+
+    const { handleMouseEnter } = useCursor();
 
     return (
         <nav className={`${isSecondary ? 'secondary' : ''} ` + `nav`}>
@@ -8,7 +12,11 @@ const NavBar = ({ isMenuClicked, openMenu, isSecondary }) => {
                 <div className="type">
                     <p className="p1 flex flex-col">Jude Joshua<span>Lagos, Nigeria.</span></p>
                 </div>
-                <div onClick={openMenu} className="menu flex flex-row content-center justify-center">
+                <div
+                    onClick={openMenu}
+                    onMouseOver={handleMouseEnter}
+                    className="menu flex flex-row content-center justify-center"
+                >
                     <div className="menu-bars flex flex-col items-start justify-center">
                         <span className="menu-bars-span top"></span>
                         <span className="menu-bars-span mid"></span>

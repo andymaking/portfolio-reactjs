@@ -9,7 +9,7 @@ const Links = ({ type, href, children, target, extra }) => {
 
     const classNames = "flex flex-row content-end items-center justify-start " + extra;
 
-    const { handleMouseEnter} = useCursor();
+    const { handleMouseEnter } = useCursor();
 
     return (
         <Link

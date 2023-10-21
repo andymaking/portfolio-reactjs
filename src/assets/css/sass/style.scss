@@ -169,13 +169,6 @@ main {
     background-color: var(--active-neutral, #e5efee);
     color: var(--active-primary, #006a5d);
     border-radius: 50%;
-    // transition:
-    //     top 0.05s ease-in,
-    //     left 0.05s ease-in,
-    //     transform 0.05s linear,
-    //     background-color 0.3s ease,
-    //     color 0.5s ease,
-    //     opacity 0.1s linear;
     z-index: 100000;
     mix-blend-mode: difference;
     text-align: center;
@@ -184,5 +177,5 @@ main {
 .cursor.linked{
     width: 32px;
     height: 32px;
-    background-color: #006a5d;
+    background-color: var(--active-primary, #006a5d);
 }

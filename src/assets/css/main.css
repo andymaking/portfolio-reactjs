@@ -1528,4 +1528,4 @@ main {
 .cursor.linked {
   width: 32px;
   height: 32px;
-  background-color: #006a5d; }
+  background-color: var(--active-primary, #006a5d); }
