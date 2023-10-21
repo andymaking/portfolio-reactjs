@@ -157,7 +157,7 @@ const List = ({ type, linkText, link }) => {
         if (linkText !== "none") {
             if (type !== "pricing") {
                 return (
-                    <Links type={"primary"} href={`/` + link}>
+                    <Links target="_self" type={"primary"} href={`/` + link}>
                         <div className="icon-hold flex items-center justify-center">
                             <ArrowRight size={24} weight="regular" />
                         </div>
@@ -166,7 +166,7 @@ const List = ({ type, linkText, link }) => {
                 )
             } else {
                 return (
-                    <Links type={"primary"} href={`/` + link}>
+                    <Links target="_self" type={"primary"} href={`/` + link}>
                         <div className="icon-hold flex items-center justify-center">
                             <ArrowLeft size={24} weight="regular" />
                         </div>

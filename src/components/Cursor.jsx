@@ -32,36 +32,36 @@ export const useCursor = () => {
         window.addEventListener("mousemove", updateMousePosition);
 
         menuOpen.forEach(open => {
-            open.addEventListener("mouseover", handleMouseEnter);
-            open.addEventListener("mouseout", handleMouseLeave);
+            open.addEventListener("mouseenter", handleMouseEnter);
+            open.addEventListener("mouseleave", handleMouseLeave);
         });
 
         menuClose.forEach(close => {
-            close.addEventListener("mouseover", handleMouseEnter);
-            close.addEventListener("mouseout", handleMouseLeave);
+            close.addEventListener("mouseenter", handleMouseEnter);
+            close.addEventListener("mouseleave", handleMouseLeave);
         });
 
         links.forEach(link => {
-            link.addEventListener("mouseover", handleMouseEnter);
-            link.addEventListener("mouseout", handleMouseLeave);
+            link.addEventListener("mouseenter", handleMouseEnter);
+            link.addEventListener("mouseleave", handleMouseLeave);
         });
 
         return () => {
             window.removeEventListener("mousemove", updateMousePosition);
 
             menuOpen.forEach(open => {
-                open.removeEventListener("mouseover", handleMouseEnter);
-                open.removeEventListener("mouseout", handleMouseLeave);
+                open.removeEventListener("mouseenter", handleMouseEnter);
+                open.removeEventListener("mouseleave", handleMouseLeave);
             });
 
             menuClose.forEach(close => {
-                close.removeEventListener("mouseover", handleMouseEnter);
-                close.removeEventListener("mouseout", handleMouseLeave);
+                close.removeEventListener("mouseenter", handleMouseEnter);
+                close.removeEventListener("mouseleave", handleMouseLeave);
             });
 
             links.forEach(link => {
-                link.removeEventListener("mouseover", handleMouseEnter);
-                link.removeEventListener("mouseout", handleMouseLeave);
+                link.removeEventListener("mouseenter", handleMouseEnter);
+                link.removeEventListener("mouseleave", handleMouseLeave);
             });
         };
     }, []);

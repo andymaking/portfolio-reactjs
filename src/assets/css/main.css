@@ -1524,8 +1524,10 @@ main {
   z-index: 100000;
   mix-blend-mode: difference;
   text-align: center; }
-
-.cursor.linked {
-  width: 32px;
-  height: 32px;
-  background-color: var(--active-primary, #006a5d); }
+  .cursor.linked {
+    width: 32px;
+    height: 32px;
+    background-color: var(--active-primary, #006a5d); }
+  @media only screen and (max-width: 850px) {
+    .cursor {
+      display: none; } }
