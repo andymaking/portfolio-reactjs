@@ -158,29 +158,6 @@ main {
     overflow: hidden;
 }
 
-.copyright {
-    @include devices(phone) {
-        flex-direction: column;
-        gap: var(--has-button-gap);
-        align-items: flex-start;
-    }
-
-    .social-media {
-        gap: var(--paragraphs);
-
-        @include devices(phone) {
-            gap: var(--has-button-gap);
-        }
-
-        svg {
-            width: 20px;
-            height: auto;
-            stroke: var(--active-accent, #e5efee);
-            fill: none !important;
-        }
-    }
-}
-
 .cursor {
     width: 16px;
     height: 16px;

@@ -97,7 +97,7 @@ const List = ({ type, linkText, link }) => {
                 },
                 {
                     title: "Schedule a call:",
-                    details: 'Calendly',
+                    details: 'Google Meet',
                 },
                 {
                     title: "Phone:",
@@ -123,15 +123,15 @@ const List = ({ type, linkText, link }) => {
                     <p className="h4">{listing.title}</p>
                     <div className="clover flex flex-col">
                         {isValidEmail(listing.details) ? (
-                            <a className="h4 e-mail flex flex-row content-end items-center justify-start" href={`mailto:${listing.details}`}>
+                            <Links extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:${listing.details}`}>
                                 {listing.details}
                                 <ArrowSquareIn />
-                            </a>
-                        ) : (listing.details === 'Calendly') ? (
-                            <a className="h4 e-mail flex flex-row content-end items-center justify-start" href={`https://calendly.com/thejudejoshua/30min`}>
+                            </Links>
+                        ) : (listing.details === 'Google Meet') ? (
+                            <Links target={"__blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`https://calendar.app.google/rN9ypA5o8PWUcSb3A`}>
                                 {listing.details}
                                 <ArrowSquareIn />
-                            </a>
+                            </Links>
                         ) : (
                             <h3 className="h4">
                                 {listing.details}

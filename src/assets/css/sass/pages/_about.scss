@@ -3,6 +3,10 @@
         & .head {
             padding-left: var(--padding-none);
             padding-bottom: var(--header-gap);
+
+            @include devices(tablet) {
+                padding-bottom: var(--element-block-padding);
+            }
         }
     }
 
@@ -22,6 +26,11 @@
 
                 @include devices(tablet) {
                     width: 100%;
+                    height: 528px;
+                }
+
+                @include devices(phone) {
+                    height: 420pxa;
                 }
 
                 img {
@@ -59,7 +68,7 @@
                 border-radius: 0 0 72px 72px;
             }
 
-            @include devices(phone){
+            @include devices(phone) {
                 border-radius: 0 0 48px 48px;
             }
 
@@ -79,7 +88,7 @@
                 padding-right: var(--padding-none);
                 padding-top: var(--page-padding);
 
-                .listing{
+                .listing {
                     @include devices(tablet) {
                         flex-direction: row;
                         align-items: flex-start;

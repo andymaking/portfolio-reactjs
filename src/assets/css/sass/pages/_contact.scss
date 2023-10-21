@@ -1,5 +1,4 @@
 .contact {
-    
     .landing {
         padding: var(--padding-none) var(--page-padding);
 
@@ -17,7 +16,7 @@
                     p {
                         margin-bottom: var(--buttons-links);
 
-                        @include devices(tablet){
+                        @include devices(tablet) {
                             margin-bottom: 0;
                         }
                     }
@@ -41,6 +40,14 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    footer {
+        .copyright {
+            @include devices(phone) {
+                padding-top: var(--elements-inline-padding);
             }
         }
     }

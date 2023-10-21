@@ -176,6 +176,11 @@
                         bottom: 10%;
                         left: -30%;
                         color: var(--active-placeholder, #bdbdbd);
+
+                        @include devices(tablet) {
+                            display: none;
+                        }
+                
                     }
                 }
             }
