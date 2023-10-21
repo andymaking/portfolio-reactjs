@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Links = ({type, href, children, target, extra}) => {
+import { useCursor } from "./Cursor";
+
+
+const Links = ({ type, href, children, target, extra }) => {
 
     const classNames = "flex flex-row content-end items-center justify-start " + extra;
+
+    const { handleMouseEnter} = useCursor();
 
     return (
         <Link
@@ -12,6 +17,7 @@ const Links = ({type, href, children, target, extra}) => {
             type={type}
             to={href}
             target={target}
+            onMouseOver={handleMouseEnter}
         >
             {children}
         </Link>

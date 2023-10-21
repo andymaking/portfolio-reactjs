@@ -1,63 +1,68 @@
 import React, { useState, useEffect } from "react";
-// import "./App.css";
-import { motion } from "framer-motion";
 
-const App = () => {
+import { ArrowUpRight } from "@phosphor-icons/react";
+
+export const useCursor = () => {
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
     });
-    console.log(mousePosition);
 
-    // Set cursor variant to change color on hover text
+    const variants = {
+        default: {},
+        link: {}
+    };
 
     const [cursorVariant, setCursorVariant] = useState("default");
- 
 
     useEffect(() => {
         const mouseMove = (e) => {
             setMousePosition({
-                x: e.clientX,
-                y: e.clientY
+                x: e.pageX,
+                y: e.pageY
             });
         };
 
+        const handleMouseEnter = () => {
+            setCursorVariant("link");
+        };
+        const handleMouseLeave = () => {
+            setCursorVariant("default");
+        };
+
+        const links = document.querySelectorAll('a');
+
         window.addEventListener("mousemove", mouseMove);
+        links.forEach(link => {
+            link.addEventListener("mouseover", handleMouseEnter);
+            link.addEventListener("mouseout", handleMouseLeave);
+        });
 
         return () => {
             window.removeEventListener("mousemove", mouseMove);
+            links.forEach(link => {
+                link.removeEventListener("mouseover", handleMouseEnter);
+                link.removeEventListener("mouseout", handleMouseLeave);
+            });
         };
     }, []);
 
-    // Variant animation
-    // const variants = {
-    //     default: {
-    //         x: mousePosition.x - 8,
-    //         y: mousePosition.y - 8
-    //     },
-    //     text: {
-    //         height: 150,
-    //         width: 150,
-    //         x: mousePosition.x - 70,
-    //         y: mousePosition.y - 70,
-    //         backgroundColor: "aqua",
-    //         mixBlendMode: "difference"
-    //     }
-    // };
+    return { mousePosition, cursorVariant };
+};
 
-    // function for textLeave and textEnter
-    // const textEnter = () => setCursorVariant("text");
-    // const textLeave = () => setCursorVariant("default");
+const Cursor = () => {
+    const { cursorVariant, mousePosition } = useCursor();
 
     return (
-
-            <motion.div
-                className="cursor"
-                // variants={variants}
-                animate={cursorVariant}
-            ></motion.div>
-
+        <div
+            className={`cursor ` + `${cursorVariant === 'link' ? 'linked' : ''}`}
+            style={{
+                top: mousePosition.y,
+                left: mousePosition.x,
+            }}
+        >
+        </div>
     );
 };
 
-export default App;
+export default Cursor;
