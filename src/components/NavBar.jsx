@@ -1,14 +1,32 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
+
+import Link from "./Links";
+
+import { ReactComponent as Logo } from "../assets/images/newlogo.svg";
 
 const NavBar = ({ isMenuClicked, openMenu }) => {
 
+    const location = useLocation();
+    const currentPage = location.pathname;
 
     return (
         <nav className={`nav`}>
             <div className={`flex flex-row items-center justify-between ` + `${isMenuClicked ? 'nav-clicked' : ''}`}>
-                <div className="type">
-                    <p className="p1 flex flex-col">Jude Joshua<span>Abuja, Nigeria.</span></p>
-                </div>
+                {currentPage === '/' &&
+                    <div className="logo flex flex-row items-center justify-center">
+                        <Logo />
+                    </div>
+                }
+
+                {currentPage != '/' &&
+                    <Link type={"none"} href={"/"}>
+                        <div className="logo flex flex-row items-center justify-center">
+                            <Logo />
+                        </div>
+                    </Link>
+                }
+
                 <div
                     onClick={openMenu}
                     className="menu flex flex-row content-center justify-center"

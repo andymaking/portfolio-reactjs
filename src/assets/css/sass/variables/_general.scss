@@ -50,14 +50,14 @@
 
             .projekt {
                 &-container {
-                    gap: var(--has-button-gap);
+                    gap: var(--box-elements-gap);
                     width: 100%;
 
                     &-image {
                         background: var(--active-accent, #fefefe);
                         width: 60%;
-                        height: 496px;
-                        border-radius: 32px;
+                        height: 520px;
+                        border-radius: 12px;
 
                         @include devices(tablet) {
                             height: 448px;

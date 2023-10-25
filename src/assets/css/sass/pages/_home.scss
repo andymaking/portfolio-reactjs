@@ -55,8 +55,8 @@
                 white-space: nowrap;
 
                 @media only screen and(max-width: 850px) {
-                    padding-left: var(--paragraphs);
-                    padding-right: var(--paragraphs);
+                    padding-left: var(--elements-inline-padding);
+                    padding-right: var(--elements-inline-padding);
                 }
 
                 @media only screen and(max-width: 700px) {
@@ -432,7 +432,7 @@
     .projekt:nth-child(1) {
         .projekt-container {
             flex-direction: column;
-            gap: var(--has-button-gap);
+            gap: var(--box-elements-gap);
 
             &-image {
                 width: 100%;
@@ -443,7 +443,7 @@
                 justify-content: space-between;
                 align-items: flex-end;
                 padding-bottom: 0;
-                width: 50%;
+                width: 100%;
 
                 @include devices(tablet) {
                     width: 100%;
@@ -464,7 +464,7 @@
 
         .projekt-container {
             flex-direction: column;
-            gap: var(--has-button-gap);
+            gap: var(--box-elements-gap);
 
             &-image {
                 width: 100%;

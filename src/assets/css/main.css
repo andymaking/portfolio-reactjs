@@ -35,13 +35,13 @@
       flex-wrap: wrap;
       flex-direction: row; }
       .main article .works .projekt-container {
-        gap: var(--has-button-gap);
+        gap: var(--box-elements-gap);
         width: 100%; }
         .main article .works .projekt-container-image {
           background: var(--active-accent, #fefefe);
           width: 60%;
-          height: 496px;
-          border-radius: 32px; }
+          height: 520px;
+          border-radius: 12px; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-container-image {
               height: 448px;
@@ -225,8 +225,8 @@
       white-space: nowrap; }
       @media only screen and (max-width: 850px) {
         .home .head-text h1.hightlight {
-          padding-left: var(--paragraphs);
-          padding-right: var(--paragraphs); } }
+          padding-left: var(--elements-inline-padding);
+          padding-right: var(--elements-inline-padding); } }
       @media only screen and (max-width: 700px) {
         .home .head-text h1.hightlight {
           top: -6px;
@@ -482,7 +482,7 @@
 
 .home .projekt:nth-child(1) .projekt-container {
   flex-direction: column;
-  gap: var(--has-button-gap); }
+  gap: var(--box-elements-gap); }
   .home .projekt:nth-child(1) .projekt-container-image {
     width: 100%; }
   .home .projekt:nth-child(1) .projekt-container-details {
@@ -490,7 +490,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 0;
-    width: 50%; }
+    width: 100%; }
     @media only screen and (max-width: 1120px) {
       .home .projekt:nth-child(1) .projekt-container-details {
         width: 100%; } }
@@ -507,7 +507,7 @@
   .home .projekt:nth-child(2) .projekt-container,
   .home .projekt:nth-child(3) .projekt-container {
     flex-direction: column;
-    gap: var(--has-button-gap); }
+    gap: var(--box-elements-gap); }
     .home .projekt:nth-child(2) .projekt-container-image,
     .home .projekt:nth-child(3) .projekt-container-image {
       width: 100%; }
@@ -878,34 +878,40 @@
   margin: 0 auto;
   transition: all 0.2s ease-in;
   width: 100%; }
-  .nav .type p {
-    gap: 0; }
-    .nav .type p span {
-      font-family: "Vegur";
-      font-weight: 400;
-      line-height: 1.5;
-      white-space: pre-line;
-      font-size: 16px;
-      opacity: 0.8;
-      display: block; }
-      @media only screen and (max-width: 1440px) {
-        .nav .type p span {
-          font-size: 16px; } }
-      @media only screen and (max-width: 1366px) {
-        .nav .type p span {
-          font-size: 16px; } }
-      @media only screen and (max-width: 1120px) {
-        .nav .type p span {
-          font-size: 13.33333px; } }
-      @media only screen and (max-width: 502px) {
-        .nav .type p span {
-          font-size: 11.11111px; } }
   .nav svg,
   .nav svg g,
   .nav svg path {
     fill: var(--active-secondary, #e5efee); }
   .nav .logo {
     flex-wrap: wrap; }
+    .nav .logo svg {
+      width: auto;
+      height: 40px; }
+      @media only screen and (max-width: 502px) {
+        .nav .logo svg {
+          height: 28px; } }
+    .nav .logo p {
+      gap: 0; }
+      .nav .logo p span {
+        font-family: "Vegur";
+        font-weight: 400;
+        line-height: 1.5;
+        white-space: pre-line;
+        font-size: 16px;
+        opacity: 0.8;
+        display: block; }
+        @media only screen and (max-width: 1440px) {
+          .nav .logo p span {
+            font-size: 16px; } }
+        @media only screen and (max-width: 1366px) {
+          .nav .logo p span {
+            font-size: 16px; } }
+        @media only screen and (max-width: 1120px) {
+          .nav .logo p span {
+            font-size: 13.33333px; } }
+        @media only screen and (max-width: 502px) {
+          .nav .logo p span {
+            font-size: 11.11111px; } }
   .nav .menu {
     gap: var(--buttons-links);
     flex-wrap: wrap;
@@ -970,14 +976,14 @@
   visibility: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  z-index: 2000; }
+  z-index: 2000;
+  overflow: hidden; }
   @media only screen and (max-width: 1120px) {
     .menu-links-holder {
       flex-direction: column-reverse; } }
   @media only screen and (max-width: 502px) {
     .menu-links-holder {
-      right: 0;
-      overflow: hidden; } }
+      right: 0; } }
   .menu-links-holder .menuLinks-list {
     gap: var(--has-button-gap);
     align-self: flex-end; }
@@ -1576,7 +1582,8 @@ main {
   .cursor.linked {
     background-color: var(--active-primary, #006a5d);
     width: 40px;
-    height: 40px; }
+    height: 40px;
+    opacity: 0.5; }
   .cursor.projector {
     min-width: 32px;
     min-height: 32px;
