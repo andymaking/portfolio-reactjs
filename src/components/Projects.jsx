@@ -86,7 +86,7 @@ const Project = ({ type }) => {
 
     if (type === "home") {
         const projectElements = projectsOfType.map((project, index) => (
-            <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`} key={index}>
+            <Link type={"none"} href={"/portfolio/" + index} extra={`projekt w-full`} key={index}>
                 <div className={`projekt-container w-full flex`} key={index}>
                     <div className="projekt-container-image"></div>
                     <div className="projekt-container-details flex flex-col justify-end items-start">
@@ -105,9 +105,9 @@ const Project = ({ type }) => {
         )
     } else {
         const projectElements = projectPairs.map((pair, index) => (
-            <div className="projekt-pair w-full flex flex-row">
+            <div className="projekt-pair w-full flex flex-row" key={index}>
                 {pair.map((project) => (
-                    <Link type={"none"} href={"/project/" + index} extra={`projekt w-full`}>
+                    <Link type={"none"} href={"/portfolio/" + project.id} key={project.id} extra={`projekt w-full`}>
                         <div className={`projekt-container w-full flex flex-col`}>
                             <div className="projekt-container-image"></div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
@@ -128,12 +128,6 @@ const Project = ({ type }) => {
             </div>
         )
     };
-
-
-
-
-
-
 }
 
 export default Project;

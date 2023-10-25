@@ -37,7 +37,7 @@ const Footer = forwardRef((props, ref) => {
     };
 
     return (
-        <footer className='w-full flex flex-col' ref={ref}>
+        <footer className='w-full flex flex-col'>
             {footerClub()}
             <div className="slide-text">
                 <div className="scrolling_text w-full flex flex-row">
@@ -102,6 +102,6 @@ const Footer = forwardRef((props, ref) => {
     )
 });
 
-Footer.displayName = 'Footer';
+// Footer.displayName = 'Footer';
 
 export default Footer;

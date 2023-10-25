@@ -123,12 +123,12 @@ const List = ({ type, linkText, link }) => {
                     <p className="h4">{listing.title}</p>
                     <div className="clover flex flex-col">
                         {isValidEmail(listing.details) ? (
-                            <Links extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:${listing.details}`}>
+                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:${listing.details}`}>
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>
                         ) : (listing.details === 'Google Meet') ? (
-                            <Links target={"__blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`https://calendar.app.google/rN9ypA5o8PWUcSb3A`}>
+                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`https://calendar.app.google/rN9ypA5o8PWUcSb3A`}>
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>

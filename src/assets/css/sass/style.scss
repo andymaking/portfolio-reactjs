@@ -21,7 +21,7 @@
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    cursor: none !important;
+    // cursor: none !important;
 }
 
 ::-webkit-scrollbar {
@@ -160,8 +160,8 @@ main {
 }
 
 .cursor {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     pointer-events: none;
     position: fixed;
     padding: 6px;
@@ -173,10 +173,31 @@ main {
     mix-blend-mode: difference;
     text-align: center;
 
+    * {
+        opacity: 0;
+    }
+
     &.linked {
-        width: 32px;
-        height: 32px;
         background-color: var(--active-primary, #006a5d);
+        width: 40px;
+        height: 40px;
+    }
+
+    &.projector {
+        min-width: 32px;
+        min-height: 32px;
+        width: auto;
+        height: auto;
+        padding: 16px;
+        background-color: var(--active-secondary, #002822);
+        color: var(--active-neutral, #e5efee);
+        mix-blend-mode: unset;
+
+        * {
+            width: 32px;
+            height: 32px;
+            opacity: 1;
+        }
     }
 
     @media only screen and(max-width: 850px) {

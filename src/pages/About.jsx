@@ -30,7 +30,7 @@ export default function Pricing() {
                         />
                     </div>
                     <div className="content flex flex-col items-start justify-start">
-                        <p className="p1">I am Jude Joshua, a digital product designer, previously at FirstMedtrade Africa. From 2017 till now, I have collaborated with start-ups, Web3 ventures, and most recently, a Fintech brand, to create visually pleasing and user friendly digital experiences for their digital platforms.</p>
+                        <p className="p1">I am Jude Joshua, a digital product designer, previously at FirstMedtrade Africa. From 2017 till now, I have collaborated with start-ups, Web3 ventures, and most recently, a Fintech brand, to create visually pleasing and user-friendly digital experiences for their digital platforms, including mobile apps, websites, and social media banners and designs.</p>
                         <p className="p1">I first delved into product design in 2013, and over the years, I have pursued this passion, transitioning from designing solely websites, to designing for all digital products. My motivation is fueled by my love for design and my desire to create digital platforms that leave users feeling satisfied.</p>
                         <p className="p1">Recently, I successfully led the complete overhaul of the medical e-commerce platform for FirstMedtrade Africa, which resulted in an impressive 80% reduction in the user bounce rate.</p>
                         <p className="p1">Currently, I am actively pursuing opportunities that challenge my expertise, prioritize user needs, and enable me to deliver exceptional results.</p>

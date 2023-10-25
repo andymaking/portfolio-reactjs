@@ -1,20 +1,16 @@
 import React from "react";
 
-import { useCursor } from "./Cursor";
+const NavBar = ({ isMenuClicked, openMenu }) => {
 
-const NavBar = ({ isMenuClicked, openMenu, isSecondary }) => {
-
-    const { handleMouseEnter } = useCursor();
 
     return (
-        <nav className={`${isSecondary ? 'secondary' : ''} ` + `nav`}>
+        <nav className={`nav`}>
             <div className={`flex flex-row items-center justify-between ` + `${isMenuClicked ? 'nav-clicked' : ''}`}>
                 <div className="type">
-                    <p className="p1 flex flex-col">Jude Joshua<span>Lagos, Nigeria.</span></p>
+                    <p className="p1 flex flex-col">Jude Joshua<span>Abuja, Nigeria.</span></p>
                 </div>
                 <div
                     onClick={openMenu}
-                    onMouseOver={handleMouseEnter}
                     className="menu flex flex-row content-center justify-center"
                 >
                     <div className="menu-bars flex flex-col items-start justify-center">

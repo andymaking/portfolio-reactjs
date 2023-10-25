@@ -3,7 +3,6 @@
     top: 0;
     max-width: calc(100vw - 0px);
     padding: var(--elements-inline-padding) var(--page-padding) 0;
-    // z-index: 10000;
     margin: 0 auto;
     transition: all 0.2s ease-in;
     width: 100%;
@@ -31,7 +30,7 @@
     }
 
     & .menu {
-        gap: var(--buttons-links, 8px);
+        gap: var(--buttons-links);
         flex-wrap: wrap;
         cursor: pointer;
         z-index: 1;
@@ -110,7 +109,7 @@
 }
 
 .menu-links-holder {
-    position: absolute;
+    position: fixed;
     width: 0px;
     height: 100vh;
     background-color: var(--active-secondary, #002822);
@@ -125,7 +124,6 @@
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     z-index: 2000;
-    display: none;
 
     @include devices(tablet) {
         flex-direction: column-reverse;
@@ -193,7 +191,6 @@
     }
 
     &.menu-links-out {
-        display: inline-flex;
         width: 100vw;
         padding: var(--element-block-padding) var(--page-padding);
         padding-left: var(--main-gap);
@@ -224,7 +221,7 @@
     .menu-close {
         cursor: pointer;
         gap: var(--buttons-links);
-        padding-top: var(--has-button-gap);
+        padding-top: var(--buttons-links);
 
         @include devices(tablet) {
             align-self: flex-end;
@@ -279,8 +276,8 @@
     transition:
         transform 0.5s,
         left 0.5s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    // -webkit-transform-style: preserve-3d;
+    // transform-style: preserve-3d;
 
     &.main-shift {
         overflow: hidden;
