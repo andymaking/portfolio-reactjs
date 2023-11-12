@@ -2,30 +2,33 @@ import React from "react";
 
 import Link from "./Links";
 
-const Project = ({ type }) => {
+const Projects = ({ type }) => {
 
-    const projects = [
+    const projectsList = [
         {
             home: [
                 // {
                 //     // img: Pommo,
                 //     name: "Pommo",
-                //     description: "Transforming the remote work experience for urban tech workers in Nigeria by mitigating distractions and empowering them to stay focused.",
+                //     description: "",
                 //     id: 0,
                 // },
                 {
                     name: "FirstMedtrade",
-                    description: "Streamlining access to medical supplies for African hospitals and patients through connectivity to international manufacturers and local vendors.",
+                    description: "Improving how hospitals and patients in Nigeria connect to international manufacturers and local vendors for streamlined access to medical supplies.",
+                    uniqueId: "jf09a422",
                     id: 1,
                 },
                 {
                     name: "TGIT",
                     description: "Adding life to IT programs for engineering professionals, making access to courses less confusing and easy to navigate through.",
+                    uniqueId: "jfcd04r1",
                     id: 2,
                 },
                 {
                     name: "LunarLuxury",
                     description: "Simplifying the digital tavel solutions for luxury nomads, with a focus on facilitating seamless explorations of luxury destinations.",
+                    uniqueId: "",
                     id: 3,
                 }
             ],
@@ -33,41 +36,49 @@ const Project = ({ type }) => {
                 {
                     name: "Pommo",
                     type: "UX Design",
+                    uniqueId: "",
                     id: 0,
                 },
                 {
                     name: "FirstMedtrade",
                     type: "UX Design",
+                    uniqueId: "",
                     id: 1,
                 },
                 {
                     name: "LunarLuxury",
                     type: "UX Design",
+                    uniqueId: "",
                     id: 2,
                 },
                 {
                     name: "Thrive",
                     type: "UX Design",
+                    uniqueId: "",
                     id: 3,
                 },
                 {
                     name: "UberEats",
                     type: "UI Design",
+                    uniqueId: "",
                     id: 4,
                 },
                 {
                     name: "TGIT",
                     type: "UX Design",
+                    uniqueId: "",
                     id: 5,
                 },
                 {
                     name: "SoliumRise",
                     type: "UI Design",
+                    uniqueId: "",
                     id: 6,
                 },
                 {
                     name: "Hotel Capricon",
                     type: "UI Design",
+                    uniqueId: "",
                     id: 7,
                 }
             ],
@@ -76,7 +87,7 @@ const Project = ({ type }) => {
 
     const typeToDisplay = type;
 
-    const projectsOfType = projects[0][typeToDisplay] || [];
+    const projectsOfType = projectsList[0][typeToDisplay] || [];
 
     const projectPairs = [];
     for (let i = 0; i < projectsOfType.length; i += 2) {
@@ -86,7 +97,7 @@ const Project = ({ type }) => {
 
     if (type === "home") {
         const projectElements = projectsOfType.map((project, index) => (
-            <Link type={"none"} href={"/portfolio/" + index} extra={`projekt w-full`} key={index}>
+            <Link type={"none"} href={"/portfolio/" +  project.uniqueId} extra={`projekt w-full`} key={index}>
                 <div className={`projekt-container w-full flex`} key={index}>
                     <div className="projekt-container-image"></div>
                     <div className="projekt-container-details flex flex-col justify-end items-start">
@@ -107,7 +118,7 @@ const Project = ({ type }) => {
         const projectElements = projectPairs.map((pair, index) => (
             <div className="projekt-pair w-full flex flex-row" key={index}>
                 {pair.map((project) => (
-                    <Link type={"none"} href={"/portfolio/" + project.id} key={project.id} extra={`projekt w-full`}>
+                    <Link type={"none"} href={"/portfolio/" + project.uniqueId} key={project.id} extra={`projekt w-full`}>
                         <div className={`projekt-container w-full flex flex-col`}>
                             <div className="projekt-container-image"></div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
@@ -130,4 +141,4 @@ const Project = ({ type }) => {
     };
 }
 
-export default Project;
+export default Projects;

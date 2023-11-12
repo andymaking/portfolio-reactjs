@@ -107,6 +107,15 @@ main {
     padding-top: 0;
 }
 
+ol {
+    padding-left: var(--paragraphs);
+
+    li {
+        list-style: decimal;
+        padding: 12px;
+    }
+}
+
 #root {
     position: relative;
     height: 100vh;

@@ -5,6 +5,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
+import Project from "./pages/Project";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 // import NoPage from "./pages/NoPage";
@@ -37,7 +38,7 @@ const App = () => {
     };
 
     const location = useLocation();
-    const pageClass = location.pathname === '/' ? 'home' : location.pathname.slice(1);
+    const pageClass = location.pathname === '/' ? 'home' : location.pathname.split('/')[1];
 
     return (
         <>
@@ -86,6 +87,18 @@ const App = () => {
                                     </Helmet>
                                 </HelmetProvider>
                                 <Work />
+                            </>
+                        } />
+                    <Route
+                        path="/portfolio/:projectId"
+                        element={
+                            <>
+                                <HelmetProvider>
+                                    <Helmet>
+                                        <title></title>
+                                    </Helmet>
+                                </HelmetProvider>
+                                <Project />
                             </>
                         } />
                     <Route

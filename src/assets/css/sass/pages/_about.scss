@@ -57,15 +57,15 @@
 
         .journey-container {
             padding-top: var(--main-gap);
-            border-radius: 0 0 128px 128px;
+            // border-radius: 0 0 128px 128px;
 
             @include devices(tablet) {
                 flex-direction: column;
-                border-radius: 0 0 72px 72px;
+                // border-radius: 0 0 72px 72px;
             }
 
             @include devices(phone) {
-                border-radius: 0 0 48px 48px;
+                // border-radius: 0 0 48px 48px;
             }
 
             .title {

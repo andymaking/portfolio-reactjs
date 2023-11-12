@@ -96,8 +96,8 @@ const List = ({ type, linkText, link }) => {
                     details: 'thejudejoshua@gmail.com',
                 },
                 {
-                    title: "Schedule a call:",
-                    details: 'Google Meet',
+                    title: "Call:",
+                    details: 'Schedule a call',
                 },
                 {
                     title: "Phone:",
@@ -127,8 +127,8 @@ const List = ({ type, linkText, link }) => {
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>
-                        ) : (listing.details === 'Google Meet') ? (
-                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`https://calendar.app.google/rN9ypA5o8PWUcSb3A`}>
+                        ) : (listing.details === 'Schedule a call') ? (
+                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`https://app.simplymeet.me/thejudejoshua/call`}>
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>

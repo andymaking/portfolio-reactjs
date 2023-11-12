@@ -41,7 +41,7 @@ $steps: 4;
 */
 @mixin h1($baseFontSize: 96px) {
     font-family: "Fancyou";
-    line-height: 1;
+    line-height: 1.1;
     font-weight: normal;
     font-size: $baseFontSize;
 
@@ -64,7 +64,7 @@ $steps: 4;
 
 @mixin h2($baseFontSize: 72px) {
     font-family: "Fancyou";
-    line-height: 1;
+    line-height: 1.1;
     font-weight: normal;
     font-size: $baseFontSize;
 
@@ -87,7 +87,7 @@ $steps: 4;
 
 @mixin h3($baseFontSize: 48px) {
     font-family: "Fancyou";
-    line-height: 1;
+    line-height: 1.3;
     font-weight: normal;
     font-size: $baseFontSize;
 

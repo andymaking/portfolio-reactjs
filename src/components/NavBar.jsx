@@ -19,7 +19,7 @@ const NavBar = ({ isMenuClicked, openMenu }) => {
                     </div>
                 }
 
-                {currentPage != '/' &&
+                {currentPage !== '/' &&
                     <Link type={"none"} href={"/"}>
                         <div className="logo flex flex-row items-center justify-center">
                             <Logo />

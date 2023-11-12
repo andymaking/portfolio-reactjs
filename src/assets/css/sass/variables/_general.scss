@@ -23,12 +23,12 @@
 }
 
 .main {
-    background: var(--active-secondary, #002822);
 
     article {
         padding: 0 var(--page-padding) var(--main-gap);
         gap: var(--header-gap);
-        background: var(--active-neutral, #e5efee);
+        // background: var(--active-neutral, #e5efee);
+
         padding-top: var(--page-padding);
 
         @include devices(phone) {
@@ -60,12 +60,11 @@
                         border-radius: 12px;
 
                         @include devices(tablet) {
-                            height: 448px;
-                            border-radius: 24px;
+                            height: 480px;
                         }
 
                         @include devices(phone) {
-                            height: 320px;
+                            height: 400px;
                         }
                     }
 
@@ -87,15 +86,15 @@
     }
 
     .process-container {
-        border-radius: 0 0 128px 128px;
+        // border-radius: 0 0 128px 128px;
         padding-top: var(--element-block-padding);
 
         @include devices(tablet) {
-            border-radius: 0 0 72px 72px;
+            // border-radius: 0 0 72px 72px;
         }
 
         @include devices(phone) {
-            border-radius: 0 0 48px 48px;
+            // border-radius: 0 0 48px 48px;
         }
     }
 }

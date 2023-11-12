@@ -69,16 +69,6 @@ export default function Home() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    {/* <div className="title">
-                        <h2 className="h2 flex flex-row">Designing
-                            <span className="rolling-text">
-                                <span>People</span>
-                                <span>Emotions</span>
-                                <span>Beliefs</span>
-                                <span>Actions</span>
-                            </span>
-                        </h2>
-                    </div> */}
                     <Project type={"home"} />
                 </article>
                 <article className="process-container w-full flex flex-col items-start">

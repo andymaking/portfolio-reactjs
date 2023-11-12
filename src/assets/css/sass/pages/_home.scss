@@ -7,7 +7,7 @@
         }
 
         @include devices(phone) {
-            padding-bottom: 128px;
+            // padding-bottom: 128px;
         }
 
         h1 {
@@ -26,7 +26,7 @@
                 padding: 2px var(--box-elements-gap) 6px;
                 left: 47%;
                 top: -56%;
-                
+
                 @include devices(tablet) {
                     top: -80%;
                 }
@@ -390,14 +390,14 @@
 
         .sales-container {
             padding-top: var(--main-gap);
-            border-radius: 0 128px;
+            // border-radius: 0 128px;
 
             @include devices(tablet) {
-                border-radius: 0 72px;
+                // border-radius: 0 72px;
             }
 
             @include devices(phone) {
-                border-radius: 0 48px;
+                // border-radius: 0 48px;
             }
 
             &-call {

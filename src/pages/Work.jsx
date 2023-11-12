@@ -5,7 +5,7 @@ import Project from '../components/Projects';
 
 export default function Work() {
 
-    const designCategories = ['All projects', 'Case studies', 'Visual designs'];
+    const designCategories = ['All projects', 'Case studies', 'Playground'];
 
     return (
         <>
