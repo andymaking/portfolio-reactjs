@@ -178,7 +178,28 @@
             }
         }
 
+        .works {
+            .projekt-pair:last-child {
+                & .projekt:first-child{
+                    width: 40%;
+
+                    @include devices(tablet) {
+                        width: 100% !important;
+                    }
+                }
+                & .projekt:last-child{
+                    width: 60%;
+
+                    @include devices(tablet) {
+                        width: 100% !important;
+                        
+                    }
+                }
+            }
+        }
+
         .process-container {
+            padding-top: 0 !important;
             .lister {
                 .listing {
                     @include devices(phone) {
@@ -427,55 +448,7 @@
                 }
             }
         }
+
     }
 
-    .projekt:nth-child(1) {
-        .projekt-container {
-            flex-direction: column;
-            gap: var(--box-elements-gap);
-
-            &-image {
-                width: 100%;
-            }
-
-            &-details {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-                padding-bottom: 0;
-                width: 100%;
-
-                @include devices(tablet) {
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    .projekt:nth-child(2),
-    .projekt:nth-child(3) {
-        width: 50%;
-        flex: 0.5;
-
-        @include devices(tablet) {
-            width: 100%;
-            flex: unset;
-        }
-
-        .projekt-container {
-            flex-direction: column;
-            gap: var(--box-elements-gap);
-
-            &-image {
-                width: 100%;
-            }
-
-            &-details {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-                padding-bottom: 0;
-            }
-        }
-    }
 }

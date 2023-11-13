@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Tab from '../components/Tab';
 import Project from '../components/Projects';
 
 export default function Work() {
 
-    const designCategories = ['All projects', 'Case studies', 'Playground'];
+    const designCategories = ['All projects', 'Case studies', 'Visual Design'];
+    const [selectedTab, setSelectedTab] = useState(designCategories[0]);
+
+    const handleTabClick = (tab) => {
+        setSelectedTab(tab);
+    };
 
     return (
         <>
@@ -18,14 +23,14 @@ export default function Work() {
                             </h1>
                         </div>
                         <div className="tagger w-full flex justify-center items-start">
-                            <Tab tabArray={designCategories} />
+                            <Tab tabArray={designCategories} selectedTab={selectedTab} onTabClick={handleTabClick} />
                         </div>
                     </div>
                 </div>
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    <Project type={"work"} />
+                    <Project type={"work"} category={selectedTab.toLowerCase()} />
                 </article>
             </section>
         </>

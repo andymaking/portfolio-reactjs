@@ -16,9 +16,6 @@ const Project = () => {
         document.title = project ? project.name + ' | Jude Joshua | Top Product Designer For Businesses And Brands.' : 'Project Not Found! | Jude Joshua | Top Product Designer For Businesses And Brands.';
     }, []);
 
-
-    // const projectTitle = project ? project.title : "Project Not Found";
-
     return (
         <>
             <header className="landing w-full flex flex-col items-center project-head">

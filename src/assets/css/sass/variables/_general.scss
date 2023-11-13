@@ -17,13 +17,11 @@
                     gap: var(--buttons-links);
                 }
             }
-
         }
     }
 }
 
 .main {
-
     article {
         padding: 0 var(--page-padding) var(--main-gap);
         gap: var(--header-gap);
@@ -44,40 +42,87 @@
         }
 
         .works {
-            gap: var(--parents-elements-gap);
+            gap: var(--element-block-padding);
             flex-wrap: wrap;
             flex-direction: row;
 
             .projekt {
-                &-container {
-                    gap: var(--box-elements-gap);
-                    width: 100%;
+                align-self: flex-start;
 
-                    &-image {
-                        background: var(--active-accent, #fefefe);
-                        width: 60%;
-                        height: 520px;
-                        border-radius: 12px;
+                &:hover .projekt-container-image {
+                    transform: scale(1.04);
+                }
 
-                        @include devices(tablet) {
-                            height: 480px;
-                        }
+                &-pair {
+                    gap: var(--element-block-padding);
 
-                        @include devices(phone) {
-                            height: 400px;
-                        }
+                    @include devices(tablet) {
+                        flex-direction: column;
                     }
 
-                    &-details {
-                        gap: var(--has-button-gap);
-                        flex: 1 0 0;
-                        align-self: stretch;
-                        color: var(--active-secondary, #002822);
+                    .projekt-container {
+                        gap: var(--box-elements-gap);
+                        width: 100%;
 
-                        .clave {
-                            gap: var(--paragraphs);
-                            width: 100%;
-                            padding: var(--padding-none) var(--buttons-links);
+                        &-image {
+                            background: var(--active-accent, #fefefe);
+                            height: 520px;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            transition: all 0.6s ease;
+                            width: 100% !important;
+
+                            img {
+                                object-position: center;
+                                min-height: 100%;
+                            }
+
+                            @include devices(tablet) {
+                                height: 480px;
+                            }
+
+                            @include devices(phone) {
+                                height: 400px;
+                            }
+                        }
+
+                        &-details {
+                            gap: var(--has-button-gap);
+                            flex: 1 0 0;
+                            align-self: stretch;
+                            color: var(--active-secondary, #002822);
+                            width: 100% !important;
+
+                            .clave {
+                                gap: var(--paragraphs);
+                                width: 100%;
+                                padding: var(--padding-none) var(--buttons-links);
+                            }
+                        }
+
+                    }
+
+                    $div-count: 20;
+
+                    @for $i from 1 through $div-count {
+                        $number: if($i % 2 == 1, $i, $i + 1);
+                        $width: if($number % 4 == 1, 60%, 40%);
+
+                        &:nth-child(#{$number}) {
+                            .projekt:nth-child(1) {
+                                width: #{$width} !important;
+
+                                @include devices(tablet) {
+                                    width: 100% !important;
+                                }
+                            }
+                            .projekt:nth-child(2) {
+                                width: calc(100% - #{$width}) !important;
+
+                                @include devices(tablet) {
+                                    width: 100% !important;
+                                }
+                            }
                         }
                     }
                 }
