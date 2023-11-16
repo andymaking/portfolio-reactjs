@@ -55,10 +55,10 @@
               min-height: 100%; }
             @media only screen and (max-width: 1120px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 480px; } }
+                height: 464px; } }
             @media only screen and (max-width: 502px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 400px; } }
+                height: 376px; } }
           .main article .works .projekt-pair .projekt-container-details {
             gap: var(--has-button-gap);
             flex: 1 0 0;
@@ -819,8 +819,12 @@
     padding: 0 var(--page-padding) var(--main-gap);
     background-color: var(--active-neutral); }
   .portfolio .project-details-cover-image {
-    height: 600px;
-    background-color: var(--active-accent); }
+    height: 712px;
+    background-color: var(--active-accent);
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
   .portfolio .project-details-description {
     padding: 0 0 var(--main-gap) !important; }
     .portfolio .project-details-description .describe {

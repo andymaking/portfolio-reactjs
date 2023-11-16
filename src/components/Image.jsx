@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ImageContainer = ({ src, hash, alt }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -32,11 +34,19 @@ const ImageContainer = ({ src, hash, alt }) => {
                     punch={1}
                 />
             </div>
+            {/* <LazyLoadImage
+                src={src}
+                className={!imageLoaded ? "hidden" : "inline object-cover"}
+                loading="lazy"
+                alt={alt}
+                effect="blur"
+            /> */}
             <img
                 src={src}
                 className={!imageLoaded ? "hidden" : "inline object-cover"}
                 loading="lazy"
                 alt={alt}
+                effect="blur"
             />
         </>
     );

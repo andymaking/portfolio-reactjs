@@ -6,13 +6,14 @@ import { handleClick } from '../functions/click';
 
 
 const Links = ({ type, href, children, target, extra }) => {
-    const classNames = "flex flex-row content-end items-center justify-start " + extra;
+    const extraClass = extra !== '' ? extra : '';
+    const classNames = "flex flex-row content-end items-center justify-start " + extraClass;
 
     const navigate = useNavigate();
 
     const handleLinkClick = (event) => {
         if (target !== "_blank") {
-            handleClick(event, href, navigate); // Call the imported handleClick function
+            handleClick(event, href, navigate);
         }
     };
 

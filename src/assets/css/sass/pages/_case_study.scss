@@ -20,8 +20,12 @@
             }
 
             &-cover-image {
-                height: 600px;
+                height: 712px;
                 background-color: var(--active-accent);
+                overflow: hidden;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
             }
 
             &-description {

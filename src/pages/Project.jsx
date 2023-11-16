@@ -32,7 +32,6 @@ const Project = () => {
                                 {project ? project.title : 'Project Not Found!'}
                             </h3>
                         </div>
-
                     </div>
                 </div>
             </header>
@@ -41,7 +40,14 @@ const Project = () => {
                     {project &&
                         <>
                             <div className="grouper project-details-description flex flex-col justify-start items-start">
-                                <div className="project-details-cover-image w-full"></div>
+                                <div className="project-details-cover-image w-full" style={{ backgroundImage: `url(${project.coverImage})` }}>
+                                    {/* <Image
+                                        className='coverImage'
+                                        hash={project.coverHash}
+                                        src={project.coverImage}
+                                        alt={`Cover image`}
+                                    /> */}
+                                </div>
                                 <div className="project-details-description-checker flex flex-row justify-start items-start">
                                     <div className="describe flex flex-col">
                                         <h4 className="h4">The Client</h4>

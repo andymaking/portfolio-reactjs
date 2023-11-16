@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Work from "./pages/Work";
-import Project from "./pages/Project";
-import Pricing from "./pages/Pricing";
-import Contact from "./pages/Contact";
-// import NoPage from "./pages/NoPage";
-
 import Nav from './components/NavBar';
 import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
+
+const Home = React.lazy(() => import("./pages/Home"));
+const About = React.lazy(() => import("./pages/About"));
+const Work = React.lazy(() => import("./pages/Work"));
+const Project = React.lazy(() => import("./pages/Project"));
+const Pricing = React.lazy(() => import("./pages/Pricing"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Work from "./pages/Work";
+// import Project from "./pages/Project";
+// import Pricing from "./pages/Pricing";
+// import Contact from "./pages/Contact";
+// import NoPage from "./pages/NoPage";
+
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -48,87 +55,91 @@ const App = () => {
 
             <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
 
-                <ScrollToTop />
+                    <ScrollToTop />
 
-                <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} />
+                    <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} />
+                <React.Suspense fallback={
+                    <p>Loading page...</p>}
+                >
 
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <Home />
-                            </>
-                        } exact />
-                    <Route
-                        path="/about"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title>About | Top Product Designer For Businesses And Brands.</title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <About />
-                            </>
-                        } />
-                    <Route
-                        path="/portfolio"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <Work />
-                            </>
-                        } />
-                    <Route
-                        path="/portfolio/:projectId"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title></title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <Project />
-                            </>
-                        } />
-                    <Route
-                        path="/pricing"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title>Pricing | Top Product Designer For Businesses And Brands.</title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <Pricing />
-                            </>
-                        } />
-                    <Route
-                        path="/contact"
-                        element={
-                            <>
-                                <HelmetProvider>
-                                    <Helmet>
-                                        <title>Contact | Top Product Designer For Businesses And Brands.</title>
-                                    </Helmet>
-                                </HelmetProvider>
-                                <Contact />
-                            </>
-                        } />
-                    {/* <Route path="*" element={<NoPage />} /> */}
-                </Routes>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <Home />
+                                </>
+                            } exact />
+                        <Route
+                            path="/about"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title>About | Top Product Designer For Businesses And Brands.</title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <About />
+                                </>
+                            } />
+                        <Route
+                            path="/portfolio"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <Work />
+                                </>
+                            } />
+                        <Route
+                            path="/portfolio/:projectId"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title></title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <Project />
+                                </>
+                            } />
+                        <Route
+                            path="/pricing"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title>Pricing | Top Product Designer For Businesses And Brands.</title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <Pricing />
+                                </>
+                            } />
+                        <Route
+                            path="/contact"
+                            element={
+                                <>
+                                    <HelmetProvider>
+                                        <Helmet>
+                                            <title>Contact | Top Product Designer For Businesses And Brands.</title>
+                                        </Helmet>
+                                    </HelmetProvider>
+                                    <Contact />
+                                </>
+                            } />
+                        {/* <Route path="*" element={<NoPage />} /> */}
+                    </Routes>
 
-                <Footer />
+                    <Footer />
+                </React.Suspense>
             </main>
         </>
     );

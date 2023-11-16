@@ -28,11 +28,11 @@ const ProjectsList = [
             },
             images: {
                 1: {
-                    image: "/images/projects/jf09a422/problems-1.webp",
+                    image: "/images/projects/jw09a422/problems-1.webp",
                     details: "1. Homepage with multiple products, items and no specifics. The user is overwhelmed as a result and is unsure of what to click. Luckily, there’s a \"chat with us on Whatsapp button\", so they go with that."
                 },
                 2: {
-                    image: "/images/projects/jf09a422/problems-2.webp",
+                    image: "/images/projects/jw09a422/problems-2.webp",
                     details: "2. Long scroll to the bottom of the page. Users have to scroll far down to the bottom of the page to see the categories and sub-categories that they need. This is inefficient and takes too long."
                 }
             }
@@ -79,14 +79,14 @@ const ProjectsList = [
                     name: "Adebisi Kumi",
                     age: "32",
                     occupation: "Doctor",
-                    image: "/images/projects/jf09a422/persona.webp",
+                    image: "/images/projects/jw09a422/persona.webp",
                     quote: "It’s health, alright! I don’t have to spend 30 minutes looking for what I need. I have patients lined up and waiting for me."
                 },
                 2: {
                     name: "Ndifreke Daniel",
                     age: "64",
                     occupation: "Retired public servant",
-                    image: "/images/projects/jf09a422/persona-2.webp",
+                    image: "/images/projects/jw09a422/persona-2.webp",
                     quote: "Getting the right compression socks for myself is usually difficult. It’s either unavailable or very expensive. And your platform doesn’t make the work easier with its slow loading and too much text."
                 },
             }
@@ -95,7 +95,7 @@ const ProjectsList = [
             title: "So, I looked at how others kept their users happy...",
             competitors: {
                 practo: {
-                    logo: "/images/projects/jf09a422/practo.svg",
+                    logo: "/images/projects/jw09a422/practo.svg",
                     list: {
                         1: "Provides clear and concise information about its services.",
                         2: "Has a clean and modern design, and is visually appealing.",
@@ -104,7 +104,7 @@ const ProjectsList = [
                     }
                 },
                 ada: {
-                    logo: "/images/projects/jf09a422/ada-health.svg",
+                    logo: "/images/projects/jw09a422/ada-health.svg",
                     list: {
                         1: "Clean and modern UI with excellent use of colours and text hierarchy.",
                         2: "Has human-like chat feature in the mobile app.",
@@ -123,34 +123,34 @@ const ProjectsList = [
             }
         },
         flow: {
-            1: "/images/projects/jf09a422/flow-1.webp",
-            2: "/images/projects/jf09a422/flow-2.webp"
+            1: "/images/projects/jw09a422/flow-1.webp",
+            2: "/images/projects/jw09a422/flow-2.webp"
         },
         sketches: {
             title: "The ultimate goal was to take away the unneccesary scrolling behaviour. This way, users wouldn't have to scroll too far to find important information.",
             list: {
                 1: {
-                    images: "/images/projects/jf09a422/sketches-images - 1.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 1.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
                 2: {
-                    images: "/images/projects/jf09a422/sketches-images - 2.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 2.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
                 3: {
-                    images: "/images/projects/jf09a422/sketches-images - 3.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 3.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
                 4: {
-                    images: "/images/projects/jf09a422/sketches-images - 4.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 4.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
                 5: {
-                    images: "/images/projects/jf09a422/sketches-images - 5.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 5.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
                 6: {
-                    images: "/images/projects/jf09a422/sketches-images - 6.webp",
+                    images: "/images/projects/jw09a422/sketches-images - 6.webp",
                     description: "Taking away sign-ups. Enabling users to buy without having to go through the stress of registering.",
                 },
             }
@@ -160,43 +160,43 @@ const ProjectsList = [
                 title: "",
                 list: {
                     1: {
-                        images: "/images/projects/jf09a422/wireframes - 1.webp",
+                        images: "/images/projects/jw09a422/wireframes - 1.webp",
                         description: "Home Page: Enabling users to buy without having to go through the stress of registering.",
                     },
                     2: {
-                        images: "/images/projects/jf09a422/wireframes - 2.webp",
+                        images: "/images/projects/jw09a422/wireframes - 2.webp",
                         description: "Need help: Users can pick if they want help with simplifying products on the website or they sort through themselves.",
                     },
                     3: {
-                        images: "/images/projects/jf09a422/wireframes - 3.webp",
+                        images: "/images/projects/jw09a422/wireframes - 3.webp",
                         description: "Search: Enabling users to buy without having to go through the stress of registering.",
                     },
                     4: {
-                        images: "/images/projects/jf09a422/wireframes - 4.webp",
+                        images: "/images/projects/jw09a422/wireframes - 4.webp",
                         description: "Loading search results: Enabling users to buy without having to go through the stress of registering.",
                     },
                     5: {
-                        images: "/images/projects/jf09a422/wireframes - 5.webp",
+                        images: "/images/projects/jw09a422/wireframes - 5.webp",
                         description: "Product Listings: Reducing information on the product card to make it less overwhelming.",
                     },
                     6: {
-                        images: "/images/projects/jf09a422/wireframes - 6.webp",
+                        images: "/images/projects/jw09a422/wireframes - 6.webp",
                         description: "Product Details page: Enabling users to buy without having to go through the stress of registering.",
                     },
                     7: {
-                        images: "/images/projects/jf09a422/wireframes - 7.webp",
+                        images: "/images/projects/jw09a422/wireframes - 7.webp",
                         description: "Cart: Enabling users to buy without having to go through the stress of registering.",
                     },
                     8: {
-                        images: "/images/projects/jf09a422/wireframes - 9.webp",
+                        images: "/images/projects/jw09a422/wireframes - 9.webp",
                         description: "Delivery information: Enabling users to buy without having to go through the stress of registering.",
                     },
                     9: {
-                        images: "/images/projects/jf09a422/wireframes - 10.webp",
+                        images: "/images/projects/jw09a422/wireframes - 10.webp",
                         description: "Card Info: Enabling users to buy without having to go through the stress of registering.",
                     },
                     10: {
-                        images: "/images/projects/jf09a422/wireframes - 8.webp",
+                        images: "/images/projects/jw09a422/wireframes - 8.webp",
                         description: "Order Completed: Enabling users to buy without having to go through the stress of registering.",
                     },
                 }
@@ -205,27 +205,27 @@ const ProjectsList = [
                 title: "Curious to see how this would look on desktop for 60% of the user-base, I scaled up some screens for testing.",
                 list: {
                     1: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-0.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-0.webp",
                         description: "Home Page: Enabling users to buy without having to go through the stress of registering.",
                     },
                     2: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-1.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-1.webp",
                         description: "Need help: Users can pick if they want help with simplifying products on the website or they sort through themselves.",
                     },
                     3: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-2.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-2.webp",
                         description: "Search: Enabling users to buy without having to go through the stress of registering.",
                     },
                     4: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-4.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-4.webp",
                         description: "Product Details: Reducing information on the product card to make it less overwhelming.",
                     },
                     5: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-5.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-5.webp",
                         description: "Cart: Enabling users to buy without having to go through the stress of registering.",
                     },
                     6: {
-                        images: "/images/projects/jf09a422/desktop-wireframes-6.webp",
+                        images: "/images/projects/jw09a422/desktop-wireframes-6.webp",
                         description: "Order Completed: Enabling users to buy without having to go through the stress of registering.",
                     }
                 }
@@ -248,7 +248,7 @@ const ProjectsList = [
         update: {
             title: "Having identified what worked, I went on to combine both the \“guest-shopping\” functionality with the \“registered-user\” shopping experience.",
             images: {
-                1: "/images/projects/jf09a422/updated-flow.webp",
+                1: "/images/projects/jw09a422/updated-flow.webp",
             }
         },
     },

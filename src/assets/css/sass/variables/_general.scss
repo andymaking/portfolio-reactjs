@@ -78,11 +78,11 @@
                             }
 
                             @include devices(tablet) {
-                                height: 480px;
+                                height: 464px;
                             }
 
                             @include devices(phone) {
-                                height: 400px;
+                                height: 376px;
                             }
                         }
 

@@ -13,9 +13,6 @@ export default function Contact() {
                             <h1 className="h1 text-center">
                                 Get in touch
                             </h1>
-                            {/* <p className="p1 text-left">
-                                You can contact me here if you are interested in working with me; please include a brief description of what you plan to accomplish. I look forward to hearing your thoughts and working with you to achieve a successful outcome for your project.
-                            </p> */}
                         </div>
                     </div>
                 </div>
