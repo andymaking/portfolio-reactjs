@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Project from '../components/Projects';
 import Lists from '../components/Lists';
@@ -16,6 +16,9 @@ import Reviewer02 from "../assets/images/review-2.webp";
 
 
 export default function Home() {
+    useEffect(() => {
+        document.title = 'Jude Joshua | Top Product Designer For Businesses And Brands.';
+    }, []);
 
     const reviews = [
         {

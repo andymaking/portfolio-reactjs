@@ -1,14 +1,10 @@
 import React from "react";
-import { useLocation } from 'react-router-dom';
 
 import Link from "./Links";
 
 import { ReactComponent as Logo } from "../assets/images/newlogo.svg";
 
-const NavBar = ({ isMenuClicked, openMenu }) => {
-
-    const location = useLocation();
-    const currentPage = location.pathname;
+const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
 
     return (
         <nav className={`nav`}>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Lists from '../components/Lists';
 
 export default function Contact() {
+    useEffect(() => {
+        document.title = 'Contact | Top Product Designer For Businesses And Brands.';
+    }, []);
 
     return (
         <>

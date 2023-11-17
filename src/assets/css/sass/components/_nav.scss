@@ -121,7 +121,7 @@
     width: 0px;
     height: 100vh;
     background-color: var(--active-secondary, #002822);
-    right: -120vw;
+    right: 0;
     left: unset;
     padding: 0;
     -webkit-transform: translate3d(100%, 0, 0);
@@ -181,7 +181,7 @@
                         content: "\2192";
                         position: absolute;
                         bottom: 10%;
-                        left: -30%;
+                        left: -20%;
                         color: var(--active-placeholder, #bdbdbd);
 
                         @include devices(tablet) {
@@ -198,11 +198,9 @@
     }
 
     &.menu-links-out {
-        width: 100vw;
+        width: 72vw;
         padding: var(--element-block-padding) var(--page-padding);
-        padding-left: var(--main-gap);
-        padding-right: 32vw;
-        right: -24vw;
+        padding-left: var(--body-top-padding);
         box-shadow: -38px 29px 100px 20px #00282296;
         visibility: visible;
         -webkit-transition: -webkit-transform 0.5s;
@@ -211,16 +209,14 @@
         transform: translate3d(0, 0, 0);
 
         @include devices(tablet) {
-            right: -12vw;
             padding-left: 12vw;
-            padding-right: 18vw;
             padding-top: 24px;
-            padding-bottom: var(--header-gap);
+            padding-bottom: var(--page-padding);
         }
 
         @include devices(phone) {
-            right: 0;
             padding-right: 12vw;
+            width: 100%;
             padding-bottom: var(--body-top-padding);
         }
     }
@@ -278,19 +274,16 @@
     height: auto;
     perspective: 1000px;
     -webkit-transition:
-        -webkit-transform 0.5s,
-        left 0.5s;
+        -webkit-transform 0.5s;
     transition:
-        transform 0.5s,
-        left 0.5s;
-    // -webkit-transform-style: preserve-3d;
-    // transform-style: preserve-3d;
+        transform 0.5s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 
     &.main-shift {
         overflow: hidden;
-        -webkit-transform: translate3d(0, 0, -456px);
-        transform: translate3d(0, 0, -456px);
-        left: -92vw;
+        -webkit-transform: translate3d(0, 0, -256px);
+        transform: translate3d(0, 0, -256px);
         box-shadow: -8px 20px 100px 8px #00282242;
         height: 100%;
 

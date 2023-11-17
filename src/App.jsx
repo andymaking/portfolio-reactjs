@@ -7,19 +7,13 @@ import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 
+// const Nav = React.lazy(() => import("./components/NavBar"));
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
 const Work = React.lazy(() => import("./pages/Work"));
 const Project = React.lazy(() => import("./pages/Project"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
 const Contact = React.lazy(() => import("./pages/Contact"));
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Work from "./pages/Work";
-// import Project from "./pages/Project";
-// import Pricing from "./pages/Pricing";
-// import Contact from "./pages/Contact";
-// import NoPage from "./pages/NoPage";
 
 
 function ScrollToTop() {
@@ -31,6 +25,7 @@ function ScrollToTop() {
 
     return null;
 }
+
 
 const App = () => {
 
@@ -45,33 +40,29 @@ const App = () => {
     };
 
     const location = useLocation();
-    const pageClass = location.pathname === '/' ? 'home' : location.pathname.split('/')[1];
+    const currentPage = location.pathname;
+    const pageClass = currentPage === '/' ? 'home' : currentPage.split('/')[1];
 
     return (
         <>
-            <Cursor />
 
-            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} />
+            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} />
 
             <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
 
-                    <ScrollToTop />
+                <ScrollToTop />
 
-                    <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} />
-                <React.Suspense fallback={
-                    <p>Loading page...</p>}
-                >
 
+                <React.Suspense fallback={''}>
+                    <Cursor />
+                    
+                    <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} currentPage={currentPage} />
+                    
                     <Routes>
                         <Route
                             path="/"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title>Jude Joshua | Top Product Designer For Businesses And Brands.</title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <Home />
                                 </>
                             } exact />
@@ -79,11 +70,6 @@ const App = () => {
                             path="/about"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title>About | Top Product Designer For Businesses And Brands.</title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <About />
                                 </>
                             } />
@@ -91,11 +77,6 @@ const App = () => {
                             path="/portfolio"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title>Portfolio | Top Product Designer For Businesses And Brands.</title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <Work />
                                 </>
                             } />
@@ -103,11 +84,6 @@ const App = () => {
                             path="/portfolio/:projectId"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title></title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <Project />
                                 </>
                             } />
@@ -115,11 +91,6 @@ const App = () => {
                             path="/pricing"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title>Pricing | Top Product Designer For Businesses And Brands.</title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <Pricing />
                                 </>
                             } />
@@ -127,11 +98,6 @@ const App = () => {
                             path="/contact"
                             element={
                                 <>
-                                    <HelmetProvider>
-                                        <Helmet>
-                                            <title>Contact | Top Product Designer For Businesses And Brands.</title>
-                                        </Helmet>
-                                    </HelmetProvider>
                                     <Contact />
                                 </>
                             } />

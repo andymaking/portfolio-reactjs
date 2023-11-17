@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Lists from '../components/Lists';
 import Image from '../components/Image';
@@ -6,6 +6,9 @@ import Image from '../components/Image';
 import aboutImage from "../assets/images/about-2.webp";
 
 export default function Pricing() {
+    useEffect(() => {
+        document.title = 'About | Top Product Designer For Businesses And Brands.';
+    }, []);
 
     return (
         <>
@@ -60,7 +63,7 @@ export default function Pricing() {
                     <div className="title">
                         <h2 className="h2 flex flex-row items-center">Relevant<br />Experience.</h2>
                     </div>
-                    <Lists type={"about"} linkText={"View my Resume"} link={"pricing"} />
+                    <Lists type={"about"} linkText={"View my Resume"} link={""} />
                 </article>
             </section>
         </>

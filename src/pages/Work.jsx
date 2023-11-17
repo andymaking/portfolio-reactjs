@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Tab from '../components/Tab';
 import Project from '../components/Projects';
 
 export default function Work() {
+    useEffect(() => {
+        document.title = 'Portfolio | Top Product Designer For Businesses And Brands.';
+    }, []);
 
     const designCategories = ['All projects', 'Case studies', 'Visual Design'];
     const [selectedTab, setSelectedTab] = useState(designCategories[0]);
