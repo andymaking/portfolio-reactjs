@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Nav from './components/NavBar';
 import SideBar from "./components/SideBar";

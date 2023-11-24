@@ -21,7 +21,6 @@ export default function Work() {
             if (error) {
                 setFetchError('Could not fetch the data')
                 setProjects(null)
-                console.log(error)
             }
 
             if (data) {
