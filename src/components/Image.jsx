@@ -21,7 +21,7 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
     return (
         <>
             <div
-                className={`blurred ` + `${imageLoaded ? "hidden" : "inline"}`}
+                // className={`blurred ` + `${imageLoaded ? "hidden" : "inline"}`}
                 style={{
                     position: "absolute",
                     zIndex: "1",
@@ -41,7 +41,7 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
 
             {imageType === "project" ? (
                 <>
-                    <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME} className={!imageLoaded ? "hidden" : "inline object-cover"}>
+                    <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME} className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}>
                         <CloudinaryImage publicId={cloudSrc}>
                             <Transformation crop='scale' />
                         </CloudinaryImage>
@@ -50,7 +50,7 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
             ) : (
                 <img
                     src={src}
-                    className={!imageLoaded ? "hidden" : "inline object-cover"}
+                    className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}
                     loading="lazy"
                     alt={alt}
                     effect="blur"
