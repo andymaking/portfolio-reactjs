@@ -322,6 +322,7 @@ const ProjectsList = [
         featured: 0,
         name: "TVNR",
         uniqueId: "jw032qa1",
+        year: "September 2021",
         category: "Visual Design",
         type: "UI Design",
         coverImage: "/images/projects/jw032qa1/65520d74f240e.webp",

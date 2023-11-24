@@ -30,6 +30,8 @@ export default function Pricing() {
                             src={aboutImage}
                             hash={"LTHVVd.9u6Vr01NGkYnh_3RPVsf+"}
                             alt={"Jude Joshua smiling"}
+                            imageType={''}
+                            cloudSrc={''}
                         />
                     </div>
                     <div className="content flex flex-col items-start justify-start">

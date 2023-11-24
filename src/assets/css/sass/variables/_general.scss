@@ -65,24 +65,37 @@
                         width: 100%;
 
                         &-image {
-                            background: var(--active-accent, #fefefe);
-                            height: 520px;
+                            background: var(--disabled-primary);
+                            height: 496px;
                             border-radius: 20px;
                             overflow: hidden;
                             transition: all 0.6s ease;
                             width: 100% !important;
+
+                            span, div{
+                                height: 100%;
+                            }
 
                             img {
                                 object-position: center;
                                 min-height: 100%;
                             }
 
+
                             @include devices(tablet) {
-                                height: 464px;
+                                height: 424px;
                             }
 
                             @include devices(phone) {
-                                height: 376px;
+                                height: 320px;
+                            }
+
+                            @media screen and (max-width: 380px) {
+                                height: 296px;
+                            }
+
+                            @media screen and (max-width: 340px) {
+                                height: 248px;
                             }
                         }
 
@@ -106,7 +119,7 @@
 
                     @for $i from 1 through $div-count {
                         $number: if($i % 2 == 1, $i, $i + 1);
-                        $width: if($number % 4 == 1, 60%, 40%);
+                        $width: if($number % 4 == 1, 58%, 42%);
 
                         &:nth-child(#{$number}) {
                             .projekt:nth-child(1) {

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import supabase from '../config/supaBaseClient'
 
 import Project from '../components/Projects';
 import Lists from '../components/Lists';
@@ -16,6 +17,36 @@ import Reviewer02 from "../assets/images/review-2.webp";
 
 
 export default function Home() {
+
+    const [fetchError, setFetchError] = useState(null)
+
+    const [projects, setProjects] = useState(null);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+
+            const { data, error } = await supabase
+                .from('projects')
+                .select()
+                .gte('featured', 'true')
+                .order('id', { ascending: true })
+
+            if (error) {
+                setFetchError('Could not fetch the data')
+                setProjects(null)
+                console.log(error)
+            }
+
+            if (data) {
+                setProjects(data)
+                setFetchError(null)
+            }
+        }
+
+        fetchProjects()
+
+    }, [])
+
     useEffect(() => {
         document.title = 'Jude Joshua | Top Product Designer For Businesses And Brands.';
     }, []);
@@ -39,6 +70,7 @@ export default function Home() {
 
     return (
         <>
+            {fetchError && (<p>{fetchError}</p>)}
             <header className="landing w-full flex flex-col items-center">
                 <div className="head">
                     <div className="head-text flex flex-col items-center justify-center">
@@ -60,6 +92,8 @@ export default function Home() {
                                     src={HomeImage}
                                     hash={"LdKd}Q%ipxxu4?S$NKZ~.TM_nOs,"}
                                     alt={"Jude Joshua smiling with his left hand on his head"}
+                                    imageType={''}
+                                    cloudSrc={''}
                                 />
                             </div>
                             <p className="p1 head-text-club-grab">
@@ -72,7 +106,7 @@ export default function Home() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    <Project type={"home"} />
+                    <Project projectList={projects} category={''} />
                 </article>
                 <article className="process-container w-full flex flex-col items-start">
                     <div className="title">
@@ -170,6 +204,8 @@ export default function Home() {
                                                     src={item.img}
                                                     hash={item.hash}
                                                     alt={`Reviewer, ${item.name}`}
+                                                    imageType={''}
+                                                    cloudSrc={''}
                                                 />
                                             </div>
                                             <div className="clave flex flex-col">

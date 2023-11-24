@@ -1,52 +1,53 @@
 import React from "react";
 
 import Link from "./Links";
-import ProjectsList from "./ProjectLists";
-import ImageContainer from "./Image";
+import Image from "./Image";
 
-const Projects = ({ type, category }) => {
-    let filteredProjects;
+const Projects = ({ projectList, category }) => {
+
+    if (!projectList) {
+        return null;
+    }
 
     const filterAndExtractKeys = (array, keys) => {
-        return array.map(({ name, title, coverImage, coverHash, type, uniqueId }) => ({ name, title, coverImage, coverHash, type, uniqueId }));
+        return array.map(({ name, title, coverimage, coverhash, type, uniqueid, cloudinary }) => ({ name, title, coverimage, coverhash, type, uniqueid, cloudinary }));
     };
 
-    if (type === "home") {
-        filteredProjects = filterAndExtractKeys(ProjectsList.filter(project => project.featured === 1));
-    } else {
-        filteredProjects = category === 'all projects'
-            ? filterAndExtractKeys(ProjectsList)
-            : filterAndExtractKeys(ProjectsList.filter(project => project.category.toLowerCase() === category));
+    if (category !== "") {
+        projectList = category === 'all projects'
+            ? filterAndExtractKeys(projectList)
+            : filterAndExtractKeys(projectList.filter(project => project.category.toLowerCase() === category));
     }
 
     const projectPairs = [];
-    for (let i = 0; i < filteredProjects.length; i += 2) {
-        const pair = filteredProjects.slice(i, i + 2);
+    for (let i = 0; i < projectList.length; i += 2) {
+        const pair = projectList.slice(i, i + 2);
         projectPairs.push(pair);
     }
 
     const projectElement = (
-        projectPairs.map((project, index) => (
+        projectPairs.map((projectPair, index) => (
             <div className="projekt-pair w-full flex flex-row" key={index}>
-                {project.map((project, linkIndex) => (
+                {projectPair.map((project, linkIndex) => (
                     <Link
-                        type="none"
-                        href={`/portfolio/${project.uniqueId}`}
-                        key={linkIndex}
-                        extra="projekt w-full"
-
+                    type="none"
+                    href={`/portfolio/${project.uniqueid}`}
+                    key={linkIndex}
+                    extra="projekt w-full"
                     >
                         <div className="projekt-container w-full flex flex-col">
                             <div className="projekt-container-image">
-                                <ImageContainer
-                                    src={project.coverImage}
-                                    hash={project.coverHash}
+                                <Image
+                                    src={project.coverimage}
+                                    hash={project.coverhash}
                                     alt={`${project.name} case study`}
+                                    imageType={'project'}
+                                    cloudSrc={project.cloudinary}
                                 />
                             </div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
                                 <div className="clave flex w-full flex-row items-center justify-between">
-                                    {type === "home" ? (
+                                    {category === "" ? (
                                         <p className="p1">{project.title}</p>
                                     ) : (
                                         <>

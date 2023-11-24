@@ -1,9 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import supabase from '../config/supaBaseClient'
 
 import Tab from '../components/Tab';
 import Project from '../components/Projects';
 
 export default function Work() {
+
+    const [fetchError, setFetchError] = useState(null)
+
+    const [projects, setProjects] = useState(null);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+
+            const { data, error } = await supabase
+                .from('projects')
+                .select()
+                .order('id', { ascending: true })
+
+            if (error) {
+                setFetchError('Could not fetch the data')
+                setProjects(null)
+                console.log(error)
+            }
+
+            if (data) {
+                setProjects(data)
+                setFetchError(null)
+            }
+        }
+
+        fetchProjects()
+
+    }, [])
+
+
     useEffect(() => {
         document.title = 'Portfolio | Top Product Designer For Businesses And Brands.';
     }, []);
@@ -17,6 +48,7 @@ export default function Work() {
 
     return (
         <>
+            {fetchError && (<p>{fetchError}</p>)}
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
@@ -33,7 +65,7 @@ export default function Work() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    <Project type={"work"} category={selectedTab.toLowerCase()} />
+                    <Project projectList={projects} category={selectedTab.toLowerCase()} />
                 </article>
             </section>
         </>

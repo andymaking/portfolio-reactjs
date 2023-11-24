@@ -44,21 +44,29 @@
           gap: var(--box-elements-gap);
           width: 100%; }
           .main article .works .projekt-pair .projekt-container-image {
-            background: var(--active-accent, #fefefe);
-            height: 520px;
+            background: var(--disabled-primary);
+            height: 496px;
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.6s ease;
             width: 100% !important; }
+            .main article .works .projekt-pair .projekt-container-image span, .main article .works .projekt-pair .projekt-container-image div {
+              height: 100%; }
             .main article .works .projekt-pair .projekt-container-image img {
               object-position: center;
               min-height: 100%; }
             @media only screen and (max-width: 1120px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 464px; } }
+                height: 424px; } }
             @media only screen and (max-width: 502px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 376px; } }
+                height: 320px; } }
+            @media screen and (max-width: 380px) {
+              .main article .works .projekt-pair .projekt-container-image {
+                height: 296px; } }
+            @media screen and (max-width: 340px) {
+              .main article .works .projekt-pair .projekt-container-image {
+                height: 248px; } }
           .main article .works .projekt-pair .projekt-container-details {
             gap: var(--has-button-gap);
             flex: 1 0 0;
@@ -70,202 +78,202 @@
               width: 100%;
               padding: var(--padding-none) var(--buttons-links); }
         .main article .works .projekt-pair:nth-child(1) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(1) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(1) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(1) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(3) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(5) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(7) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(9) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(11) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(13) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(15) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(17) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(1) {
-          width: 40% !important; }
+          width: 42% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(2) {
-          width: calc(100% - 40%) !important; }
+          width: calc(100% - 42%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(19) .projekt:nth-child(2) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(21) .projekt:nth-child(1) {
-          width: 60% !important; }
+          width: 58% !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(21) .projekt:nth-child(1) {
               width: 100% !important; } }
         .main article .works .projekt-pair:nth-child(21) .projekt:nth-child(2) {
-          width: calc(100% - 60%) !important; }
+          width: calc(100% - 58%) !important; }
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(21) .projekt:nth-child(2) {
               width: 100% !important; } }
@@ -484,7 +492,7 @@
       height: 90px;
       width: 90px;
       border-radius: 1000px;
-      border: 3px solid var(--active-primary, #006a5d);
+      border: 2px solid var(--active-primary, #006a5d);
       overflow: hidden; }
       @media only screen and (max-width: 1120px) {
         .home .head-text-club-image {
@@ -516,18 +524,6 @@
 @media only screen and (max-width: 502px) {
   .home .main h2 br {
     display: none; } }
-
-.home .main .works .projekt-pair:last-child .projekt:first-child {
-  width: 40%; }
-  @media only screen and (max-width: 1120px) {
-    .home .main .works .projekt-pair:last-child .projekt:first-child {
-      width: 100% !important; } }
-
-.home .main .works .projekt-pair:last-child .projekt:last-child {
-  width: 60%; }
-  @media only screen and (max-width: 1120px) {
-    .home .main .works .projekt-pair:last-child .projekt:last-child {
-      width: 100% !important; } }
 
 .home .main .process-container {
   padding-top: 0 !important; }

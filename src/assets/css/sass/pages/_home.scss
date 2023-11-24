@@ -128,7 +128,7 @@
                 height: 90px;
                 width: 90px;
                 border-radius: 1000px;
-                border: 3px solid var(--active-primary, #006a5d);
+                border: 2px solid var(--active-primary, #006a5d);
                 overflow: hidden;
 
                 @include devices(tablet) {
@@ -174,26 +174,6 @@
             br {
                 @include devices(phone) {
                     display: none;
-                }
-            }
-        }
-
-        .works {
-            .projekt-pair:last-child {
-                & .projekt:first-child{
-                    width: 40%;
-
-                    @include devices(tablet) {
-                        width: 100% !important;
-                    }
-                }
-                & .projekt:last-child{
-                    width: 60%;
-
-                    @include devices(tablet) {
-                        width: 100% !important;
-                        
-                    }
                 }
             }
         }
