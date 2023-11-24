@@ -1,25 +1,33 @@
 .portfolio {
-    .head {
-        padding-bottom: var(--page-padding);
+    .landing {
+        @include devices(phone) {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
 
-        &-text {
-            gap: var(--has-button-gap);
+        .head {
+            padding-bottom: var(--page-padding);
 
-            @include devices(tablet) {
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-
-            .tagger {
-                gap: var(--paragraphs);
+            &-text {
+                gap: var(--has-button-gap);
 
                 @include devices(tablet) {
-                    gap: var(--buttons-links);
-                    overflow-x: scroll;
-                    padding-bottom: var(--paragraphs);
-                }
-                @include devices(phone) {
                     justify-content: flex-start;
+                    align-items: flex-start;
+                }
+
+                .tagger {
+                    gap: var(--paragraphs);
+                    padding: 0 var(--page-padding);
+
+                    @include devices(tablet) {
+                        gap: var(--buttons-links);
+                        overflow-x: scroll;
+                        padding-bottom: var(--paragraphs);
+                    }
+                    @include devices(phone) {
+                        justify-content: flex-start;
+                    }
                 }
             }
         }
@@ -33,8 +41,6 @@
             @include devices(phone) {
                 // border-radius: 0 0 48px 48px;
             }
-
         }
     }
-
 }

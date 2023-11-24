@@ -9,17 +9,12 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
 
     useEffect(() => {
         const image = new Image();
-        const cloudImage = new CloudinaryImage();
 
         image.onload = () => {
             setImageLoaded(true);
         };
-        cloudImage.onload = () => {
-            setImageLoaded(true);
-        };
         
-        image.src = src;
-        cloudImage.src = cloudSrc;
+        image.src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/'+cloudSrc : src;
     }, [src, cloudSrc]);
 
 

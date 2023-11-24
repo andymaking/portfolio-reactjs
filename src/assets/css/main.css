@@ -779,23 +779,29 @@
   .contact footer .copyright {
     padding-top: var(--elements-inline-padding); } }
 
-.portfolio .head {
+@media only screen and (max-width: 502px) {
+  .portfolio .landing {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
+
+.portfolio .landing .head {
   padding-bottom: var(--page-padding); }
-  .portfolio .head-text {
+  .portfolio .landing .head-text {
     gap: var(--has-button-gap); }
     @media only screen and (max-width: 1120px) {
-      .portfolio .head-text {
+      .portfolio .landing .head-text {
         justify-content: flex-start;
         align-items: flex-start; } }
-    .portfolio .head-text .tagger {
-      gap: var(--paragraphs); }
+    .portfolio .landing .head-text .tagger {
+      gap: var(--paragraphs);
+      padding: 0 var(--page-padding); }
       @media only screen and (max-width: 1120px) {
-        .portfolio .head-text .tagger {
+        .portfolio .landing .head-text .tagger {
           gap: var(--buttons-links);
           overflow-x: scroll;
           padding-bottom: var(--paragraphs); } }
       @media only screen and (max-width: 502px) {
-        .portfolio .head-text .tagger {
+        .portfolio .landing .head-text .tagger {
           justify-content: flex-start; } }
 
 .portfolio .main article {
