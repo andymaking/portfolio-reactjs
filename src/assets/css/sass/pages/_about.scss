@@ -1,19 +1,19 @@
 .about {
     .landing {
         & .head {
-            padding-left: var(--padding-none);
-            padding-bottom: var(--header-gap);
+            padding-left: $padding-none;
+            padding-bottom: $header-gap;
 
             @include devices(tablet) {
-                padding-bottom: var(--element-block-padding);
+                padding-bottom: $element-block-padding;
             }
         }
     }
 
     .main {
         .bio-container {
-            gap: var(--parents-elements-gap);
-            padding-top: var(--padding-none);
+            gap: $parents-elements-gap;
+            padding-top: $padding-none;
 
             @include devices(tablet) {
                 flex-direction: column;
@@ -42,7 +42,7 @@
 
             .content {
                 width: 50%;
-                gap: var(--has-button-gap);
+                gap: $has-button-gap;
 
                 @include devices(tablet) {
                     width: 100%;
@@ -51,21 +51,15 @@
         }
 
         .scrolling-container {
-            padding: var(--paragraphs) 0;
-            background: var(--active-secondary, #002822);
+            padding: $paragraphs 0;
+            background: $active-secondary;
         }
 
         .journey-container {
-            padding-top: var(--main-gap);
-            // border-radius: 0 0 128px 128px;
+            padding-top: $main-gap;
 
             @include devices(tablet) {
                 flex-direction: column;
-                // border-radius: 0 0 72px 72px;
-            }
-
-            @include devices(phone) {
-                // border-radius: 0 0 48px 48px;
             }
 
             .title {
@@ -80,9 +74,9 @@
             }
 
             .lister {
-                padding-left: var(--padding-none);
-                padding-right: var(--padding-none);
-                padding-top: var(--page-padding);
+                padding-left: $padding-none;
+                padding-right: $padding-none;
+                padding-top: $page-padding;
 
                 .listing {
                     @include devices(tablet) {
@@ -93,7 +87,7 @@
 
                 .clover {
                     text-align: right;
-                    gap: var(--paragraphs);
+                    gap: $paragraphs;
                 }
             }
         }

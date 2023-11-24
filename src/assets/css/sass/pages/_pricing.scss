@@ -1,15 +1,15 @@
 .pricing {
     .landing {
-        padding: var(--padding-none) var(--page-padding);
+        padding: $padding-none $page-padding;
 
         .head {
-            padding-bottom: var(--header-gap);
+            padding-bottom: $header-gap;
         }
     }
 
     .main {
         article {
-            padding-top: var(--padding-none, 0px);
+            padding-top: $padding-none, 0px;
 
             .lister {
                 .listing {

@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     max-width: calc(100vw - 0px);
-    padding: var(--elements-inline-padding) var(--page-padding) 0;
+    padding: $elements-inline-padding $page-padding 0;
     margin: 0 auto;
     transition: all 0.2s ease-in;
     width: 100%;
@@ -10,7 +10,7 @@
     svg,
     svg g,
     svg path {
-        fill: var(--active-secondary, #e5efee);
+        fill: $active-secondary;
     }
 
     & .logo {
@@ -37,7 +37,7 @@
     }
 
     & .menu {
-        gap: var(--buttons-links);
+        gap: $buttons-links;
         flex-wrap: wrap;
         cursor: pointer;
         z-index: 1;
@@ -59,7 +59,7 @@
                 width: 100%;
                 height: 2px;
                 border-radius: 12px;
-                background: var(--active-secondary, #002822);
+                background: $active-secondary;
                 transition:
                     width 0.3s linear,
                     height 0.3s linear,
@@ -93,17 +93,17 @@
     }
 
     &.secondary {
-        background-color: var(--active-secondary-blur, #0028223d);
-        color: var(--active-accent, #e5efee);
+        background-color: $active-secondary-blur;
+        color: $active-accent;
 
         & .menu-bars-span {
-            background: var(--active-accent, #e5efee);
+            background: $active-accent;
         }
 
         svg,
         svg g,
         svg path {
-            fill: var(--active-accent, #e5efee);
+            fill: $active-accent;
         }
     }
 }
@@ -120,7 +120,7 @@
     position: fixed;
     width: 0px;
     height: 100vh;
-    background-color: var(--active-secondary, #002822);
+    background-color: $active-secondary;
     right: 0;
     left: unset;
     padding: 0;
@@ -143,7 +143,7 @@
     }
 
     .menuLinks-list {
-        gap: var(--has-button-gap);
+        gap: $has-button-gap;
         align-self: flex-end;
 
         @include devices(tablet) {
@@ -157,9 +157,9 @@
         & .menuLink {
             a {
                 @include h2;
-                color: var(--active-accent, #e5efee);
+                color: $active-accent;
                 align-items: flex-center;
-                gap: var(--has-button-gap);
+                gap: $has-button-gap;
                 transition: 0.5s ease;
 
                 svg,
@@ -167,22 +167,22 @@
                 svg path {
                     width: 24px;
                     height: auto;
-                    fill: var(--active-accent, #e5efee);
+                    fill: $active-accent;
                 }
 
                 &:hover,
                 &:hover svg,
                 &:hover svg g,
                 &:hover svg path {
-                    color: var(--active-placeholder, #bdbdbd);
-                    fill: var(--active-placeholder, #bdbdbd);
+                    color: $active-placeholder;
+                    fill: $active-placeholder;
 
                     &::before {
                         content: "\2192";
                         position: absolute;
                         bottom: 10%;
                         left: -20%;
-                        color: var(--active-placeholder, #bdbdbd);
+                        color: $active-placeholder;
 
                         @include devices(tablet) {
                             display: none;
@@ -199,8 +199,8 @@
 
     &.menu-links-out {
         width: 72vw;
-        padding: var(--element-block-padding) var(--page-padding);
-        padding-left: var(--body-top-padding);
+        padding: $element-block-padding $page-padding;
+        padding-left: $body-top-padding;
         box-shadow: -38px 29px 100px 20px #00282296;
         visibility: visible;
         -webkit-transition: -webkit-transform 0.5s;
@@ -211,24 +211,24 @@
         @include devices(tablet) {
             padding-left: 12vw;
             padding-top: 24px;
-            padding-bottom: var(--page-padding);
+            padding-bottom: $page-padding;
         }
 
         @include devices(phone) {
             padding-right: 12vw;
             width: 100%;
-            padding-bottom: var(--body-top-padding);
+            padding-bottom: $body-top-padding;
         }
     }
 
     .menu-close {
         cursor: pointer;
-        gap: var(--buttons-links);
-        padding-top: var(--buttons-links);
+        gap: $buttons-links;
+        padding-top: $buttons-links;
 
         @include devices(tablet) {
             align-self: flex-end;
-            padding-top: var(--box-padding);
+            padding-top: $box-padding;
         }
 
         @include devices(phone) {
@@ -245,7 +245,7 @@
             &-span {
                 display: block;
                 height: 2px;
-                background: var(--active-accent, #e5efee);
+                background: $active-accent;
 
                 &.top {
                     top: 9px;
@@ -262,7 +262,7 @@
         }
         & .texter::before {
             content: "Close";
-            color: var(--active-accent, #e5efee);
+            color: $active-accent;
         }
     }
 }

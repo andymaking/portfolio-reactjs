@@ -16,7 +16,7 @@ const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
                 }
 
                 {currentPage !== '/' &&
-                    <Link type={"none"} href={"/"}>
+                    <Link type={"none"} href={"/"} aria-label="Go to homepage">
                         <div className="logo flex flex-row items-center justify-center">
                             <Logo />
                         </div>

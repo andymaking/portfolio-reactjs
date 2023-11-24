@@ -1,20 +1,20 @@
 a,
 button {
     @include p1;
-    color: var(--active-primary, #006a5d);
-    gap: var(--buttons-links, 8px);
+    color: $active-primary;
+    gap: $buttons-links;
 
     .icon-hold {
         border-radius: 1000px;
-        padding: var(--caption-columns, 4px);
-        color: var(--active-primary, #006a5d);
-        border: 2px solid var(--active-primary, #006a5d);
+        padding: $caption-columns;
+        color: $active-primary;
+        border: 2px solid $active-primary;
         overflow: hidden;
         transition: color 0.3s ease-in;
 
         &::before {
             content: "";
-            background-color: var(--active-primary, #006a5d);
+            background-color: $active-primary;
             width: 120%;
             height: 120%;
             transform: scale(0);
@@ -30,7 +30,7 @@ button {
 
     &:hover {
         .icon-hold {
-            color: var(--active-accent, #e5efee);
+            color: $active-accent;
 
             &::before {
                 left: 0;
@@ -40,20 +40,20 @@ button {
     }
 
     &[type="secondary"] {
-        color: var(--active-accent, #e5efee);
+        color: $active-accent;
 
         .icon-hold {
-            color: var(--active-accent, #e5efee);
-            border: 2px solid var(--active-accent, #e5efee);
+            color: $active-accent;
+            border: 2px solid $active-accent;
 
             &::before {
-                background-color: var(--active-accent, #e5efee);
+                background-color: $active-accent;
             }
         }
 
         &:hover {
             .icon-hold {
-                color: var(--active-secondary-dark, #0d1d1a);
+                color: $active-secondary-dark;
             }
         }
     }
@@ -64,7 +64,7 @@ button {
     z-index: 100;
     top: 0;
     left: -100%;
-    background-color: var(--disabled-secondary);
+    background-color: $disabled-secondary;
     width: 0;
     height: 100%;
     transition: transform 1.6s cubic-bezier(0.34, 0.01, 0, 1);
@@ -90,7 +90,7 @@ button {
         transform: translateX(50%);
         height: 100%;
         width: 200%;
-        background-color: var(--disabled-primary);
+        background-color: $disabled-primary;
         animation: overlayAnimation 1.5s cubic-bezier(0.5, 0.01, 0.5, 0.7) 1.6s infinite;
         animation-direction: reverse;
     }

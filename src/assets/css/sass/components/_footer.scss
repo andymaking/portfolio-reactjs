@@ -1,13 +1,13 @@
 footer {
-    color: var(--active-accent, #e5efee);
-    padding: var(--element-block-padding) var(--page-padding);
-    background: var(--active-secondary, #002822);
+    color: $active-accent;
+    padding: $element-block-padding $page-padding;
+    background: $active-secondary;
     overflow: hidden;
-    gap: var(--page-padding);
+    gap: $page-padding;
 
     @include devices(phone) {
-        padding: var(--box-padding) var(--page-padding) var(--element-block-padding);
-        gap: var(--parents-elements-gap);
+        padding: $box-padding $page-padding $element-block-padding;
+        gap: $parents-elements-gap;
     }
 
     & > * {
@@ -15,16 +15,16 @@ footer {
     }
 
     .partner-div {
-        padding: var(--header-gap) 0 var(--page-padding);
-        gap: var(--has-button-gap);
+        padding: $header-gap 0 $page-padding;
+        gap: $has-button-gap;
 
         @include devices(phone) {
-            padding-bottom: var(--parents-elements-gap);
+            padding-bottom: $parents-elements-gap;
         }
 
         .title {
             width: 50%;
-            gap: var(--paragraphs);
+            gap: $paragraphs;
 
             @include devices(tablet) {
                 width: 72%;
@@ -38,7 +38,7 @@ footer {
 
     .slide-text {
         width: 100%;
-        padding: var(--element-block-padding) 0;
+        padding: $element-block-padding 0;
         overflow: hidden;
         white-space: nowrap;
         position: absolute;
@@ -60,7 +60,7 @@ footer {
 
             span {
                 margin: 0 40px;
-                color: var(--active-secondary-dark, #0d1d1a);
+                color: $active-secondary-dark;
                 opacity: 0.6;
             }
         }
@@ -69,21 +69,21 @@ footer {
     .copyright {
         @include devices(phone) {
             flex-direction: column;
-            gap: var(--has-button-gap);
+            gap: $has-button-gap;
             align-items: flex-start;
         }
 
         .social-media {
-            gap: var(--paragraphs);
+            gap: $paragraphs;
 
             @include devices(phone) {
-                gap: var(--has-button-gap);
+                gap: $has-button-gap;
             }
 
             svg {
                 width: 20px;
                 height: auto;
-                stroke: var(--active-accent, #e5efee);
+                stroke: $active-accent;
                 fill: none !important;
             }
         }

@@ -42,7 +42,7 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
             {imageType === "project" ? (
                 <>
                     <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME} className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}>
-                        <CloudinaryImage publicId={cloudSrc}>
+                        <CloudinaryImage publicId={cloudSrc} alt={alt}>
                             <Transformation crop='scale' />
                         </CloudinaryImage>
                     </CloudinaryContext>

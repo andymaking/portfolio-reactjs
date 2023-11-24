@@ -53,7 +53,7 @@ const Footer = forwardRef((props, ref) => {
             </div>
             <div className="copyright flex flex-row justify-between items-center">
                 <div className='social-media flex flex-row justify-start items-center'>
-                    <Link target='_blank' type={"primary"} href={"https://twitter.com/thejudejoshua"} extra={"twitter(x)"}>
+                    <Link target='_blank' type={"primary"} href={"https://twitter.com/thejudejoshua"} extra={"twitter(x)"} aria-label="twitter link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <g clipPath="url(#clip0_3658_953)">
                                 <path d="M21.9802 1.39258L13.4532 10.5141M9.92888 14.2398L0.576575 24.2322M0.214844 1.41856H6.60525L23.7854 24.2173H17.395L0.214844 1.41856Z" />
@@ -65,7 +65,7 @@ const Footer = forwardRef((props, ref) => {
                             </defs>
                         </svg>
                     </Link>
-                    <Link target='_blank' type={"primary"} href={"https://instagram.com/the.jude.joshua"} extra={"instagram"}>
+                    <Link target='_blank' type={"primary"} href={"https://instagram.com/the.jude.joshua"} extra={"instagram"} aria-label="instagram link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <g clipPath="url(#clip0_3658_955)">
                                 <path d="M17.7098 1.39258H6.28999C3.13649 1.39258 0.580078 3.94899 0.580078 7.10249V18.5223C0.580078 21.6758 3.13649 24.2322 6.28999 24.2322H17.7098C20.8633 24.2322 23.4197 21.6758 23.4197 18.5223V7.10249C23.4197 3.94899 20.8633 1.39258 17.7098 1.39258Z" strokeLinecap="round" strokeLinejoin="round" />
@@ -79,7 +79,7 @@ const Footer = forwardRef((props, ref) => {
                             </defs>
                         </svg>
                     </Link>
-                    <Link target='_blank' type={"primary"} href={"https://linkedin.com/in/thejudejoshua"} extra={"linkedin"}>
+                    <Link target='_blank' type={"primary"} href={"https://linkedin.com/in/thejudejoshua"} extra={"linkedin"} aria-label="linkedin link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <g clipPath="url(#clip0_3658_960)">
                                 <path d="M6.83894 6.7687C7.09463 6.7687 7.3019 6.56142 7.3019 6.30574C7.3019 6.05005 7.09463 5.84277 6.83894 5.84277C6.58325 5.84277 6.37598 6.05005 6.37598 6.30574C6.37598 6.56142 6.58325 6.7687 6.83894 6.7687Z" />

@@ -2,26 +2,26 @@
     .project {
         &-head {
             .head {
-                gap: var(--parents-elements-gap);
+                gap: $parents-elements-gap;
             }
         }
 
         &-details {
             gap: 0;
-            padding-left: var(--padding-none);
-            padding-right: var(--padding-none);
-            padding-bottom: var(--padding-none);
+            padding-left: $padding-none;
+            padding-right: $padding-none;
+            padding-bottom: $padding-none;
             border-radius: 0;
 
             .grouper {
-                gap: var(--parents-elements-gap);
-                padding: 0 var(--page-padding) var(--main-gap);
-                background-color: var(--active-neutral);
+                gap: $parents-elements-gap;
+                padding: 0 $page-padding $main-gap;
+                background-color: $active-neutral;
             }
 
             &-cover-image {
                 height: 712px;
-                background-color: var(--active-accent);
+                background-color: $active-accent;
                 overflow: hidden;
                 background-position: center;
                 background-size: cover;
@@ -29,30 +29,30 @@
             }
 
             &-description {
-                padding: 0 0 var(--main-gap) !important;
+                padding: 0 0 $main-gap !important;
 
                 .describe {
-                    gap: var(--paragraphs);
-                    padding: var(--padding-none) var(--page-padding);
+                    gap: $paragraphs;
+                    padding: $padding-none $page-padding;
                     width: 60%;
                 }
 
                 &-checker {
-                    gap: var(--parents-elements-gap);
+                    gap: $parents-elements-gap;
 
                     &-roles {
                         width: 40%;
-                        gap: var(--has-button-gap);
+                        gap: $has-button-gap;
 
                         &-section {
-                            gap: var(--paragraphs);
+                            gap: $paragraphs;
 
                             h4 {
                                 text-transform: capitalize;
                             }
 
                             &-team {
-                                gap: var(--buttons-links);
+                                gap: $buttons-links;
                             }
                         }
                     }
@@ -61,7 +61,7 @@
 
             &-problem {
                 .why {
-                    gap: var(--parents-elements-gap);
+                    gap: $parents-elements-gap;
 
                     // * {
                     //     width: 56%;
@@ -77,14 +77,14 @@
                 }
 
                 .images {
-                    gap: var(--element-block-padding);
+                    gap: $element-block-padding;
                     justify-content: space-between;
 
                     &-image {
-                        gap: var(--paragraphs);
+                        gap: $paragraphs;
                         width: 49%;
-                        // padding: var(--box-padding);
-                        // background-color: var(--active-secondary-blur);
+                        // padding: $box-padding;
+                        // background-color: $active-secondary-blur;
                         border-radius: 8px;
                     }
                 }
@@ -95,18 +95,18 @@
 
                 .complaints {
                     flex-direction: column;
-                    gap: var(--paragraphs);
+                    gap: $paragraphs;
                 }
 
                 .numbers {
-                    gap: var(--has-button-gap);
+                    gap: $has-button-gap;
                     justify-content: space-between;
 
                     &-details {
                         border: 1px solid;
-                        padding: var(--box-padding);
+                        padding: $box-padding;
                         width: 33%;
-                        gap: var(--paragraphs);
+                        gap: $paragraphs;
                         border-radius: 12px;
                     }
                 }
@@ -118,29 +118,29 @@
 
             &-understand {
                 justify-content: space-between;
-                background-color: var(--active-secondary) !important;
-                color: var(--active-neutral) !important;
-                padding: var(--body-top-padding) var(--page-padding) !important;
+                background-color: $active-secondary !important;
+                color: $active-neutral !important;
+                padding: $body-top-padding $page-padding !important;
                 align-items: center;
 
                 &-section {
-                    gap: var(--paragraphs);
+                    gap: $paragraphs;
                     width: 45%;
 
                     &.constraints {
                         width: 45%;
-                        padding-bottom: var(--element-block-padding);
+                        padding-bottom: $element-block-padding;
 
                         ol {
                             padding: 0;
 
                             li {
                                 list-style: none;
-                                padding: var(--box-padding);
+                                padding: $box-padding;
                                 max-width: 400px;
-                                color: var(--active-secondary);
-                                background-color: var(--active-accent);
-                                border: 1px solid var(--active-secondary, #002822);
+                                color: $active-secondary;
+                                background-color: $active-accent;
+                                border: 1px solid $active-secondary;
                                 box-shadow: 0px 16px 40px 0px rgba(0, 106, 93, 0.32);
                                 text-align: center;
 
@@ -173,20 +173,20 @@
 
             &-user {
                 // border-radius: 128px 128px 0 0;
-                padding-top: var(--body-top-padding) !important;
+                padding-top: $body-top-padding !important;
 
                 .persona {
-                    gap: var(--has-button-gap);
+                    gap: $has-button-gap;
 
                     .user-persona-details {
-                        gap: var(--parents-elements-gap);
-                        padding: var(--element-block-padding);
+                        gap: $parents-elements-gap;
+                        padding: $element-block-padding;
                         border: 1px solid;
                         width: 50%;
                         border-radius: 24px;
 
                         &-person {
-                            gap: var(--paragraphs);
+                            gap: $paragraphs;
 
                             img {
                                 width: 56px;
@@ -196,7 +196,7 @@
                             }
 
                             &-dels {
-                                gap: var(--caption-columns);
+                                gap: $caption-columns;
                             }
                         }
 
@@ -208,7 +208,7 @@
                                 font-weight: normal;
                                 font-size: 480px;
                                 position: absolute;
-                                color: var(--disabled-secondary);
+                                color: $disabled-secondary;
                                 opacity: 0.2;
                                 top: -120px;
                                 transform: scale(0.6);
@@ -221,11 +221,11 @@
 
             &-competition {
                 & .competitors {
-                    gap: var(--has-button-gap);
+                    gap: $has-button-gap;
 
                     &-info {
-                        gap: var(--paragraphs);
-                        padding: var(--element-block-padding);
+                        gap: $paragraphs;
+                        padding: $element-block-padding;
                         border: 1px solid;
                         width: 50%;
                         border-radius: 24px;
@@ -241,22 +241,22 @@
             &-ideas {
                 &-section {
                     width: 100%;
-                    gap: var(--has-button-gap);
+                    gap: $has-button-gap;
                 }
             }
 
             &-flow {
                 &-image {
-                    gap: var(--has-button-gap);
+                    gap: $has-button-gap;
                 }
             }
 
             &-sketches {
                 &-images {
-                    gap: var(--element-block-padding);
+                    gap: $element-block-padding;
                     &-details {
                         width: 12.5%;
-                        gap: var(--box-elements-gap);
+                        gap: $box-elements-gap;
                         text-align: center;
                     }
 
@@ -269,12 +269,12 @@
             }
 
             &-wireframes {
-                gap: var(--body-top-padding) !important;
+                gap: $body-top-padding !important;
                 &-images {
-                    gap: var(--element-block-padding);
+                    gap: $element-block-padding;
                     &-details {
                         width: 16%;
-                        gap: var(--box-elements-gap);
+                        gap: $box-elements-gap;
                         text-align: center;
                     }
 
@@ -286,7 +286,7 @@
                 }
 
                 .wireframes-holder {
-                    gap: var(--element-block-padding);
+                    gap: $element-block-padding;
                     justify-content: space-between;
                 }
             }

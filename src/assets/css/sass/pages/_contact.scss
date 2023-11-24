@@ -1,20 +1,20 @@
 .contact {
     .landing {
-        padding: var(--padding-none) var(--page-padding);
+        padding: $padding-none $page-padding;
 
         .head {
-            padding-bottom: var(--header-gap);
+            padding-bottom: $header-gap;
         }
     }
 
     .main {
         article {
-            padding-top: var(--padding-none);
+            padding-top: $padding-none;
 
             .lister {
                 .listing {
                     p {
-                        margin-bottom: var(--buttons-links);
+                        margin-bottom: $buttons-links;
 
                         @include devices(tablet) {
                             margin-bottom: 0;
@@ -23,20 +23,20 @@
 
                     a {
                         align-items: center;
-                        gap: var(--paragraphs);
+                        gap: $paragraphs;
                         transition: 0.5s ease;
-                        color: var(--active-secondary, #002822);
+                        color: $active-secondary;
 
                         svg {
                             width: 16px;
                             height: auto;
-                            color: var(--active-secondary, #002822);
+                            color: $active-secondary;
                         }
 
                         &:hover,
                         &:hover svg {
-                            color: var(--active-primary, #006a5d);
-                            fill: var(--active-primary, #006a5d);
+                            color: $active-primary;
+                            fill: $active-primary;
                         }
                     }
                 }
@@ -47,7 +47,7 @@
     footer {
         .copyright {
             @include devices(phone) {
-                padding-top: var(--elements-inline-padding);
+                padding-top: $elements-inline-padding;
             }
         }
     }
