@@ -6,10 +6,10 @@
         }
 
         .head {
-            padding-bottom: $page-padding;
+            padding-bottom: var(--page-padding);
 
             &-text {
-                gap: $has-button-gap;
+                gap: var(--has-button-gap);
 
                 @include devices(tablet) {
                     justify-content: flex-start;
@@ -17,13 +17,13 @@
                 }
 
                 .tagger {
-                    gap: $paragraphs;
-                    padding: 0 $page-padding;
+                    gap: var(--paragraphs);
+                    padding: 0 var(--page-padding);
 
                     @include devices(tablet) {
-                        gap: $buttons-links;
+                        gap: var(--buttons-links);
                         overflow-x: scroll;
-                        padding-bottom: $paragraphs;
+                        padding-bottom: var(--paragraphs);
                     }
                     @include devices(phone) {
                         justify-content: flex-start;
@@ -36,7 +36,7 @@
     .main {
         article {
             // border-radius: 0 0 128px 128px;
-            padding-top: $padding-none;
+            padding-top: var(--padding-none);
 
             @include devices(phone) {
                 // border-radius: 0 0 48px 48px;

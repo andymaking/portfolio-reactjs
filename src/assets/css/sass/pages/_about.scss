@@ -1,19 +1,19 @@
 .about {
     .landing {
         & .head {
-            padding-left: $padding-none;
-            padding-bottom: $header-gap;
+            padding-left: var(--padding-none);
+            padding-bottom: var(--header-gap);
 
             @include devices(tablet) {
-                padding-bottom: $element-block-padding;
+                padding-bottom: var(--element-block-padding);
             }
         }
     }
 
     .main {
         .bio-container {
-            gap: $parents-elements-gap;
-            padding-top: $padding-none;
+            gap: var(--parents-elements-gap);
+            padding-top: var(--padding-none);
 
             @include devices(tablet) {
                 flex-direction: column;
@@ -42,7 +42,7 @@
 
             .content {
                 width: 50%;
-                gap: $has-button-gap;
+                gap: var(--has-button-gap);
 
                 @include devices(tablet) {
                     width: 100%;
@@ -51,12 +51,12 @@
         }
 
         .scrolling-container {
-            padding: $paragraphs 0;
-            background: $active-secondary;
+            padding: var(--paragraphs) 0;
+            background: var(--active-secondary);
         }
 
         .journey-container {
-            padding-top: $main-gap;
+            padding-top: var(--main-gap);
 
             @include devices(tablet) {
                 flex-direction: column;
@@ -74,9 +74,9 @@
             }
 
             .lister {
-                padding-left: $padding-none;
-                padding-right: $padding-none;
-                padding-top: $page-padding;
+                padding-left: var(--padding-none);
+                padding-right: var(--padding-none);
+                padding-top: var(--page-padding);
 
                 .listing {
                     @include devices(tablet) {
@@ -87,7 +87,7 @@
 
                 .clover {
                     text-align: right;
-                    gap: $paragraphs;
+                    gap: var(--paragraphs);
                 }
             }
         }

@@ -1,6 +1,6 @@
 .scrolling-container {
-    padding: $paragraphs, 24px 0;
-    background: $active-secondary;
+    padding: var(--paragraphs) 0;
+    background: var(--active-secondary);
 
     .scrolling_text {
         overflow: hidden;
@@ -11,7 +11,7 @@
 
             span {
                 margin: 0 40px;
-                color: $active-accent;
+                color: var(--active-accent);
 
                 @include devices(phone){
                     margin: 0 24px;

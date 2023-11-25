@@ -1,58 +1,118 @@
-.portfolio {
-    .project {
-        &-head {
-            .head {
-                gap: $parents-elements-gap;
+.case-study {
+    .project-head {
+        padding: 0 var(--page-padding) !important;
+        .head {
+            gap: var(--parents-elements-gap);
+            padding-bottom: 0;
+
+            .not-found {
+                gap: var(--has-button-gap);
+
+                svg {
+                    width: 128px;
+                    fill: var(--active-secondary);
+
+                    @include devices(tablet) {
+                        width: 72px;
+                    }
+
+                    @include devices(phone) {
+                        width: 56px;
+                    }
+                }
+            }
+
+            &-text {
+                @include devices(tablet) {
+                    flex-direction: column;
+                }
+
+                &-top {
+                    gap: var(--paragraphs);
+
+                    &.right{
+                        padding-top: var(--paragraphs);
+                    }
+                }
             }
         }
+    }
 
-        &-details {
+    .main {
+        padding-top: var(--element-block-padding);
+
+        .project-details {
             gap: 0;
-            padding-left: $padding-none;
-            padding-right: $padding-none;
-            padding-bottom: $padding-none;
+            padding-left: var(--padding-none);
+            padding-right: var(--padding-none);
+            padding-bottom: var(--padding-none);
             border-radius: 0;
 
             .grouper {
-                gap: $parents-elements-gap;
-                padding: 0 $page-padding $main-gap;
-                background-color: $active-neutral;
+                gap: var(--element-block-padding);
+                padding: 0 var(--page-padding) var(--body-top-padding);
+                background-color: var(--active-neutral);
             }
 
             &-cover-image {
-                height: 712px;
-                background-color: $active-accent;
+                height: 724px;
+                background-color: var(--active-accent);
                 overflow: hidden;
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
+                border-radius: 20px;
+
+                @include devices(tablet) {
+                    height: 480px;
+                    border-radius: 16px;
+                }
+
+                @include devices(phone) {
+                    height: 280px;
+                    border-radius: 12px;
+                }
+
+                div {
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        min-height: 100%;
+                        object-position: center;
+                        top: -15%;
+                    }
+                }
             }
 
             &-description {
-                padding: 0 0 $main-gap !important;
-
-                .describe {
-                    gap: $paragraphs;
-                    padding: $padding-none $page-padding;
-                    width: 60%;
-                }
-
                 &-checker {
-                    gap: $parents-elements-gap;
+                    gap: var(--parents-elements-gap);
+
+                    @include devices(tablet) {
+                        flex-direction: column;
+                    }
+
+                    .describe {
+                        gap: var(--buttons-links);
+                        width: 60%;
+
+                        @include devices(tablet) {
+                            width: 100%;
+                        }
+                    }
 
                     &-roles {
                         width: 40%;
-                        gap: $has-button-gap;
+                        gap: var(--has-button-gap);
 
                         &-section {
-                            gap: $paragraphs;
+                            gap: var(--paragraphs);
 
                             h4 {
                                 text-transform: capitalize;
                             }
 
                             &-team {
-                                gap: $buttons-links;
+                                gap: var(--buttons-links);
                             }
                         }
                     }
@@ -61,7 +121,7 @@
 
             &-problem {
                 .why {
-                    gap: $parents-elements-gap;
+                    gap: var(--parents-elements-gap);
 
                     // * {
                     //     width: 56%;
@@ -77,14 +137,14 @@
                 }
 
                 .images {
-                    gap: $element-block-padding;
+                    gap: var(--element-block-padding);
                     justify-content: space-between;
 
                     &-image {
-                        gap: $paragraphs;
+                        gap: var(--paragraphs);
                         width: 49%;
-                        // padding: $box-padding;
-                        // background-color: $active-secondary-blur;
+                        // padding: var(--box-padding);
+                        // background-color: var(--active-secondary-blur);
                         border-radius: 8px;
                     }
                 }
@@ -95,18 +155,18 @@
 
                 .complaints {
                     flex-direction: column;
-                    gap: $paragraphs;
+                    gap: var(--paragraphs);
                 }
 
                 .numbers {
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
                     justify-content: space-between;
 
                     &-details {
                         border: 1px solid;
-                        padding: $box-padding;
+                        padding: var(--box-padding);
                         width: 33%;
-                        gap: $paragraphs;
+                        gap: var(--paragraphs);
                         border-radius: 12px;
                     }
                 }
@@ -118,29 +178,29 @@
 
             &-understand {
                 justify-content: space-between;
-                background-color: $active-secondary !important;
-                color: $active-neutral !important;
-                padding: $body-top-padding $page-padding !important;
+                background-color: var(--active-secondary) !important;
+                color: var(--active-neutral) !important;
+                padding: var(--body-top-padding) var(--page-padding) !important;
                 align-items: center;
 
                 &-section {
-                    gap: $paragraphs;
+                    gap: var(--paragraphs);
                     width: 45%;
 
                     &.constraints {
                         width: 45%;
-                        padding-bottom: $element-block-padding;
+                        padding-bottom: var(--element-block-padding);
 
                         ol {
                             padding: 0;
 
                             li {
                                 list-style: none;
-                                padding: $box-padding;
+                                padding: var(--box-padding);
                                 max-width: 400px;
-                                color: $active-secondary;
-                                background-color: $active-accent;
-                                border: 1px solid $active-secondary;
+                                color: var(--active-secondary);
+                                background-color: var(--active-accent);
+                                border: 1px solid var(--active-secondary);
                                 box-shadow: 0px 16px 40px 0px rgba(0, 106, 93, 0.32);
                                 text-align: center;
 
@@ -173,20 +233,20 @@
 
             &-user {
                 // border-radius: 128px 128px 0 0;
-                padding-top: $body-top-padding !important;
+                padding-top: var(--body-top-padding) !important;
 
                 .persona {
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
 
                     .user-persona-details {
-                        gap: $parents-elements-gap;
-                        padding: $element-block-padding;
+                        gap: var(--parents-elements-gap);
+                        padding: var(--element-block-padding);
                         border: 1px solid;
                         width: 50%;
                         border-radius: 24px;
 
                         &-person {
-                            gap: $paragraphs;
+                            gap: var(--paragraphs);
 
                             img {
                                 width: 56px;
@@ -196,7 +256,7 @@
                             }
 
                             &-dels {
-                                gap: $caption-columns;
+                                gap: var(--caption-columns);
                             }
                         }
 
@@ -208,7 +268,7 @@
                                 font-weight: normal;
                                 font-size: 480px;
                                 position: absolute;
-                                color: $disabled-secondary;
+                                color: var(--disabled-secondary);
                                 opacity: 0.2;
                                 top: -120px;
                                 transform: scale(0.6);
@@ -221,11 +281,11 @@
 
             &-competition {
                 & .competitors {
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
 
                     &-info {
-                        gap: $paragraphs;
-                        padding: $element-block-padding;
+                        gap: var(--paragraphs);
+                        padding: var(--element-block-padding);
                         border: 1px solid;
                         width: 50%;
                         border-radius: 24px;
@@ -241,22 +301,22 @@
             &-ideas {
                 &-section {
                     width: 100%;
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
                 }
             }
 
             &-flow {
                 &-image {
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
                 }
             }
 
             &-sketches {
                 &-images {
-                    gap: $element-block-padding;
+                    gap: var(--element-block-padding);
                     &-details {
                         width: 12.5%;
-                        gap: $box-elements-gap;
+                        gap: var(--box-elements-gap);
                         text-align: center;
                     }
 
@@ -269,12 +329,12 @@
             }
 
             &-wireframes {
-                gap: $body-top-padding !important;
+                gap: var(--body-top-padding) !important;
                 &-images {
-                    gap: $element-block-padding;
+                    gap: var(--element-block-padding);
                     &-details {
                         width: 16%;
-                        gap: $box-elements-gap;
+                        gap: var(--box-elements-gap);
                         text-align: center;
                     }
 
@@ -286,9 +346,20 @@
                 }
 
                 .wireframes-holder {
-                    gap: $element-block-padding;
+                    gap: var(--element-block-padding);
                     justify-content: space-between;
                 }
+            }
+        }
+    }
+    .other-projects {
+        gap: var(--has-button-gap);
+
+        .h4 {
+            padding-inline: var(--page-padding);
+
+            @include devices(tablet) {
+                text-align: left;
             }
         }
     }

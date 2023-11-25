@@ -12,13 +12,13 @@ const SideBar = ({ isMenuClicked, closeMenu, currentPage }) => {
             <div className={`menu-links-holder flex flex-row items-start justify-between ` + `${isMenuClicked ? 'menu-links-out' : 'in'}`}>
 
                 <div className="menuLinks-list flex flex-col justify-center">
-                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/' ? 'active' : ''}`}>
+                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/"}>Home</Link>
                     </span>
                     <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/about' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/about"}>About</Link>
                     </span>
-                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/portfolio' || (currentPage.indexOf("/portfolio") > -1) ? 'active' : ''}`}>
+                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/portfolio' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/portfolio"}>Work</Link>
                     </span>
                     <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/pricing' ? 'active' : ''}`}>

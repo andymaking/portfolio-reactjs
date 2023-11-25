@@ -1,20 +1,20 @@
 .landing {
-    padding: $padding-none $page-padding $caption-columns;
-    background-color: $active-neutral;
+    padding: var(--padding-none) var(--page-padding) var(--caption-columns);
+    background-color: var(--active-neutral);
 
     & .head {
-        padding: $body-top-padding 0 0;
+        padding: var(--body-top-padding) 0 0;
         width: 100%;
 
         &-text {
-            gap: $box-elements-gap;
+            gap: var(--box-elements-gap);
 
             &-top {
                 gap: 16px;
                 width: 100%;
 
                 @include devices(phone) {
-                    gap: $buttons-links;
+                    gap: var(--buttons-links);
                 }
             }
         }
@@ -23,26 +23,26 @@
 
 .main {
     article {
-        padding: 0 $page-padding $main-gap;
-        gap: $header-gap;
-        // background: $active-neutral;
+        padding: 0 var(--page-padding) var(--main-gap);
+        gap: var(--header-gap);
+        // background: var(--active-neutral);
 
-        padding-top: $page-padding;
+        padding-top: var(--page-padding);
 
         @include devices(phone) {
-            padding-bottom: $body-top-padding;
+            padding-bottom: var(--body-top-padding);
         }
 
         &.idea {
-            padding-top: $element-block-padding;
+            padding-top: var(--element-block-padding);
         }
 
         h2 {
-            gap: $paragraphs;
+            gap: var(--paragraphs);
         }
 
         .works {
-            gap: $element-block-padding;
+            gap: var(--element-block-padding);
             flex-wrap: wrap;
             flex-direction: row;
 
@@ -54,18 +54,18 @@
                 }
 
                 &-pair {
-                    gap: $element-block-padding;
+                    gap: var(--element-block-padding);
 
                     @include devices(tablet) {
                         flex-direction: column;
                     }
 
                     .projekt-container {
-                        gap: $box-elements-gap;
+                        gap: var(--box-elements-gap);
                         width: 100%;
 
                         &-image {
-                            background: $disabled-primary;
+                            background: var(--disabled-primary);
                             height: 496px;
                             border-radius: 20px;
                             overflow: hidden;
@@ -108,21 +108,21 @@
                         }
 
                         &-details {
-                            gap: $has-button-gap;
+                            gap: var(--has-button-gap);
                             flex: 1 0 0;
                             align-self: stretch;
-                            color: $active-secondary;
+                            color: var(--active-secondary);
                             width: 100% !important;
 
                             .clave {
-                                gap: $paragraphs;
+                                gap: var(--paragraphs);
                                 width: 100%;
-                                padding: $padding-none $buttons-links;
+                                padding: var(--padding-none) var(--buttons-links);
                             }
                         }
 
                     }
-
+                    
                     $div-count: 20;
 
                     @for $i from 1 through $div-count {
@@ -153,7 +153,7 @@
 
     .process-container {
         // border-radius: 0 0 128px 128px;
-        padding-top: $element-block-padding;
+        padding-top: var(--element-block-padding);
 
         @include devices(tablet) {
             // border-radius: 0 0 72px 72px;

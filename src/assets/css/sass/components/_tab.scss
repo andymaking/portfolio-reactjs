@@ -1,22 +1,22 @@
 .tab {
-    padding: $buttons-links $elements-inline-padding;
-    gap: $buttons-links;
+    padding: var(--buttons-links) var(--elements-inline-padding);
+    gap: var(--buttons-links);
     border-radius: 64px;
-    border: 2px solid $active-secondary;
+    border: 2px solid var(--active-secondary);
     transition: 0.3s;
     cursor: pointer;
     text-align: center;
 
     &:hover {
-        border-color: $disabled-primary;
-        background: $disabled-primary;
+        border-color: var(--disabled-primary);
+        background: var(--disabled-primary);
     }
 
     &:focus,
     &.active {
-        border-color: $active-secondary;
-        background: $active-secondary;
-        color: $active-accent;
+        border-color: var(--active-secondary);
+        background: var(--active-secondary);
+        color: var(--active-accent);
         cursor: default;
     }
 

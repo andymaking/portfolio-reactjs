@@ -1,20 +1,20 @@
 .contact {
     .landing {
-        padding: $padding-none $page-padding;
+        padding: var(--padding-none)var(--page-padding);
 
         .head {
-            padding-bottom: $header-gap;
+            padding-bottom: var(--header-gap);
         }
     }
 
     .main {
         article {
-            padding-top: $padding-none;
+            padding-top: var(--padding-none);
 
             .lister {
                 .listing {
                     p {
-                        margin-bottom: $buttons-links;
+                        margin-bottom: var(--buttons-links);
 
                         @include devices(tablet) {
                             margin-bottom: 0;
@@ -23,20 +23,20 @@
 
                     a {
                         align-items: center;
-                        gap: $paragraphs;
+                        gap: var(--paragraphs);
                         transition: 0.5s ease;
-                        color: $active-secondary;
+                        color: var(--active-secondary);
 
                         svg {
                             width: 16px;
                             height: auto;
-                            color: $active-secondary;
+                            color: var(--active-secondary);
                         }
 
                         &:hover,
                         &:hover svg {
-                            color: $active-primary;
-                            fill: $active-primary;
+                            color: var(--active-primary);
+                            fill: var(--active-primary);
                         }
                     }
                 }
@@ -47,7 +47,7 @@
     footer {
         .copyright {
             @include devices(phone) {
-                padding-top: $elements-inline-padding;
+                padding-top: var(--elements-inline-padding);
             }
         }
     }

@@ -7,7 +7,7 @@
         }
 
         @include devices(phone) {
-            // padding-bottom: 128px;
+            padding-bottom: 96px;
         }
 
         h1 {
@@ -21,11 +21,12 @@
             .lighter {
                 position: absolute;
                 border-radius: 48px;
-                border: 2px solid $active-secondary;
+                border: 2px solid var(--active-secondary);
                 transform: rotate(-16deg);
-                padding: 2px $box-elements-gap 6px;
+                padding: 2px var(--box-elements-gap) 6px;
                 left: 47%;
                 top: -56%;
+                line-height: 1;
 
                 @include devices(tablet) {
                     top: -80%;
@@ -39,24 +40,24 @@
                 @include devices(phone) {
                     top: 14%;
                     left: 208px;
-                    padding: 2px $paragraphs 6px;
+                    padding: 2px var(--paragraphs) 6px;
                     transform: rotate(0deg) scale(1);
-                    background: $active-secondary;
-                    color: $active-accent;
+                    background: var(--active-secondary);
+                    color: var(--active-accent);
                 }
             }
 
             &.hightlight {
                 border-radius: 160px;
-                background: $active-secondary;
+                background: var(--active-secondary);
                 padding: 16px 88px 24px;
-                color: $active-accent;
+                color: var(--active-accent);
                 overflow: hidden;
                 white-space: nowrap;
 
                 @media only screen and(max-width: 850px) {
-                    padding-left: $elements-inline-padding;
-                    padding-right: $elements-inline-padding;
+                    padding-left: var(--elements-inline-padding);
+                    padding-right: var(--elements-inline-padding);
                 }
 
                 @media only screen and(max-width: 700px) {
@@ -77,8 +78,8 @@
         }
 
         &-club {
-            padding: 0 $body-top-padding;
-            gap: $paragraphs;
+            padding: 0 var(--body-top-padding);
+            gap: var(--paragraphs);
 
             @include devices(tablet) {
                 padding: 0;
@@ -94,7 +95,7 @@
                 position: absolute;
                 top: 50%;
                 right: 49%;
-                fill: $active-primary;
+                fill: var(--active-primary);
                 height: 208px;
                 width: 144px;
 
@@ -120,6 +121,7 @@
 
                     @include devices(phone) {
                         left: 20%;
+                        bottom: -104%;
                     }
                 }
             }
@@ -128,7 +130,7 @@
                 height: 90px;
                 width: 90px;
                 border-radius: 1000px;
-                border: 2px solid $active-primary;
+                border: 2px solid var(--active-primary);
                 overflow: hidden;
 
                 @include devices(tablet) {
@@ -190,9 +192,9 @@
         }
 
         .testimonials-container {
-            padding: $main-gap $page-padding;
-            background: $active-secondary;
-            color: $active-accent;
+            padding: var(--main-gap) var(--page-padding);
+            background: var(--active-secondary);
+            color: var(--active-accent);
 
             @include devices(tablet) {
                 overflow: hidden;
@@ -202,7 +204,7 @@
                 @include devices(phone) {
                     display: flex;
                     flex-direction: column;
-                    gap: $buttons-links;
+                    gap: var(--buttons-links);
                 }
 
                 .liner {
@@ -221,10 +223,10 @@
             }
 
             .data {
-                gap: $header-gap;
+                gap: var(--header-gap);
 
                 &-results {
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
                     width: 100%;
 
                     @media only screen and(max-width: 850px) {
@@ -248,14 +250,14 @@
                         }
 
                         &-plug {
-                            gap: $paragraphs;
+                            gap: var(--paragraphs);
                             width: 44%;
 
                             &-title {
-                                gap: $paragraphs;
+                                gap: var(--paragraphs);
 
                                 @include devices(phone) {
-                                    gap: $buttons-links;
+                                    gap: var(--buttons-links);
                                 }
 
                                 svg {
@@ -265,10 +267,10 @@
                             }
 
                             &-description {
-                                padding-left: $has-button-gap;
+                                padding-left: var(--has-button-gap);
 
                                 @include devices(phone) {
-                                    padding-left: $buttons-links;
+                                    padding-left: var(--buttons-links);
                                 }
                             }
                         }
@@ -287,15 +289,15 @@
                         }
 
                         .questionsContainer {
-                            gap: $paragraphs;
+                            gap: var(--paragraphs);
 
                             .questions {
-                                background-color: $active-accent;
-                                color: $active-secondary;
-                                border: 1px solid $active-secondary;
+                                background-color: var(--active-accent);
+                                color: var(--active-secondary);
+                                border: 1px solid var(--active-secondary);
                                 box-shadow: 24px 16px 40px 0px rgba(0, 106, 93, 0.32);
                                 width: 256px;
-                                padding: $box-elements-gap;
+                                padding: var(--box-elements-gap);
                                 text-align: center;
 
                                 &:first-child {
@@ -342,7 +344,7 @@
             }
 
             .client-responses {
-                gap: $parents-elements-gap;
+                gap: var(--parents-elements-gap);
 
                 & .title {
                     width: 40%;
@@ -357,20 +359,20 @@
                 }
 
                 .talk {
-                    gap: $box-elements-gap;
+                    gap: var(--box-elements-gap);
 
                     @include devices(tablet) {
                         flex-direction: column;
                     }
 
                     .review {
-                        padding: $element-block-padding $elements-inline-padding;
-                        gap: $element-block-padding;
+                        padding: var(--element-block-padding) var(--elements-inline-padding);
+                        gap: var(--element-block-padding);
                         border-radius: 32px;
-                        border: 1px solid $active-accent;
+                        border: 1px solid var(--active-accent);
 
                         &-details {
-                            gap: $paragraphs;
+                            gap: var(--paragraphs);
 
                             &-image {
                                 width: 56px;
@@ -390,7 +392,7 @@
         }
 
         .sales-container {
-            padding-top: $main-gap;
+            padding-top: var(--main-gap);
             // border-radius: 0 128px;
 
             @include devices(tablet) {
@@ -402,16 +404,16 @@
             }
 
             &-call {
-                gap: $parents-elements-gap;
+                gap: var(--parents-elements-gap);
 
                 @include devices(phone) {
                     flex-direction: column;
-                    gap: $has-button-gap;
+                    gap: var(--has-button-gap);
                 }
 
                 &-objects {
                     width: 28%;
-                    gap: $paragraphs;
+                    gap: var(--paragraphs);
 
                     @include devices(tablet) {
                         width: 50%;
@@ -419,7 +421,7 @@
 
                     @include devices(phone) {
                         width: 100%;
-                        gap: $buttons-links;
+                        gap: var(--buttons-links);
                     }
 
                     h4 {

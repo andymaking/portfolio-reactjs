@@ -3,7 +3,7 @@
 @import "../../../../node_modules/tailwindcss/utilities";
 
 @import "./variables/breakpoints", "./variables/colors", "./variables/spacings", "./variables/general",
-    "./variables/animations", "./variables/type", "./pages/home", "./pages/about", "./pages/contact", "./pages/work",
+    "./variables/animations", "./components/loader", "./variables/type", "./pages/home", "./pages/about", "./pages/contact", "./pages/work",
     "./pages/case_study", "./pages/pricing", "./components/nav", "./components/buttonlink", "./components/tab",
     "./components/footer";
 
@@ -31,17 +31,17 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: $active-accent;
+    background: var(--active-accent);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $active-secondary;
+    background: var(--active-secondary);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: $active-secondary;
+    background: var(--active-secondary);
 }
 
 /*
@@ -85,12 +85,12 @@
 }
 
 body {
-    font-size: $font-size;
-    font-family: $font-family;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
     scroll-behavior: smooth;
     min-height: 100vh;
-    background-color: $disabled-primary;
-    color: $active-secondary;
+    background-color: var(--disabled-primary);
+    color: var(--active-secondary);
     max-width: 1536px;
     width: 100%;
     margin: 0 auto;
@@ -103,14 +103,14 @@ img {
 }
 
 main {
-    padding: $header-gap $padding-none 0;
-    background-color: $active-neutral;
-    gap: $gap-none;
+    padding: var(--header-gap) var(--padding-none) 0;
+    background-color: var(--active-neutral);
+    gap: var(--gap-none);
     padding-top: 0;
 }
 
 ol {
-    padding-left: $paragraphs;
+    padding-left: var(--paragraphs);
 
     li {
         list-style: decimal;
@@ -130,29 +130,29 @@ ol {
     display: inline-block;
     height: 1.6px;
     flex: 1;
-    background-color: $active-secondary;
+    background-color: var(--active-secondary);
 
     &.secondary {
-        background-color: $disabled-secondary;
+        background-color: var(--disabled-secondary);
         flex: auto;
     }
 }
 
 .lister {
-    padding: 0px $page-padding;
-    gap: $header-gap;
+    padding: 0px var(--page-padding);
+    gap: var(--header-gap);
 
     @include devices(tablet) {
         padding: 0;
     }
 
     .listing {
-        padding: $element-block-padding 0px;
-        border-bottom: 1px solid $disabled-secondary;
+        padding: var(--element-block-padding) 0px;
+        border-bottom: 1px solid var(--disabled-secondary);
 
         @include devices(phone) {
             flex-direction: row;
-            gap: $paragraphs;
+            gap: var(--paragraphs);
             align-items: center;
         }
 
@@ -177,8 +177,8 @@ ol {
     position: fixed;
     padding: 6px;
     transform: translate(-50%, -50%);
-    background-color: $active-neutral;
-    color: $active-primary;
+    background-color: var(--active-neutral);
+    color: var(--active-primary);
     border-radius: 50%;
     z-index: 100000;
     mix-blend-mode: difference;
@@ -189,7 +189,7 @@ ol {
     }
 
     &.linked {
-        background-color: $active-primary;
+        background-color: var(--active-primary);
         width: 64px;
         height: 64px;
         opacity: 0.5;
@@ -201,8 +201,8 @@ ol {
         width: auto;
         height: auto;
         padding: 16px;
-        background-color: $active-secondary;
-        color: $active-neutral;
+        background-color: var(--active-secondary);
+        color: var(--active-neutral);
         mix-blend-mode: unset;
 
         * {

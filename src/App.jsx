@@ -5,12 +5,14 @@ import Nav from './components/NavBar';
 import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
+import Loading from './components/Loading';
+
 
 // const Nav = React.lazy(() => import("./components/NavBar"));
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
-const Work = React.lazy(() => import("./pages/Work"));
-const Project = React.lazy(() => import("./pages/Project"));
+const Work = React.lazy(() => import("./pages/Portfolio"));
+const Project = React.lazy(() => import("./pages/CaseStudy"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 
@@ -40,7 +42,15 @@ const App = () => {
 
     const location = useLocation();
     const currentPage = location.pathname;
-    const pageClass = currentPage === '/' ? 'home' : currentPage.split('/')[1];
+
+    const pageClass =
+        currentPage === '/'
+            ? 'home'
+            : currentPage.startsWith('/portfolio')
+                ? currentPage.split('/').length > 2
+                    ? 'portfolio case-study'
+                    : 'portfolio'
+                : currentPage.slice(1);
 
     return (
         <>
@@ -51,11 +61,13 @@ const App = () => {
 
                 <ScrollToTop />
 
-                <React.Suspense fallback={''}>
+                <React.Suspense fallback={
+                    <Loading className="fill">loading</Loading>
+                }>
                     <Cursor />
-                    
+
                     <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} currentPage={currentPage} />
-                    
+
                     <Routes>
                         <Route
                             path="/"

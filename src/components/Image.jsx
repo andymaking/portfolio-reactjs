@@ -13,15 +13,14 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
         image.onload = () => {
             setImageLoaded(true);
         };
-        
-        image.src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/'+cloudSrc : src;
+
+        image.src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
     }, [src, cloudSrc]);
 
-
+    
     return (
         <>
             <div
-                // className={`blurred ` + `${imageLoaded ? "hidden" : "inline"}`}
                 style={{
                     position: "absolute",
                     zIndex: "1",
@@ -51,7 +50,6 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
                 <img
                     src={src}
                     className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}
-                    loading="lazy"
                     alt={alt}
                     effect="blur"
                 />

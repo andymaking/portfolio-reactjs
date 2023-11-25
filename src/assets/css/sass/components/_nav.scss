@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     max-width: calc(100vw - 0px);
-    padding: $elements-inline-padding $page-padding 0;
+    padding: var(--elements-inline-padding) var(--page-padding) 0;
     margin: 0 auto;
     transition: all 0.2s ease-in;
     width: 100%;
@@ -10,7 +10,7 @@
     svg,
     svg g,
     svg path {
-        fill: $active-secondary;
+        fill: var(--active-secondary);
     }
 
     & .logo {
@@ -37,7 +37,7 @@
     }
 
     & .menu {
-        gap: $buttons-links;
+        gap: var(--buttons-links);
         flex-wrap: wrap;
         cursor: pointer;
         z-index: 1;
@@ -59,7 +59,7 @@
                 width: 100%;
                 height: 2px;
                 border-radius: 12px;
-                background: $active-secondary;
+                background: var(--active-secondary);
                 transition:
                     width 0.3s linear,
                     height 0.3s linear,
@@ -93,17 +93,17 @@
     }
 
     &.secondary {
-        background-color: $active-secondary-blur;
-        color: $active-accent;
+        background-color: var(--active-secondary-blur);
+        color: var(--active-accent);
 
         & .menu-bars-span {
-            background: $active-accent;
+            background: var(--active-accent);
         }
 
         svg,
         svg g,
         svg path {
-            fill: $active-accent;
+            fill: var(--active-accent);
         }
     }
 }
@@ -120,7 +120,7 @@
     position: fixed;
     width: 0px;
     height: 100vh;
-    background-color: $active-secondary;
+    background-color: var(--active-secondary);
     right: 0;
     left: unset;
     padding: 0;
@@ -143,7 +143,7 @@
     }
 
     .menuLinks-list {
-        gap: $has-button-gap;
+        gap: var(--has-button-gap);
         align-self: flex-end;
 
         @include devices(tablet) {
@@ -157,9 +157,9 @@
         & .menuLink {
             a {
                 @include h2;
-                color: $active-accent;
+                color: var(--active-accent);
                 align-items: flex-center;
-                gap: $has-button-gap;
+                gap: var(--has-button-gap);
                 transition: 0.5s ease;
 
                 svg,
@@ -167,22 +167,22 @@
                 svg path {
                     width: 24px;
                     height: auto;
-                    fill: $active-accent;
+                    fill: var(--active-accent);
                 }
 
                 &:hover,
                 &:hover svg,
                 &:hover svg g,
                 &:hover svg path {
-                    color: $active-placeholder;
-                    fill: $active-placeholder;
+                    color: var(--active-placeholder);
+                    fill: var(--active-placeholder);
 
                     &::before {
                         content: "\2192";
                         position: absolute;
                         bottom: 10%;
                         left: -20%;
-                        color: $active-placeholder;
+                        color: var(--active-placeholder);
 
                         @include devices(tablet) {
                             display: none;
@@ -199,8 +199,8 @@
 
     &.menu-links-out {
         width: 72vw;
-        padding: $element-block-padding $page-padding;
-        padding-left: $body-top-padding;
+        padding: var(--element-block-padding) var(--page-padding);
+        padding-left: var(--body-top-padding);
         box-shadow: -38px 29px 100px 20px #00282296;
         visibility: visible;
         -webkit-transition: -webkit-transform 0.5s;
@@ -211,24 +211,24 @@
         @include devices(tablet) {
             padding-left: 12vw;
             padding-top: 24px;
-            padding-bottom: $page-padding;
+            padding-bottom: var(--page-padding);
         }
 
         @include devices(phone) {
             padding-right: 12vw;
             width: 100%;
-            padding-bottom: $body-top-padding;
+            padding-bottom: var(--body-top-padding);
         }
     }
 
     .menu-close {
         cursor: pointer;
-        gap: $buttons-links;
-        padding-top: $buttons-links;
+        gap: var(--buttons-links);
+        padding-top: var(--buttons-links);
 
         @include devices(tablet) {
             align-self: flex-end;
-            padding-top: $box-padding;
+            padding-top: var(--box-padding);
         }
 
         @include devices(phone) {
@@ -245,7 +245,7 @@
             &-span {
                 display: block;
                 height: 2px;
-                background: $active-accent;
+                background: var(--active-accent);
 
                 &.top {
                     top: 9px;
@@ -262,7 +262,7 @@
         }
         & .texter::before {
             content: "Close";
-            color: $active-accent;
+            color: var(--active-accent);
         }
     }
 }

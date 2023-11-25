@@ -10,7 +10,7 @@ const Projects = ({ projectList, category }) => {
     }
 
     const filterAndExtractKeys = (array, keys) => {
-        return array.map(({ name, title, coverimage, coverhash, type, uniqueid, cloudinary }) => ({ name, title, coverimage, coverhash, type, uniqueid, cloudinary }));
+        return array.map(({ name, title, coverhash, type, uniqueid, cloudinary }) => ({ name, title, coverhash, type, uniqueid, cloudinary }));
     };
 
     if (category !== "") {
@@ -30,15 +30,15 @@ const Projects = ({ projectList, category }) => {
             <div className="projekt-pair w-full flex flex-row" key={index}>
                 {projectPair.map((project, linkIndex) => (
                     <Link
-                    type="none"
-                    href={`/portfolio/${project.uniqueid}`}
-                    key={linkIndex}
-                    extra="projekt w-full"
+                        type="none"
+                        href={`/portfolio/${project.uniqueid}`}
+                        key={linkIndex}
+                        extra="projekt w-full"
                     >
                         <div className="projekt-container w-full flex flex-col">
                             <div className="projekt-container-image">
                                 <Image
-                                    src={project.coverimage}
+                                    src={null}
                                     hash={project.coverhash}
                                     alt={`${project.name} case study`}
                                     imageType={'project'}

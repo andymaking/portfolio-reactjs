@@ -1,50 +1,55 @@
 import React, { useEffect, useState } from 'react';
-import supabase from '../config/supaBaseClient'
+import supabase from '../config/supaBaseClient';
 
-import Project from '../components/Projects';
+import ProjectList from '../components/ProjectList';
 import Lists from '../components/Lists';
 import Image from '../components/Image';
+import Loading from '../components/Loading';
 
 import EmojiSmile from "../assets/images/Smiling Face.svg";
 import EmojiRocket from "../assets/images/Rocket.svg";
 import EmojiSmileHeart from "../assets/images/Smiling Face With Heart Eyes.svg";
 import EmojiSmileTear from "../assets/images/Smiling Face With Tear.svg";
-import { ArrowDown } from "@phosphor-icons/react";
-import { ArrowUp } from "@phosphor-icons/react";
+import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 import HomeImage from "../assets/images/home.webp";
 import Reviewer01 from "../assets/images/review-1.webp";
 import Reviewer02 from "../assets/images/review-2.webp";
 
 
 export default function Home() {
-
-    const [fetchError, setFetchError] = useState(null)
-
+    const [fetchError, setFetchError] = useState(null);
     const [projects, setProjects] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchProjects = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('projects')
+                    .select()
+                    .is('featured', 'true')
+                    .order('id', { ascending: true });
 
-            const { data, error } = await supabase
-                .from('projects')
-                .select()
-                .gte('featured', 'true')
-                .order('id', { ascending: true })
+                if (error) {
+                    setFetchError('Could not fetch the data');
+                    setProjects(null);
+                    console.error(error);
+                }
 
-            if (error) {
-                setFetchError('Could not fetch the data')
-                setProjects(null)
+                if (data) {
+                    setProjects(data);
+                    setFetchError(null);
+                }
+            } catch (error) {
+                setFetchError('Could not fetch the data');
+                setProjects(null);
+            } finally {
+                setIsLoading(false);
             }
+        };
 
-            if (data) {
-                setProjects(data)
-                setFetchError(null)
-            }
-        }
-
-        fetchProjects()
-
-    }, [])
+        fetchProjects();
+    }, []);
 
     useEffect(() => {
         document.title = 'Jude Joshua | Top Product Designer For Businesses And Brands.';
@@ -69,7 +74,6 @@ export default function Home() {
 
     return (
         <>
-            {fetchError && (<p>{fetchError}</p>)}
             <header className="landing w-full flex flex-col items-center">
                 <div className="head">
                     <div className="head-text flex flex-col items-center justify-center">
@@ -105,7 +109,12 @@ export default function Home() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    <Project projectList={projects} category={''} />
+                    {isLoading && <Loading>loading projects</Loading>}
+                    {!isLoading && !fetchError && (
+                        <>
+                            <ProjectList projectList={projects} category={''} />
+                        </>
+                    )}
                 </article>
                 <article className="process-container w-full flex flex-col items-start">
                     <div className="title">
@@ -236,6 +245,7 @@ export default function Home() {
                     </div>
                 </article>
             </section>
+
         </>
     )
 }

@@ -1,0 +1,24 @@
+.loader-div{
+    padding: var(--body-top-padding) var(--page-padding) var(--body-top-padding);
+    gap: var(--buttons-links);
+
+    @include devices(tablet){
+        gap: var(--caption-columns);
+    }
+
+    &.fill{
+        height: 100vh;
+    }
+
+    img{
+        width: 128px;
+
+        @include devices(tablet){
+            width: 72px;
+        }
+
+        @include devices(phone){
+            width: 48px;
+        }
+    }
+}
