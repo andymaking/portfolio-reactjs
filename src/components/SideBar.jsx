@@ -43,7 +43,7 @@ const SideBar = ({ isMenuClicked, closeMenu, currentPage }) => {
                         <span className="menu-bars-span top"></span>
                         <span className="menu-bars-span last"></span>
                     </div>
-                    <p className="texter b1">Close</p>
+                    <p className="texter b1"></p>
                 </div>
 
             </div>
