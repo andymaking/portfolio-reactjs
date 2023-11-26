@@ -4,7 +4,7 @@ import Lists from '../components/Lists';
 
 export default function Pricing() {
     useEffect(() => {
-        document.title = 'Pricing | Top Product Designer For Businesses And Brands.';
+        document.title = 'Pricing for Jude | Designing User Experiences for Increased conversions.';
     }, []);
 
     return (

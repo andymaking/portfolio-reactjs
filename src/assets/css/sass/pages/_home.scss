@@ -108,20 +108,21 @@
                     right: unset;
                     top: unset;
                     width: auto;
-                    height: 24px;
                     position: absolute;
                     bottom: -100%;
                     justify-self: center;
-
+                    
                     @include devices(tablet) {
                         display: block;
-                        left: 50%;
-                        bottom: -120%;
+                        left: 47%;
+                        bottom: -348%;
+                        height: 144px;
                     }
-
+                    
                     @include devices(phone) {
                         left: 20%;
-                        bottom: -104%;
+                        height: 104px;
+                        bottom: -184%;
                     }
                 }
             }
@@ -430,7 +431,5 @@
                 }
             }
         }
-
     }
-
 }

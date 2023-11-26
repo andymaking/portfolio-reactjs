@@ -67,6 +67,10 @@
     --page-padding: 24px;
     --body-top-padding: 96px; } }
 
+@media screen and (max-width: 340px) {
+  :root {
+    --page-padding: 16px; } }
+
 .landing {
   padding: var(--padding-none) var(--page-padding) var(--caption-columns);
   background-color: var(--active-neutral); }
@@ -94,7 +98,7 @@
   .main article h2 {
     gap: var(--paragraphs); }
   .main article .works {
-    gap: var(--element-block-padding);
+    gap: var(--elements-inline-padding);
     flex-wrap: wrap;
     flex-direction: row; }
     .main article .works .projekt {
@@ -102,7 +106,7 @@
       .main article .works .projekt:hover .projekt-container-image {
         transform: scale(1.04); }
       .main article .works .projekt-pair {
-        gap: var(--element-block-padding); }
+        gap: var(--elements-inline-padding); }
         @media only screen and (max-width: 1120px) {
           .main article .works .projekt-pair {
             flex-direction: column; } }
@@ -500,19 +504,20 @@
         right: unset;
         top: unset;
         width: auto;
-        height: 24px;
         position: absolute;
         bottom: -100%;
         justify-self: center; }
         @media only screen and (max-width: 1120px) {
           .home .head-text-club .more.phone {
             display: block;
-            left: 50%;
-            bottom: -120%; } }
+            left: 47%;
+            bottom: -348%;
+            height: 144px; } }
         @media only screen and (max-width: 502px) {
           .home .head-text-club .more.phone {
             left: 20%;
-            bottom: -104%; } }
+            height: 104px;
+            bottom: -184%; } }
     .home .head-text-club-image {
       height: 90px;
       width: 90px;
@@ -885,10 +890,9 @@
         width: 100%;
         height: 100%; }
         .case-study .main .project-details-cover-image div img {
-          width: 100%;
+          min-width: 100%;
           min-height: 100%;
-          object-position: center;
-          top: -15%; }
+          object-position: center; }
     .case-study .main .project-details-description-checker {
       gap: var(--parents-elements-gap); }
       @media only screen and (max-width: 1120px) {
@@ -1757,8 +1761,8 @@ ol {
   overflow: hidden; }
 
 .cursor {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   pointer-events: none;
   position: fixed;
   padding: 6px;
@@ -1768,7 +1772,8 @@ ol {
   border-radius: 50%;
   z-index: 100000;
   mix-blend-mode: difference;
-  text-align: center; }
+  text-align: center;
+  transition: all 0.2s linear; }
   .cursor * {
     opacity: 0; }
   .cursor.linked {

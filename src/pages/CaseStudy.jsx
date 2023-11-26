@@ -6,8 +6,6 @@ import Image from '../components/Image';
 import Loading from '../components/Loading';
 import OtherProjects from "../components/OtherProjects";
 
-import { ArrowLeft } from "@phosphor-icons/react";
-
 const CaseStudy = () => {
     const { projectId } = useParams();
 
@@ -51,7 +49,7 @@ const CaseStudy = () => {
             document.title = 'loading project...';
         } else {
             if (project.length > 0) {
-                document.title = `${project[0].name} by Jude Joshua | Top Product Designer For Businesses And Brands.`;
+                document.title = `${project[0].name} by Jude Joshua | Designing User Experiences for Increased conversions.`;
             } else {
                 document.title = 'Error! This Project by Jude Joshua does not exist.';
             }
@@ -60,7 +58,7 @@ const CaseStudy = () => {
 
     return (
         <>
-            {isLoading && <Loading>loading</Loading>}
+            {isLoading && <Loading className="">loading</Loading>}
             {!isLoading && !fetchError && (
                 <>
                     <header className="landing w-full flex flex-col items-center project-head">

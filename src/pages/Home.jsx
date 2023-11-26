@@ -8,13 +8,14 @@ import Loading from '../components/Loading';
 
 import EmojiSmile from "../assets/images/Smiling Face.svg";
 import EmojiRocket from "../assets/images/Rocket.svg";
+import {ReactComponent as PushDown} from "../assets/images/mobile-down.svg";
 import EmojiSmileHeart from "../assets/images/Smiling Face With Heart Eyes.svg";
 import EmojiSmileTear from "../assets/images/Smiling Face With Tear.svg";
-import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 import HomeImage from "../assets/images/home.webp";
 import Reviewer01 from "../assets/images/review-1.webp";
 import Reviewer02 from "../assets/images/review-2.webp";
 
+import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 
 export default function Home() {
     const [fetchError, setFetchError] = useState(null);
@@ -52,7 +53,7 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        document.title = 'Jude Joshua | Top Product Designer For Businesses And Brands.';
+        document.title = 'Jude Joshua | Designing User Experiences for Increased conversions.';
     }, []);
 
     const reviews = [
@@ -102,14 +103,17 @@ export default function Home() {
                             <p className="p1 head-text-club-grab">
                                 Design generalist driving business growth by crafting digital experiences that users love to use.
                             </p>
-                            <ArrowDown className='more phone' />
+                            {/* <svg className="more phone" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path d="M10.6645 191.296C11.2552 191.877 12.2049 191.869 12.7858 191.278L22.2518 181.653C22.8327 181.063 22.8248 180.113 22.2341 179.532C21.6435 178.951 20.6938 178.959 20.1129 179.55L11.6986 188.105L3.14291 179.691C2.55227 179.11 1.60255 179.118 1.02167 179.709C0.440783 180.299 0.448698 181.249 1.03935 181.83L10.6645 191.296ZM122.808 0.232019C122.955 40.5318 121.249 67.0225 118.188 83.399C116.655 91.6015 114.805 97.1368 112.761 100.582C110.734 104 108.683 105.117 106.723 105.107C104.601 105.096 102.032 103.785 99.0106 101.057C96.0329 98.368 92.8408 94.5104 89.4864 89.8736C82.7709 80.5908 75.6219 68.4993 68.4016 57.0426C61.2347 45.6705 53.9719 34.8808 47.1262 28.507C43.7129 25.329 40.2196 23.0701 36.7302 22.5456C33.0853 21.9978 29.7356 23.3789 26.8435 26.8019C24.0149 30.1497 21.5614 35.5039 19.4547 43.1454C17.3401 50.8157 15.5399 60.9249 14.1012 73.9021C11.2236 99.8582 9.77633 137.439 10.2163 190.239L13.2162 190.214C12.7766 137.458 14.2247 100.014 17.083 74.2326C18.5122 61.3409 20.2901 51.4031 22.3468 43.9427C24.4115 36.4535 26.7225 31.5935 29.1351 28.738C31.4841 25.9579 33.8519 25.1467 36.2843 25.5123C38.8721 25.9013 41.8156 27.6614 45.0819 30.7026C51.5955 36.7673 58.6633 47.2171 65.8636 58.6421C73.0105 69.9824 80.2653 82.2456 87.0557 91.632C90.4543 96.3298 93.7907 100.385 97.0001 103.283C100.166 106.142 103.443 108.09 106.708 108.107C110.136 108.124 113.015 106.036 115.342 102.112C117.653 98.2149 119.582 92.2704 121.137 83.9501C124.252 67.2809 125.955 40.5541 125.808 0.221106L122.808 0.232019Z" fill="#006A5D" />
+                            </svg> */}
+                            <PushDown className='more phone' />
                         </div>
                     </div>
                 </div>
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    {isLoading && <Loading>loading projects</Loading>}
+                    {isLoading && <Loading className="">loading projects</Loading>}
                     {!isLoading && !fetchError && (
                         <>
                             <ProjectList projectList={projects} category={''} />

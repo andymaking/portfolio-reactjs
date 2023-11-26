@@ -58,3 +58,9 @@
         --body-top-padding: 96px;
     }
 }
+
+@media screen and (max-width: 340px) {
+    :root{
+        --page-padding: 16px;
+    }
+}

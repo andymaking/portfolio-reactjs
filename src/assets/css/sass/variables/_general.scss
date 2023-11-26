@@ -42,7 +42,7 @@
         }
 
         .works {
-            gap: var(--element-block-padding);
+            gap: var(--elements-inline-padding);
             flex-wrap: wrap;
             flex-direction: row;
 
@@ -54,7 +54,7 @@
                 }
 
                 &-pair {
-                    gap: var(--element-block-padding);
+                    gap: var(--elements-inline-padding);
 
                     @include devices(tablet) {
                         flex-direction: column;

@@ -1,9 +1,9 @@
 import React from 'react'
 import Loader from '../assets/images/loading.gif'
 
-const Loading = ({ children }) => {
+const Loading = ({ children, className }) => {
     return (
-        <div className='loader-div flex flex-col items-center justify-center'>
+        <div className={`loader-div flex flex-col items-center justify-center ` + `${className}`}>
             <img
                 src={Loader}
             />

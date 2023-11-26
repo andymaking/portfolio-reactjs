@@ -155,16 +155,7 @@ const List = ({ type, linkText, link }) => {
 
     const listingLink = () => {
         if (linkText !== "none") {
-            if (type !== "pricing") {
-                return (
-                    <Links target="_self" type={"primary"} href={`/` + link}>
-                        <div className="icon-hold flex items-center justify-center">
-                            <ArrowRight size={24} weight="regular" />
-                        </div>
-                        {linkText}
-                    </Links>
-                )
-            } else {
+            if (type === "pricing") {
                 return (
                     <Links target="_self" type={"primary"} href={`/` + link}>
                         <div className="icon-hold flex items-center justify-center">
@@ -173,6 +164,26 @@ const List = ({ type, linkText, link }) => {
                         {linkText}
                     </Links>
                 )
+            } else {
+                if (type === 'about') {
+                    return (
+                        <Links target="_blank" type={"primary"} href={link}>
+                            <div className="icon-hold flex items-center justify-center">
+                                <ArrowRight size={24} weight="regular" />
+                            </div>
+                            {linkText}
+                        </Links>
+                    )
+                } else {
+                    return (
+                        <Links target="_self" type={"primary"} href={`/` + link}>
+                            <div className="icon-hold flex items-center justify-center">
+                                <ArrowRight size={24} weight="regular" />
+                            </div>
+                            {linkText}
+                        </Links>
+                    )
+                }
             }
         } else {
             return null;

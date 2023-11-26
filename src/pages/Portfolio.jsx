@@ -41,7 +41,7 @@ export default function Portfolio() {
     }, []);
 
     useEffect(() => {
-        document.title = 'Portfolio | Top Product Designer For Businesses And Brands.';
+        document.title = 'Portfolio by Jude | Designing User Experiences for Increased conversions.';
     }, []);
 
     const designCategories = ['All projects', 'Case studies', 'Visual Design'];
@@ -66,7 +66,7 @@ export default function Portfolio() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    {isLoading && <Loading>loading projects</Loading>}
+                    {isLoading && <Loading className="">loading projects</Loading>}
                     {!isLoading && !fetchError && (
                         <>
                             <ProjectList projectList={projects} category={selectedTab.toLowerCase()} />

@@ -75,10 +75,9 @@
                     height: 100%;
 
                     img {
-                        width: 100%;
+                        min-width: 100%;
                         min-height: 100%;
                         object-position: center;
-                        top: -15%;
                     }
                 }
             }
