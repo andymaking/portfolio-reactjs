@@ -14,8 +14,11 @@
             line-height: 0.9;
 
             @include devices(phone) {
-                text-align: left;
                 line-height: 1;
+            }
+
+            @media only screen and(max-width: 400px) {
+                text-align: left;
             }
 
             .lighter {
@@ -39,7 +42,16 @@
 
                 @include devices(phone) {
                     top: 14%;
+                    left: 292px;
+                    padding: 2px var(--paragraphs) 6px;
+                    transform: rotate(0deg) scale(1);
+                    background: var(--active-secondary);
+                    color: var(--active-accent);
+                }
+
+                @media only screen and(max-width: 400px) {
                     left: 208px;
+                    top: 14%;
                     padding: 2px var(--paragraphs) 6px;
                     transform: rotate(0deg) scale(1);
                     background: var(--active-secondary);
@@ -71,7 +83,7 @@
                     overflow: unset;
                 }
 
-                @include devices(phone) {
+                @media only screen and(max-width: 400px) {
                     text-align: left;
                 }
             }
@@ -87,7 +99,7 @@
                 align-items: center;
             }
 
-            @include devices(phone) {
+            @media only screen and(max-width: 400px) {
                 justify-content: flex-start;
             }
 
@@ -109,20 +121,23 @@
                     top: unset;
                     width: auto;
                     position: absolute;
-                    bottom: -100%;
                     justify-self: center;
-                    
+
                     @include devices(tablet) {
                         display: block;
-                        left: 47%;
-                        bottom: -348%;
+                        left: 48%;
+                        bottom: -332%;
                         height: 144px;
                     }
-                    
+
                     @include devices(phone) {
-                        left: 20%;
+                        left: 36%;
                         height: 104px;
-                        bottom: -184%;
+                        bottom: -190%;
+                    }
+
+                    @media only screen and(max-width: 400px) {
+                        left: 30%;
                     }
                 }
             }
@@ -166,6 +181,10 @@
                 }
 
                 @include devices(phone) {
+                    max-width: 58.5%;
+                }
+
+                @media only screen and(max-width: 400px) {
                     max-width: 68%;
                 }
             }

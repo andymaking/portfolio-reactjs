@@ -64,7 +64,7 @@
     --box-padding: 24px;
     --elements-inline-padding: 32px;
     --element-block-padding: 48px;
-    --page-padding: 24px;
+    --page-padding: 28px;
     --body-top-padding: 96px; } }
 
 @media screen and (max-width: 340px) {
@@ -132,10 +132,12 @@
                 opacity: 1; }
             @media only screen and (max-width: 1120px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 424px; } }
+                height: 424px;
+                border-radius: 16px; } }
             @media only screen and (max-width: 502px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 320px; } }
+                height: 320px;
+                border-radius: 12px; } }
             @media screen and (max-width: 380px) {
               .main article .works .projekt-pair .projekt-container-image {
                 height: 296px; } }
@@ -428,8 +430,10 @@
     line-height: 0.9; }
     @media only screen and (max-width: 502px) {
       .home .head-text h1 {
-        text-align: left;
         line-height: 1; } }
+    @media only screen and (max-width: 400px) {
+      .home .head-text h1 {
+        text-align: left; } }
     .home .head-text h1 .lighter {
       position: absolute;
       border-radius: 48px;
@@ -449,7 +453,15 @@
       @media only screen and (max-width: 502px) {
         .home .head-text h1 .lighter {
           top: 14%;
+          left: 292px;
+          padding: 2px var(--paragraphs) 6px;
+          transform: rotate(0deg) scale(1);
+          background: var(--active-secondary);
+          color: var(--active-accent); } }
+      @media only screen and (max-width: 400px) {
+        .home .head-text h1 .lighter {
           left: 208px;
+          top: 14%;
           padding: 2px var(--paragraphs) 6px;
           transform: rotate(0deg) scale(1);
           background: var(--active-secondary);
@@ -475,7 +487,7 @@
           white-space: unset;
           border-radius: unset;
           overflow: unset; } }
-      @media only screen and (max-width: 502px) {
+      @media only screen and (max-width: 400px) {
         .home .head-text h1.hightlight {
           text-align: left; } }
   .home .head-text-club {
@@ -486,7 +498,7 @@
         padding: 0;
         justify-content: center;
         align-items: center; } }
-    @media only screen and (max-width: 502px) {
+    @media only screen and (max-width: 400px) {
       .home .head-text-club {
         justify-content: flex-start; } }
     .home .head-text-club .more {
@@ -505,19 +517,21 @@
         top: unset;
         width: auto;
         position: absolute;
-        bottom: -100%;
         justify-self: center; }
         @media only screen and (max-width: 1120px) {
           .home .head-text-club .more.phone {
             display: block;
-            left: 47%;
-            bottom: -348%;
+            left: 48%;
+            bottom: -332%;
             height: 144px; } }
         @media only screen and (max-width: 502px) {
           .home .head-text-club .more.phone {
-            left: 20%;
+            left: 36%;
             height: 104px;
-            bottom: -184%; } }
+            bottom: -190%; } }
+        @media only screen and (max-width: 400px) {
+          .home .head-text-club .more.phone {
+            left: 30%; } }
     .home .head-text-club-image {
       height: 90px;
       width: 90px;
@@ -548,6 +562,9 @@
         .home .head-text-club-grab {
           max-width: 60%; } }
       @media only screen and (max-width: 502px) {
+        .home .head-text-club-grab {
+          max-width: 58.5%; } }
+      @media only screen and (max-width: 400px) {
         .home .head-text-club-grab {
           max-width: 68%; } }
 
