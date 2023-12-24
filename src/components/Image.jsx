@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Blurhash } from "react-blurhash";
+
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import { Image as CloudinaryImage, Transformation, CloudinaryContext } from 'cloudinary-react';
 
 const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
 
-    const [imageLoaded, setImageLoaded] = useState(false);
+    src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
 
-    useEffect(() => {
-        const image = new Image();
-
-        image.onload = () => {
-            setImageLoaded(true);
-        };
-
-        image.src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
-    }, [src, cloudSrc]);
-
-    
     return (
         <>
             <div
                 style={{
                     position: "absolute",
-                    zIndex: "1",
                     width: "100%",
                     height: "100%"
                 }}
@@ -40,8 +31,8 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
 
             {imageType === "project" ? (
                 <>
-                    <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME} className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}>
-                        <CloudinaryImage publicId={cloudSrc} alt={alt}>
+                    <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}>
+                        <CloudinaryImage publicId={cloudSrc} data-src={src} alt={alt} loading="lazy" className={"lazyload object-cover"}>
                             <Transformation crop='scale' />
                         </CloudinaryImage>
                     </CloudinaryContext>
@@ -49,9 +40,11 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
             ) : (
                 <img
                     src={src}
-                    className={!imageLoaded ? "hide-till-load" : "hide-undo object-cover"}
+                    data-src={src}
+                    className={"lazyload object-cover"}
                     alt={alt}
                     effect="blur"
+                    loading="lazy"
                 />
             )}
         </>

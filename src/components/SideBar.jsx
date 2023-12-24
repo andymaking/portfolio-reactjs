@@ -4,7 +4,7 @@ import Link from "./Links";
 import { ArrowSquareIn } from "@phosphor-icons/react";
 
 
-const SideBar = ({ isMenuClicked, closeMenu, currentPage }) => {
+const SideBar = ({ isMenuClicked, closeMenu, currentPage, noPage }) => {
 
     return (
         <>
@@ -12,7 +12,7 @@ const SideBar = ({ isMenuClicked, closeMenu, currentPage }) => {
             <div className={`menu-links-holder flex flex-row items-start justify-between ` + `${isMenuClicked ? 'menu-links-out' : 'in'}`}>
 
                 <div className="menuLinks-list flex flex-col justify-center">
-                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) ? 'active' : ''}`}>
+                    <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) || noPage ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/"}>Home</Link>
                     </span>
                     <span onClick={closeMenu} className={`menuLink ` + `${currentPage === '/about' ? 'active' : ''}`}>

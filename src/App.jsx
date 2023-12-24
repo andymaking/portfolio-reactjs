@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Nav from './components/NavBar';
@@ -8,20 +8,20 @@ import Cursor from './components/Cursor';
 import Loading from './components/Loading';
 
 
-// const Nav = React.lazy(() => import("./components/NavBar"));
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
 const Work = React.lazy(() => import("./pages/Portfolio"));
 const Project = React.lazy(() => import("./pages/CaseStudy"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
 const Contact = React.lazy(() => import("./pages/Contact"));
+const NoPage = React.lazy(() => import("./pages/NoPage"));
 
 
 function ScrollToTop() {
     const { pathname } = useLocation();
 
     React.useEffect(() => {
-        window.scrollTo(0, 0); // Scroll to the top of the page when the pathname changes
+        window.scrollTo(0, 0);
     }, [pathname]);
 
     return null;
@@ -31,6 +31,7 @@ function ScrollToTop() {
 const App = () => {
 
     const [isMenuClicked, setIsMenuClicked] = useState(false);
+    const [noPage, setNoPage] = useState(false);
 
     const openMenu = () => {
         setIsMenuClicked(true);
@@ -52,10 +53,21 @@ const App = () => {
                     : 'portfolio'
                 : currentPage.slice(1);
 
+    useEffect(() => {
+        const validRoutes = ['/about', '/portfolio', '/pricing', '/contact'];
+
+        if (!validRoutes.includes(currentPage)) {
+            setNoPage(true);
+        } else {
+            setNoPage(false);
+        }
+
+    }, [currentPage]);
+
+
     return (
         <>
-
-            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} />
+            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} noPage={noPage} />
 
             <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
 
@@ -72,46 +84,38 @@ const App = () => {
                         <Route
                             path="/"
                             element={
-                                <>
-                                    <Home />
-                                </>
+                                <Home />
                             } exact />
                         <Route
                             path="/about"
                             element={
-                                <>
-                                    <About />
-                                </>
+                                <About />
                             } />
                         <Route
                             path="/portfolio"
                             element={
-                                <>
-                                    <Work />
-                                </>
+                                <Work />
                             } />
                         <Route
                             path="/portfolio/:projectId"
                             element={
-                                <>
-                                    <Project />
-                                </>
+                                <Project />
                             } />
                         <Route
                             path="/pricing"
                             element={
-                                <>
-                                    <Pricing />
-                                </>
+                                <Pricing />
                             } />
                         <Route
                             path="/contact"
                             element={
-                                <>
-                                    <Contact />
-                                </>
+                                <Contact />
                             } />
-                        {/* <Route path="*" element={<NoPage />} /> */}
+                        <Route path="*"
+                            element={
+                                <NoPage />
+                            }
+                        />
                     </Routes>
 
                     <Footer />

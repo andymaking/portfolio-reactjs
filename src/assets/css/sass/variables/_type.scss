@@ -21,6 +21,14 @@
     font-display: swap;
 }
 
+// @font-face {
+//     font-family: "Fancyou";
+//     src:
+//         url("/src/assets/fonts/Vacelyn.ttf") format("truetype");
+//     font-style: normal;
+//     font-display: swap;
+// }
+
 :root {
     --font-size: 20px;
     --font-family: "Vegur";
@@ -60,6 +68,7 @@ $steps: 4;
     @include devices(phone) {
         font-size: calculate-font-size($baseFontSize, $steps);
     }
+
 }
 
 @mixin h2($baseFontSize: 72px) {
@@ -81,7 +90,7 @@ $steps: 4;
     }
 
     @include devices(phone) {
-        font-size: calculate-font-size($baseFontSize, $steps - 1);
+        font-size: calculate-font-size($baseFontSize, $steps);
     }
 }
 

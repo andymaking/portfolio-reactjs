@@ -124,13 +124,13 @@
     right: 0;
     left: unset;
     padding: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    // -webkit-transform: translate3d(100%, 0, 0);
+    // transform: translate3d(100%, 0, 0);
     top: 0;
     z-index: 100;
     visibility: hidden;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
     z-index: 2000;
     overflow: hidden;
 
@@ -203,21 +203,19 @@
         padding-left: var(--body-top-padding);
         box-shadow: -38px 29px 100px 20px #00282296;
         visibility: visible;
-        -webkit-transition: -webkit-transform 0.5s;
-        transition: transform 0.5s;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+        transition: width 0.3s;
 
         @include devices(tablet) {
             padding-left: 12vw;
+            padding-right: 12vw;
             padding-top: 24px;
-            padding-bottom: var(--page-padding);
+            padding-bottom: var(--parents-elements-gap);
         }
 
         @include devices(phone) {
-            padding-right: 12vw;
+            padding-right: 8vw;
+            padding-left: 8vw;
             width: 100%;
-            padding-bottom: var(--body-top-padding);
         }
     }
 
@@ -274,9 +272,9 @@
     height: auto;
     perspective: 1000px;
     -webkit-transition:
-        -webkit-transform 0.5s;
+        -webkit-transform 0.3s;
     transition:
-        transform 0.5s;
+        transform 0.3s;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 

@@ -25,6 +25,10 @@
     // cursor: none !important;
 }
 
+img, svg, canvas {
+    pointer-events: none;
+}
+
 ::-webkit-scrollbar {
     width: 4px;
     height: 0;
@@ -215,5 +219,27 @@ ol {
 
     @media only screen and(max-width: 850px) {
         display: none;
+    }
+}
+
+
+.not-found {
+    gap: var(--has-button-gap);
+
+    svg {
+        width: 104px;
+        fill: var(--active-secondary);
+
+        @include devices(tablet) {
+            width: 72px;
+        }
+
+        @include devices(phone) {
+            width: 56px;
+        }
+    }
+
+    .head-text{
+        gap: var(--paragraphs);
     }
 }

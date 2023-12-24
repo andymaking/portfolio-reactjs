@@ -52,7 +52,7 @@ const Projects = ({ projectList, category }) => {
                                     ) : (
                                         <>
                                             <h2 className="h3">{project.name}</h2>
-                                            <p className="p1">{project.type}</p>
+                                            <p className="p2">{project.type}</p>
                                         </>
                                     )}
                                 </div>

@@ -2,6 +2,10 @@
     padding: var(--padding-none) var(--page-padding) var(--caption-columns);
     background-color: var(--active-neutral);
 
+    &.empty{
+        padding-bottom: var(--main-gap);
+    }
+
     & .head {
         padding: var(--body-top-padding) 0 0;
         width: 100%;
@@ -54,7 +58,7 @@
                 }
 
                 &-pair {
-                    gap: var(--elements-inline-padding);
+                    gap: var(--has-button-gap);
 
                     @include devices(tablet) {
                         flex-direction: column;

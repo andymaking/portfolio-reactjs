@@ -17,7 +17,7 @@
                 }
 
                 .tagger {
-                    gap: var(--paragraphs);
+                    gap: 16px;
                     padding: 0 var(--page-padding);
 
                     @include devices(tablet) {
