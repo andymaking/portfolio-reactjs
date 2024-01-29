@@ -2,7 +2,7 @@
     padding: var(--padding-none) var(--page-padding) var(--caption-columns);
     background-color: var(--active-neutral);
 
-    &.empty{
+    &.empty {
         padding-bottom: var(--main-gap);
     }
 
@@ -46,32 +46,32 @@
         }
 
         .works {
-            gap: var(--elements-inline-padding);
+            gap: var(--element-block-padding);
             flex-wrap: wrap;
             flex-direction: row;
 
             .projekt {
                 align-self: flex-start;
 
-                &:hover .projekt-container-image {
-                    transform: scale(1.04);
+                &:hover .projekt-container-image img {
+                    transform: scale(1.2);
                 }
 
                 &-pair {
-                    gap: var(--has-button-gap);
+                    gap: var(--box-elements-gap);
 
                     @include devices(tablet) {
                         flex-direction: column;
                     }
 
                     .projekt-container {
-                        gap: var(--box-elements-gap);
+                        gap: var(--paragraphs);
                         width: 100%;
 
                         &-image {
                             background: var(--disabled-primary);
                             height: 496px;
-                            border-radius: 20px;
+                            border-radius: 24px;
                             overflow: hidden;
                             transition: all 0.6s ease;
                             width: 100% !important;
@@ -85,13 +85,13 @@
                                 min-height: 100%;
                                 transition: all 0.5s linear;
 
-                                &.hide-till-load {
-                                    opacity: 0;
-                                }
+                                // &.hide-till-load {
+                                //     opacity: 0;
+                                // }
 
-                                &.hide-undo {
-                                    opacity: 1;
-                                }
+                                // &.hide-undo {
+                                //     opacity: 1;
+                                // }
                             }
 
                             @include devices(tablet) {
@@ -124,6 +124,10 @@
                                 gap: var(--paragraphs);
                                 width: 100%;
                                 padding: var(--padding-none) var(--buttons-links);
+
+                                .typer {
+                                    text-align: right;
+                                }
                             }
                         }
                     }
@@ -132,7 +136,7 @@
 
                     @for $i from 1 through $div-count {
                         $number: if($i % 2 == 1, $i, $i + 1);
-                        $width: if($number % 4 == 1, 58%, 42%);
+                        $width: if($number % 4 == 1, 60%, 40%);
 
                         &:nth-child(#{$number}) {
                             .projekt:nth-child(1) {

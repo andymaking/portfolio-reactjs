@@ -222,6 +222,9 @@ ol {
     }
 }
 
+.case__overlayed {
+    filter: blur(8px);
+}
 
 .not-found {
     gap: var(--has-button-gap);

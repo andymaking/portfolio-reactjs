@@ -10,7 +10,7 @@ const Projects = ({ projectList, category }) => {
     }
 
     const filterAndExtractKeys = (array, keys) => {
-        return array.map(({ name, title, coverhash, type, uniqueid, cloudinary }) => ({ name, title, coverhash, type, uniqueid, cloudinary }));
+        return array.map(({ name, title, coverhash, type, uniqueid, imageSrc }) => ({ name, title, coverhash, type, uniqueid, imageSrc }));
     };
 
     if (category !== "") {
@@ -38,21 +38,19 @@ const Projects = ({ projectList, category }) => {
                         <div className="projekt-container w-full flex flex-col">
                             <div className="projekt-container-image">
                                 <Image
-                                    src={null}
+                                    src={project.imageSrc}
                                     hash={project.coverhash}
                                     alt={`${project.name} case study`}
-                                    imageType={'project'}
-                                    cloudSrc={project.cloudinary}
                                 />
                             </div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
                                 <div className="clave flex w-full flex-row items-center justify-between">
                                     {category === "" ? (
-                                        <p className="p1">{project.title}</p>
+                                        <p className="p2">{project.title}</p>
                                     ) : (
                                         <>
                                             <h2 className="h3">{project.name}</h2>
-                                            <p className="p2">{project.type}</p>
+                                            <p className="p2 typer">{project.type}</p>
                                         </>
                                     )}
                                 </div>

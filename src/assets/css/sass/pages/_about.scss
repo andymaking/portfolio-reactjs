@@ -24,6 +24,8 @@
                 height: auto;
                 align-self: stretch;
                 height: 528px;
+                border-radius: 24px;
+                overflow: hidden;
 
                 @include devices(tablet) {
                     width: 100%;

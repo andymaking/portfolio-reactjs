@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from 'gsap';
 
 import Link from "./Links";
 
@@ -6,9 +7,26 @@ import { ReactComponent as Logo } from "../assets/images/newlogo.svg";
 
 const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
 
+    const navRef = useRef(null);
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const t1 = gsap.timeline()
+
+            t1.from('.nav-shape', {
+                top: "-60px",
+                opacity: 0,
+                duration: 1,
+            })
+
+        }, navRef)
+
+        return () => ctx.revert()
+    }, []);
+
     return (
-        <nav className={`nav`}>
-            <div className={`flex flex-row items-center justify-between ` + `${isMenuClicked ? 'nav-clicked' : ''}`}>
+        <nav className={`nav`} ref={navRef}>
+            <div className={`nav-shape flex flex-row items-center justify-between ` + `${isMenuClicked ? 'nav-clicked' : ''}`}>
                 {currentPage === '/' &&
                     <div className="logo flex flex-row items-center justify-center">
                         <Logo />

@@ -7,6 +7,8 @@ import Link from "./Links";
 
 const Footer = forwardRef((props, ref) => {
 
+    const currentYear = new Date().getFullYear();
+
     const location = useLocation();
     const currentPage = location.pathname;
 
@@ -17,15 +19,15 @@ const Footer = forwardRef((props, ref) => {
                     <div className="partner-div w-full flex flex-col items-start justify-center">
                         <div className="title flex flex-col">
                             <h2 className="h2">
-                                Got an idea in mind?
+                                Let's work together to bring your idea to life!
                             </h2>
-                            <p className='p1'>I will offer you a digital product that provides your users with a stress-free experience and maximum satisfaction.</p>
+                            {/* <p className='p1'>I will work with you through every step of the design process to ensure that your digital product satisfies your users' needs and provides maximum satisfaction.</p> */}
                         </div>
                         <Link type={"secondary"} href={"/contact"}>
                             <div className="icon-hold flex items-center justify-center">
                                 <ArrowRight size={24} weight="regular" />
                             </div>
-                            Get in touch
+                            <span>Send me a message</span>
                         </Link>
                     </div>
                     <span className="liner secondary"></span>
@@ -96,7 +98,7 @@ const Footer = forwardRef((props, ref) => {
                         </svg>
                     </Link>
                 </div>
-                <p className='p2'>Copyright Jude Joshua 2023. All rights reserved.</p>
+                <p className='p2'>&copy; {currentYear} Jude Joshua. All rights reserved.</p>
             </div>
         </footer>
     )

@@ -2,7 +2,7 @@ a,
 button {
     @include p1;
     color: var(--active-primary);
-    gap: var(--buttons-links);
+    // gap: var(--buttons-links);
 
     .icon-hold {
         border-radius: 1000px;
@@ -10,7 +10,7 @@ button {
         color: var(--active-primary);
         border: 2px solid var(--active-primary);
         overflow: hidden;
-        transition: color 0.3s ease-in;
+        transition: 0.3s ease-in;
 
         &::before {
             content: "";
@@ -28,9 +28,16 @@ button {
         }
     }
 
+    & span {
+        border: 2px solid var(--active-primary);
+        padding: 1px 16px 4px;
+        border-radius: 30px;
+    }
+
     &:hover {
         .icon-hold {
             color: var(--active-accent);
+            transform: rotate(-45deg);
 
             &::before {
                 left: 0;
@@ -49,6 +56,10 @@ button {
             &::before {
                 background-color: var(--active-accent);
             }
+        }
+
+        & span {
+            border-color: var(--active-accent);
         }
 
         &:hover {

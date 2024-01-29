@@ -171,7 +171,7 @@ const List = ({ type, linkText, link }) => {
                             <div className="icon-hold flex items-center justify-center">
                                 <ArrowRight size={24} weight="regular" />
                             </div>
-                            {linkText}
+                            <span>{linkText}</span>
                         </Links>
                     )
                 } else {
@@ -180,7 +180,7 @@ const List = ({ type, linkText, link }) => {
                             <div className="icon-hold flex items-center justify-center">
                                 <ArrowRight size={24} weight="regular" />
                             </div>
-                            {linkText}
+                            <span>{linkText}</span>
                         </Links>
                     )
                 }

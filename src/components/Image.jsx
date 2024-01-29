@@ -4,11 +4,11 @@ import { Blurhash } from "react-blurhash";
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-import { Image as CloudinaryImage, Transformation, CloudinaryContext } from 'cloudinary-react';
+// import { Image as CloudinaryImage, Transformation, CloudinaryContext } from 'cloudinary-react';
 
-const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
+const ImageContainer = ({ src, hash, alt, imageType }) => {
 
-    src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
+    // src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
 
     return (
         <>
@@ -31,11 +31,19 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
 
             {imageType === "project" ? (
                 <>
-                    <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}>
+                    {/* <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}>
                         <CloudinaryImage publicId={cloudSrc} data-src={src} alt={alt} loading="lazy" className={"lazyload object-cover"}>
                             <Transformation crop='scale' />
                         </CloudinaryImage>
-                    </CloudinaryContext>
+                    </CloudinaryContext> */}
+                    <img
+                        src={`/`+ `${src}`}
+                        data-src={src}
+                        className={"lazyload object-cover"}
+                        alt={alt}
+                        // effect="blur"
+                        loading="lazy"
+                    />
                 </>
             ) : (
                 <img
@@ -43,7 +51,7 @@ const ImageContainer = ({ src, hash, alt, imageType, cloudSrc }) => {
                     data-src={src}
                     className={"lazyload object-cover"}
                     alt={alt}
-                    effect="blur"
+                    // effect="blur"
                     loading="lazy"
                 />
             )}

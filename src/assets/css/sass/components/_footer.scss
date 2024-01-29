@@ -16,14 +16,14 @@ footer {
 
     .partner-div {
         padding: var(--header-gap) 0 var(--page-padding);
-        gap: var(--has-button-gap);
+        gap: var(--element-block-padding);
 
         @include devices(phone) {
             padding-bottom: var(--parents-elements-gap);
         }
 
         .title {
-            width: 50%;
+            width: 49%;
             gap: var(--paragraphs);
 
             @include devices(tablet) {

@@ -13,7 +13,7 @@
                 margin: 0 40px;
                 color: var(--active-accent);
 
-                @include devices(phone){
+                @include devices(phone) {
                     margin: 0 24px;
                 }
             }
@@ -27,5 +27,20 @@
     }
     to {
         transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 400;
+    }
+    20% {
+        stroke-dashoffset: 0;
+    }
+    70% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -400;
     }
 }

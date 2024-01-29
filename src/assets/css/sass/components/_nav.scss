@@ -20,7 +20,7 @@
             width: auto;
             height: 40px;
 
-            @include devices(phone){
+            @include devices(phone) {
                 height: 28px;
             }
         }
@@ -113,7 +113,7 @@
     position: absolute;
     width: 100vw;
     z-index: 1500;
-    left: -50vw;    
+    left: -50vw;
 }
 
 .menu-links-holder {
@@ -124,8 +124,6 @@
     right: 0;
     left: unset;
     padding: 0;
-    // -webkit-transform: translate3d(100%, 0, 0);
-    // transform: translate3d(100%, 0, 0);
     top: 0;
     z-index: 100;
     visibility: hidden;
@@ -155,10 +153,15 @@
         }
 
         & .menuLink {
+            opacity: 0;
+            top: 40px;
+            transition: 0.4s linear;
+            transition-delay: 0.3s;
+
             a {
                 @include h2;
                 color: var(--active-accent);
-                align-items: flex-center;
+                align-items: center;
                 gap: var(--has-button-gap);
                 transition: 0.5s ease;
 
@@ -170,6 +173,20 @@
                     fill: var(--active-accent);
                 }
 
+                &::before {
+                    content: "\2192";
+                    position: absolute;
+                    bottom: 10%;
+                    left: -20%;
+                    color: var(--active-placeholder);
+                    opacity: 0;
+                    transition: 0.5s ease-in;
+
+                    @include devices(tablet) {
+                        display: none;
+                    }
+                }
+
                 &:hover,
                 &:hover svg,
                 &:hover svg g,
@@ -178,15 +195,7 @@
                     fill: var(--active-placeholder);
 
                     &::before {
-                        content: "\2192";
-                        position: absolute;
-                        bottom: 10%;
-                        left: -20%;
-                        color: var(--active-placeholder);
-
-                        @include devices(tablet) {
-                            display: none;
-                        }
+                        opacity: 1;
                     }
                 }
             }
@@ -217,12 +226,26 @@
             padding-left: 8vw;
             width: 100%;
         }
+
+        & .menuLink {
+            opacity: 1;
+            top: 0;
+        }
+
+        & .menu-close {
+            opacity: 1;
+            right: 0;
+        }
     }
 
     .menu-close {
         cursor: pointer;
         gap: var(--buttons-links);
         padding-top: var(--buttons-links);
+        opacity: 0;
+        right: -40px;
+        transition: 0.4s linear;
+        transition-delay: 0.3s;
 
         @include devices(tablet) {
             align-self: flex-end;
@@ -271,10 +294,8 @@
     z-index: 99;
     height: auto;
     perspective: 1000px;
-    -webkit-transition:
-        -webkit-transform 0.3s;
-    transition:
-        transform 0.3s;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 

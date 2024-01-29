@@ -3,6 +3,7 @@ import React from "react";
 const ProjectsList = [
     {
         uniqueId: "jw09a422",
+        
         people: {
             role: "Product designer",
             team: {
@@ -124,20 +125,20 @@ const ProjectsList = [
             //     hash: "LBS?Jmt7oeozxufQa|fQ~AWVWCj[",
             // },
             2: {
-                title: "The goal was easy - To have a straight-forward journey and test it to see how well users would adopt them.",
+                title: "The goal was easy - Design a straight-forward journey and test it to see how well users would adopt them.",
                 image: "/images/jw09a422/l6mf8ajdczxlyuq09xeg.webp",
                 hash: "LGSsEPofxZoft7fQfQfQ~Aj[NHaz",
             },
         },
         sketches: {
-            title: "And to achieve this, we decided to go for a mobile-first approach, taking away the unneccesary scrolling behaviour. This way, users wouldn't have to scroll too far to find important information.",
+            title: "With a mobile-first approach, we ensured that important information was easily accessible to users without having to scroll too much.",
             image: {
                 sketch: "/images/jw09a422/sketches.webp",
                 hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
             }
         },
         wireframes: {
-            title: "While it was intimidating to start with the mobile screens first, I was able to maintain the mobile app feel that made going through easy and seamless.",
+            title: "It was interesting to start by designing the mobile screens first, given the nature of the target user base. Doing so helped me understand what needed to have a high hierarchy and what didn't.",
             mobile: {
                 design: "/images/jw09a422/mobile-wireframes.webp",
                 hash: "L6PQjL%M0y9F~Ws8D%%M9@RPrq-;",
@@ -148,7 +149,7 @@ const ProjectsList = [
             }
         },
         testing: {
-            title: "The ideas were successful! Users loved them, but raised a few concerns during testing.",
+            title: "We ran these ideas with a couple of users in an internal test. They loved the improvements but raised a few concerns as to what they wanted more of.",
             complaints: {
                 1: "\“Site looks loose on desktop. It’s as though you guys don’t have a lot of products.\”. Desktop users didn't like the excessive negative space available on desktop.",
                 2: "Hospital owners had concerns about whether they would have to enter their data every time they wanted to place an order or make a request.",
@@ -156,7 +157,7 @@ const ProjectsList = [
                 4: "\“The site is not really visually appealing. I want to buy easily but I still want something that I can trust\”",
             },
             numbers: {
-                title: "The numbers made it even more encouraging... Users were more curious and excited to navigate through.",
+                title: "In addition to discovering more desktop users, we saw users felt more relaxed, were more curious and excited to see more while navigating through as opposed to \“having everything bumped at them from the start\”.",
                 1: "10%--user bounce rates",
                 2: "72%--user click-through rate",
                 3: "80%--faster order experience",
@@ -169,7 +170,7 @@ const ProjectsList = [
                 hash: "L6SipqJV^j%1T0s.s:a}~AxZIpR,",
             }
         },
-        branding:{
+        branding: {
             title: "When it comes to branding, keeping things in line with what users already know, is the best way to go.",
             describe: "Our focus was to maintain a serene and gentle ambience of the platform, which was particularly important because the values we were dealing with were identical. We aimed to preserve the boldness of the design while giving it a modern look that wouldn't overwhelm users.\n\nOur primary goal was to inspire user confidence and ensure that they felt that the platform catered to their needs. We wanted them to feel that nothing was done in haste, and that every step was taken with care and consideration. To achieve this, we had to strike the perfect balance between boldness and subtlety.",
             colors: {
@@ -186,36 +187,92 @@ const ProjectsList = [
                 hash: "L342y8?wIAD%-=xuRjRj8^ITxuxv",
             }
         },
-        components:{
+        components: {
             title: "Setting the states and components for the elements.",
             images: {
-                1:{
+                1: {
                     image: "/images/jw09a422/buttons-Links.webp",
                     hash: "L9SigSMd~Ux^R-NGkCj[t-b_M|iw",
                 },
-                2:{
+                2: {
                     image: "/images/jw09a422/form-elemments.webp",
                     hash: "L3S~x6RS_2tS_3xaWBM|%NRkD*sp",
                 }
             }
         },
-        finalWireframes:{
-            title: "With these settings, a refined idea...",
+        finalWireframes: {
+            title: "Putting all of this together, it was easier to create something that was both visually appealing and focused on streamlining the unnecessary parts of the flow.",
             images: {
-                1:{
+                1: {
                     image: "/images/jw09a422/hifi-wireframes.webp",
                     hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
                 },
-                2:{
+                2: {
                     image: "/images/jw09a422/hifi-wireframes-1.webp",
                     hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
                 },
-                3:{
+                3: {
                     image: "/images/jw09a422/hifi-wireframesmobile.webp",
                     hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
                 }
             }
-        }
+        },
+        "final tests": {
+            title: "On testing again, users showed great enthuthiasm and excitement to use the new look and they mostly agreed it was a near-perfect attempt to help them resolve their needs.",
+            describe: "During testing, we observed that users displayed a remarkably high level of enthusiasm and excitement for the revamped design. They were visibly impressed by the updated look and feel of the interface and expressed their admiration for the improvements made. The updated look and feel of the interface was intuitive and user-friendly, which made it easy to understand and use.\n\nThey also mentioned that the improved design allowed for a faster and more efficient way for them to complete their tasks, which was important for them. At the end of the day, user click through rate had gone up to 80% and users were 70% more comfortable and confident to buy online than to order on WhatsApp. This overwhelmingly positive feedback provided us with valuable insight into how we could further improve the user experience and also gave us the motivation to continue to refine the interface and make it even more user-friendly and efficient.",
+            list: {
+                1: "This feels refreshing. The flow is simple and straightforward. The dashboard is so clean!",
+                2: "It’s now very easy to find categories and look for what I need.",
+                3: "I know the filters are looking better now, but I think it can be better. I find it hard to scroll through sometimes.",
+                4: "I like that I can place an order without having to create an account.",
+                5: "Wow! It loads so fast!",
+                6: "I can now send a list? This is a great addition and I'm sure my team will love it.",
+                7: "Bring back the Whatsapp button. I think it would be a nice add-on.",
+            },
+            img: {
+                image: "/images/jw09a422/conversions-gif.gif",
+                hash: "L6RDK4M,M}tjjfX6oet3}8TFR-Vv",
+            }
+        },
+        stakeholder: {
+            title: "While users enjoyed the new experience and interface, stakeholders, wanted something \“loud and full\”.",
+            describe: "During our final review with stakeholders, they were concerned with whether this new interface showcased their services, as they wanted to maintain a view that had all of the services displaying at once. They wanted ads displayed on empty spaces to present a more fuller version with everything at once as it made them feel like less wasn't enough. However, after deliberations, we were able to agree that about 80% services were not in use and would best fit in later as features added on to enhance usability; once more research was done with the users to see the best way around displaying these services.\n\nSeeing as the present goal and need of these users was to search and shop, we tried to emphasize the need to have features and functionalities that improved this goal without making the system slow. Among budgetary considerations and timeline pressures, we also discussed the possibilities of rolling out these other services as part of beta tests in the future to see how users would respond to seeing them.\n\nHowever, some of the things we would fix included:",
+            list: {
+                1: "WhatsApp button to ease users into knowing that there is a human factor behind the scenes, if anything went wrong.",
+                2: "The homepage lacked some sort of capturing effect and it looked like it catered more for a B2C audience and less of a B2B audience.",
+            }
+        },
+        tech_constraints: {
+            title: "Technical Constraints:",
+            describe: "After the recent redesign of our medical e-commerce platform, we encountered several notable technical constraints that influenced the project's development and functionality. The redesign aimed to enhance user experience, implement modern design principles, and improve overall performance. However, certain technical challenges emerged during and after the process.\n\nSome of the fixes that stood out included, but not limited to:",
+            list: {
+                1: "Seamless integration of the redesigned user interface with existing backend systems.",
+                2: "Implementing the product slider for the display of featured products on the landing page.",
+                3: "Cross-browser compatibility and responsiveness across various devices. Some modals like the filters modal were not fitted properly and this affected how the website appeared on desktop and mobile.",
+                4: "Breaking the product page into two - product information and product details page. There was some kind of conflict with the best way to make it work.",
+            }
+        },
+        iterations: {
+            title: "Iterations:",
+            images: {
+                1: {
+                    image: "/images/jw09a422/hifi-wireframes.webp",
+                    hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
+                },
+                2: {
+                    image: "/images/jw09a422/hifi-wireframes-1.webp",
+                    hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
+                },
+                3: {
+                    image: "/images/jw09a422/hifi-wireframesmobile.webp",
+                    hash: "LDP@FXIVS#bb~qxuIoof0KV@o3of",
+                }
+            }
+        },
+        conclusion: {
+            title: "Conclusion:",
+            describe: "Moving forward, the next steps for FirstMedtrade Africa would be to address the negative feedback received during final testing. There were a couple of complaints about the whatsapp button and about how not so user-friendly the filters functionality felt. These would be taken as potential user drop-off points and they would be addressed by carrying out additional research to know what is missing and what can be fixed to ensure at least 80% user satisfaction.\n\nWith these next steps in mind, FirstMedtrade Africa is well-positioned to redefine the way hospitals, doctors, and patients access and procure essential medical equipment and consumables from local vendors and international manufacturers.",
+        },
     },
     {
         uniqueId: "jwcdr2r1",

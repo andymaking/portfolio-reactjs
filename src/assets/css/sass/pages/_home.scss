@@ -1,6 +1,6 @@
 .home {
     .head-text {
-        padding-bottom: 200px;
+        padding-bottom: var(--page-padding);
 
         @include devices(tablet) {
             padding-bottom: 160px;
@@ -40,7 +40,7 @@
                     top: 36%;
                     transform: rotate(-12deg) scale(0.4);
                     background: var(--active-secondary);
-                    color: var(--active-accent);
+                    color: var(--active-neutral);
                 }
 
                 @include devices(phone) {
@@ -66,13 +66,26 @@
                 }
             }
 
-            &.hightlight {
+            &.highlight {
                 border-radius: 160px;
-                background: var(--active-secondary);
                 padding: 16px 88px 24px;
-                color: var(--active-accent);
+                color: var(--active-neutral);
                 overflow: hidden;
                 white-space: nowrap;
+
+                & #highlight-background {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--active-secondary);
+                    left: 0;
+                    top: 0;
+                }
+
+                & #highlight-reel {
+                    z-index: 1;
+                }
 
                 @media only screen and(max-width: 850px) {
                     padding-left: var(--elements-inline-padding);
@@ -113,10 +126,15 @@
             .more {
                 position: absolute;
                 top: 50%;
-                right: 49%;
-                fill: var(--active-primary);
-                height: 208px;
+                right: 48%;
                 width: 144px;
+
+                path {
+                    stroke-dasharray: 400;
+                    stroke-dashoffset: 400;
+                    animation: dash 5s linear infinite;
+                    animation-delay: 2s;
+                }
 
                 @include devices(tablet) {
                     display: none;
@@ -245,7 +263,7 @@
 
                     @media only screen and(max-width: 850px) {
                         flex: unset;
-                        top: -24px;
+                        // top: -24px;
                     }
 
                     @include devices(phone) {
@@ -425,18 +443,33 @@
 
         .sales-container {
             padding-top: var(--main-gap);
-            // border-radius: 0 128px;
+            align-items: center;
 
             @include devices(tablet) {
-                // border-radius: 0 72px;
+                gap: var(--has-button-gap);
+                flex-direction: column;
             }
 
             @include devices(phone) {
                 // border-radius: 0 48px;
             }
 
+            .title {
+                width: 50%;
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
+            }
+
             &-call {
-                gap: var(--parents-elements-gap);
+                width: 50%;
+                gap: var(--has-button-gap);
+
+                @include devices(tablet) {
+                    flex-direction: row;
+                    width: 100%;
+                }
 
                 @include devices(phone) {
                     flex-direction: column;
@@ -444,8 +477,8 @@
                 }
 
                 &-objects {
-                    width: 28%;
-                    gap: var(--paragraphs);
+                    // width: 28%;
+                    gap: var(--buttons-links);
 
                     @include devices(tablet) {
                         width: 50%;
@@ -457,7 +490,7 @@
                     }
 
                     h4 {
-                        opacity: 0.24;
+                        opacity: 0.48;
                     }
                 }
             }
