@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import supabase from '../config/supaBaseClient';
 import gsap  from 'gsap';
 
@@ -57,29 +57,21 @@ export default function Home({ }) {
         document.title = 'Jude Joshua | Designing User Experiences for Increased conversions.';
     }, []);
 
-    const headerContainerRef = useRef(null);
-
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline()
             const t2 = gsap.timeline()
-            const t3 = gsap.timeline()
 
             t1.from('.loadime', {
                 top: "+=50",
                 opacity: 0,
-                duration: 0.6,
-            })
-            
-            t2.from('#highlight-background', {
-                height: 0,
                 duration: 0.6,
             }).from('.head-text-club-image', {
                 opacity: 0,
                 duration: 0.6
             })
             
-            t3.from('#highlight-reel', {
+            t2.from('#highlight-reel', {
                 top: "+=50",
                 opacity: 0,
                 duration: 0.8,
@@ -88,7 +80,7 @@ export default function Home({ }) {
                 opacity: 0,
                 duration: 0.6
             })
-        }, headerContainerRef)
+        })
 
         return () => ctx.revert()
     }, []);
@@ -112,7 +104,7 @@ export default function Home({ }) {
 
     return (
         <>
-            <header className="landing w-full flex flex-col items-center" ref={headerContainerRef}>
+            <header className="landing w-full flex flex-col items-center">
                 <div className="head">
                     <div className={`head-text flex flex-col items-center justify-center`}>
                         <div className="head-text-top flex flex-col items-center justify-center">

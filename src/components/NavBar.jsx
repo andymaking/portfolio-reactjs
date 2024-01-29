@@ -16,7 +16,7 @@ const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
             t1.from('.nav-shape', {
                 top: "-60px",
                 opacity: 0,
-                duration: 1,
+                duration: 0.7,
             })
 
         }, navRef)

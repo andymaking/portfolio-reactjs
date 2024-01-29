@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
+import gsap  from 'gsap';
 import supabase from '../config/supaBaseClient';
 
 import Tab from '../components/Tab';
@@ -50,13 +51,35 @@ export default function Portfolio() {
         setSelectedTab(tab);
     };
 
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const t1 = gsap.timeline()
+            const t2 = gsap.timeline()
+
+            t1.from(['.loadime, .tagger'], {
+                top: "+=50",
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.2
+            })
+
+            // t2.from('.tagger', {
+            //     top: "+=50",
+            //     opacity: 0,
+            //     duration: 0.6,
+            // })
+        })
+
+        return () => ctx.revert()
+    }, []);
+
     return (
         <>
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top w-full">
-                            <h1 className="h1 text-center">Work</h1>
+                            <h1 className="h1 loadime text-center">Work</h1>
                         </div>
                         <div className="tagger w-full flex justify-center items-start">
                             <Tab tabArray={designCategories} selectedTab={selectedTab} onTabClick={handleTabClick} />

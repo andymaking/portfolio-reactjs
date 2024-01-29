@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
+import gsap  from 'gsap';
 
 import Lists from '../components/Lists';
 import Image from '../components/Image';
@@ -10,13 +11,35 @@ export default function Pricing() {
         document.title = 'About Jude | Designing User Experiences for Increased conversions.';
     }, []);
 
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const t1 = gsap.timeline()
+            const t2 = gsap.timeline()
+
+            t1.from('.loadime', {
+                left: "-=150",
+                opacity: 0,
+                duration: 0.6,
+            })
+            
+            t2.from(['.dol, .content'], {
+                top: "+=150",
+                height: 0,
+                duration: 0.6,
+                stagger: 0.3
+            })
+        })
+
+        return () => ctx.revert()
+    }, []);
+
     return (
         <>
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top flex flex-col items-center justify-center">
-                            <h1 className="h1 text-left">
+                            <h1 className="h1 loadime text-left">
                                 Designing pixels to solve everyday problems.
                             </h1>
                         </div>
