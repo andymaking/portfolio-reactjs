@@ -1893,7 +1893,9 @@ footer {
   -webkit-user-select: none;
   user-select: none; }
 
-img, svg, canvas {
+img,
+svg,
+canvas {
   pointer-events: none; }
 
 ::-webkit-scrollbar {
@@ -2147,19 +2149,19 @@ ol {
   overflow: hidden; }
 
 .cursor {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   pointer-events: none;
   position: fixed;
   padding: 6px;
   transform: translate(-50%, -50%);
-  background-color: var(--active-neutral);
-  color: var(--active-primary);
+  background-color: #006a5d91;
+  color: var(--active-neutral);
   border-radius: 50%;
   z-index: 100000;
-  mix-blend-mode: difference;
   text-align: center;
-  transition: all 0.2s linear; }
+  transition: all 0.2s linear;
+  backdrop-filter: blur(12px); }
   .cursor * {
     opacity: 0; }
   .cursor.linked {
@@ -2173,9 +2175,8 @@ ol {
     width: auto;
     height: auto;
     padding: 16px;
-    background-color: var(--active-secondary);
-    color: var(--active-neutral);
-    mix-blend-mode: unset; }
+    background-color: #006a5d91;
+    color: var(--active-neutral); }
     .cursor.projector * {
       width: 32px;
       height: 32px;

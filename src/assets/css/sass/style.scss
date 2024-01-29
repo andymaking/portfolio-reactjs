@@ -3,9 +3,9 @@
 @import "../../../../node_modules/tailwindcss/utilities";
 
 @import "./variables/breakpoints", "./variables/colors", "./variables/spacings", "./variables/general",
-    "./variables/animations", "./components/loader", "./variables/type", "./pages/home", "./pages/about", "./pages/contact", "./pages/work",
-    "./pages/case_study", "./pages/pricing", "./components/nav", "./components/buttonlink", "./components/tab",
-    "./components/footer";
+"./variables/animations", "./components/loader", "./variables/type", "./pages/home", "./pages/about",
+"./pages/contact", "./pages/work", "./pages/case_study", "./pages/pricing", "./components/nav",
+"./components/buttonlink", "./components/tab", "./components/footer";
 
 *,
 *::before,
@@ -25,7 +25,9 @@
     // cursor: none !important;
 }
 
-img, svg, canvas {
+img,
+svg,
+canvas {
     pointer-events: none;
 }
 
@@ -175,19 +177,22 @@ ol {
 }
 
 .cursor {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     pointer-events: none;
     position: fixed;
     padding: 6px;
     transform: translate(-50%, -50%);
-    background-color: var(--active-neutral);
-    color: var(--active-primary);
+    // background-color: var(--active-neutral);
+    // color: var(--active-primary);
+    background-color: #006a5d91;
+    color: var(--active-neutral);
     border-radius: 50%;
     z-index: 100000;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     text-align: center;
     transition: all 0.2s linear;
+    backdrop-filter: blur(12px);
 
     * {
         opacity: 0;
@@ -206,9 +211,8 @@ ol {
         width: auto;
         height: auto;
         padding: 16px;
-        background-color: var(--active-secondary);
+        background-color: #006a5d91;
         color: var(--active-neutral);
-        mix-blend-mode: unset;
 
         * {
             width: 32px;
@@ -242,7 +246,7 @@ ol {
         }
     }
 
-    .head-text{
+    .head-text {
         gap: var(--paragraphs);
     }
 }

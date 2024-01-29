@@ -20,15 +20,15 @@ export const handleClick = (event, href, navigate) => {
 
             setTimeout(() => {
                 el.className = 'page-transition page-transition--width page-transition--out';
-            }, 2000);
+            }, 1600);
 
             setTimeout(() => {
                 el.className = 'page-transition';
-            }, 2400);
+            }, 1800);
 
             setTimeout(() => {
                 navigate(href);
-            }, 1800);
+            }, 1500);
 
         }
 
