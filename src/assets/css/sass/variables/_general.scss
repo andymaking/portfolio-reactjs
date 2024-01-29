@@ -53,10 +53,6 @@
             .projekt {
                 align-self: flex-start;
 
-                &:hover .projekt-container-image img {
-                    transform: scale(1.2);
-                }
-
                 &-pair {
                     gap: var(--box-elements-gap);
 
@@ -84,14 +80,6 @@
                                 object-position: center;
                                 min-height: 100%;
                                 transition: all 0.5s linear;
-
-                                // &.hide-till-load {
-                                //     opacity: 0;
-                                // }
-
-                                // &.hide-undo {
-                                //     opacity: 1;
-                                // }
                             }
 
                             @include devices(tablet) {
@@ -125,6 +113,18 @@
                                 width: 100%;
                                 padding: var(--padding-none) var(--buttons-links);
 
+                                .h3::after{
+                                    content: "";
+                                    position: absolute;
+                                    background-color: var(--active-secondary);
+                                    top: 100%;
+                                    left: 0;
+                                    width: 0;
+                                    border-radius: 10%;
+                                    height: 2px;
+                                    transition: 0.5s cubic-bezier(0.92, 0, 0.47, 1.01);
+                                }
+
                                 .typer {
                                     text-align: right;
                                 }
@@ -136,7 +136,7 @@
 
                     @for $i from 1 through $div-count {
                         $number: if($i % 2 == 1, $i, $i + 1);
-                        $width: if($number % 4 == 1, 60%, 40%);
+                        $width: if($number % 4 == 1, 50%, 50%);
 
                         &:nth-child(#{$number}) {
                             .projekt:nth-child(1) {
@@ -156,6 +156,16 @@
                         }
                     }
                 }
+                
+                &:hover {
+                    .projekt-container-image img {
+                        transform: scale(1.2);
+                    }
+                    .projekt-container-details .h3::after{
+                        width: 100%;
+                    }
+                }
+
             }
         }
     }

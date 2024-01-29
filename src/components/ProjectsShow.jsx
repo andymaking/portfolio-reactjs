@@ -3,9 +3,9 @@ import React from "react";
 import Link from "./Links";
 import Image from "./Image";
 
-const Projects = ({ projectList, category }) => {
+const ProjectsShow = ({ show, category }) => {
 
-    if (!projectList) {
+    if (!show) {
         return null;
     }
 
@@ -14,14 +14,14 @@ const Projects = ({ projectList, category }) => {
     };
 
     if (category !== "") {
-        projectList = category === 'all projects'
-            ? filterAndExtractKeys(projectList)
-            : filterAndExtractKeys(projectList.filter(project => project.category.toLowerCase() === category));
+        show = category === 'all projects'
+            ? filterAndExtractKeys(show)
+            : filterAndExtractKeys(show.filter(project => project.category.toLowerCase() === category));
     }
 
     const projectPairs = [];
-    for (let i = 0; i < projectList.length; i += 2) {
-        const pair = projectList.slice(i, i + 2);
+    for (let i = 0; i < show.length; i += 2) {
+        const pair = show.slice(i, i + 2);
         projectPairs.push(pair);
     }
 
@@ -71,4 +71,4 @@ const Projects = ({ projectList, category }) => {
     );
 };
 
-export default Projects;
+export default ProjectsShow;

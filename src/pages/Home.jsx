@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import supabase from '../config/supaBaseClient';
-import gsap  from 'gsap';
+import gsap from 'gsap';
 
-import ProjectList from '../components/ProjectList';
+import ProjectsShow from '../components/ProjectsShow';
+import Projects from '../components/Projects';
 import Lists from '../components/Lists';
 import Image from '../components/Image';
-import Loading from '../components/Loading';
 
 import EmojiSmile from "../assets/images/Smiling Face.svg";
 import EmojiRocket from "../assets/images/Rocket.svg";
@@ -19,39 +18,11 @@ import Reviewer02 from "../assets/images/review-2.webp";
 import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 
 export default function Home({ }) {
-    const [fetchError, setFetchError] = useState(null);
-    const [projects, setProjects] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('projects')
-                    .select()
-                    .is('featured', 'true')
-                    .order('id', { ascending: true });
-
-                if (error) {
-                    setFetchError('Could not fetch the data');
-                    setProjects(null);
-                    console.error(error);
-                }
-
-                if (data) {
-                    setProjects(data);
-                    setFetchError(null);
-                }
-            } catch (error) {
-                setFetchError('Could not fetch the data');
-                setProjects(null);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProjects();
-    }, []);
+    const featuredProjects = Projects.filter((project) => project.featured === true);
+    const compareIds = (a, b) => {
+        return a.id - b.id;
+    };
+    const projects = featuredProjects.slice().sort(compareIds);
 
     useEffect(() => {
         document.title = 'Jude Joshua | Designing User Experiences for Increased conversions.';
@@ -70,12 +41,12 @@ export default function Home({ }) {
                 opacity: 0,
                 duration: 0.6
             })
-            
+
             t2.from('#highlight-reel', {
                 top: "+=50",
                 opacity: 0,
                 duration: 0.8,
-            }).from('.head-text-club-grab',{
+            }).from('.head-text-club-grab', {
                 left: "-=100",
                 opacity: 0,
                 duration: 0.6
@@ -140,12 +111,7 @@ export default function Home({ }) {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    {isLoading && <Loading className="">loading projects</Loading>}
-                    {!isLoading && !fetchError && (
-                        <>
-                            <ProjectList projectList={projects} category={''} />
-                        </>
-                    )}
+                    <ProjectsShow show={projects} category={''} />
                 </article>
                 <article className="process-container w-full flex flex-col items-start">
                     <div className="title">

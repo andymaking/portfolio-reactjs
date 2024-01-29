@@ -5,7 +5,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 import Link from "./Links";
 
-const Footer = forwardRef((props, ref) => {
+const Footer = forwardRef(() => {
 
     const currentYear = new Date().getFullYear();
 
@@ -18,10 +18,10 @@ const Footer = forwardRef((props, ref) => {
                 <div className="w-full flex flex-col items-start justify-center">
                     <div className="partner-div w-full flex flex-col items-start justify-center">
                         <div className="title flex flex-col">
-                            <h2 className="h2">
+                            <h2 className="h3">
                                 Let's work together to bring your idea to life!
                             </h2>
-                            {/* <p className='p1'>I will work with you through every step of the design process to ensure that your digital product satisfies your users' needs and provides maximum satisfaction.</p> */}
+                            <p className='p1'>I will work with you through every step of the design process to ensure that your digital product satisfies your users' needs and provides maximum satisfaction.</p>
                         </div>
                         <Link type={"secondary"} href={"/contact"}>
                             <div className="icon-hold flex items-center justify-center">

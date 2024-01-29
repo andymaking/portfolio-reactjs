@@ -32,12 +32,37 @@ button {
         border: 2px solid var(--active-primary);
         padding: 1px 16px 4px;
         border-radius: 30px;
+
+        &::before {
+            content: "";
+            background-color: var(--active-primary);
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+            top: 0;
+            left: -70%;
+            position: absolute;
+            border-radius: 1000px;
+            transition:
+                transform 0.3s ease-in-out,
+                left 0.3s ease-in-out;
+                z-index: -1;
+        }
     }
 
     &:hover {
         .icon-hold {
             color: var(--active-accent);
             transform: rotate(-45deg);
+
+            &::before {
+                left: 0;
+                transform: scale(1);
+            }
+        }
+
+        & span {
+            color: var(--active-accent);
 
             &::before {
                 left: 0;
@@ -60,10 +85,17 @@ button {
 
         & span {
             border-color: var(--active-accent);
+
+            &::before {
+                background-color: var(--active-accent);
+            }
         }
 
         &:hover {
             .icon-hold {
+                color: var(--active-secondary-dark);
+            }
+            & span {
                 color: var(--active-secondary-dark);
             }
         }

@@ -83,7 +83,7 @@ const CaseStudy = () => {
     }, [project]);
 
 
-    useEffect(() => {
+    useEffect(() => {                           //---------------------------outline
         if (project && project.length > 0) {
             const parentDiv = parentRef.current;
 

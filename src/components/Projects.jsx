@@ -1,4 +1,4 @@
-[
+const Projects = [
     {
         "id": 2,
         "featured": false,
@@ -126,3 +126,5 @@
         "imageSrc": "images/jw032qa1/m6hmebi3faindigzx6kz.webp"
     }
 ]
+
+export default Projects;

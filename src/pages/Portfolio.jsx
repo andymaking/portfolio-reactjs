@@ -1,45 +1,20 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import gsap  from 'gsap';
-import supabase from '../config/supaBaseClient';
+import gsap from 'gsap';
 
 import Tab from '../components/Tab';
-import ProjectList from '../components/ProjectList';
-import Loading from '../components/Loading';
+import ProjectsShow from '../components/ProjectsShow';
+import Projects from '../components/Projects';
 
 export default function Portfolio() {
-    const [fetchError, setFetchError] = useState(null);
-    const [projects, setProjects] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
     const [selectedTab, setSelectedTab] = useState('All projects');
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('projects')
-                    .select()
-                    .order('id', { ascending: true });
-
-                if (error) {
-                    setFetchError('Could not fetch the data');
-                    setProjects(null);
-                    console.error(error);
-                }
-
-                if (data) {
-                    setProjects(data);
-                    setFetchError(null);
-                }
-            } catch (error) {
-                setFetchError('Could not fetch the data');
-                setProjects(null);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProjects();
-    }, []);
+    const compareDates = (a, b) => {
+        const dateA = new Date(a.year);
+        const dateB = new Date(b.year);
+        // Reverse the order of comparison to sort in descending order
+        return dateB - dateA;
+    };
+    const projects = Projects.slice().sort(compareDates);
 
     useEffect(() => {
         document.title = 'Portfolio by Jude | Designing User Experiences for Increased conversions.';
@@ -89,12 +64,7 @@ export default function Portfolio() {
             </header>
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col">
-                    {isLoading && <Loading className="">loading projects</Loading>}
-                    {!isLoading && !fetchError && (
-                        <>
-                            <ProjectList projectList={projects} category={selectedTab.toLowerCase()} />
-                        </>
-                    )}
+                    <ProjectsShow show={projects} category={selectedTab.toLowerCase()} />
                 </article>
             </section>
         </>

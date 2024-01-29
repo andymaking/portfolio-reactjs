@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProjectsList = [
     {
         uniqueId: "jw09a422",
