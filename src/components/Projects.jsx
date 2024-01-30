@@ -51,7 +51,7 @@ const Projects = [
         "type": "UI Design, Design Exploration",
         "coverimage": "/images/projects/jwacery1/6551f4b61080e.webp",
         "coverhash": "LQK^mHHXMyBj~WrXM{xI4;O=-Uw4",
-        "title": "Designing an online food magazine for engaged reading experience.",
+        "title": "Designing a captivating reading experience for an online food magazine.",
         "description": "Imagine a world where food is not just something you eat, but an experience that engages all your senses. The Food Mag brings this world to life by providing an immersive experience into the exciting world of culinary arts.",
         "imageSrc": "images/jwacery1/a7uly1bj67tojzn9tnry.webp"
     },

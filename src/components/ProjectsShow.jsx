@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import Link from "./Links";
 import Image from "./Image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsShow = ({ show, category }) => {
 
@@ -44,13 +48,16 @@ const ProjectsShow = ({ show, category }) => {
                                 />
                             </div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
-                                <div className="clave flex w-full flex-row items-center justify-between">
+                                <div className="clave flex w-full flex-col items-center justify-between">
                                     {category === "" ? (
-                                        <p className="p2">{project.title}</p>
+                                        <>
+                                            <h2 className="h3">{project.name}</h2>
+                                            <p className="p2 text-center">{project.title}</p>
+                                        </>
                                     ) : (
                                         <>
                                             <h2 className="h3">{project.name}</h2>
-                                            <p className="p2 typer">{project.type}</p>
+                                            <p className="p2 text-center">{project.title}</p>
                                         </>
                                     )}
                                 </div>
@@ -63,11 +70,11 @@ const ProjectsShow = ({ show, category }) => {
     );
 
     return (
-        <div
-            className="works w-full flex flex-col items-center"
-        >
-            {projectElement}
-        </div>
+        <article className="idea w-full flex flex-col" >
+            <div className="works w-full flex flex-col items-center">
+                {projectElement}
+            </div>
+        </article>
     );
 };
 

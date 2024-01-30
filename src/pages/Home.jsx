@@ -110,9 +110,8 @@ export default function Home() {
                 </div>
             </header>
             <section className="main w-full flex flex-col items-center">
-                <article className="idea w-full flex flex-col">
-                    <ProjectsShow show={projects} category={''} />
-                </article>
+                <ProjectsShow show={projects} category={''} />
+
                 <article className="process-container w-full flex flex-col items-start">
                     <div className="title">
                         <h2 className="h2 flex flex-row items-center">Your project
@@ -122,6 +121,7 @@ export default function Home() {
                     </div>
                     <Lists type={"home"} linkText={"View pricing guide"} link={"pricing"} />
                 </article>
+
                 <article className="testimonials-container w-full flex flex-col items-start">
                     <div className="title">
                         <h2 className="h2 flex flex-row items-center">An iterative journey,</h2>
@@ -223,6 +223,7 @@ export default function Home() {
                         </div>
                     </div>
                 </article>
+                
                 <article className="sales-container w-full flex flex-row items-start">
                     <div className="title">
                         <h2 className="h2 flex flex-row items-center">

@@ -37,12 +37,11 @@ export default function Portfolio() {
                 duration: 0.6,
                 stagger: 0.2
             })
-
-            // t2.from('.tagger', {
-            //     top: "+=50",
-            //     opacity: 0,
-            //     duration: 0.6,
-            // })
+            t2.from('.clipper', {
+                top: "+=150",
+                opacity: 0,
+                duration: 1,
+            })
         })
 
         return () => ctx.revert()
@@ -62,10 +61,8 @@ export default function Portfolio() {
                     </div>
                 </div>
             </header>
-            <section className="main w-full flex flex-col items-center">
-                <article className="idea w-full flex flex-col">
+            <section className="main w-full flex flex-col items-center clipper">
                     <ProjectsShow show={projects} category={selectedTab.toLowerCase()} />
-                </article>
             </section>
         </>
     );

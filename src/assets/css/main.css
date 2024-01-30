@@ -106,7 +106,7 @@
     .main article .works .projekt {
       align-self: flex-start; }
       .main article .works .projekt-pair {
-        gap: var(--box-elements-gap); }
+        gap: var(--has-button-gap); }
         @media only screen and (max-width: 1120px) {
           .main article .works .projekt-pair {
             flex-direction: column; } }
@@ -128,7 +128,7 @@
               transition: all 0.5s linear; }
             @media only screen and (max-width: 1120px) {
               .main article .works .projekt-pair .projekt-container-image {
-                height: 424px;
+                height: 524px;
                 border-radius: 16px; } }
             @media only screen and (max-width: 502px) {
               .main article .works .projekt-pair .projekt-container-image {
@@ -141,27 +141,26 @@
               .main article .works .projekt-pair .projekt-container-image {
                 height: 248px; } }
           .main article .works .projekt-pair .projekt-container-details {
-            gap: var(--has-button-gap);
             flex: 1 0 0;
             align-self: stretch;
             color: var(--active-secondary);
             width: 100% !important; }
             .main article .works .projekt-pair .projekt-container-details .clave {
-              gap: var(--paragraphs);
+              gap: var(--caption-columns);
               width: 100%;
               padding: var(--padding-none) var(--buttons-links); }
-              .main article .works .projekt-pair .projekt-container-details .clave .h3::after {
-                content: "";
-                position: absolute;
-                background-color: var(--active-secondary);
-                top: 100%;
-                left: 0;
-                width: 0;
-                border-radius: 10%;
-                height: 2px;
-                transition: 0.5s cubic-bezier(0.92, 0, 0.47, 1.01); }
-              .main article .works .projekt-pair .projekt-container-details .clave .typer {
-                text-align: right; }
+              @media only screen and (max-width: 502px) {
+                .main article .works .projekt-pair .projekt-container-details .clave {
+                  align-items: start; } }
+              .main article .works .projekt-pair .projekt-container-details .clave p {
+                width: 60%; }
+                @media only screen and (max-width: 1120px) {
+                  .main article .works .projekt-pair .projekt-container-details .clave p {
+                    width: 65%; } }
+                @media only screen and (max-width: 502px) {
+                  .main article .works .projekt-pair .projekt-container-details .clave p {
+                    width: 100%;
+                    text-align: left; } }
         .main article .works .projekt-pair:nth-child(1) .projekt:nth-child(1) {
           width: 50% !important; }
           @media only screen and (max-width: 1120px) {
@@ -362,10 +361,10 @@
           @media only screen and (max-width: 1120px) {
             .main article .works .projekt-pair:nth-child(21) .projekt:nth-child(2) {
               width: 100% !important; } }
+      .main article .works .projekt:hover .h3, .main article .works .projekt:hover p {
+        color: var(--active-primary); }
       .main article .works .projekt:hover .projekt-container-image img {
         transform: scale(1.2); }
-      .main article .works .projekt:hover .projekt-container-details .h3::after {
-        width: 100%; }
 
 .main .process-container {
   padding-top: var(--element-block-padding); }

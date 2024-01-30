@@ -54,7 +54,7 @@
                 align-self: flex-start;
 
                 &-pair {
-                    gap: var(--box-elements-gap);
+                    gap: var(--has-button-gap);
 
                     @include devices(tablet) {
                         flex-direction: column;
@@ -83,7 +83,7 @@
                             }
 
                             @include devices(tablet) {
-                                height: 424px;
+                                height: 524px;
                                 border-radius: 16px;
                             }
 
@@ -102,31 +102,32 @@
                         }
 
                         &-details {
-                            gap: var(--has-button-gap);
                             flex: 1 0 0;
                             align-self: stretch;
                             color: var(--active-secondary);
                             width: 100% !important;
 
+                            
                             .clave {
-                                gap: var(--paragraphs);
+                                gap: var(--caption-columns);
                                 width: 100%;
                                 padding: var(--padding-none) var(--buttons-links);
-
-                                .h3::after{
-                                    content: "";
-                                    position: absolute;
-                                    background-color: var(--active-secondary);
-                                    top: 100%;
-                                    left: 0;
-                                    width: 0;
-                                    border-radius: 10%;
-                                    height: 2px;
-                                    transition: 0.5s cubic-bezier(0.92, 0, 0.47, 1.01);
+                                
+                                @include devices(phone) {
+                                    align-items: start;
                                 }
 
-                                .typer {
-                                    text-align: right;
+                                p {
+                                    width: 60%;
+
+                                    @include devices(tablet) {
+                                        width: 65%;
+                                    }
+        
+                                    @include devices(phone) {
+                                        width: 100%;
+                                        text-align: left;
+                                    }
                                 }
                             }
                         }
@@ -135,8 +136,8 @@
                     $div-count: 20;
 
                     @for $i from 1 through $div-count {
-                        $number: if($i % 2 == 1, $i, $i + 1);
-                        $width: if($number % 4 == 1, 50%, 50%);
+                        $number: if($i % 2==1, $i, $i + 1);
+                        $width: if($number % 4==1, 50%, 50%);
 
                         &:nth-child(#{$number}) {
                             .projekt:nth-child(1) {
@@ -146,6 +147,7 @@
                                     width: 100% !important;
                                 }
                             }
+
                             .projekt:nth-child(2) {
                                 width: calc(100% - #{$width}) !important;
 
@@ -156,14 +158,16 @@
                         }
                     }
                 }
-                
+
                 &:hover {
+                    .h3, p{
+                        color: var(--active-primary);
+                    }
+
                     .projekt-container-image img {
                         transform: scale(1.2);
                     }
-                    .projekt-container-details .h3::after{
-                        width: 100%;
-                    }
+
                 }
 
             }
