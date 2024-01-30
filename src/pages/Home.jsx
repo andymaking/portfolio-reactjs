@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 
 import ProjectsShow from '../components/ProjectsShow';
@@ -17,7 +17,7 @@ import Reviewer02 from "../assets/images/review-2.webp";
 
 import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 
-export default function Home({ }) {
+export default function Home() {
     const featuredProjects = Projects.filter((project) => project.featured === true);
     const compareIds = (a, b) => {
         return a.id - b.id;

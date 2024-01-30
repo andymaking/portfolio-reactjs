@@ -19,7 +19,7 @@ const ProjectsList = [
                 1: {
                     image: "/images/jw09a422/bixj8qba0cbhhcaeq9ry.webp",
                     hash: "LBN-ZZ-o.lENNGofxuR*KdIpIA%1",
-                    details: "1. Homepage with multiple products, items and no specifics. The user is overwhelmed as a result and is unsure of what to click. Luckily, there’s a \"chat with us on Whatsapp button\", so they go with that."
+                    details: "1. Homepage with multiple products, items and no specifics. The user is overwhelmed as a result and is unsure of what to click. Luckily, there’s a “chat with us on Whatsapp button”, so they go with that."
                 },
                 2: {
                     image: "/images/jw09a422/djljdy4j4onmdi2qc4xo.webp",
@@ -149,20 +149,20 @@ const ProjectsList = [
         testing: {
             title: "We ran these ideas with a couple of users in an internal test. They loved the improvements but raised a few concerns as to what they wanted more of.",
             complaints: {
-                1: "\“Site looks loose on desktop. It’s as though you guys don’t have a lot of products.\”. Desktop users didn't like the excessive negative space available on desktop.",
+                1: "“Site looks loose on desktop. It’s as though you guys don’t have a lot of products.”. Desktop users didn't like the excessive negative space available on desktop.",
                 2: "Hospital owners had concerns about whether they would have to enter their data every time they wanted to place an order or make a request.",
                 3: "Stakeholders had concerns about how hospital data would be separated from the patient data.",
-                4: "\“The site is not really visually appealing. I want to buy easily but I still want something that I can trust\”",
+                4: "“The site is not really visually appealing. I want to buy easily but I still want something that I can trust”",
             },
             numbers: {
-                title: "In addition to discovering more desktop users, we saw users felt more relaxed, were more curious and excited to see more while navigating through as opposed to \“having everything bumped at them from the start\”.",
+                title: "In addition to discovering more desktop users, we saw users felt more relaxed, were more curious and excited to see more while navigating through as opposed to “having everything bumped at them from the start”.",
                 1: "10%--user bounce rates",
                 2: "72%--user click-through rate",
                 3: "80%--faster order experience",
             }
         },
         update: {
-            title: "Having identified what worked, I went on to make changes to the flow; keeping the \“guest-shopping\” functionality for users who didn't want to log in or create a new account.",
+            title: "Having identified what worked, I went on to make changes to the flow; keeping the “guest-shopping” functionality for users who didn't want to log in or create a new account.",
             image: {
                 img: "/images/jw09a422/inw9stij30bitctr3m3m.webp",
                 hash: "L6SipqJV^j%1T0s.s:a}~AxZIpR,",
@@ -233,7 +233,7 @@ const ProjectsList = [
             }
         },
         stakeholder: {
-            title: "While users enjoyed the new experience and interface, stakeholders, wanted something \“loud and full\”.",
+            title: "While users enjoyed the new experience and interface, stakeholders, wanted something “loud and full”.",
             describe: "During our final review with stakeholders, they were concerned with whether this new interface showcased their services, as they wanted to maintain a view that had all of the services displaying at once. They wanted ads displayed on empty spaces to present a more fuller version with everything at once as it made them feel like less wasn't enough. However, after deliberations, we were able to agree that about 80% services were not in use and would best fit in later as features added on to enhance usability; once more research was done with the users to see the best way around displaying these services.\n\nSeeing as the present goal and need of these users was to search and shop, we tried to emphasize the need to have features and functionalities that improved this goal without making the system slow. Among budgetary considerations and timeline pressures, we also discussed the possibilities of rolling out these other services as part of beta tests in the future to see how users would respond to seeing them.\n\nHowever, some of the things we would fix included:",
             list: {
                 1: "WhatsApp button to ease users into knowing that there is a human factor behind the scenes, if anything went wrong.",

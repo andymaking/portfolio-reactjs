@@ -153,11 +153,6 @@
         }
 
         & .menuLink {
-            opacity: 0;
-            top: 40px;
-            transition: 0.4s linear;
-            transition-delay: 0.3s;
-
             a {
                 @include h2;
                 color: var(--active-accent);
@@ -226,26 +221,12 @@
             padding-left: 8vw;
             width: 100%;
         }
-
-        & .menuLink {
-            opacity: 1;
-            top: 0;
-        }
-
-        & .menu-close {
-            opacity: 1;
-            right: 0;
-        }
     }
 
     .menu-close {
         cursor: pointer;
         gap: var(--buttons-links);
         padding-top: var(--buttons-links);
-        opacity: 0;
-        right: -40px;
-        transition: 0.4s linear;
-        transition-delay: 0.3s;
 
         @include devices(tablet) {
             align-self: flex-end;
@@ -281,6 +262,7 @@
                 }
             }
         }
+
         & .texter::before {
             content: "Close";
             color: var(--active-accent);

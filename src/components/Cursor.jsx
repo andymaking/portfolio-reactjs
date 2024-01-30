@@ -87,7 +87,7 @@ const Cursor = () => {
     return ReactDOM.createPortal(
         (
             <div
-                className={`cursor ` + `${cursorVariant === 'link' ? 'linked' : ''}` + `${cursorVariant === 'projector' ? 'projector' : ''}`}
+                className={`cursor ${cursorVariant === 'link' ? 'linked' : ''}${cursorVariant === 'projector' ? 'projector' : ''}`}
                 style={{
                     top: mousePosition.y,
                     left: mousePosition.x,

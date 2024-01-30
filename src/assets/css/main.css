@@ -1520,62 +1520,57 @@
     @media only screen and (max-width: 502px) {
       .menu-links-holder .menuLinks-list {
         align-self: flex-start; } }
-    .menu-links-holder .menuLinks-list .menuLink {
-      opacity: 0;
-      top: 40px;
-      transition: 0.4s linear;
-      transition-delay: 0.3s; }
-      .menu-links-holder .menuLinks-list .menuLink a {
-        font-family: "Fancyou";
-        line-height: 1.1;
-        font-weight: normal;
-        font-size: 72px;
-        color: var(--active-accent);
-        align-items: center;
-        gap: var(--has-button-gap);
-        transition: 0.5s ease; }
-        @media only screen and (max-width: 1440px) {
-          .menu-links-holder .menuLinks-list .menuLink a {
-            font-size: 72px; } }
-        @media only screen and (max-width: 1366px) {
-          .menu-links-holder .menuLinks-list .menuLink a {
-            font-size: 60px; } }
+    .menu-links-holder .menuLinks-list .menuLink a {
+      font-family: "Fancyou";
+      line-height: 1.1;
+      font-weight: normal;
+      font-size: 72px;
+      color: var(--active-accent);
+      align-items: center;
+      gap: var(--has-button-gap);
+      transition: 0.5s ease; }
+      @media only screen and (max-width: 1440px) {
+        .menu-links-holder .menuLinks-list .menuLink a {
+          font-size: 72px; } }
+      @media only screen and (max-width: 1366px) {
+        .menu-links-holder .menuLinks-list .menuLink a {
+          font-size: 60px; } }
+      @media only screen and (max-width: 1120px) {
+        .menu-links-holder .menuLinks-list .menuLink a {
+          font-size: 50px; } }
+      @media only screen and (max-width: 502px) {
+        .menu-links-holder .menuLinks-list .menuLink a {
+          font-size: 34.72222px; } }
+      .menu-links-holder .menuLinks-list .menuLink a svg,
+      .menu-links-holder .menuLinks-list .menuLink a svg g,
+      .menu-links-holder .menuLinks-list .menuLink a svg path {
+        width: 24px;
+        height: auto;
+        fill: var(--active-accent); }
+      .menu-links-holder .menuLinks-list .menuLink a::before {
+        content: "\2192";
+        position: absolute;
+        bottom: 10%;
+        left: -20%;
+        color: var(--active-placeholder);
+        opacity: 0;
+        transition: 0.5s ease-in; }
         @media only screen and (max-width: 1120px) {
-          .menu-links-holder .menuLinks-list .menuLink a {
-            font-size: 50px; } }
-        @media only screen and (max-width: 502px) {
-          .menu-links-holder .menuLinks-list .menuLink a {
-            font-size: 34.72222px; } }
-        .menu-links-holder .menuLinks-list .menuLink a svg,
-        .menu-links-holder .menuLinks-list .menuLink a svg g,
-        .menu-links-holder .menuLinks-list .menuLink a svg path {
-          width: 24px;
-          height: auto;
-          fill: var(--active-accent); }
-        .menu-links-holder .menuLinks-list .menuLink a::before {
-          content: "\2192";
-          position: absolute;
-          bottom: 10%;
-          left: -20%;
-          color: var(--active-placeholder);
-          opacity: 0;
-          transition: 0.5s ease-in; }
-          @media only screen and (max-width: 1120px) {
-            .menu-links-holder .menuLinks-list .menuLink a::before {
-              display: none; } }
-        .menu-links-holder .menuLinks-list .menuLink a:hover,
-        .menu-links-holder .menuLinks-list .menuLink a:hover svg,
-        .menu-links-holder .menuLinks-list .menuLink a:hover svg g,
-        .menu-links-holder .menuLinks-list .menuLink a:hover svg path {
-          color: var(--active-placeholder);
-          fill: var(--active-placeholder); }
-          .menu-links-holder .menuLinks-list .menuLink a:hover::before,
-          .menu-links-holder .menuLinks-list .menuLink a:hover svg::before,
-          .menu-links-holder .menuLinks-list .menuLink a:hover svg g::before,
-          .menu-links-holder .menuLinks-list .menuLink a:hover svg path::before {
-            opacity: 1; }
-      .menu-links-holder .menuLinks-list .menuLink.active {
-        display: none; }
+          .menu-links-holder .menuLinks-list .menuLink a::before {
+            display: none; } }
+      .menu-links-holder .menuLinks-list .menuLink a:hover,
+      .menu-links-holder .menuLinks-list .menuLink a:hover svg,
+      .menu-links-holder .menuLinks-list .menuLink a:hover svg g,
+      .menu-links-holder .menuLinks-list .menuLink a:hover svg path {
+        color: var(--active-placeholder);
+        fill: var(--active-placeholder); }
+        .menu-links-holder .menuLinks-list .menuLink a:hover::before,
+        .menu-links-holder .menuLinks-list .menuLink a:hover svg::before,
+        .menu-links-holder .menuLinks-list .menuLink a:hover svg g::before,
+        .menu-links-holder .menuLinks-list .menuLink a:hover svg path::before {
+          opacity: 1; }
+    .menu-links-holder .menuLinks-list .menuLink.active {
+      display: none; }
   .menu-links-holder.menu-links-out {
     width: 72vw;
     padding: var(--element-block-padding) var(--page-padding);
@@ -1594,20 +1589,10 @@
         padding-right: 8vw;
         padding-left: 8vw;
         width: 100%; } }
-    .menu-links-holder.menu-links-out .menuLink {
-      opacity: 1;
-      top: 0; }
-    .menu-links-holder.menu-links-out .menu-close {
-      opacity: 1;
-      right: 0; }
   .menu-links-holder .menu-close {
     cursor: pointer;
     gap: var(--buttons-links);
-    padding-top: var(--buttons-links);
-    opacity: 0;
-    right: -40px;
-    transition: 0.4s linear;
-    transition-delay: 0.3s; }
+    padding-top: var(--buttons-links); }
     @media only screen and (max-width: 1120px) {
       .menu-links-holder .menu-close {
         align-self: flex-end;

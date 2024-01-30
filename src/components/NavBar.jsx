@@ -26,7 +26,7 @@ const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
 
     return (
         <nav className={`nav`} ref={navRef}>
-            <div className={`nav-shape flex flex-row items-center justify-between ` + `${isMenuClicked ? 'nav-clicked' : ''}`}>
+            <div className={`nav-shape flex flex-row items-center justify-between ${isMenuClicked ? 'nav-clicked' : ''}`}>
                 {currentPage === '/' &&
                     <div className="logo flex flex-row items-center justify-center">
                         <Logo />

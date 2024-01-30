@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useLayoutEffect } from 'react';
+import gsap  from 'gsap';
+
 import { ArrowLeft } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
 import { ArrowSquareIn } from "@phosphor-icons/react";
@@ -107,6 +109,21 @@ const List = ({ type, linkText, link }) => {
         }
     ];
 
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const t1 = gsap.timeline()
+
+            t1.from(['.listnime', '.listnime_p'], {
+                top: "+=50",
+                opacity: 0,
+                duration: 0.5,
+                delay: 0.2,
+                stagger: 0.2,
+            })
+        })
+        return () => ctx.revert()
+    }, []);
+
     const isValidEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
@@ -119,7 +136,7 @@ const List = ({ type, linkText, link }) => {
     const listingElements = listingsOfType.map((listing, index) => {
         if (type === "contact") {
             return (
-                <div className="listing w-full flex flex-row justify-between" key={index}>
+                <div className="listing listnime w-full flex flex-row justify-between" key={index}>
                     <p className="h4">{listing.title}</p>
                     <div className="clover flex flex-col">
                         {isValidEmail(listing.details) ? (
@@ -142,11 +159,11 @@ const List = ({ type, linkText, link }) => {
             )
         } else {
             return (
-                <div className="listing w-full flex flex-row justify-between" key={index}>
+                <div className="listing listnime w-full flex flex-row justify-between" key={index}>
                     <h3 className="h4">{listing.hinge}</h3>
                     <div className="clover flex flex-col">
                         <h3 className="h4">{listing.title}</h3>
-                        <p className="p1">{listing.copy}</p>
+                        <p className="p1 listnime_p">{listing.copy}</p>
                     </div>
                 </div>
             )

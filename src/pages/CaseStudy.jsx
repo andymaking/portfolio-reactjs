@@ -28,7 +28,7 @@ const CaseStudy = () => {
     const scroller = (e) => {
         var classer = e.currentTarget.textContent;
         var goToSection = classer.charAt(0).toLowerCase() + classer.slice(1).replaceAll(' ', '_');
-        const targetDiv = document.querySelector(`.` + `${goToSection}`);
+        const targetDiv = document.querySelector(`.${goToSection}`);
         if (targetDiv) {
             targetDiv.scrollIntoView({ behavior: 'smooth' });
         }
@@ -112,7 +112,7 @@ const CaseStudy = () => {
             )}
             {!isLoading && !fetchError && (
                 <>
-                    <header className={`landing w-full flex flex-col items-center project-head intro ` + `${outlineOpen ? ' case__overlayed' : ''}`}>
+                    <header className={`landing w-full flex flex-col items-center project-head intro ${outlineOpen ? ' case__overlayed' : ''}`}>
                         <div className="head w-full flex flex-col items-start justify-start">
                             {
                                 project.length > 0 ? (
@@ -152,11 +152,11 @@ const CaseStudy = () => {
                             }
                         </div>
                     </header>
-                    <section className={`main w-full flex flex-col items-center` + `${outlineOpen ? ' case__overlayed' : ''}`}>
+                    <section className={`main w-full flex flex-col items-center${outlineOpen ? ' case__overlayed' : ''}`}>
                         {project.length > 0 && (
                             <>
                                 {createPortal(
-                                    <div className={`casestudy-outline` + `${outlineOpen ? ' opened' : ''}`}>
+                                    <div className={`casestudy-outline${outlineOpen ? ' opened' : ''}`}>
                                         <div className="casestudy-outline-opening flex flex-col justify-center items-center">
                                             <div className="half-top flex flex-row justify-center items-center" onClick={handleOutlineOpen}>
                                                 <div className="casestudy-outline-opening-bars flex flex-col items-start justify-center">
@@ -191,13 +191,13 @@ const CaseStudy = () => {
                                     </div>,
                                     document.body
                                 )}
-                                <article className={`project-details idea w-full flex flex-col ` + `${project[0].name.toLowerCase()}`}>
+                                <article className={`project-details idea w-full flex flex-col ${project[0].name.toLowerCase()}`}>
                                     <div className="grouper project-details-description flex flex-col justify-start items-start" ref={parentRef}>
                                         <div className="details-section project-details-home flex flex-col">
                                             <div className="project-details-cover-image w-full">
                                                 <Image
                                                     hash={project[0].coverhash}
-                                                    alt={`${project[0].name}` + ` cover image`}
+                                                    alt={`${project[0].name} cover image`}
                                                     imageType={'project'}
                                                     src={project[0].imageSrc}
                                                     className='coverImage'
@@ -276,7 +276,7 @@ const CaseStudy = () => {
                                                 {Object.keys(projectDetails.insights).map((insights, insights__i) => (
                                                     <React.Fragment key={insights__i}>
                                                         {typeof projectDetails.insights[insights] === 'object' && (
-                                                            <div className={`w-full flex ` + `${insights}`}>
+                                                            <div className={`w-full flex ${insights}`}>
                                                                 {insights === 'complaints' ? (
                                                                     <>
                                                                         <h3 className="h3">{projectDetails.insights.title}</h3>
@@ -309,7 +309,7 @@ const CaseStudy = () => {
                                         {projectDetails.understand && (
                                             <div className="details-section project-details-understand flex flex-row justify-start items-start inquiries">
                                                 {Object.keys(projectDetails.understand).map((understand, understand__i) => (
-                                                    <div className={`flex flex-col project-details-understand-section ` + `${understand}`} key={understand__i}>
+                                                    <div className={`flex flex-col project-details-understand-section ${understand}`} key={understand__i}>
                                                         {Object.keys(projectDetails.understand[understand]).map((step, step__i) => (
                                                             <React.Fragment key={step__i}>
                                                                 {typeof projectDetails.understand[understand][step] !== 'object' ? (
@@ -338,7 +338,7 @@ const CaseStudy = () => {
                                                 {Object.keys(projectDetails.users).map((section, section__i) => (
                                                     <React.Fragment key={section__i}>
                                                         {typeof projectDetails.users[section] === 'object' ? (
-                                                            <div className={`w-full flex ` + `${section}`}>
+                                                            <div className={`w-full flex ${section}`}>
                                                                 {Object.keys(projectDetails.users[section]).map((topic, topic__i) => (
                                                                     <React.Fragment key={topic__i}>
                                                                         {typeof projectDetails.users[section][topic] === 'object' && (
@@ -376,7 +376,7 @@ const CaseStudy = () => {
                                                 {Object.keys(projectDetails.competition).map((section, section__i) => (
                                                     <React.Fragment key={section__i}>
                                                         {typeof projectDetails.competition[section] === 'object' ? (
-                                                            <div className={`w-full flex ` + `${section}`} key={section__i}>
+                                                            <div className={`w-full flex ${section}`} key={section__i}>
                                                                 {Object.keys(projectDetails.competition[section]).map((competitor, competitor__i) => (
                                                                     <div className="competitors-info flex flex-col" key={competitor__i}>
                                                                         {Object.keys(projectDetails.competition[section][competitor]).map((data, data__i) => (
@@ -398,7 +398,7 @@ const CaseStudy = () => {
                                                                                             <Image
                                                                                                 src={projectDetails.competition[section][competitor].screenshot}
                                                                                                 hash={projectDetails.competition[section][competitor].hash}
-                                                                                                alt={`${competitor}'s` + ` screenshot`}
+                                                                                                alt={`${competitor}'s screenshot`}
                                                                                             />
                                                                                         </div>
                                                                                     )
@@ -481,13 +481,13 @@ const CaseStudy = () => {
                                                 <h3 className="h3">{projectDetails.wireframes.title}</h3>
                                                 {Object.keys(projectDetails.wireframes).map((size, size__i) => (
                                                     (size !== 'title') && (
-                                                        <div className={`wireframes-holder flex flex-col ` + `${size}`} key={size__i}>
-                                                            <div className={`w-full flex flex-wrap project-details-wireframes-images ` + `${size}`}>
+                                                        <div className={`wireframes-holder flex flex-col ${size}`} key={size__i}>
+                                                            <div className={`w-full flex flex-wrap project-details-wireframes-images ${size}`}>
                                                                 <div className="project-details-wireframes-images-details flex flex-col">
                                                                     <Image
                                                                         src={projectDetails.wireframes[size].design}
                                                                         hash={projectDetails.wireframes[size].hash}
-                                                                        alt={`${size}` + `wireframe` + (size__i + 1)}
+                                                                        alt={`${size}wireframe` + (size__i + 1)}
                                                                     />
                                                                 </div>
                                                             </div>
@@ -501,7 +501,7 @@ const CaseStudy = () => {
                                                 {Object.keys(projectDetails.testing).map((insights, insights__i) => (
                                                     <React.Fragment key={insights__i}>
                                                         {typeof projectDetails.testing[insights] === 'object' && (
-                                                            <div className={`w-full flex ` + `${insights}`}>
+                                                            <div className={`w-full flex ${insights}`}>
                                                                 {insights === 'complaints' ? (
                                                                     <>
                                                                         <h3 className="h3">{projectDetails.testing.title}</h3>
@@ -539,7 +539,7 @@ const CaseStudy = () => {
                                                 {Object.keys(projectDetails.update).map((section, section__i) => (
                                                     <React.Fragment key={section__i}>
                                                         {typeof projectDetails.update[section] === 'object' ? (
-                                                            <div className={`w-full flex flex-wrap project-details-updates-images ` + `${section}`}>
+                                                            <div className={`w-full flex flex-wrap project-details-updates-images ${section}`}>
                                                                 <Image
                                                                     src={projectDetails.update[section].img}
                                                                     hash={projectDetails.update[section].hash}
@@ -629,7 +629,7 @@ const CaseStudy = () => {
                                                     <h3 className="h3">{projectDetails["final tests"].title}</h3>
                                                     <p className="p1">{projectDetails["final tests"].describe}</p>
                                                 </div>
-                                                <div className={`w-full flex ` + `list`}>
+                                                <div className={`w-full flex list`}>
                                                     <div className="numbers-flex flex flex-row">
                                                         {Object.keys(projectDetails["final tests"].list).map((rdata, rdata__i) => (
                                                             <div className="numbers-details flex flex-row items-center w-full" key={rdata__i}>
@@ -656,7 +656,7 @@ const CaseStudy = () => {
                                                 <div className="title flex flex-col">
                                                     <h3 className="h3">{projectDetails.stakeholder.title}</h3>
                                                 </div>
-                                                <div className={`w-full flex flex-col ` + `list`}>
+                                                <div className={`w-full flex flex-col list`}>
                                                     <p className="p1">{projectDetails.stakeholder.describe}</p>
                                                     <ol>
                                                         {Object.keys(projectDetails.stakeholder.list).map((rdata, rdata__i) => (
@@ -673,7 +673,7 @@ const CaseStudy = () => {
                                                 <div className="title flex flex-col">
                                                     <h3 className="h3">{projectDetails.tech_constraints.title}</h3>
                                                 </div>
-                                                <div className={`w-full flex flex-col ` + `list`}>
+                                                <div className={`w-full flex flex-col list`}>
                                                     <p className="p1">{projectDetails.tech_constraints.describe}</p>
                                                     <ol>
                                                         {Object.keys(projectDetails.tech_constraints.list).map((rdata, rdata__i) => (
@@ -697,7 +697,7 @@ const CaseStudy = () => {
                                                 <div className="title flex flex-col">
                                                     <h3 className="h3">{projectDetails.conclusion.title}</h3>
                                                 </div>
-                                                <div className={`w-full flex flex-col ` + `list`}>
+                                                <div className={`w-full flex flex-col list`}>
                                                     <p className="p1">{projectDetails.conclusion.describe}</p>
                                                 </div>
                                             </div>
@@ -708,7 +708,7 @@ const CaseStudy = () => {
                         )}
 
                         <div className="other-projects flex flex-col">
-                            <h3 className={`h4` + `${project.length > 0 ? ' text-left' : ' text-center'}`}>Check out these other projects:</h3>
+                            <h3 className={`h4${project.length > 0 ? ' text-left' : ' text-center'}`}>Check out these other projects:</h3>
                             <article className="idea w-full flex flex-col">
                                 <OtherProjects projectId={projectId} />
                             </article>

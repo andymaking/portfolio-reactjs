@@ -69,7 +69,7 @@ const App = () => {
         <>
             <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} noPage={noPage} />
 
-            <main className={`body flex w-full flex-col min-h-screen ` + `${isMenuClicked ? 'main-shift ' : ''}` + `${pageClass}`}>
+            <main className={`body flex w-full flex-col min-h-screen ${isMenuClicked ? 'main-shift ' : ''}${pageClass}`}>
 
                 <ScrollToTop />
 
