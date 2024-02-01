@@ -1,47 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import supabase from '../config/supaBaseClient';
-import ProjectList from './ProjectsShow';
+import React, { useEffect } from 'react';
+
+import ProjectsShow from '../components/ProjectsShow';
+import Projects from '../components/Projects';
 
 const OtherProjects = ({ projectId }) => {
-    const [fetchError, setFetchError] = useState(null);
-    const [projects, setProjects] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('projects')
-                    .select()
-                    .neq('uniqueid', projectId);
+    const data = Projects.filter((project) => project.uniqueid !== projectId);
 
-                if (error) {
-                    setFetchError('Could not fetch the data');
-                    setProjects(null);
-                    console.error(error);
-                }
+    const shuffledData = data.sort(() => Math.random() - 0.5);
 
-                if (data) {
-                    const shuffledData = data.sort(() => Math.random() - 0.5);
+    const limitedData = shuffledData.slice(0, 2);
 
-                    const limitedData = shuffledData.slice(0, 2);
-
-                    setProjects(limitedData);
-                    setFetchError(null);
-                }
-            } catch (error) {
-                setFetchError('Could not fetch the data');
-                setProjects(null);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProjects();
-    }, [projectId]);
 
     return (
-        <ProjectList projectList={projects} category={''} />
+        <ProjectsShow show={limitedData} category={''} />
     )
 }
 

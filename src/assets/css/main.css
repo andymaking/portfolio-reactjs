@@ -115,7 +115,7 @@
           width: 100%; }
           .main article .works .projekt-pair .projekt-container-image {
             background: var(--disabled-primary);
-            height: 496px;
+            height: 516px;
             border-radius: 24px;
             overflow: hidden;
             transition: all 0.6s ease;
@@ -508,6 +508,9 @@
         top: 0; }
       .home .head-text h1.highlight #highlight-reel {
         z-index: 1; }
+        @media only screen and (max-width: 502px) {
+          .home .head-text h1.highlight #highlight-reel {
+            display: none; } }
       @media only screen and (max-width: 850px) {
         .home .head-text h1.highlight {
           padding-left: var(--elements-inline-padding);
@@ -1259,7 +1262,8 @@
         width: 48%; }
 
 .case-study .other-projects {
-  gap: var(--has-button-gap); }
+  gap: var(--has-button-gap);
+  width: 100%; }
   .case-study .other-projects .h4 {
     padding-inline: var(--page-padding); }
     @media only screen and (max-width: 1120px) {
@@ -1689,6 +1693,10 @@ button {
     border: 2px solid var(--active-primary);
     padding: 1px 16px 4px;
     border-radius: 30px; }
+    @media only screen and (max-width: 502px) {
+      a span,
+      button span {
+        padding-block: 5px 7px; } }
     a span::before,
     button span::before {
       content: "";

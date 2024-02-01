@@ -62,7 +62,9 @@ export default function Portfolio() {
                 </div>
             </header>
             <section className="main w-full flex flex-col items-center clipper">
+                <article className="idea w-full flex flex-col" >
                     <ProjectsShow show={projects} category={selectedTab.toLowerCase()} />
+                </article>
             </section>
         </>
     );

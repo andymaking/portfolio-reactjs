@@ -85,6 +85,10 @@
 
                 & #highlight-reel {
                     z-index: 1;
+
+                    @include devices(phone){
+                        display: none;
+                    }
                 }
 
                 @media only screen and(max-width: 850px) {

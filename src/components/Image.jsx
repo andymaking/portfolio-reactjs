@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-
-// import { Image as CloudinaryImage, Transformation, CloudinaryContext } from 'cloudinary-react';
+// import 'lazysizes';
+// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const ImageContainer = ({ src, hash, alt, imageType }) => {
-
-    // src = imageType === 'project' ? 'https://res.cloudinary.com/dngacec9j/image/upload/c_scale/v1/' + cloudSrc : src;
 
     return (
         <>
@@ -31,13 +27,8 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
 
             {imageType === "project" ? (
                 <>
-                    {/* <CloudinaryContext cloud_name={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}>
-                        <CloudinaryImage publicId={cloudSrc} data-src={src} alt={alt} loading="lazy" className={"lazyload object-cover"}>
-                            <Transformation crop='scale' />
-                        </CloudinaryImage>
-                    </CloudinaryContext> */}
                     <img
-                        src={`/`+ `${src}`}
+                        src={`/${src}`}
                         data-src={src}
                         className={"lazyload object-cover"}
                         alt={alt}

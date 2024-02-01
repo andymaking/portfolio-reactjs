@@ -110,7 +110,9 @@ export default function Home() {
                 </div>
             </header>
             <section className="main w-full flex flex-col items-center">
-                <ProjectsShow show={projects} category={''} />
+                <article className="idea w-full flex flex-col" >
+                    <ProjectsShow show={projects} category={''} />
+                </article>
 
                 <article className="process-container w-full flex flex-col items-start">
                     <div className="title">
@@ -223,7 +225,7 @@ export default function Home() {
                         </div>
                     </div>
                 </article>
-                
+
                 <article className="sales-container w-full flex flex-row items-start">
                     <div className="title">
                         <h2 className="h2 flex flex-row items-center">

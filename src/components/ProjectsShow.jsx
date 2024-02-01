@@ -1,11 +1,7 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from "gsap/ScrollTrigger";
+import React from 'react';
 
 import Link from "./Links";
 import Image from "./Image";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsShow = ({ show, category }) => {
 
@@ -45,6 +41,7 @@ const ProjectsShow = ({ show, category }) => {
                                     src={project.imageSrc}
                                     hash={project.coverhash}
                                     alt={`${project.name} case study`}
+                                    imageType={'project'}
                                 />
                             </div>
                             <div className="projekt-container-details w-full flex flex-col justify-end items-start">
@@ -70,11 +67,9 @@ const ProjectsShow = ({ show, category }) => {
     );
 
     return (
-        <article className="idea w-full flex flex-col" >
-            <div className="works w-full flex flex-col items-center">
-                {projectElement}
-            </div>
-        </article>
+        <div className="works w-full flex flex-col items-center">
+            {projectElement}
+        </div>
     );
 };
 
