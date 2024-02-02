@@ -21,7 +21,7 @@ const Footer = forwardRef(() => {
                             <h2 className="h3">
                                 Let's work together to bring your idea to life!
                             </h2>
-                            <p className='p1'>I will work with you through every step of the design process to ensure that your digital product satisfies your users' needs and provides maximum satisfaction.</p>
+                            {/* <p className='p1'>I will work with you through every step of the design process to ensure that your digital product satisfies your users' needs and provides maximum satisfaction.</p> */}
                         </div>
                         <Link type={"secondary"} href={"/contact"}>
                             <div className="icon-hold flex items-center justify-center">

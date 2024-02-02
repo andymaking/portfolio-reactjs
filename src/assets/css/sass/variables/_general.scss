@@ -11,7 +11,7 @@
         width: 100%;
 
         &-text {
-            gap: var(--box-elements-gap);
+            gap: var(--element-block-gap);
 
             &-top {
                 gap: 16px;
@@ -27,18 +27,18 @@
 
 .main {
     article {
-        padding: 0 var(--page-padding) var(--main-gap);
+        padding: var(--header-gap) var(--page-padding) var(--header-gap);
         gap: var(--header-gap);
-        // background: var(--active-neutral);
+        background: var(--active-neutral);
 
-        padding-top: var(--page-padding);
 
         @include devices(phone) {
             padding-bottom: var(--body-top-padding);
         }
 
         &.idea {
-            padding-top: var(--element-block-padding);
+            padding-top: var(--page-padding);
+            gap: var(--parents-elements-gap);
         }
 
         h2 {
@@ -46,7 +46,7 @@
         }
 
         .works {
-            gap: var(--element-block-padding);
+            gap: var(--paragraphs);
             flex-wrap: wrap;
             flex-direction: row;
 
@@ -54,7 +54,7 @@
                 align-self: flex-start;
 
                 &-pair {
-                    gap: var(--has-button-gap);
+                    gap: var(--paragraphs);
 
                     @include devices(tablet) {
                         flex-direction: column;
@@ -65,9 +65,10 @@
                         width: 100%;
 
                         &-image {
-                            background: var(--disabled-primary);
-                            height: 516px;
-                            border-radius: 24px;
+                            background-color: var(--disabled-primary);
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            height: 720px;
                             overflow: hidden;
                             transition: all 0.6s ease;
                             width: 100% !important;
@@ -104,15 +105,15 @@
                         &-details {
                             flex: 1 0 0;
                             align-self: stretch;
-                            color: var(--active-secondary);
+                            color: var(--active-accent);
                             width: 100% !important;
+                            padding: var(--element-block-padding);
 
-                            
+
                             .clave {
                                 gap: var(--caption-columns);
                                 width: 100%;
-                                padding: var(--padding-none) var(--buttons-links);
-                                
+
                                 @include devices(phone) {
                                     align-items: start;
                                 }
@@ -123,7 +124,7 @@
                                     @include devices(tablet) {
                                         width: 65%;
                                     }
-        
+
                                     @include devices(phone) {
                                         width: 100%;
                                         text-align: left;
@@ -159,17 +160,15 @@
                     }
                 }
 
-                &:hover {
-                    .h3, p{
-                        color: var(--active-primary);
-                    }
+            }
+        }
 
-                    .projekt-container-image img {
-                        transform: scale(1.2);
-                    }
+        .moreProjects {
+            gap: var(--has-button-gap);
 
-                }
-
+            & p {
+                width: 42%;
+                text-align: center;
             }
         }
     }

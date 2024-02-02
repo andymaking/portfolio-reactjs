@@ -12,7 +12,7 @@
 
     .main {
         .bio-container {
-            gap: var(--parents-elements-gap);
+            gap: var(--has-button-gap);
             padding-top: var(--padding-none);
 
             @include devices(tablet) {
@@ -21,10 +21,10 @@
 
             .dol {
                 width: 45%;
-                height: auto;
+                height: 100%;
                 align-self: stretch;
-                height: 564px;
-                border-radius: 24px;
+                min-height: 684px;
+                // border-radius: 24px;
                 overflow: hidden;
 
                 @include devices(tablet) {
@@ -89,7 +89,7 @@
 
                 .clover {
                     text-align: right;
-                    gap: var(--paragraphs);
+                    gap: var(--caption-columns);
                 }
             }
         }

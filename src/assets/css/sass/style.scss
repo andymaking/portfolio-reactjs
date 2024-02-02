@@ -32,7 +32,7 @@ canvas {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 0px;
     height: 0;
 }
 
@@ -68,6 +68,10 @@ canvas {
 
 .h4 {
     @include h4;
+}
+
+.h5 {
+    @include h5;
 }
 
 .s1 {
@@ -127,8 +131,8 @@ ol {
 #root {
     position: relative;
     height: 100vh;
-    -webkit-perspective: 1500px;
-    perspective: 1500px;
+    // -webkit-perspective: 1500px;
+    // perspective: 1500px;
 }
 
 .liner {
@@ -211,7 +215,7 @@ ol {
         width: auto;
         height: auto;
         padding: 16px;
-        background-color: #006a5d91;
+        background-color: var(--active-primary-blur);
         color: var(--active-neutral);
 
         * {
@@ -249,4 +253,10 @@ ol {
     .head-text {
         gap: var(--paragraphs);
     }
+}
+
+span#round{
+    border-radius: 100%;
+    border: 2px solid var(--active-primary);
+    padding: var(--padding-none) var(--paragraphs);
 }

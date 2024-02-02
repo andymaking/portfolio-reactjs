@@ -47,7 +47,7 @@
         }
 
         &-bars {
-            width: 20px;
+            width: 25px;
             height: 18px;
             gap: 6px;
 
@@ -56,8 +56,8 @@
             }
 
             & span {
-                width: 100%;
-                height: 2px;
+                width: 40%;
+                height: 2.5px;
                 border-radius: 12px;
                 background: var(--active-secondary);
                 transition:
@@ -73,11 +73,13 @@
                 &.top {
                     top: 0;
                     left: 0;
+                    width: 100%;
                 }
 
                 &.last {
                     bottom: 0;
                     right: 0;
+                    width: 60%;
                 }
 
                 @include devices(phone) {
@@ -108,27 +110,20 @@
     }
 }
 
-.click-outside {
-    height: 100vh;
-    position: absolute;
-    width: 100vw;
-    z-index: 1500;
-    left: -50vw;
-}
-
 .menu-links-holder {
     position: fixed;
-    width: 0px;
+    width: 0vw;
     height: 100vh;
     background-color: var(--active-secondary);
     right: 0;
     left: unset;
     padding: 0;
+
     top: 0;
     z-index: 100;
-    visibility: hidden;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    // visibility: hidden;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
     z-index: 2000;
     overflow: hidden;
 
@@ -143,6 +138,7 @@
     .menuLinks-list {
         gap: var(--has-button-gap);
         align-self: flex-end;
+        padding: var(--element-block-padding) var(--page-padding);
 
         @include devices(tablet) {
             align-self: flex-start;
@@ -154,7 +150,9 @@
 
         & .menuLink {
             a {
-                @include h2;
+                @include h3;
+                font-family: "Manrope";
+                font-weight: 200;
                 color: var(--active-accent);
                 align-items: center;
                 gap: var(--has-button-gap);
@@ -201,42 +199,20 @@
         }
     }
 
-    &.menu-links-out {
-        width: 72vw;
-        padding: var(--element-block-padding) var(--page-padding);
-        padding-left: var(--body-top-padding);
-        box-shadow: -38px 29px 100px 20px #00282296;
-        visibility: visible;
-        transition: width 0.3s;
-
-        @include devices(tablet) {
-            padding-left: 12vw;
-            padding-right: 12vw;
-            padding-top: 24px;
-            padding-bottom: var(--parents-elements-gap);
-        }
-
-        @include devices(phone) {
-            padding-right: 8vw;
-            padding-left: 8vw;
-            width: 100%;
-        }
-    }
 
     .menu-close {
         cursor: pointer;
         gap: var(--buttons-links);
-        padding-top: var(--buttons-links);
+        padding: var(--page-padding);
 
         @include devices(tablet) {
             align-self: flex-end;
-            padding-top: var(--box-padding);
+            // padding-top: var(--box-padding);
         }
 
         @include devices(phone) {
             align-items: center;
             align-self: flex-end;
-            padding-top: 24px;
         }
 
         & .menu-bars {
@@ -266,30 +242,6 @@
         & .texter::before {
             content: "Close";
             color: var(--active-accent);
-        }
-    }
-}
-
-.body {
-    position: relative;
-    left: 0;
-    z-index: 99;
-    height: auto;
-    perspective: 1000px;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-
-    &.main-shift {
-        overflow: hidden;
-        -webkit-transform: translate3d(0, 0, -256px);
-        transform: translate3d(0, 0, -256px);
-        box-shadow: -8px 20px 100px 8px #00282242;
-        height: 100%;
-
-        .menu {
-            cursor: default;
         }
     }
 }

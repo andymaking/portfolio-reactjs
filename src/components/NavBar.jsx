@@ -5,7 +5,7 @@ import Link from "./Links";
 
 import { ReactComponent as Logo } from "../assets/images/newlogo.svg";
 
-const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
+const NavBar = ({ openMenu, currentPage }) => {
 
     const navRef = useRef(null);
 
@@ -26,7 +26,7 @@ const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
 
     return (
         <nav className={`nav`} ref={navRef}>
-            <div className={`nav-shape flex flex-row items-center justify-between ${isMenuClicked ? 'nav-clicked' : ''}`}>
+            <div className={`nav-shape flex flex-row items-center justify-between`}>
                 {currentPage === '/' &&
                     <div className="logo flex flex-row items-center justify-center">
                         <Logo />
@@ -41,11 +41,8 @@ const NavBar = ({ isMenuClicked, openMenu, currentPage }) => {
                     </Link>
                 }
 
-                <div
-                    onClick={openMenu}
-                    className="menu flex flex-row content-center justify-center"
-                >
-                    <div className="menu-bars flex flex-col items-start justify-center">
+                <div onClick={openMenu} className="menu flex flex-row content-center justify-center">
+                    <div className="menu-bars flex flex-col items-end justify-center">
                         <span className="menu-bars-span top"></span>
                         <span className="menu-bars-span mid"></span>
                         <span className="menu-bars-span last"></span>

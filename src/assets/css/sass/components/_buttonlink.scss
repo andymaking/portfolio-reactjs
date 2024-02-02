@@ -6,7 +6,7 @@ button {
 
     .icon-hold {
         border-radius: 1000px;
-        padding: var(--caption-columns);
+        padding: var(--buttons-links);
         color: var(--active-primary);
         border: 2px solid var(--active-primary);
         overflow: hidden;
@@ -28,9 +28,9 @@ button {
         }
     }
 
-    & span {
+    & span.linkContent {
         border: 2px solid var(--active-primary);
-        padding: 1px 16px 4px;
+        padding: 0.5px 16px 2px;
         border-radius: 30px;
 
         @include devices(phone){
@@ -50,8 +50,13 @@ button {
             transition:
                 transform 0.3s ease-in-out,
                 left 0.3s ease-in-out;
-                z-index: -1;
+                z-index: 1;
         }
+
+        & span{
+            z-index: 2;
+        }
+       
     }
 
     &:hover {
@@ -126,7 +131,7 @@ button {
     }
 
     &--out {
-        transition-duration: 0.5s;
+        transition-duration: 0.7s;
         transform: translateX(200%);
     }
 
@@ -137,7 +142,7 @@ button {
         transform: translateX(50%);
         height: 100%;
         width: 200%;
-        background-color: var(--disabled-primary);
+        background-color: var(--active-secondary);
         animation: overlayAnimation 1.5s cubic-bezier(0.5, 0.01, 0.5, 0.7) 1.6s infinite;
         animation-direction: reverse;
     }

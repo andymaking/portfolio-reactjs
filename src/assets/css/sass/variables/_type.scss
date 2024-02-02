@@ -10,28 +10,28 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: "Vegur";
-    src:
-        url("/src/assets/fonts/Vegur-Regular.eot?#iefix") format("embedded-opentype"),
-        url("/src/assets/fonts/Vegur-Regular.woff2") format("woff2"),
-        url("/src/assets/fonts/Vegur-Regular.woff") format("woff"),
-        url("/src/assets/fonts/Vegur-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-display: swap;
-}
-
 // @font-face {
-//     font-family: "Fancyou";
+//     font-family: "Vegur";
 //     src:
-//         url("/src/assets/fonts/Vacelyn.ttf") format("truetype");
+//         url("/src/assets/fonts/Vegur-Regular.eot?#iefix") format("embedded-opentype"),
+//         url("/src/assets/fonts/Vegur-Regular.woff2") format("woff2"),
+//         url("/src/assets/fonts/Vegur-Regular.woff") format("woff"),
+//         url("/src/assets/fonts/Vegur-Regular.ttf") format("truetype");
 //     font-style: normal;
 //     font-display: swap;
 // }
 
+@font-face {
+    font-family: "Manrope";
+    src:
+        url("/src/assets/fonts/Manrope.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --font-size: 20px;
-    --font-family: "Vegur";
+    --font-family: "Manrope";
 }
 
 $steps: 4;
@@ -47,7 +47,7 @@ $steps: 4;
 /*
     H E A D I N G S
 */
-@mixin h1($baseFontSize: 96px) {
+@mixin h1($baseFontSize: 112.2px) {
     font-family: "Fancyou";
     line-height: 1.1;
     font-weight: normal;
@@ -71,7 +71,7 @@ $steps: 4;
 
 }
 
-@mixin h2($baseFontSize: 72px) {
+@mixin h2($baseFontSize: 84.17px) {
     font-family: "Fancyou";
     line-height: 1.1;
     font-weight: normal;
@@ -94,7 +94,7 @@ $steps: 4;
     }
 }
 
-@mixin h3($baseFontSize: 48px) {
+@mixin h3($baseFontSize: 63.15px) {
     font-family: "Fancyou";
     line-height: 1.3;
     font-weight: normal;
@@ -117,9 +117,32 @@ $steps: 4;
     }
 }
 
-@mixin h4($baseFontSize: 32px) {
+@mixin h4($baseFontSize: 47.37px) {
     font-family: "Fancyou";
     line-height: 1.4;
+    font-weight: 500;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 1);
+    }
+}
+
+@mixin h5($baseFontSize: 35.52px) {
+    font-family: "Fancyou";
+    line-height: 1.3;
     font-weight: 500;
     font-size: $baseFontSize;
 
@@ -168,7 +191,31 @@ $steps: 4;
 */
 
 @mixin p1($baseFontSize: 20px) {
-    font-family: "Vegur";
+    font-family: "Manrope";
+    font-weight: 400;
+    line-height: 1.8;
+    white-space: pre-line;
+    font-size: $baseFontSize;
+
+    @include devices(desktop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(laptop) {
+        font-size: $baseFontSize;
+    }
+
+    @include devices(tablet) {
+        font-size: calculate-font-size($baseFontSize, $steps - 3);
+    }
+
+    @include devices(phone) {
+        font-size: calculate-font-size($baseFontSize, $steps - 2);
+    }
+}
+
+@mixin p2($baseFontSize: 15px) {
+    font-family: "Manrope";
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line;
@@ -191,32 +238,8 @@ $steps: 4;
     }
 }
 
-@mixin p2($baseFontSize: 16px) {
-    font-family: "Vegur";
-    font-weight: 400;
-    line-height: 1.5;
-    white-space: pre-line;
-    font-size: $baseFontSize;
-
-    @include devices(desktop) {
-        font-size: $baseFontSize;
-    }
-
-    @include devices(laptop) {
-        font-size: $baseFontSize;
-    }
-
-    @include devices(tablet) {
-        font-size: calculate-font-size($baseFontSize, $steps - 3);
-    }
-
-    @include devices(phone) {
-        font-size: calculate-font-size($baseFontSize, $steps - 2);
-    }
-}
-
-@mixin c1($baseFontSize: 14px) {
-    font-family: "Vegur";
+@mixin c1($baseFontSize: 11.26px) {
+    font-family: "Manrope";
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line;
@@ -240,7 +263,7 @@ $steps: 4;
 }
 
 @mixin b1($baseFontSize: 24px) {
-    font-family: "Vegur";
+    font-family: "Manrope";
     font-weight: 400;
     line-height: 0.75;
     font-size: $baseFontSize;

@@ -23,7 +23,7 @@ const Projects = [
         "type": "UX Design, Website Design",
         "coverimage": "/images/projects/jwcd04r1/6550ecff98f66.webp",
         "coverhash": "LJK-Um_3~Vt501t8D%ay^*WBD+WD",
-        "title": "Making access to professional courses less confusing and easy to navigate through for engineers.",
+        "title": "Making access to professional courses less confusing and easier to navigate through for engineers.",
         "description": "Thompson and Grace Insitute of Technology is dedicated to simplifying the process of finding IT professional courses for engineering professionals and making their journey easy for them to navigate through.",
         "imageSrc": "images/jwcd04r1/qyoticyz7g1nukukdkpk.webp"
     },

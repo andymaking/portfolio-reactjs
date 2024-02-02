@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import gsap  from 'gsap';
+import gsap from 'gsap';
 
 import { ArrowLeft } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -19,12 +19,12 @@ const List = ({ type, linkText, link }) => {
                 },
                 {
                     hinge: '02',
-                    title: "User Research",
+                    title: "Product Research",
                     copy: '',
                 },
                 {
                     hinge: '03',
-                    title: "User Interface Design",
+                    title: "Product Design",
                     copy: '',
                 },
                 {
@@ -103,7 +103,7 @@ const List = ({ type, linkText, link }) => {
                 },
                 {
                     title: "Phone:",
-                    details: '+234 904 113 4407',
+                    details: '+234 811 933 4926',
                 }
             ]
         }
@@ -188,7 +188,11 @@ const List = ({ type, linkText, link }) => {
                             <div className="icon-hold flex items-center justify-center">
                                 <ArrowRight size={24} weight="regular" />
                             </div>
-                            <span>{linkText}</span>
+                            <span className='linkContent'>
+                                <span>
+                                    {linkText}
+                                </span>
+                            </span>
                         </Links>
                     )
                 } else {
@@ -197,7 +201,11 @@ const List = ({ type, linkText, link }) => {
                             <div className="icon-hold flex items-center justify-center">
                                 <ArrowRight size={24} weight="regular" />
                             </div>
-                            <span>{linkText}</span>
+                            <span className='linkContent'>
+                                <span>
+                                    {linkText}
+                                </span>
+                            </span>
                         </Links>
                     )
                 }

@@ -69,7 +69,7 @@ const App = () => {
         <>
             <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} noPage={noPage} />
 
-            <main className={`body flex w-full flex-col min-h-screen ${isMenuClicked ? 'main-shift ' : ''}${pageClass}`}>
+            <main className={`flex w-full flex-col min-h-screen ${pageClass}`}>
 
                 <ScrollToTop />
 
@@ -78,7 +78,7 @@ const App = () => {
                 }>
                     <Cursor />
 
-                    <Nav isMenuClicked={isMenuClicked} openMenu={openMenu} currentPage={currentPage} />
+                    <Nav openMenu={openMenu} currentPage={currentPage} />
 
                     <Routes>
                         <Route
