@@ -9,7 +9,7 @@ import Links from "../components/Links";
 import Reviewer01 from "../assets/images/review-1.webp";
 import Reviewer02 from "../assets/images/review-2.webp";
 
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowRight, ArrowSquareOut } from "@phosphor-icons/react";
 
 export default function Home() {
     const featuredProjects = Projects.filter((project) => project.featured === true);
@@ -58,14 +58,14 @@ export default function Home() {
     const reviews = [
         {
             img: Reviewer01,
-            hash: "L7A^F4.70J0000IAby?^4mtm-WR4",
+            hash: "L7A-n*.R31000cH?a8?^53tm,]R4",
             name: "Amina Ibrahim",
             position: "SEO Consultant, Prosple",
             content: "I have worked with Jude on several occasions, and I can confidently say that he is an exceptional product designer. He has a remarkable ability to grasp the product idea quickly and then works diligently to ensure that it aligns with the users' needs and developers' requirements.\n\nJude is also highly patient and willing to collaborate with clients to guarantee that their expectations are met. His work is consistently of outstanding quality, and his designs have consistently met the clients' standards.",
         },
         {
             img: Reviewer02,
-            hash: "LHB3:0Rj00s:00t7_4RjtSRjjExb",
+            hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
             name: "Victoria Oniyide",
             position: "Communications Manager, Paaira",
             content: "I recently had the pleasure of working with Jude, a digital product designer who specializes in improving digital user experiences. He is highly professional and knowledgeable about his field.\n\nJude's work is exceptionally meticulous and detailed. He takes the time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from both users and developers, and I would recommend him without hesitation.",
@@ -93,7 +93,6 @@ export default function Home() {
                                 <span className='loadime'>experiences</span>
                             </h1>
                             <h1 className="h1 highlight text-left flex flex-row justify-left">
-                                {/* <span id='highlight-background'></span> */}
                                 <span id='highlight-reel'>for increased conversions.</span>
                             </h1>
                         </div>
@@ -104,6 +103,7 @@ export default function Home() {
                                 </div>
                                 <p className="p2 aboute-grab">
                                     Design generalist driving business growth by crafting digital experiences that users love to use.
+                                    <Links href={'about'} extra={'highlight-link'}>Learn more<ArrowSquareOut/></Links>
                                 </p>
                             </div>
                             <div className='scroller flex flex-row justify-center items-center'>

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Nav from './components/NavBar';
-import SideBar from "./components/SideBar";
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import Loading from './components/Loading';
-
 
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
@@ -30,16 +28,7 @@ function ScrollToTop() {
 
 const App = () => {
 
-    const [isMenuClicked, setIsMenuClicked] = useState(false);
     const [noPage, setNoPage] = useState(false);
-
-    const openMenu = () => {
-        setIsMenuClicked(true);
-    };
-
-    const closeMenu = () => {
-        setIsMenuClicked(false);
-    };
 
     const location = useLocation();
     const currentPage = location.pathname;
@@ -67,8 +56,6 @@ const App = () => {
 
     return (
         <>
-            <SideBar isMenuClicked={isMenuClicked} closeMenu={closeMenu} currentPage={currentPage} noPage={noPage} />
-
             <main className={`flex w-full flex-col min-h-screen ${pageClass}`}>
 
                 <ScrollToTop />
@@ -78,7 +65,7 @@ const App = () => {
                 }>
                     <Cursor />
 
-                    <Nav openMenu={openMenu} currentPage={currentPage} />
+                    <Nav currentPage={currentPage} noPage={noPage} />
 
                     <Routes>
                         <Route

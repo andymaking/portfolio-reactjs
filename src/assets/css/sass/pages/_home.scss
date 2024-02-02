@@ -32,7 +32,6 @@
                         position: absolute;
                         border-radius: 100%;
                         border: 2px solid var(--active-primary);
-                        /* transform: rotate(-16deg); */
                         padding: 2px var(--box-elements-gap) 4px;
                         left: 45%;
                         top: -32%;
@@ -79,20 +78,6 @@
                         color: var(--active-secondary);
                         border: 2px solid var(--active-primary);
                         white-space: nowrap;
-
-                        // & #highlight-background {
-                        //     content: "";
-                        //     position: absolute;
-                        //     width: 100%;
-                        //     height: 100%;
-                        //     background: var(--active-secondary);
-                        //     left: 0;
-                        //     top: 0;
-
-                        //     @include devices(phone) {
-                        //         display: none;
-                        //     }
-                        // }
 
                         & #highlight-reel {
                             z-index: 1;
@@ -153,7 +138,7 @@
                         }
 
                         &-grab {
-                            width: 264px;
+                            width: 296px;
 
                             @include devices(tablet) {
                                 max-width: 38%;
@@ -233,7 +218,6 @@
                         padding: var(--padding-none) var(--header-gap);
                         width: 100%;
                         height: 100%;
-                        opacity: 0;
                         position: absolute;
                         left: 0;
                         transition: 1s ease;

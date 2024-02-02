@@ -10,7 +10,7 @@
   --active-secondary-dark: #0d1d1a;
   --active-accent-blur: #e5efee3d;
   --active-secondary-blur: #0028220f;
-  --active-primary-blur: #006a5eac;
+  --active-primary-blur: #006a5ee4;
   --disabled-primary: #cbe0de;
   --disabled-secondary: #8da7a4;
   --disabled-secondary-dark: #092f2a; }
@@ -470,7 +470,6 @@
           position: absolute;
           border-radius: 100%;
           border: 2px solid var(--active-primary);
-          /* transform: rotate(-16deg); */
           padding: 2px var(--box-elements-gap) 4px;
           left: 45%;
           top: -32%;
@@ -553,7 +552,7 @@
             width: 100%;
             height: 100%; }
         .home .landing .head-text-club .aboute-grab {
-          width: 264px; }
+          width: 296px; }
           @media only screen and (max-width: 1120px) {
             .home .landing .head-text-club .aboute-grab {
               max-width: 38%; } }
@@ -605,7 +604,6 @@
         padding: var(--padding-none) var(--header-gap);
         width: 100%;
         height: 100%;
-        opacity: 0;
         position: absolute;
         left: 0;
         transition: 1s ease; }
@@ -1356,15 +1354,6 @@
     .nav .menu .texter::before {
       content: "Menu";
       transition: 0.5s linear; }
-  .nav.secondary {
-    background-color: var(--active-secondary-blur);
-    color: var(--active-accent); }
-    .nav.secondary .menu-bars-span {
-      background: var(--active-accent); }
-    .nav.secondary svg,
-    .nav.secondary svg g,
-    .nav.secondary svg path {
-      fill: var(--active-accent); }
 
 .menu-links-holder {
   position: fixed;
@@ -1373,11 +1362,8 @@
   background-color: var(--active-secondary);
   right: 0;
   left: unset;
-  padding: 0;
   top: 0;
-  z-index: 100;
-  -webkit-transition: all 0.7s;
-  transition: all 0.7s;
+  padding: 0;
   z-index: 2000;
   overflow: hidden; }
   @media only screen and (max-width: 1120px) {
@@ -1524,6 +1510,32 @@ button {
       position: absolute;
       border-radius: 1000px;
       transition: transform 0.2s ease-in-out, left 0.2s ease-in-out; }
+  a.highlight-link,
+  button.highlight-link {
+    font-family: "Manrope";
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: pre-line;
+    font-size: 15px;
+    display: inline-flex;
+    margin-left: 12px;
+    gap: var(--caption-columns); }
+    @media only screen and (max-width: 1440px) {
+      a.highlight-link,
+      button.highlight-link {
+        font-size: 15px; } }
+    @media only screen and (max-width: 1366px) {
+      a.highlight-link,
+      button.highlight-link {
+        font-size: 15px; } }
+    @media only screen and (max-width: 1120px) {
+      a.highlight-link,
+      button.highlight-link {
+        font-size: 12.5px; } }
+    @media only screen and (max-width: 502px) {
+      a.highlight-link,
+      button.highlight-link {
+        font-size: 10.41667px; } }
   a span.linkContent,
   button span.linkContent {
     border: 2px solid var(--active-primary);

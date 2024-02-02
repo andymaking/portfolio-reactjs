@@ -94,20 +94,6 @@
         }
     }
 
-    &.secondary {
-        background-color: var(--active-secondary-blur);
-        color: var(--active-accent);
-
-        & .menu-bars-span {
-            background: var(--active-accent);
-        }
-
-        svg,
-        svg g,
-        svg path {
-            fill: var(--active-accent);
-        }
-    }
 }
 
 .menu-links-holder {
@@ -117,13 +103,8 @@
     background-color: var(--active-secondary);
     right: 0;
     left: unset;
-    padding: 0;
-
     top: 0;
-    z-index: 100;
-    // visibility: hidden;
-    -webkit-transition: all 0.7s;
-    transition: all 0.7s;
+    padding: 0;
     z-index: 2000;
     overflow: hidden;
 
@@ -207,7 +188,6 @@
 
         @include devices(tablet) {
             align-self: flex-end;
-            // padding-top: var(--box-padding);
         }
 
         @include devices(phone) {
