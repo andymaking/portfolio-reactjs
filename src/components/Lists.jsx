@@ -52,7 +52,7 @@ const List = ({ type, linkText, link }) => {
                 {
                     hinge: '2021',
                     title: "UX Designer (contract)",
-                    copy: 'Thrive',
+                    copy: 'Thrive.Nig',
                 },
                 {
                     hinge: '2017 - 2020',

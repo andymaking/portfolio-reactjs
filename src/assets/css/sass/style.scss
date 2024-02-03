@@ -255,8 +255,8 @@ ol {
     }
 }
 
-span#round{
+#round{
     border-radius: 100%;
     border: 2px solid var(--active-primary);
-    padding: var(--padding-none) var(--paragraphs);
+    padding: var(--padding-none) var(--elements-inline-padding);
 }

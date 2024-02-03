@@ -59,13 +59,13 @@ const App = () => {
             <main className={`flex w-full flex-col min-h-screen ${pageClass}`}>
 
                 <ScrollToTop />
+                <Nav currentPage={currentPage} noPage={noPage} />
 
                 <React.Suspense fallback={
                     <Loading className="fill">loading</Loading>
                 }>
                     <Cursor />
 
-                    <Nav currentPage={currentPage} noPage={noPage} />
 
                     <Routes>
                         <Route

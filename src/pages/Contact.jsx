@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import gsap  from 'gsap';
+import gsap from 'gsap';
 
 import Lists from '../components/Lists';
 
@@ -29,7 +29,9 @@ export default function Contact() {
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top w-full">
                             <h1 className="h1 loadime text-center">
-                                Get in touch
+                                <span id='round'>
+                                    Get in touch
+                                </span>
                             </h1>
                         </div>
                     </div>

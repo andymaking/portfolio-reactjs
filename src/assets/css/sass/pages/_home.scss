@@ -34,7 +34,7 @@
                         border: 2px solid var(--active-primary);
                         padding: 2px var(--box-elements-gap) 4px;
                         left: 45%;
-                        top: -32%;
+                        top: -40%;
                         line-height: 1;
 
                         @include devices(tablet) {
@@ -192,6 +192,7 @@
 
         .testimonials-container {
             padding-top: 0;
+            gap: var(--main-gap);
 
             & .title {
                 width: 100%;
@@ -216,6 +217,7 @@
                     .review {
                         gap: var(--parents-elements-gap);
                         padding: var(--padding-none) var(--header-gap);
+                        background-color: var(--active-neutral);
                         width: 100%;
                         height: 100%;
                         position: absolute;

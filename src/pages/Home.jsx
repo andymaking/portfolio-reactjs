@@ -26,6 +26,7 @@ export default function Home() {
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline()
             const t2 = gsap.timeline()
+            const t3 = gsap.timeline()
 
             t1.from('.loadime', {
                 top: "+=50",
@@ -50,6 +51,12 @@ export default function Home() {
                 opacity: 0,
                 duration: 0.6
             })
+
+            t3.from('.lighter span',{
+                top: "-=50",
+                opacity: 0,
+                duration: 0.8,
+            })
         })
 
         return () => ctx.revert()
@@ -68,7 +75,7 @@ export default function Home() {
             hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
             name: "Victoria Oniyide",
             position: "Communications Manager, Paaira",
-            content: "I recently had the pleasure of working with Jude, a digital product designer who specializes in improving digital user experiences. He is highly professional and knowledgeable about his field.\n\nJude's work is exceptionally meticulous and detailed. He takes the time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from both users and developers, and I would recommend him without hesitation.",
+            content: "I had the pleasure of working with Jude recently, and it was an experience that left me thoroughly impressed. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that Jude is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from my team and clients, and I would recommend him without hesitation.",
         }
     ];
 
@@ -89,7 +96,7 @@ export default function Home() {
                         <div className="head-text-top flex flex-col items-center justify-center">
                             <h1 className="h1 w-full text-left">
                                 <span className='loadime'>Designing </span>
-                                <span className="h4 lighter flex items-center justify-center">user</span>
+                                <span className="h4 lighter flex items-center justify-center"><span>user</span></span>
                                 <span className='loadime'>experiences</span>
                             </h1>
                             <h1 className="h1 highlight text-left flex flex-row justify-left">
@@ -117,7 +124,7 @@ export default function Home() {
             <section className="main w-full flex flex-col items-center">
                 <article className="idea w-full flex flex-col" >
                     <div className="title">
-                        <h2 className="h2 flex flex-row justify-end">Selected <span id='round'>Projects</span></h2>
+                        <h2 className="h2 flex flex-row justify-end">Selected<span id='round'>Projects</span></h2>
                     </div>
                     <ProjectsShow show={projects} category={''} />
                     <div className='moreProjects flex flex-col justify-center items-center'>
@@ -174,16 +181,6 @@ export default function Home() {
                                         <ArrowRight weight="thin"/>
                                     </span>
                                 </div>
-                                {/* <div className='review-nav flex flex-row'>
-
-                                    <div className="numbering">
-                                        {reviews.map((name, index) => (
-                                            <span key={index} className={index === activeIndex ? 'active' : ''}>
-                                                {index + 1}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>

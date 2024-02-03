@@ -29,14 +29,14 @@ const NavBar = ({ currentPage, noPage }) => {
             const t2 = gsap.timeline();
 
             t2.fromTo('.menuLink',
-                { top: "0", opacity: 1 },
+                { top: 0, opacity: 1 },
                 { top: "+50", opacity: 0, duration: 0.5, stagger: 0.2 },
             ).fromTo('.menu-close',
-                { right: "0", opacity: 1 },
+                { right: 0, opacity: 1 },
                 { right: "-70", opacity: 0, duration: 0.5 }
             ).fromTo('.menu-links-holder',
                 { width: "100vw" },
-                { width: "0", duration: 0.5 }
+                { width: 0, duration: 0.5 }
             )
         });
 
@@ -49,20 +49,47 @@ const NavBar = ({ currentPage, noPage }) => {
             const t1 = gsap.timeline();
 
             t1.fromTo('.menu-links-holder',
-                { width: "0" },
-                { width: "100vw", duration: 0.5 }
+                { width: 0, opacity: 0 },
+                { width: "100vw", opacity: 1, duration: 0.5 }
             ).fromTo('.menuLink',
                 { top: "+50", opacity: 0 },
-                { top: "0", opacity: 1, duration: 0.5, stagger: 0.2 },
+                { top: 0, opacity: 1, duration: 0.5, stagger: 0.2 },
             ).fromTo('.menu-close',
                 { right: "-70", opacity: 0 },
-                { right: "0", opacity: 1, duration: 0.5 }
+                { right: 0, opacity: 1, duration: 0.5 }
             );
         });
 
         return () => ctx.revert();
 
     };
+
+    const menuOut = () => {
+        let ctx = gsap.context(() => {
+            const t3 = gsap.timeline();
+
+            t3.fromTo('.menuLink',
+                { top: 0, opacity: 1 },
+                { top: "+50", opacity: 0, duration: 0.5, stagger: 0.2 },
+            ).fromTo('.menu-close',
+                { right: 0, opacity: 1 },
+                { right: "-70", opacity: 0, duration: 0.5 }
+            ).fromTo('.menu-links-holder',
+                { opacity: 1 },
+                { opacity: 0, duration: 0.5 }
+            )
+            t3.to('.menu-links-holder',{ 
+                opacity: 0,
+                width: 0,
+                duration: 0.1,
+                delay: 1.3
+            })
+        });
+
+        return () => ctx.revert();
+
+    };
+
 
     return (
         <>
@@ -95,25 +122,25 @@ const NavBar = ({ currentPage, noPage }) => {
             <div className={`menu-links-holder h-screen flex flex-row items-start justify-between`}>
 
                 <div className="menuLinks-list flex flex-col justify-center">
-                    <span className={`menuLink ${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) || noPage ? 'active' : ''}`}>
+                    <span onClick={menuOut} className={`menuLink ${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) || noPage ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/"}>Home</Link>
                     </span>
-                    <span className={`menuLink ${currentPage === '/about' ? 'active' : ''}`}>
+                    <span onClick={menuOut} className={`menuLink ${currentPage === '/about' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/about"}>About</Link>
                     </span>
-                    <span className={`menuLink ${currentPage === '/portfolio' ? 'active' : ''}`}>
+                    <span onClick={menuOut} className={`menuLink ${currentPage === '/portfolio' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/portfolio"}>Work</Link>
                     </span>
-                    <span className={`menuLink ${currentPage === '/pricing' ? 'active' : ''}`}>
+                    {/* <span onClick={menuOut} className={`menuLink ${currentPage === '/pricing' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/pricing"}>Pricing</Link>
-                    </span>
-                    <span className={`menuLink`}>
+                    </span> */}
+                    <span onClick={menuOut} className={`menuLink`}>
                         <Link type={"primary"} href={"https://thejudejoshua.gumroad.com/"} target="_blank">
                             Resources
                             <ArrowSquareIn />
                         </Link>
                     </span>
-                    <span className={`menuLink ${currentPage === '/contact' ? 'active' : ''}`}>
+                    <span onClick={menuOut} className={`menuLink ${currentPage === '/contact' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/contact"}>Get in touch</Link>
                     </span>
                 </div>

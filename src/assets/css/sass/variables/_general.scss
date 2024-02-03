@@ -27,7 +27,7 @@
 
 .main {
     article {
-        padding: var(--header-gap) var(--page-padding) var(--header-gap);
+        padding: var(--main-gap) var(--page-padding) var(--main-gap);
         gap: var(--header-gap);
         background: var(--active-neutral);
 
@@ -39,10 +39,6 @@
         &.idea {
             padding-top: var(--page-padding);
             gap: var(--parents-elements-gap);
-        }
-
-        h2 {
-            gap: var(--paragraphs);
         }
 
         .works {
@@ -164,7 +160,7 @@
         }
 
         .moreProjects {
-            gap: var(--has-button-gap);
+            gap: var(--box-elements-gap);
 
             & p {
                 width: 42%;
