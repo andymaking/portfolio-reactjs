@@ -8,6 +8,13 @@ import Links from "../components/Links";
 
 import Reviewer01 from "../assets/images/review-1.webp";
 import Reviewer02 from "../assets/images/review-2.webp";
+import clientLogo1 from "../assets/images/pro-jobs/1.webp";
+import clientLogo2 from "../assets/images/pro-jobs/2.webp";
+import clientLogo3 from "../assets/images/pro-jobs/3.webp";
+import clientLogo4 from "../assets/images/pro-jobs/4.webp";
+import clientLogo5 from "../assets/images/pro-jobs/5.webp";
+import clientLogo6 from "../assets/images/pro-jobs/6.webp";
+import clientLogo7 from "../assets/images/pro-jobs/7.webp";
 
 import { ArrowLeft, ArrowRight, ArrowSquareOut } from "@phosphor-icons/react";
 
@@ -52,7 +59,7 @@ export default function Home() {
                 duration: 0.6
             })
 
-            t3.from('.lighter span',{
+            t3.from('.lighter span', {
                 top: "-=50",
                 opacity: 0,
                 duration: 0.8,
@@ -62,13 +69,23 @@ export default function Home() {
         return () => ctx.revert()
     }, []);
 
+    const clientLogos = [
+        clientLogo1,
+        clientLogo2,
+        clientLogo3,
+        clientLogo4,
+        clientLogo5,
+        clientLogo6,
+        clientLogo7,
+    ];
+
     const reviews = [
         {
             img: Reviewer01,
             hash: "L7A-n*.R31000cH?a8?^53tm,]R4",
             name: "Amina Ibrahim",
             position: "SEO Consultant, Prosple",
-            content: "I have worked with Jude on several occasions, and I can confidently say that he is an exceptional product designer. He has a remarkable ability to grasp the product idea quickly and then works diligently to ensure that it aligns with the users' needs and developers' requirements.\n\nJude is also highly patient and willing to collaborate with clients to guarantee that their expectations are met. His work is consistently of outstanding quality, and his designs have consistently met the clients' standards.",
+            content: "I have worked with Jude on several occasions, and I can confidently say that he is an exceptional product designer. He has a remarkable ability to grasp the product idea quickly and then works diligently to ensure that it aligns with the users' needs and developers' requirements.\n\nJude is also highly patient and willing to carry out extensive research to guarantee that user and business expectations are met. His work is consistently of outstanding quality, and his designs consistently meet the market standards.",
         },
         {
             img: Reviewer02,
@@ -110,7 +127,7 @@ export default function Home() {
                                 </div>
                                 <p className="p2 aboute-grab">
                                     Design generalist driving business growth by crafting digital experiences that users love to use.
-                                    <Links href={'about'} extra={'highlight-link'}>Learn more<ArrowSquareOut/></Links>
+                                    <Links href={'about'} extra={'highlight-link'}>Learn more<ArrowSquareOut /></Links>
                                 </p>
                             </div>
                             <div className='scroller flex flex-row justify-center items-center'>
@@ -135,7 +152,7 @@ export default function Home() {
                             </div>
                             <span className='linkContent'>
                                 <span>
-                                    See more work
+                                    See more projects
                                 </span>
                             </span>
                         </Links>
@@ -175,13 +192,48 @@ export default function Home() {
                                 </div>
                                 <div className='navigate'>
                                     <span onClick={prevSlide} className={`nav-btn previous ${activeIndex > 0 ? 'showing' : 'hidden'}`}>
-                                        <ArrowLeft weight="thin"/>
+                                        <ArrowLeft weight="thin" />
                                     </span>
                                     <span onClick={nextSlide} className={`nav-btn next ${activeIndex < 1 ? 'showing' : 'hidden'}`}>
-                                        <ArrowRight weight="thin"/>
+                                        <ArrowRight weight="thin" />
                                     </span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article className='client-logos scrolling-container w-full flex flex-row'>
+                    <div className="scrolling_text w-full flex flex-row">
+                        <div className="text flex flex-row items-center justfiy-center">
+                            {clientLogos.map((logo, index) => (
+                                <span key={index}>
+                                    <img
+                                        src={logo}
+                                        alt={`clientImage${index + 1}`}
+                                    />
+                                </span>
+                            ))}
+                        </div>
+                        <div className="text flex flex-row items-center justfiy-center">
+                            {clientLogos.map((logo, index) => (
+                                <span key={index}>
+                                    <img
+                                        src={logo}
+                                        alt={`clientImage${index + 1}`}
+                                    />
+                                </span>
+                            ))}
+                        </div>
+                        <div className="text flex flex-row items-center justfiy-center">
+                            {clientLogos.map((logo, index) => (
+                                <span key={index}>
+                                    <img
+                                        src={logo}
+                                        alt={`clientImage${index + 1}`}
+                                    />
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </article>

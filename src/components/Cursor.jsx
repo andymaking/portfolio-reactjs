@@ -32,7 +32,7 @@ export const useCursor = () => {
         };
 
 
-        const links = document.querySelectorAll('a');
+        const links = document.querySelectorAll('a, .toTop, .nav-btn');
         const projekts = document.querySelectorAll('.projekt');
         const menuOpen = document.querySelector('.menu');
         const menuClose = document.querySelector('.menu-close');

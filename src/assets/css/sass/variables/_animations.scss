@@ -25,22 +25,14 @@
     from {
         transform: translate3d(0, 0, 0);
     }
+
     to {
         transform: translate3d(-100%, 0, 0);
     }
 }
 
-@keyframes dash {
-    0% {
-        stroke-dashoffset: 400;
-    }
-    20% {
-        stroke-dashoffset: 0;
-    }
-    70% {
-        stroke-dashoffset: 0;
-    }
-    100% {
-        stroke-dashoffset: -400;
+@keyframes rotate-text {
+    to {
+        transform: rotate(1turn);
     }
 }

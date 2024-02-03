@@ -394,15 +394,9 @@
   to {
     transform: translate3d(-100%, 0, 0); } }
 
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 400; }
-  20% {
-    stroke-dashoffset: 0; }
-  70% {
-    stroke-dashoffset: 0; }
-  100% {
-    stroke-dashoffset: -400; } }
+@keyframes rotate-text {
+  to {
+    transform: rotate(1turn); } }
 
 .loader-div {
   padding: var(--body-top-padding) var(--page-padding) var(--body-top-padding);
@@ -667,6 +661,14 @@
           .home .main .testimonials-container .client-responses .talk .navigate span.showing {
             display: inline-block; }
 
+.home .main .client-logos {
+  padding-top: var(--element-block-padding);
+  padding-inline: 0; }
+  .home .main .client-logos .scrolling_text {
+    transform: scale(3.2); }
+    .home .main .client-logos .scrolling_text span {
+      margin: 0 20px; }
+
 .about .landing .head {
   padding-left: var(--padding-none);
   padding-bottom: var(--header-gap); }
@@ -684,8 +686,9 @@
     width: 45%;
     height: 100%;
     align-self: stretch;
-    min-height: 716px;
-    overflow: hidden; }
+    height: 720px;
+    overflow: hidden;
+    transform: skew(2deg); }
     @media only screen and (max-width: 1120px) {
       .about .main .bio-container .dol {
         width: 100%; } }
@@ -1631,21 +1634,51 @@ button {
 .tab {
   padding: var(--buttons-links) var(--elements-inline-padding);
   gap: var(--buttons-links);
-  border-radius: 64px;
-  border: 2px solid var(--active-secondary);
-  transition: 0.3s;
+  transition: 0.6s;
   cursor: pointer;
   text-align: center; }
-  .tab:hover {
-    border-color: var(--disabled-primary);
-    background: var(--disabled-primary); }
   .tab:focus, .tab.active {
-    border-color: var(--active-secondary);
-    background: var(--active-secondary);
-    color: var(--active-accent);
     cursor: default; }
   .tab p {
-    text-wrap: nowrap; }
+    text-wrap: nowrap;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom;
+    white-space: nowrap; }
+    .tab p svg.link-svgline {
+      position: absolute;
+      top: 100%;
+      left: -5%;
+      overflow: hidden;
+      margin: 0;
+      width: 110%;
+      height: 20px;
+      transition: stroke-dashoffset 0.3s ease-in-out;
+      transform: translateY(-90%);
+      fill: none;
+      stroke: var(--active-secondary);
+      stroke-width: 1.5;
+      stroke-dasharray: 400px;
+      stroke-dashoffset: 400px; }
+    .tab p:hover {
+      color: var(--active-primary); }
+      .tab p:hover svg.link-svgline {
+        stroke-dashoffset: 0px;
+        stroke: var(--active-primary); }
+  .tab.active p {
+    color: var(--active-secondary); }
+    .tab.active p svg.link-svgline {
+      stroke: var(--active-secondary);
+      stroke-dashoffset: 0px;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.svg-wrap {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  overflow: hidden; }
 
 footer {
   color: var(--active-accent);
@@ -1661,12 +1694,12 @@ footer {
     z-index: 2; }
   footer .partner-div {
     padding: var(--header-gap) 0 var(--page-padding);
-    gap: var(--element-block-padding); }
+    gap: var(--parents-elements-gap); }
     @media only screen and (max-width: 502px) {
       footer .partner-div {
         padding-bottom: var(--parents-elements-gap); } }
     footer .partner-div .title {
-      width: 49%;
+      width: 56%;
       gap: var(--paragraphs); }
       @media only screen and (max-width: 1120px) {
         footer .partner-div .title {
@@ -1674,44 +1707,33 @@ footer {
       @media only screen and (max-width: 502px) {
         footer .partner-div .title {
           width: 100%; } }
-  footer .slide-text {
-    width: 100%;
-    padding: var(--element-block-padding) 0;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    right: -30%;
-    bottom: 0;
-    transform: rotate(-90deg);
-    z-index: 1;
-    left: unset; }
-    @media only screen and (max-width: 502px) {
-      footer .slide-text {
-        width: 560px;
-        bottom: 150px;
-        left: unset;
-        right: -44%; } }
-    footer .slide-text .text {
-      animation: animate_text 20s linear infinite; }
-      footer .slide-text .text span {
-        margin: 0 40px;
-        color: var(--active-secondary-dark);
-        opacity: 0.6; }
-  @media only screen and (max-width: 502px) {
-    footer .copyright {
-      flex-direction: column;
-      gap: var(--has-button-gap);
-      align-items: flex-start; } }
-  footer .copyright .social-media {
+    footer .partner-div .footer-send .iconer {
+      position: absolute; }
+    footer .partner-div .footer-send #rotatingText {
+      animation-name: rotate-text;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running; }
+      footer .partner-div .footer-send #rotatingText .text {
+        letter-spacing: 13px;
+        text-transform: uppercase;
+        fill: var(--active-accent); }
+    footer .partner-div .footer-send:hover #rotatingText {
+      animation-play-state: paused; }
+  footer .copyright .copyright-list {
     gap: var(--paragraphs); }
     @media only screen and (max-width: 502px) {
-      footer .copyright .social-media {
-        gap: var(--has-button-gap); } }
-    footer .copyright .social-media svg {
-      width: 20px;
-      height: auto;
-      stroke: var(--active-accent);
-      fill: none !important; }
+      footer .copyright .copyright-list {
+        flex-direction: column; } }
+    footer .copyright .copyright-list .social-media {
+      gap: var(--siblings); }
+      footer .copyright .copyright-list .social-media img {
+        width: 16px;
+        height: auto; }
+  footer .copyright .toTop {
+    gap: var(--buttons-links);
+    cursor: pointer; }
 
 *,
 *::before,
@@ -2051,10 +2073,12 @@ ol {
     @media only screen and (max-width: 502px) {
       .not-found svg {
         width: 56px; } }
-  .not-found .head-text {
-    gap: var(--paragraphs); }
+  .not-found .head-text-top {
+    gap: var(--box-elements-gap) !important; }
 
 #round {
   border-radius: 100%;
   border: 2px solid var(--active-primary);
   padding: var(--padding-none) var(--elements-inline-padding); }
+  #round.rufu {
+    padding-inline: var(--page-padding); }

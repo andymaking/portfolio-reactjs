@@ -309,16 +309,29 @@
                             left: -5%;
                             position: absolute;
 
-                            &.next{
+                            &.next {
                                 right: -5%;
                                 left: unset;
                             }
 
-                            &.showing{
+                            &.showing {
                                 display: inline-block;
                             }
                         }
                     }
+                }
+            }
+        }
+
+        .client-logos {
+            padding-top: var(--element-block-padding);
+            padding-inline: 0;
+
+            & .scrolling_text {
+                transform: scale(3.2);
+
+                & span{
+                    margin: 0 20px;
                 }
             }
         }

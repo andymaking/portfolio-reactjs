@@ -29,8 +29,8 @@ export default function Contact() {
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top w-full">
                             <h1 className="h1 loadime text-center">
-                                <span id='round'>
-                                    Get in touch
+                                <span id='round' className='rufu'>
+                                    Send a message
                                 </span>
                             </h1>
                         </div>

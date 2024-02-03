@@ -102,9 +102,9 @@ const CaseStudy = () => {
                                 <div className="head-text w-full flex flex-row items-center justify-start">
                                     <div className="head-text-top w-full text-center flex flex-col">
                                         <h3 className="h2">
-                                            This project does not exist!
+                                            This project,<br /><span id='round'>does not exist!</span>
                                         </h3>
-                                        <p className="p1">Seems like an error occured and I couldn't find the project you requested.</p>
+                                        <p className="p1">You can try these other projects below...</p>
                                     </div>
                                 </div>
 
@@ -669,7 +669,9 @@ const CaseStudy = () => {
                 )}
 
                 <div className="other-projects flex flex-col">
-                    <h3 className={`h4${project.length > 0 ? ' text-left' : ' text-center'}`}>Check out these other projects:</h3>
+                    {project.length > 0 && (
+                        <p className={`p1${project.length > 0 ? ' text-left' : ' text-center'}`}>Check out these other projects:</p>
+                    )}
                     <article className="idea w-full flex flex-col">
                         <OtherProjects projectId={projectId} />
                     </article>

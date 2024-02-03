@@ -2,7 +2,7 @@ const Projects = [
     {
         "id": 2,
         "featured": false,
-        "name": "Pommo",
+        "name": "Pomo",
         "uniqueid": "jwcdr2r1",
         "year": "July 2022",
         "category": "Case Studies",

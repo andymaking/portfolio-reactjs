@@ -23,8 +23,9 @@
                 width: 45%;
                 height: 100%;
                 align-self: stretch;
-                min-height: 716px;
+                height: 720px;
                 overflow: hidden;
+                transform: skew(2deg);
 
                 @include devices(tablet) {
                     width: 100%;

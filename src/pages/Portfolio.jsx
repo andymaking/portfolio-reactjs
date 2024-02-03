@@ -53,7 +53,7 @@ export default function Portfolio() {
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top w-full">
-                            <h1 className="h1 loadime text-center">Work</h1>
+                            <h1 className="h1 loadime text-center"><span id='round' className='rufu'>Portfolio</span></h1>
                         </div>
                         <div className="tagger w-full flex justify-center items-start">
                             <Tab tabArray={designCategories} selectedTab={selectedTab} onTabClick={handleTabClick} />

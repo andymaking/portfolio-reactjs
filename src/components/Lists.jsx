@@ -98,12 +98,8 @@ const List = ({ type, linkText, link }) => {
                     details: 'thejudejoshua@gmail.com',
                 },
                 {
-                    title: "Call:",
+                    title: "Let's talk:",
                     details: 'Schedule a call',
-                },
-                {
-                    title: "Phone:",
-                    details: '+234 811 933 4926',
                 }
             ]
         }

@@ -24,6 +24,7 @@ const ProjectsShow = ({ show, category }) => {
         projectPairs.push(pair);
     }
 
+    
     const projectElement = (
         projectPairs.map((projectPair, index) => (
             <div className="projekt-pair w-full flex flex-row" key={index}>
@@ -37,7 +38,7 @@ const ProjectsShow = ({ show, category }) => {
                         <div className="projekt-container w-full flex flex-col">
                             <div className="projekt-container-image"
                                 style={{
-                                    backgroundImage: `url(${project.imageSrc})`,
+                                    backgroundImage: `url(/${project.imageSrc})`,
                                 }}
                             >
                                 <div className="projekt-container-details w-full flex flex-col justify-end items-start">

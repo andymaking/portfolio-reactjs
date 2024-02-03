@@ -4,7 +4,7 @@
 
 @import "./variables/breakpoints", "./variables/colors", "./variables/spacings", "./variables/general",
 "./variables/animations", "./components/loader", "./variables/type", "./pages/home", "./pages/about",
-"./pages/contact", "./pages/work", "./pages/case_study", "./pages/pricing", "./components/nav",
+"./pages/contact", "./pages/portfolio", "./pages/case_study", "./pages/pricing", "./components/nav",
 "./components/buttonlink", "./components/tab", "./components/footer";
 
 *,
@@ -250,8 +250,8 @@ ol {
         }
     }
 
-    .head-text {
-        gap: var(--paragraphs);
+    .head-text-top {
+        gap: var(--box-elements-gap) !important;
     }
 }
 
@@ -259,4 +259,8 @@ ol {
     border-radius: 100%;
     border: 2px solid var(--active-primary);
     padding: var(--padding-none) var(--elements-inline-padding);
+
+    &.rufu{
+        padding-inline: var(--page-padding);
+    }
 }

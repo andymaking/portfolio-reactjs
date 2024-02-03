@@ -16,7 +16,7 @@ const NoPage = () => {
                         <div className="head-text w-full flex flex-row items-center justify-start">
                             <div className="head-text-top w-full text-center flex flex-col">
                                 <h3 className="h2">
-                                    This url does not exist!
+                                    This url,<br/><span id='round'>does not exist!</span>
                                 </h3>
                                 <p className="p1">Seems like an error occured and I couldn't find the link you requested.</p>
                             </div>

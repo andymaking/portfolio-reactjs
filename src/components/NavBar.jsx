@@ -129,7 +129,7 @@ const NavBar = ({ currentPage, noPage }) => {
                         <Link type={"primary"} href={"/about"}>About</Link>
                     </span>
                     <span onClick={menuOut} className={`menuLink ${currentPage === '/portfolio' ? 'active' : ''}`}>
-                        <Link type={"primary"} href={"/portfolio"}>Work</Link>
+                        <Link type={"primary"} href={"/portfolio"}>Portfolio</Link>
                     </span>
                     {/* <span onClick={menuOut} className={`menuLink ${currentPage === '/pricing' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/pricing"}>Pricing</Link>
@@ -141,7 +141,7 @@ const NavBar = ({ currentPage, noPage }) => {
                         </Link>
                     </span>
                     <span onClick={menuOut} className={`menuLink ${currentPage === '/contact' ? 'active' : ''}`}>
-                        <Link type={"primary"} href={"/contact"}>Get in touch</Link>
+                        <Link type={"primary"} href={"/contact"}>Send a message</Link>
                     </span>
                 </div>
 

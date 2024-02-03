@@ -10,20 +10,20 @@ footer {
         gap: var(--parents-elements-gap);
     }
 
-    & > * {
+    &>* {
         z-index: 2;
     }
 
     .partner-div {
         padding: var(--header-gap) 0 var(--page-padding);
-        gap: var(--element-block-padding);
+        gap: var(--parents-elements-gap);
 
         @include devices(phone) {
             padding-bottom: var(--parents-elements-gap);
         }
 
         .title {
-            width: 49%;
+            width: 56%;
             gap: var(--paragraphs);
 
             @include devices(tablet) {
@@ -34,58 +34,61 @@ footer {
                 width: 100%;
             }
         }
-    }
 
-    .slide-text {
-        width: 100%;
-        padding: var(--element-block-padding) 0;
-        overflow: hidden;
-        white-space: nowrap;
-        position: absolute;
-        right: -30%;
-        bottom: 0;
-        transform: rotate(-90deg);
-        z-index: 1;
-        left: unset;
 
-        @include devices(phone) {
-            width: 560px;
-            bottom: 150px;
-            left: unset;
-            right: -44%;
-        }
+        .footer-send {
 
-        .text {
-            animation: animate_text 20s linear infinite;
-
-            span {
-                margin: 0 40px;
-                color: var(--active-secondary-dark);
-                opacity: 0.6;
+            & .iconer {
+                position: absolute;
             }
+
+            & #rotatingText {
+                animation-name: rotate-text;
+                animation-duration: 10s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-play-state: running;
+
+
+                .text {
+                    letter-spacing: 13px;
+                    text-transform: uppercase;
+                    fill: var(--active-accent);
+                }
+
+            }
+
+            &:hover {
+                #rotatingText {
+                    animation-play-state: paused;
+                }
+            }
+
         }
+
     }
 
     .copyright {
-        @include devices(phone) {
-            flex-direction: column;
-            gap: var(--has-button-gap);
-            align-items: flex-start;
+        .copyright-list{
+            gap: var(--paragraphs);
+    
+            @include devices(phone) {
+                flex-direction: column;
+            }
+    
+            .social-media {
+                gap: var(--siblings);
+    
+                img {
+                    width: 16px;
+                    height: auto;
+                }
+            }
         }
 
-        .social-media {
-            gap: var(--paragraphs);
-
-            @include devices(phone) {
-                gap: var(--has-button-gap);
-            }
-
-            svg {
-                width: 20px;
-                height: auto;
-                stroke: var(--active-accent);
-                fill: none !important;
-            }
+        .toTop{
+            gap: var(--buttons-links);
+            cursor: pointer;
         }
     }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import ProjectsShow from '../components/ProjectsShow';
 import Projects from '../components/Projects';
@@ -10,7 +10,6 @@ const OtherProjects = ({ projectId }) => {
     const shuffledData = data.sort(() => Math.random() - 0.5);
 
     const limitedData = shuffledData.slice(0, 2);
-
 
     return (
         <ProjectsShow show={limitedData} category={''} />
