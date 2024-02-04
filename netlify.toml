@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "./functions/redirect"
+  status = 200
+  force = true
