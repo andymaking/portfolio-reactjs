@@ -2,7 +2,7 @@
     .landing {
         & .head {
             padding-left: var(--padding-none);
-            padding-bottom: var(--header-gap);
+            padding-bottom: var(--element-block-gap);
 
             @include devices(sm-laptop) {
                 padding-bottom: var(--element-block-padding);

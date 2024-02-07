@@ -119,6 +119,7 @@
     .menuLinks-list {
         gap: var(--has-button-gap);
         padding: var(--element-block-padding) var(--page-padding);
+        height: 100%;
 
         @include devices(phone) {
             padding-bottom: var(--body-top-padding)

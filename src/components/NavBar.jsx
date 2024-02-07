@@ -120,8 +120,7 @@ const NavBar = ({ currentPage, noPage }) => {
                 </div>
             </nav>
             <div className={`menu-links-holder h-screen flex flex-row items-start justify-between`}>
-
-                <div className="menuLinks-list flex flex-col justify-center">
+                <div className="menuLinks-list flex flex-col justify-end">
                     <span onClick={menuOut} className={`menuLink ${currentPage === '/' || (currentPage.indexOf("/portfolio/") > -1) || noPage ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/"}>Home</Link>
                     </span>
@@ -144,7 +143,6 @@ const NavBar = ({ currentPage, noPage }) => {
                         <Link type={"primary"} href={"/contact"}>Send a message</Link>
                     </span>
                 </div>
-
                 <div onClick={offMenu} className="menu-close flex flex-row content-center justify-center">
                     <div className="menu-bars">
                         <span className="menu-bars-span top"></span>

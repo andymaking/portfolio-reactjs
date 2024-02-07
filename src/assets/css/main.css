@@ -810,7 +810,7 @@
 
 .about .landing .head {
   padding-left: var(--padding-none);
-  padding-bottom: var(--header-gap); }
+  padding-bottom: var(--element-block-gap); }
   @media only screen and (max-width: 1120px) {
     .about .landing .head {
       padding-bottom: var(--element-block-padding); } }
@@ -1529,7 +1529,8 @@
       right: 0; } }
   .menu-links-holder .menuLinks-list {
     gap: var(--has-button-gap);
-    padding: var(--element-block-padding) var(--page-padding); }
+    padding: var(--element-block-padding) var(--page-padding);
+    height: 100%; }
     @media only screen and (max-width: 502px) {
       .menu-links-holder .menuLinks-list {
         padding-bottom: var(--body-top-padding); } }
