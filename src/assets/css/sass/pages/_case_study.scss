@@ -8,7 +8,7 @@
             padding-bottom: 0;
 
             &-text {
-                @include devices(tablet) {
+                @include devices(sm-laptop) {
                     flex-direction: column;
                 }
 
@@ -56,7 +56,7 @@
                 overflow: hidden;
                 border-radius: 20px;
 
-                @include devices(tablet) {
+                @include devices(sm-laptop) {
                     height: 480px;
                     border-radius: 16px;
                 }
@@ -82,7 +82,7 @@
                 &-checker {
                     gap: var(--parents-elements-gap);
 
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         flex-direction: column;
                         gap: var(--has-button-gap);
                     }
@@ -91,7 +91,7 @@
                         gap: var(--buttons-links);
                         width: 50%;
 
-                        @include devices(tablet) {
+                        @include devices(sm-laptop) {
                             width: 100%;
                         }
                     }
@@ -100,7 +100,7 @@
                         width: 50%;
                         gap: var(--has-button-gap);
 
-                        @include devices(tablet) {
+                        @include devices(sm-laptop) {
                             width: 100%;
                             flex-direction: row;
                             gap: var(--parents-elements-gap);
@@ -566,7 +566,7 @@
         .h4 {
             padding-inline: var(--page-padding);
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 text-align: left;
             }
         }

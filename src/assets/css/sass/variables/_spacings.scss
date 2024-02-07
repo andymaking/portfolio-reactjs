@@ -19,23 +19,53 @@
     --body-top-padding: 160px;
 }
 
-@include devices(tablet) {
+@include devices(laptop) {
+    --page-padding: 64px;
+}
+
+@include devices(sm-laptop) {
     :root {
         --gap-none: 0px;
-        --caption-columns: 4px;
-        --buttons-links: 8px;
+        --caption-columns: 3px;
+        --buttons-links: 6px;
+        --siblings: 12px;
         --paragraphs: 20px;
         --box-elements-gap: 32px;
         --has-button-gap: 48px;
+        --element-block-gap: 64px;
         --parents-elements-gap: 96px;
         --header-gap: 104px;
         --main-gap: 128px;
 
         --padding-none: 0px;
-        --box-padding: 32px;
+        --box-padding: 24px;
         --elements-inline-padding: 32px;
         --element-block-padding: 48px;
-        --page-padding: 64px;
+        --page-padding: 56px;
+        --body-top-padding: 144px;
+    }
+}
+
+
+@include devices(tablet) {
+    :root {
+        --gap-none: 0px;
+        --caption-columns: 3px;
+        --buttons-links: 6px;
+        --siblings: 10px;
+        --paragraphs: 18px;
+        --box-elements-gap: 24px;
+        --has-button-gap: 40px;
+        --element-block-gap: 56px;
+        --parents-elements-gap: 80px;
+        --header-gap: 96px;
+        --main-gap: 104px;
+
+        --padding-none: 0px;
+        --box-padding: 24px;
+        --elements-inline-padding: 32px;
+        --element-block-padding: 48px;
+        --page-padding: 56px;
         --body-top-padding: 144px;
     }
 }
@@ -43,26 +73,28 @@
 @include devices(phone) {
     :root {
         --gap-none: 0px;
-        --caption-columns: 4px;
-        --buttons-links: 8px;
+        --caption-columns: 2px;
+        --buttons-links: 4px;
+        --siblings: 8px;
         --paragraphs: 16px;
         --box-elements-gap: 24px;
         --has-button-gap: 32px;
+        --element-block-gap: 48px;
         --parents-elements-gap: 64px;
         --header-gap: 80px;
-        --main-gap: 104px;
+        --main-gap: 96px;
 
         --padding-none: 0px;
-        --box-padding: 24px;
-        --elements-inline-padding: 32px;
-        --element-block-padding: 48px;
+        --box-padding: 16px;
+        --elements-inline-padding: 24px;
+        --element-block-padding: 32px;
         --page-padding: 24px;
-        --body-top-padding: 96px;
+        --body-top-padding: 128px;
     }
 }
 
 @media screen and (max-width: 340px) {
-    :root{
+    :root {
         --page-padding: 16px;
     }
 }

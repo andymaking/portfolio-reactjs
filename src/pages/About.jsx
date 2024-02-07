@@ -38,9 +38,9 @@ export default function Pricing() {
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
-                        <div className="head-text-top flex flex-col items-center justify-center">
+                        <div className="head-text-top flex flex-col items-start justify-start">
                             <h1 className="h1 loadime text-left">
-                                Designing<span id="round">pixels to solve</span> everyday problems.
+                                Designing<span id="round">pixels</span><br/><span id="round">to solve</span>everyday problems.
                             </h1>
                         </div>
                     </div>

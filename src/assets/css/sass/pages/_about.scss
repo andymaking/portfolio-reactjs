@@ -4,7 +4,7 @@
             padding-left: var(--padding-none);
             padding-bottom: var(--header-gap);
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 padding-bottom: var(--element-block-padding);
             }
         }
@@ -14,6 +14,10 @@
         .bio-container {
             gap: var(--parents-elements-gap);
             padding-top: var(--padding-none);
+
+            @include devices(sm-laptop) {
+                gap: var(--has-button-gap);
+            }
 
             @include devices(tablet) {
                 flex-direction: column;
@@ -27,7 +31,13 @@
                 overflow: hidden;
                 transform: skew(2deg);
 
+                @include devices(sm-laptop) {
+                    height: 656px;
+                    width: 40%;
+                }
+
                 @include devices(tablet) {
+                    height: 456px;
                     width: 100%;
                 }
 
@@ -46,6 +56,10 @@
                 width: 50%;
                 gap: var(--has-button-gap);
 
+                @include devices(sm-laptop) {
+                    width: 60%;
+                }
+
                 @include devices(tablet) {
                     width: 100%;
                 }
@@ -59,24 +73,25 @@
 
         .journey-container {
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 flex-direction: column;
             }
 
             .title {
-                // position: sticky;
-                // align-self: flex-start;
-                // top: 200px;
 
-                @include devices(tablet) {
+                @include devices(sm-laptop) {
                     top: 0;
                     position: relative;
+                }
+
+                @include devices(phone){
+                    left: -28px;
                 }
             }
 
             .lister {
                 .listing {
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         flex-direction: row;
                         align-items: flex-start;
                     }

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Blurhash } from "react-blurhash";
 
-// import 'lazysizes';
-// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const ImageContainer = ({ src, hash, alt, imageType }) => {
 
@@ -32,7 +32,7 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                         data-src={src}
                         className={"lazyload object-cover"}
                         alt={alt}
-                        // effect="blur"
+                        effect="blur"
                         loading="lazy"
                     />
                 </>
@@ -42,7 +42,7 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                     data-src={src}
                     className={"lazyload object-cover"}
                     alt={alt}
-                    // effect="blur"
+                    effect="blur"
                     loading="lazy"
                 />
             )}

@@ -108,7 +108,7 @@
     z-index: 2000;
     overflow: hidden;
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         flex-direction: column-reverse;
     }
 
@@ -118,15 +118,10 @@
 
     .menuLinks-list {
         gap: var(--has-button-gap);
-        align-self: flex-end;
         padding: var(--element-block-padding) var(--page-padding);
 
-        @include devices(tablet) {
-            align-self: flex-start;
-        }
-
         @include devices(phone) {
-            align-self: flex-start;
+            padding-bottom: var(--body-top-padding)
         }
 
         & .menuLink {
@@ -156,7 +151,7 @@
                     opacity: 0;
                     transition: 0.5s ease-in;
 
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         display: none;
                     }
                 }
@@ -186,7 +181,7 @@
         gap: var(--buttons-links);
         padding: var(--page-padding);
 
-        @include devices(tablet) {
+        @include devices(sm-laptop) {
             align-self: flex-end;
         }
 

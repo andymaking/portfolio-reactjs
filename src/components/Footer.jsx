@@ -32,7 +32,7 @@ const Footer = forwardRef(() => {
                                 Let's<span id="round">work</span> <span id="round">together</span>to bring your idea to life!
                             </h2>
                         </div>
-                        <Link type={"secondary"} href={"/contact"}>
+                        <Link type={"secondary"} href={"/contact"} extra={'livey'}>
                             <div className="footer-send grid justify-items-center items-center">
                                 <div className="iconer flex items-center justify-center">
                                     <EnvelopeSimple size={64} weight='thin' />

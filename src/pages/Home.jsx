@@ -92,7 +92,7 @@ export default function Home() {
             hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
             name: "Victoria Oniyide",
             position: "Communications Manager, Paaira",
-            content: "I had the pleasure of working with Jude recently, and it was an experience that left me thoroughly impressed. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that Jude is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from my team and clients, and I would recommend him without hesitation.",
+            content: "I had the pleasure of working with Jude recently, and it was an experience that left me thoroughly impressed. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that he is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from my team and clients, and I would recommend him without hesitation.",
         }
     ];
 
@@ -110,7 +110,7 @@ export default function Home() {
             <header className="landing w-full flex flex-col items-center">
                 <div className="head">
                     <div className={`head-text flex flex-col items-center justify-between`}>
-                        <div className="head-text-top flex flex-col items-center justify-center">
+                        <div className="head-text-top flex flex-col items-center justify-start">
                             <h1 className="h1 w-full text-left">
                                 <span className='loadime'>Designing </span>
                                 <span className="h4 lighter flex items-center justify-center"><span>user</span></span>
@@ -182,9 +182,19 @@ export default function Home() {
                                             </div>
                                             <div className="review-details flex flex-col justify-start items-start">
                                                 <p className="p1">{item.content}</p>
-                                                <div className="clave flex flex-col">
-                                                    <p className="p2">{item.name}</p>
-                                                    <p className="p2">{item.position}</p>
+                                                <div className="clave flex flex-row items-center">
+                                                    <div className="review-details-image-holder-mobile">
+                                                        <Image
+                                                            src={item.img}
+                                                            hash={item.hash}
+                                                            alt={`Reviewer, ${item.name}`}
+                                                            imageType={''}
+                                                        />
+                                                    </div>
+                                                    <div className='flex flex-col'>
+                                                        <p className="p2">{item.name}</p>
+                                                        <p className="p2">{item.position}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

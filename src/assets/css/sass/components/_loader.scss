@@ -2,7 +2,7 @@
     padding: var(--body-top-padding) var(--page-padding) var(--body-top-padding);
     gap: var(--buttons-links);
 
-    @include devices(tablet){
+    @include devices(sm-laptop){
         gap: var(--caption-columns);
     }
 
@@ -13,7 +13,7 @@
     img{
         width: 128px;
 
-        @include devices(tablet){
+        @include devices(sm-laptop){
             width: 72px;
         }
 

@@ -11,7 +11,7 @@
             &-text {
                 gap: var(--has-button-gap);
 
-                @include devices(tablet) {
+                @include devices(sm-laptop) {
                     justify-content: flex-start;
                     align-items: flex-start;
                 }
@@ -20,13 +20,13 @@
                     gap: 16px;
                     padding: 0 var(--page-padding);
 
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         gap: var(--buttons-links);
                         overflow-x: scroll;
                         padding-bottom: var(--paragraphs);
                     }
                     @include devices(phone) {
-                        justify-content: flex-start;
+                        justify-content: center;
                     }
                 }
             }
@@ -35,11 +35,9 @@
 
     .main {
         article {
-            // border-radius: 0 0 128px 128px;
             padding-top: var(--padding-none);
 
             @include devices(phone) {
-                // border-radius: 0 0 48px 48px;
             }
         }
     }

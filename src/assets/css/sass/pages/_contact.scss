@@ -4,6 +4,7 @@
 
         .head {
             padding-bottom: var(--header-gap);
+            text-wrap: nowrap;
         }
     }
 
@@ -13,10 +14,14 @@
 
             .lister {
                 .listing {
+                    @include devices(phone){
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
                     p {
                         margin-bottom: var(--buttons-links);
 
-                        @include devices(tablet) {
+                        @include devices(sm-laptop) {
                             margin-bottom: 0;
                         }
                     }

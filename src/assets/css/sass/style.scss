@@ -117,6 +117,7 @@ main {
     background-color: var(--active-neutral);
     gap: var(--gap-none);
     padding-top: 0;
+    overflow: hidden;
 }
 
 ol {
@@ -131,8 +132,6 @@ ol {
 #root {
     position: relative;
     height: 100vh;
-    // -webkit-perspective: 1500px;
-    // perspective: 1500px;
 }
 
 .liner {
@@ -152,7 +151,7 @@ ol {
     padding: 0px var(--page-padding);
     gap: var(--header-gap);
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         padding: 0;
     }
 
@@ -187,13 +186,10 @@ ol {
     position: fixed;
     padding: 6px;
     transform: translate(-50%, -50%);
-    // background-color: var(--active-neutral);
-    // color: var(--active-primary);
     background-color: #006a5d91;
     color: var(--active-neutral);
     border-radius: 50%;
     z-index: 100000;
-    // mix-blend-mode: difference;
     text-align: center;
     transition: all 0.2s linear;
     backdrop-filter: blur(12px);
@@ -241,7 +237,7 @@ ol {
         width: 104px;
         fill: var(--active-secondary);
 
-        @include devices(tablet) {
+        @include devices(sm-laptop) {
             width: 72px;
         }
 
@@ -259,8 +255,14 @@ ol {
     border-radius: 100%;
     border: 2px solid var(--active-primary);
     padding: var(--padding-none) var(--elements-inline-padding);
+    display: inline-block;
 
     &.rufu{
         padding-inline: var(--page-padding);
+    }
+    
+    @include devices(tablet){
+        text-wrap: wrap;
+        border-width: 1.5px;
     }
 }

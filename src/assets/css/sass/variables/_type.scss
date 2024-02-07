@@ -10,17 +10,6 @@
     font-display: swap;
 }
 
-// @font-face {
-//     font-family: "Vegur";
-//     src:
-//         url("/src/assets/fonts/Vegur-Regular.eot?#iefix") format("embedded-opentype"),
-//         url("/src/assets/fonts/Vegur-Regular.woff2") format("woff2"),
-//         url("/src/assets/fonts/Vegur-Regular.woff") format("woff"),
-//         url("/src/assets/fonts/Vegur-Regular.ttf") format("truetype");
-//     font-style: normal;
-//     font-display: swap;
-// }
-
 @font-face {
     font-family: "Manrope";
     src:
@@ -39,7 +28,7 @@ $steps: 4;
 @function calculate-font-size($baseFontSize, $steps) {
     $fontSize: $baseFontSize;
     @for $i from 1 through $steps {
-        $fontSize: $fontSize / 1.2;
+        $fontSize: $fontSize / 1.19;
     }
     @return $fontSize;
 }
@@ -61,7 +50,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 1);
     }
 
@@ -85,7 +74,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
@@ -108,7 +97,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
@@ -131,7 +120,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
@@ -154,7 +143,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
@@ -177,7 +166,7 @@ $steps: 4;
         font-size: calculate-font-size($baseFontSize, $steps - 2);
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 1);
     }
 
@@ -205,7 +194,7 @@ $steps: 4;
         font-size: $baseFontSize;
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
@@ -229,7 +218,7 @@ $steps: 4;
         font-size: $baseFontSize;
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 
@@ -253,7 +242,7 @@ $steps: 4;
         font-size: $baseFontSize;
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: $baseFontSize;
     }
 
@@ -276,7 +265,7 @@ $steps: 4;
         font-size: $baseFontSize;
     }
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         font-size: calculate-font-size($baseFontSize, $steps - 3);
     }
 

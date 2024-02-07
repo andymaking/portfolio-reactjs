@@ -19,66 +19,97 @@ footer {
         gap: var(--parents-elements-gap);
 
         @include devices(phone) {
-            padding-bottom: var(--parents-elements-gap);
+            flex-direction: column;
+            align-items: flex-start;
+            // align-items: flex-end;
+            gap: var(--has-button-gap);
+            padding-bottom: 0;
         }
 
         .title {
-            width: 56%;
+            width: 64%;
             gap: var(--paragraphs);
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 width: 72%;
             }
 
+            @include devices(tablet) {
+                width: 80%;
+            }
+
             @include devices(phone) {
-                width: 100%;
+                width: 96%;
+                align-self: flex-start;
             }
         }
 
 
-        .footer-send {
-
-            & .iconer {
-                position: absolute;
+        .livey {
+            @include devices(phone) {
+                transform: scale(0.8);
+                left: -9%;
+                top: -28px;
             }
 
-            & #rotatingText {
-                animation-name: rotate-text;
-                animation-duration: 10s;
-                animation-timing-function: linear;
-                animation-iteration-count: infinite;
-                animation-play-state: running;
+            .footer-send {
+
+                & .iconer {
+                    position: absolute;
+                }
+
+                & #rotatingText {
+                    animation-name: rotate-text;
+                    animation-duration: 10s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    animation-play-state: running;
 
 
-                .text {
-                    letter-spacing: 13px;
-                    text-transform: uppercase;
-                    fill: var(--active-accent);
+                    .text {
+                        letter-spacing: 13px;
+                        text-transform: uppercase;
+                        fill: var(--active-accent);
+
+                        @include devices(tablet) {
+                            letter-spacing: 14.5px;
+                        }
+
+                        @include devices(phone) {
+                            letter-spacing: 16px;
+                        }
+
+                    }
+
+                }
+
+                &:hover {
+                    #rotatingText {
+                        animation-play-state: paused;
+                    }
                 }
 
             }
-
-            &:hover {
-                #rotatingText {
-                    animation-play-state: paused;
-                }
-            }
-
         }
 
     }
 
     .copyright {
-        .copyright-list{
+        @include devices(phone) {
+            align-items: flex-end;
+        }
+
+        .copyright-list {
             gap: var(--paragraphs);
-    
+
             @include devices(phone) {
                 flex-direction: column;
+                align-items: flex-start;
             }
-    
+
             .social-media {
                 gap: var(--siblings);
-    
+
                 img {
                     width: 16px;
                     height: auto;
@@ -86,7 +117,7 @@ footer {
             }
         }
 
-        .toTop{
+        .toTop {
             gap: var(--buttons-links);
             cursor: pointer;
         }
