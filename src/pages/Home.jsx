@@ -7,7 +7,8 @@ import Image from '../components/Image';
 import Links from "../components/Links";
 
 import Reviewer01 from "../assets/images/review-1.webp";
-import Reviewer02 from "../assets/images/review-2.webp";
+import Reviewer02 from "../assets/images/review-3.webp";
+import Reviewer03 from "../assets/images/review-3.webp";
 import clientLogo1 from "../assets/images/pro-jobs/1.webp";
 import clientLogo2 from "../assets/images/pro-jobs/2.webp";
 import clientLogo3 from "../assets/images/pro-jobs/3.webp";
@@ -90,9 +91,16 @@ export default function Home() {
         {
             img: Reviewer02,
             hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
-            name: "Victoria Oniyide",
-            position: "Communications Manager, Paaira",
-            content: "I had the pleasure of working with Jude recently, and it was an experience that left me thoroughly impressed. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that he is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from my team and clients, and I would recommend him without hesitation.",
+            name: "Jide Tomoshegbo",
+            position: "Software Engineer",
+            content: "Working with Jude is always a sight to behold. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that he is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from our team and clients, and I would recommend him without hesitation.",
+        },
+        {
+            img: Reviewer03,
+            hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
+            name: "Ugochukwu Kizito",
+            position: "Concordia University",
+            content: "I collaborated with Jude on my project and his commitment to communication was remarkable. He kept me in the loop every step of the way through email, calls or in-person meetings.\n\nI felt more involved and informed throughout the project. His exceptional design skills and commitment to communication sets him apart from others in the industry. I appreciate his hard work and dedication and look forward to working with him again.",
         }
     ];
 
@@ -168,7 +176,7 @@ export default function Home() {
                             <div className="talk w-full flex flex-col justify-start">
                                 <div className='review-container flex flex-row'>
                                     {reviews.map((item, index) => (
-                                        <div className={`review w-full flex flex-row justify-between items-center ${activeIndex === index ? 'active' : activeIndex === index + 1 ? 'back' : activeIndex === index - 1 ? 'forward' : ''}`} key={index}>
+                                        <div className={`review w-full flex flex-row justify-between items-center ${activeIndex === index ? 'active' : activeIndex === index + 1 ? 'back' : activeIndex === index - 1 ? 'forward' : 'hidden'}`} key={index}>
                                             <div className='review-details-image'>
                                                 <div className="review-details-image-holder">
                                                     <Image
@@ -204,7 +212,7 @@ export default function Home() {
                                     <span onClick={prevSlide} className={`nav-btn previous ${activeIndex > 0 ? 'showing' : 'hidden'}`}>
                                         <ArrowLeft weight="thin" />
                                     </span>
-                                    <span onClick={nextSlide} className={`nav-btn next ${activeIndex < 1 ? 'showing' : 'hidden'}`}>
+                                    <span onClick={nextSlide} className={`nav-btn next ${activeIndex < 2 ? 'showing' : 'hidden'}`}>
                                         <ArrowRight weight="thin" />
                                     </span>
                                 </div>

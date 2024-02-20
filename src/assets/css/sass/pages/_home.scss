@@ -194,7 +194,8 @@
                     border-width: 1.5px;
                     padding-inline: var(--paragraphs);
                 }
-                @include devices(phone){
+
+                @include devices(phone) {
                     width: 140%;
                     text-align: left;
                     padding-inline: 80px;
@@ -365,7 +366,7 @@
                                 font-size: 24px;
                             }
 
-                            @include devices(phone){
+                            @include devices(phone) {
                                 font-size: 16px;
                                 left: -10%;
                             }
@@ -405,6 +406,9 @@
 
                 & span {
                     margin: 0 20px;
+                    transform: translate3d(0, 0, 0);
+                    backface-visibility: hidden;
+                    -webkit-perspective: 1000;
 
                     @include devices(sm-laptop) {
                         margin: 0 10px;

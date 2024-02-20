@@ -6,7 +6,7 @@ import Image from '../components/Image';
 
 import aboutImage from "../assets/images/about.webp";
 
-export default function Pricing() {
+export default function About() {
     useEffect(() => {
         document.title = 'About Jude | Designing User Experiences for Increased conversions.';
     }, []);
@@ -35,12 +35,13 @@ export default function Pricing() {
 
     return (
         <>
+        {console.log('rabi')}
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
                         <div className="head-text-top flex flex-col items-start justify-start">
                             <h1 className="h1 loadime text-left">
-                                Designing<span id="round">pixels</span><br/><span id="round">to solve</span>everyday problems.
+                                Designing pixels<span id="round">to solve</span>everyday problems.
                             </h1>
                         </div>
                     </div>

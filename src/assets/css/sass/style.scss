@@ -137,8 +137,7 @@ ol {
 .liner {
     width: 100%;
     display: inline-block;
-    height: 1.6px;
-    flex: 1;
+    height: 1.2px;
     background-color: var(--active-secondary);
 
     &.secondary {
@@ -251,17 +250,17 @@ ol {
     }
 }
 
-#round{
+#round {
     border-radius: 100%;
     border: 2px solid var(--active-primary);
     padding: var(--padding-none) var(--elements-inline-padding);
     display: inline-block;
 
-    &.rufu{
+    &.rufu {
         padding-inline: var(--page-padding);
     }
-    
-    @include devices(tablet){
+
+    @include devices(tablet) {
         text-wrap: wrap;
         border-width: 1.5px;
     }

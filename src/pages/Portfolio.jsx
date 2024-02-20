@@ -8,13 +8,19 @@ import Projects from '../components/Projects';
 export default function Portfolio() {
     const [selectedTab, setSelectedTab] = useState('All projects');
 
-    const compareDates = (a, b) => {
-        const dateA = new Date(a.year);
-        const dateB = new Date(b.year);
-        // Reverse the order of comparison to sort in descending order
-        return dateB - dateA;
-    };
-    const projects = Projects.slice().sort(compareDates);
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        const compareDates = (a, b) => {
+            const dateA = new Date(a.year);
+            const dateB = new Date(b.year);
+            // Reverse the order of comparison to sort in descending order
+            return dateB - dateA;
+        };
+        
+        const sortedProjects = Projects.slice().sort(compareDates);
+        setProjects(sortedProjects);
+    }, [])
 
     useEffect(() => {
         document.title = 'Portfolio by Jude | Designing User Experiences for Increased conversions.';

@@ -93,6 +93,9 @@
                             overflow: hidden;
                             transition: all 0.6s ease;
                             width: 100%;
+                            transform: translate3d(0, 0, 0);
+                            backface-visibility: hidden;
+                            -webkit-perspective: 1000;
 
                             div {
                                 height: 100%;
@@ -151,30 +154,30 @@
                         }
                     }
 
-                    $div-count: 20;
+                    // $div-count: 20;
 
-                    @for $i from 1 through $div-count {
-                        $number: if($i % 2==1, $i, $i + 1);
-                        $width: if($number % 4==1, 50%, 50%);
+                    // @for $i from 1 through $div-count {
+                    //     $number: if($i % 2==1, $i, $i + 1);
+                    //     $width: if($number % 4==1, 50%, 50%);
 
-                        &:nth-child(#{$number}) {
-                            .projekt:nth-child(1) {
-                                width: #{$width};
+                    //     &:nth-child(#{$number}) {
+                    //         .projekt:nth-child(1) {
+                    //             width: #{$width};
 
-                                @include devices(tablet) {
-                                    width: 100%;
-                                }
-                            }
+                    //             @include devices(tablet) {
+                    //                 width: 100%;
+                    //             }
+                    //         }
 
-                            .projekt:nth-child(2) {
-                                width: calc(100% - #{$width});
+                    //         .projekt:nth-child(2) {
+                    //             width: calc(100% - #{$width});
 
-                                @include devices(tablet) {
-                                    width: 100%;
-                                }
-                            }
-                        }
-                    }
+                    //             @include devices(tablet) {
+                    //                 width: 100%;
+                    //             }
+                    //         }
+                    //     }
+                    // }
                 }
 
             }

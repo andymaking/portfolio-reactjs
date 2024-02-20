@@ -12,7 +12,8 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                 style={{
                     position: "absolute",
                     width: "100%",
-                    height: "100%"
+                    height: "100%",
+                    display: "none"
                 }}
             >
                 <Blurhash

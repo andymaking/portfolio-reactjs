@@ -140,7 +140,7 @@ const NavBar = ({ currentPage, noPage }) => {
                         </Link>
                     </span>
                     <span onClick={menuOut} className={`menuLink ${currentPage === '/contact' ? 'active' : ''}`}>
-                        <Link type={"primary"} href={"/contact"}>Send a message</Link>
+                        <Link type={"primary"} href={"/contact"}>Contact</Link>
                     </span>
                 </div>
                 <div onClick={offMenu} className="menu-close flex flex-row content-center justify-center">
