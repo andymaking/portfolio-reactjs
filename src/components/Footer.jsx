@@ -24,7 +24,7 @@ const Footer = forwardRef(() => {
 
     return (
         <footer className='w-full flex flex-col'>
-            {currentPage !== "/contact" && (
+            {currentPage !== "/contact" && currentPage !== "/success" &&  currentPage !== "/contact/" && currentPage !== "/success/" && (
                 <div className="w-full flex flex-col items-start justify-center">
                     <div className="partner-div w-full flex flex-row items-end justify-between">
                         <div className="title flex flex-col">

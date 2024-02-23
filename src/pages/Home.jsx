@@ -7,7 +7,7 @@ import Image from '../components/Image';
 import Links from "../components/Links";
 
 import Reviewer01 from "../assets/images/review-1.webp";
-import Reviewer02 from "../assets/images/review-3.webp";
+import Reviewer02 from "../assets/images/review-2.webp";
 import Reviewer03 from "../assets/images/review-3.webp";
 import clientLogo1 from "../assets/images/pro-jobs/1.webp";
 import clientLogo2 from "../assets/images/pro-jobs/2.webp";
@@ -91,8 +91,8 @@ export default function Home() {
         {
             img: Reviewer02,
             hash: "LFA-x4RP0Jt700t7~XR%t,R%iwxb",
-            name: "Jide Tomoshegbo",
-            position: "Software Engineer",
+            name: "Oniyide Victoria",
+            position: "Brand Communications, Paaira",
             content: "Working with Jude is always a sight to behold. His level of professionalism and expertise in his field is remarkable and truly stands out. I can confidently say that he is an asset to any team and an individual who sets a high standard for excellence.\n\nHe takes his time to test different versions of the product to ensure that it meets all the necessary requirements. His work has resulted in positive feedback from our team and clients, and I would recommend him without hesitation.",
         },
         {

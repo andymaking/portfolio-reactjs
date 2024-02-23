@@ -134,6 +134,7 @@
                 align-items: center;
                 gap: var(--has-button-gap);
                 transition: 0.5s ease;
+                width: 100%;
 
                 svg,
                 svg g,
@@ -145,9 +146,12 @@
 
                 &::before {
                     content: "\2192";
+                    @include h4;
+                    font-family: "Manrope";
+                    font-weight: 200;
                     position: absolute;
                     bottom: 10%;
-                    left: -20%;
+                    left: -12%;
                     color: var(--active-placeholder);
                     opacity: 0;
                     transition: 0.5s ease-in;

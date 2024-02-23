@@ -77,7 +77,7 @@ const List = ({ type, linkText, link }) => {
                     copy: '',
                 },
                 {
-                    hinge: 'Website + admin',
+                    hinge: 'Dynamic Website + admin',
                     title: "$5,500 - above",
                     copy: '',
                 },
@@ -136,7 +136,7 @@ const List = ({ type, linkText, link }) => {
                     <p className="h4">{listing.title}</p>
                     <div className="clover flex flex-col">
                         {isValidEmail(listing.details) ? (
-                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:${listing.details}`}>
+                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:Jude%20Joshua<${listing.details}>`}>
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>

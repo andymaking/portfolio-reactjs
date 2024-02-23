@@ -179,14 +179,14 @@ ol {
 }
 
 .cursor {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     pointer-events: none;
     position: fixed;
     padding: 6px;
     transform: translate(-50%, -50%);
-    background-color: #006a5d91;
-    color: var(--active-neutral);
+    border: 1.5px solid var(--active-secondary);
+    background-color: var(--active-neutral);
     border-radius: 50%;
     z-index: 100000;
     text-align: center;
@@ -198,10 +198,12 @@ ol {
     }
 
     &.linked {
-        background-color: var(--active-primary);
+        background-color: var(--active-accent-blur);
         width: 64px;
         height: 64px;
-        opacity: 0.5;
+        opacity: 0.7;
+        backdrop-filter: blur(12px);
+
     }
 
     &.projector {
@@ -211,6 +213,7 @@ ol {
         height: auto;
         padding: 16px;
         background-color: var(--active-primary-blur);
+        border-color: var(--active-primary-blur);
         color: var(--active-neutral);
 
         * {
@@ -247,6 +250,26 @@ ol {
 
     .head-text-top {
         gap: var(--box-elements-gap) !important;
+    }
+
+    p{
+        width: 56%;
+        margin: 0 auto;
+
+        @include devices(sm-laptop) {
+            width: 72%;
+        }
+        @include devices(tablet){
+            width: 80%;
+        }
+
+        @include devices(phone){
+            width: 100%;
+        }
+
+        a{
+            text-decoration: underline;
+        }
     }
 }
 

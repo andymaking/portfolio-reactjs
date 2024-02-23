@@ -707,13 +707,12 @@
     gap: var(--buttons-links);
     flex-wrap: wrap;
     z-index: 17;
-    border-radius: 32px;
     position: fixed;
     bottom: var(--box-padding);
     right: var(--box-padding);
     top: unset;
     left: unset;
-    background: rgba(1, 41, 34, 0.7);
+    background: var(--active-primary-blur);
     backdrop-filter: blur(10px);
     color: var(--active-neutral);
     box-shadow: -7px 5px 20px 10px rgba(0, 0, 0, 0.24);
@@ -731,13 +730,13 @@
             position: absolute;
             gap: var(--buttons-links);
             transition: all 0.5s ease;
-            padding: 16px 32px;
+            padding: var(--siblings) var(--element-block-padding);
             width: 100%;
             left: 0;
         }
 
         .half-bottom {
-            padding: 16px 32px;
+            padding: var(--siblings) var(--element-block-padding);
             display: inline-flex;
             transition: 500ms ease;
             position: relative;
@@ -821,16 +820,16 @@
         position: absolute;
         height: 0;
         max-height: 0;
-        width: 200px;
         bottom: 105%;
         right: 0;
         top: unset;
         left: unset;
         padding: 0;
-        border-radius: 12px;
         background: var(--active-neutral);
         box-shadow: none;
         transition: 0.3s linear;
+        width: 248px;
+        border-radius: 0;
 
         li {
             padding: var(--buttons-links);
@@ -862,7 +861,7 @@
             max-height: 530px;
             height: auto;
             overflow-y: scroll;
-            padding: var(--buttons-links);
+            padding: var(--siblings);
             border: 1px solid var(--active-secondary);
             box-shadow: -7px 5px 20px 10px rgba(0, 0, 0, 0.24);
         }

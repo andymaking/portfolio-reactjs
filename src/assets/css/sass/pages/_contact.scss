@@ -3,7 +3,7 @@
         padding: var(--padding-none)var(--page-padding);
 
         .head {
-            padding-bottom: var(--header-gap);
+            padding-bottom: var(--parents-elements-gap);
             text-wrap: nowrap;
         }
     }
@@ -12,12 +12,48 @@
         article {
             padding-top: var(--padding-none);
 
+            .contact-form {
+                width: 100%;
+                padding-inline: var(--page-padding);
+
+                @include devices(phone){
+                    padding-inline: var(--padding-none)
+                }
+
+                &-group {
+                    padding-bottom: var(--element-block-padding);
+                    gap: var(--caption-columns);
+
+                    &.message {
+                        padding-bottom: var(--page-padding);
+                    }
+
+                    &:last-child{
+                        padding-bottom: var(--padding-none);
+                    }
+                }
+
+                &-control{
+                    background-color: unset;
+                    border-bottom: 1px solid var(--active-secondary);
+                    padding: var(--siblings) var(--padding-none) var(--padding-none);
+                    font-size: 16px;
+                    border-radius: none;
+
+                    &.area{
+                        height: 128px;
+                        resize: none;
+                    }
+                }
+            }
+
             .lister {
                 .listing {
-                    @include devices(phone){
+                    @include devices(phone) {
                         flex-direction: column;
                         align-items: flex-start;
                     }
+
                     p {
                         margin-bottom: var(--buttons-links);
 
@@ -48,7 +84,7 @@
             }
         }
     }
-    
+
     footer {
         .copyright {
             @include devices(phone) {

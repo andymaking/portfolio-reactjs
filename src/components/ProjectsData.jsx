@@ -63,7 +63,7 @@ const ProjectsList = [
                 }
             }
         },
-        users: {
+        target_users: {
             head: "Time-saving users",
             title: "Unlike other e-commerce platforms, FirstMedtrade catered for users who were in a hurry or had one item they were looking for; hardly looking to browse through. Through earlier insights obtained from research, we found that many of the users are busy professionals who require quick and efficient service. Based on this, the idea was to design FirstMedtrade to provide a streamlined shopping experience that saves our users time.",
             persona: {
@@ -120,7 +120,7 @@ const ProjectsList = [
                 4: "Making the tone more empathetic. Make it seem like the CTA cues and text understand their plight and are helping them get through.",
             }
         },
-        flow: {
+        inital_user_flows: {
             2: {
                 title: "The goal was easy - Develop a simple user journey, and test it for adoption",
                 image: "/images/jw09a422/l6mf8ajdczxlyuq09xeg.webp",
@@ -163,7 +163,7 @@ const ProjectsList = [
                 3: "80%--faster order experience",
             }
         },
-        update: {
+        final_user_flows: {
             title: "Having identified what worked, I went on to make changes to the flow; keeping the “guest-shopping” functionality for users who didn't want to log in or create a new account.",
             image: {
                 img: "/images/jw09a422/inw9stij30bitctr3m3m.webp",
@@ -200,7 +200,7 @@ const ProjectsList = [
                 }
             }
         },
-        finalWireframes: {
+        final_wireframes: {
             title: "Putting all of this together, it was easier to create an interface that was both visually appealing and focused on streamlining the unnecessary parts of the flow.",
             images: {
                 1: {
@@ -300,7 +300,7 @@ const ProjectsList = [
                 }
             }
         },
-        "final tests": {
+        final_tests: {
             title: "Results showed enthuthiasm and excitement.",
             describe: "During testing, we observed that users displayed a remarkably high level of enthusiasm and excitement for the revamped design. They were visibly impressed by the updated look and feel of the interface and expressed their admiration for the improvements made. The updated look and feel of the interface was intuitive and user-friendly, which made it easy to understand and use.\n\nThey also mentioned that the improved design allowed for a faster and more efficient way for them to complete their tasks, which was important for them. At the end of the day, user click through rate had gone up to 80% and users were 70% more comfortable and confident to buy online than to order on WhatsApp. This overwhelmingly positive feedback provided us with valuable insight into how we could further improve the user experience and also gave us the motivation to continue to refine the interface and make it even more user-friendly and efficient.",
             list: {
@@ -317,7 +317,7 @@ const ProjectsList = [
                 hash: "L6RDK4M,M}tjjfX6oet3}8TFR-Vv",
             }
         },
-        stakeholder: {
+        stakeholder_constraints: {
             title: "One director wanted something “loud and full”",
             describe: "During our final review with the business director, one of them was concerned with whether this new interface showcased their services, as he wanted to maintain a view that had all of the services displaying at once. He wanted ads displayed on empty spaces. However, after deliberations, we were able to agree that about 80% services were not in use and would best fit in later as features added on to enhance usability; once more research was done with the users to see the best way around displaying these services.\n\nSeeing as the present goal and need of these users was to search and shop, we tried to emphasize the need to have features and functionalities that improved this goal without making the system slow. Among budgetary considerations and timeline pressures, we also discussed the possibilities of rolling out these other services as part of beta tests in the future to see how users would respond to seeing them.\n\nHowever, some of the things we would fix included:",
             list: {

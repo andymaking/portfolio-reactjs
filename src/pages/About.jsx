@@ -35,7 +35,6 @@ export default function About() {
 
     return (
         <>
-        {console.log('rabi')}
             <header className="landing w-full flex flex-col items-center">
                 <div className="head w-full">
                     <div className="head-text flex flex-col items-center justify-center">
