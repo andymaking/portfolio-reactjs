@@ -11,36 +11,60 @@
     .main {
         article {
             padding-top: var(--padding-none);
+            gap: var(--header-gap);
+
+            @include devices(tablet) {
+                flex-direction: column;
+                gap: var(--element-block-gap);
+            }
+
+            .contact-info {
+                width: 45%;
+                gap: var(--paragraphs);
+
+                & p {
+                    gap: var(--buttons-links);
+
+                    & a {
+                        gap: var(--buttons-links);
+                    }
+                }
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
+            }
 
             .contact-form {
-                width: 100%;
-                padding-inline: var(--page-padding);
+                width: 55%;
+                align-self: center;
 
-                @include devices(phone){
-                    padding-inline: var(--padding-none)
+                @include devices(tablet) {
+                    width: 100%;
                 }
 
                 &-group {
                     padding-bottom: var(--element-block-padding);
-                    gap: var(--caption-columns);
+                    gap: var(--buttons-links);
+                    width: 100%;
 
                     &.message {
                         padding-bottom: var(--page-padding);
                     }
 
-                    &:last-child{
+                    &:last-child {
                         padding-bottom: var(--padding-none);
                     }
                 }
 
-                &-control{
+                &-control {
                     background-color: unset;
                     border-bottom: 1px solid var(--active-secondary);
                     padding: var(--siblings) var(--padding-none) var(--padding-none);
                     font-size: 16px;
-                    border-radius: none;
+                    border-radius: unset;
 
-                    &.area{
+                    &.area {
                         height: 128px;
                         resize: none;
                     }

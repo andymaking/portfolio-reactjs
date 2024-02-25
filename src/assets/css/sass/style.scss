@@ -32,12 +32,12 @@ canvas {
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 4px;
     height: 0;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--active-accent);
+    background: var(--active-nuetral);
 }
 
 /* Handle */
@@ -226,10 +226,6 @@ ol {
     @media only screen and(max-width: 850px) {
         display: none;
     }
-}
-
-.case__overlayed {
-    filter: blur(8px);
 }
 
 .not-found {

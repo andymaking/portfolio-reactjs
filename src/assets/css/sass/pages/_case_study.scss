@@ -13,7 +13,7 @@
             padding-bottom: 0;
 
             &-text {
-                @include devices(sm-laptop) {
+                @include devices(tablet) {
                     flex-direction: column;
                 }
 
@@ -45,6 +45,15 @@
 
                 &-title {
                     width: 90%;
+
+                    @include devices(tablet) {
+                        width: 100%;
+                    }
+                }
+
+                @include devices(tablet) {
+                    flex-direction: column;
+                    gap: var(--element-block-gap);
                 }
             }
 
@@ -52,6 +61,10 @@
                 gap: var(--header-gap);
                 padding: 0 0 var(--body-top-padding);
                 background-color: var(--active-neutral);
+
+                @include devices(tablet) {
+                    gap: var(--parents-elements-gap);
+                }
             }
 
             &-home {
@@ -65,7 +78,7 @@
                 background-color: var(--active-accent);
                 overflow: hidden;
 
-                @include devices(sm-laptop) {
+                @include devices(tablet) {
                     height: 480px;
                 }
 
@@ -73,14 +86,13 @@
                     height: 280px;
                 }
 
-                div {
-                    width: 100%;
-                    height: 100%;
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                    object-position: center;
 
-                    img {
-                        min-width: 100%;
-                        min-height: 100%;
-                        object-position: center;
+                    @include devices(tablet) {
+                        height: 100%;
                     }
                 }
             }
@@ -93,12 +105,16 @@
                     &-context {
                         gap: var(--header-gap);
 
+                        @include devices(tablet) {
+                            flex-direction: column;
+                            gap: var(--element-block-gap);
+                        }
+
                         &-describe {
                             gap: var(--buttons-links);
-                            max-width: 68%;
                             width: 68%;
 
-                            @include devices(sm-laptop) {
+                            @include devices(tablet) {
                                 width: 100%;
                             }
                         }
@@ -107,10 +123,10 @@
                             width: 32%;
                             gap: var(--box-elements-gap);
 
-                            @include devices(sm-laptop) {
+                            @include devices(tablet) {
                                 width: 100%;
-                                flex-direction: row;
-                                gap: var(--parents-elements-gap);
+                                flex-direction: column;
+                                gap: var(--box-elements-gap);
                             }
 
                             &-section {
@@ -149,6 +165,14 @@
                             &-self {
                                 height: 704px;
 
+                                @include devices(tablet) {
+                                    height: 560px;
+                                }
+
+                                @include devices(phone) {
+                                    height: 216px;
+                                }
+
                                 img {
                                     height: 100%;
                                 }
@@ -172,6 +196,10 @@
                         gap: var(--box-elements-gap);
                         justify-content: space-between;
 
+                        @include devices(phone) {
+                            flex-direction: column;
+                        }
+
                         &-details {
                             padding: var(--paragraphs);
                             width: 33%;
@@ -179,6 +207,10 @@
                             justify-content: center;
                             border: 1px solid;
                             border-radius: 100%;
+
+                            @include devices(phone) {
+                                width: 100%;
+                            }
                         }
                     }
 
@@ -190,13 +222,25 @@
                             flex-direction: row;
                             gap: var(--header-gap);
 
+                            @include devices(tablet) {
+                                flex-direction: column;
+                            }
+
                             h5 {
                                 width: 44%;
+
+                                @include devices(tablet) {
+                                    width: 100%;
+                                }
                             }
 
                             ol {
                                 width: 56%;
                                 height: 504px;
+
+                                @include devices(tablet) {
+                                    width: 100%;
+                                }
 
                                 li {
                                     list-style: none;
@@ -226,12 +270,20 @@
                                         position: absolute;
                                         right: 32%;
                                         left: unset;
+
+                                        @include devices(tablet) {
+                                            top: 66%
+                                        }
                                     }
 
                                     &:nth-child(4) {
                                         left: -74px;
                                         top: -8px;
                                         transform: rotate(5deg);
+
+                                        @include devices(tablet) {
+                                            left: -37px
+                                        }
                                     }
 
                                     &:nth-child(5) {
@@ -255,6 +307,11 @@
 
                             &-flex {
                                 gap: var(--box-elements-gap);
+
+                                @include devices(phone) {
+                                    flex-direction: column;
+                                }
+
                             }
                         }
 
@@ -267,17 +324,32 @@
                                 padding-inline: var(--page-padding);
                                 width: 100%;
 
+                                @include devices(tablet){
+                                    gap: var(--parents-elements-gap);
+                                }
+
                                 div {
                                     gap: var(--header-gap);
+
+                                    @include devices(tablet){
+                                        flex-direction: column;
+                                        gap: var(--paragraphs);
+                                    }
                                 }
 
                                 p.h5,
                                 p.p2 {
                                     width: 32%;
+                                    @include devices(tablet){
+                                        width: 100%;
+                                    }
                                 }
 
                                 p.p1 {
                                     width: 56%;
+                                    @include devices(tablet){
+                                        width: 100%;
+                                    }
                                 }
                             }
 
@@ -317,12 +389,24 @@
                     &.review {
                         gap: var(--header-gap);
 
+                        @include devices(tablet){
+                            gap: var(--paragraphs);
+                        }
+
                         & .title {
                             width: 40%;
+
+                            @include devices(tablet){
+                                width: 100%;
+                            }
                         }
 
                         & .describer {
                             width: 60%;
+
+                            @include devices(tablet){
+                                width: 100%;
+                            }
                         }
                     }
                 }
@@ -341,14 +425,31 @@
                     &.constraints {
                         gap: var(--header-gap);
 
+                        @include devices(tablet) {
+                            flex-direction: column;
+                            width: 100%;
+                        }
+
                         h4 {
                             width: 44%;
+
+                            @include devices(tablet) {
+                                width: 100%;
+                            }
                         }
 
                         ol {
                             padding: var(--padding-none);
                             width: 56%;
                             height: 320px;
+
+                            @include devices(tablet) {
+                                width: 100%;
+                            }
+
+                            @include devices(phone) {
+                                height: 240px;
+                            }
 
                             li {
                                 list-style: none;
@@ -366,6 +467,10 @@
                                     right: 50px;
                                     left: unset;
                                     top: 208px;
+
+                                    @include devices(phone) {
+                                        top: 160px;
+                                    }
                                 }
 
                                 &:nth-child(2) {
@@ -393,6 +498,10 @@
                 .persona {
                     gap: var(--box-elements-gap);
 
+                    @include devices(tablet) {
+                        flex-direction: column;
+                    }
+
                     .user-persona-details {
                         gap: var(--box-elements-gap);
                         padding: var(--box-padding);
@@ -400,15 +509,41 @@
                         width: 50%;
                         max-height: 313px;
 
+                        @include devices(sm-laptop) {
+                            max-height: 213px;
+                        }
+
+                        @include devices(tablet) {
+                            width: 100%;
+                            max-height: unset;
+                        }
+
+                        @include devices(phone) {
+                            flex-direction: column;
+                        }
+
                         &-person {
                             gap: var(--paragraphs);
                             width: 65%;
+
+                            @include devices(phone) {
+                                width: 100%;
+                            }
 
                             &-image-holder {
                                 width: 35%;
                                 height: 248px;
                                 border: 1px solid;
                                 overflow: hidden;
+
+                                @include devices(sm-laptop) {
+                                    height: 164px;
+                                }
+
+                                @include devices(phone) {
+                                    height: 248px;
+                                    width: 100%;
+                                }
 
                                 img {
                                     height: 100%;
@@ -431,10 +566,18 @@
                                 transform: scale(0.6);
                                 left: -50px;
                             }
+
+                            @include devices(phone) {
+                                width: 100%;
+                            }
                         }
 
                         &:last-child {
                             margin-top: var(--page-padding);
+
+                            @include devices(tablet) {
+                                margin-top: 0;
+                            }
                         }
                     }
                 }
@@ -444,9 +587,17 @@
                 & .competitors {
                     gap: var(--has-button-gap);
 
+                    @include devices(phone) {
+                        flex-direction: column;
+                    }
+
                     &-info {
                         gap: var(--has-button-gap);
                         width: 50%;
+
+                        @include devices(phone) {
+                            width: 100%;
+                        }
 
                         .competitorDetails {
                             gap: var(--paragraphs);
@@ -455,6 +606,10 @@
                                 text-transform: capitalize;
                                 width: fit-content;
                                 align-self: center;
+
+                                @include devices(phone) {
+                                    align-self: flex-start;
+                                }
                             }
                         }
 
@@ -488,8 +643,14 @@
                         height: 280px;
                         border: 1px solid var(--active-secondary);
 
+                        @include devices(phone) {
+                            height: 120px;
+                        }
+
                         img {
-                            object-position: 0px -148px;
+                            height: 100%;
+                            width: 100%;
+                            // object-position: 0px -148px;
                         }
                     }
                 }
@@ -548,6 +709,10 @@
                 &-details {
                     gap: var(--box-elements-gap);
 
+                    @include devices(tablet) {
+                        flex-direction: column;
+                    }
+
                     .color__list__holder {
                         gap: var(--buttons-links);
                     }
@@ -557,12 +722,26 @@
                         flex-wrap: wrap;
                         overflow: hidden;
 
+                        @include devices(tablet) {
+                            width: 100%;
+                        }
+
                         .colors__list {
                             min-height: 232px;
                             width: 23%;
                             padding: var(--paragraphs);
                             border: 1px solid var(--active-secondary);
                             flex-grow: 1;
+
+                            @include devices(sm-laptop) {
+                                min-height: 160px;
+                                padding: var(--buttons-links);
+                            }
+
+                            @include devices(phone) {
+                                min-height: 104px;
+                                padding: var(--buttons-links);
+                            }
 
                             .colorate {
                                 filter: invert(1);
@@ -575,6 +754,10 @@
                         width: 50%;
                         overflow: hidden;
                         border: 1px solid var(--active-secondary);
+
+                        @include devices(tablet) {
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -583,10 +766,18 @@
                 &-details {
                     gap: var(--box-elements-gap);
 
+                    @include devices(tablet) {
+                        flex-direction: column;
+                    }
+
                     .image-holder {
                         width: 50%;
                         overflow: hidden;
                         border: 1px solid var(--active-secondary);
+
+                        @include devices(tablet) {
+                            width: 100%;
+                        }
 
                         img {
                             height: 100%;
@@ -620,8 +811,17 @@
                 &-title {
                     gap: var(--header-gap);
 
+                    @include devices(tablet){
+                        flex-direction: column;
+                        gap: var(--parents-elements-gap);
+                    }
+
                     .p1 {
                         width: 40%;
+
+                        @include devices(tablet){
+                            width: 100%;
+                        }
                     }
 
                     .describer {
@@ -640,6 +840,10 @@
 
         gap: var(--parents-elements-gap);
 
+        @include devices(tablet) {
+            flex-direction: column;
+            gap: var(--paragraphs);
+        }
 
         div {
             gap: var(--has-button-gap);
@@ -649,10 +853,18 @@
 
                 h3 {
                     width: 48%;
+
+                    @include devices(tablet) {
+                        width: 100%;
+                    }
                 }
 
                 p {
                     width: 48%;
+
+                    @include devices(tablet) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -663,10 +875,44 @@
 
         &-images {
             gap: var(--has-button-gap);
+            flex-wrap: wrap;
+
+            @include devices(tablet) {
+                gap: var(--box-elements-gap);
+            }
+
+            .column {
+                width: 30%;
+                gap: var(--has-button-gap);
+
+                @include devices(sm-laptop) {
+                    width: 29%;
+                }
+
+                @include devices(tablet) {
+                    width: 48%;
+                }
+
+                @include devices(phone) {
+                    width: 100%;
+                }
+
+                & .full-images-section-images-holder{
+                    width: 100%;
+                }
+            }
 
             &-holder {
-                width: 100%;
+                width: 30%;
                 gap: var(--paragraphs);
+
+                @include devices(tablet){
+                    width: 48%;
+                }
+
+                @include devices(phone){
+                    width: 100%;
+                }
 
                 img {
                     width: 100%;
@@ -679,6 +925,10 @@
     .describer {
         width: 56%;
         align-self: flex-end;
+
+        @include devices(tablet) {
+            width: 100%;
+        }
     }
 
     .other-projects {
@@ -858,7 +1108,7 @@
         }
 
         ul {
-            max-height: 530px;
+            max-height: 500px;
             height: auto;
             overflow-y: scroll;
             padding: var(--siblings);

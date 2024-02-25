@@ -204,6 +204,36 @@ const ProjectsList = [
             title: "Putting all of this together, it was easier to create an interface that was both visually appealing and focused on streamlining the unnecessary parts of the flow.",
             images: {
                 1: {
+                    title: "Sketches",
+                    img: {
+                        1: {
+                            image: "/images/jw09a422/home.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Home Page"
+                        },
+                        2: {
+                            image: "/images/jw09a422/request.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Send a list"
+                        },
+                        3: {
+                            image: "/images/jw09a422/track.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Track an order"
+                        },
+                        4: {
+                            image: "/images/jw09a422/order-details.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Order details"
+                        },
+                        5: {
+                            image: "/images/jw09a422/login.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Login"
+                        }
+                    }
+                },
+                2: {
                     title: "Homepage and Search",
                     img: {
                         1: {
@@ -223,7 +253,7 @@ const ProjectsList = [
                         }
                     }
                 },
-                2: {
+                3: {
                     title: "Product directory and Cart",
                     img: {
                         1: {
@@ -237,18 +267,18 @@ const ProjectsList = [
                             sub: "Product page"
                         },
                         3: {
+                            image: "/images/jw09a422/onboarding-cart.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Cart page"
+                        },
+                        4: {
                             image: "/images/jw09a422/modal-filters-old.webp",
                             hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
                             sub: "Filters modal"
                         },
-                        4: {
-                            image: "/images/jw09a422/onboarding-cart.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Cart page"
-                        }
                     }
                 },
-                3: {
+                4: {
                     title: "Account and Dashboard area",
                     img: {
                         1: {
@@ -268,7 +298,7 @@ const ProjectsList = [
                         }
                     }
                 },
-                4: {
+                5: {
                     title: "Mobile screens",
                     img: {
                         1: {
@@ -348,15 +378,16 @@ const ProjectsList = [
                     title: "Product directory",
                     img: {
                         1: {
-                            image: "/images/jw09a422/productsfull.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Products listing - took out the boxed shadows to reduce the weight of page on the user eyes."
-                        },
-                        2: {
                             image: "/images/jw09a422/product.webp",
                             hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
                             sub: "Product page - Merged the product description page as a section on the product page to fix engineering issue when switching pages."
                         },
+                        2: {
+                            image: "/images/jw09a422/productsfull.webp",
+                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+                            sub: "Products listing - took out the boxed shadows to reduce the weight of page on the user eyes."
+                        },
+                        
                         3: {
                             image: "/images/jw09a422/modal-filters.webp",
                             hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",

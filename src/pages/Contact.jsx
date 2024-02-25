@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 import Success from '../components/Success';
 
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, ArrowSquareOut, ArrowFatLineRight } from "@phosphor-icons/react";
 
 export default function Contact() {
     useEffect(() => {
@@ -63,7 +63,7 @@ export default function Contact() {
                                     <div className="head-text-top w-full">
                                         <h1 className="h1 loadime text-center">
                                             <span id='round' className='rufu'>
-                                                Send a message
+                                                Let's get in touch
                                             </span>
                                         </h1>
                                     </div>
@@ -71,14 +71,22 @@ export default function Contact() {
                             </div>
                         </header>
                         <section className="main w-full flex flex-col items-center">
-                            <article className="process-container w-full flex flex-col justify-between items-start">
+                            <article className="process-container w-full flex flex-row justify-between items-start">
+                                <div className='contact-info flex flex-col'>
+                                    <p className='p1'>
+                                        Have a question, suggestion, or just want to say hello? I'd love to hear from you! Feel free to send me an email using the address below or fill out the form, and I'll get back to you as soon as possible.
+                                    </p>
+                                    <p className='p1 flex flex-row items-center'>
+                                        <ArrowFatLineRight />
+                                        <a className='flex flex-row items-center' href='mailto:Jude%20Joshua<thejudejoshua@gmail.com>'>thejudejoshua@gmail.com<ArrowSquareOut /></a>
+                                    </p>
+                                </div>
 
                                 <form
-                                    className='contact-form flex flex-col'
+                                    className='contact-form flex flex-col w-full'
                                     onSubmit={handleSubmit}
                                     name="contact-form"
                                     method="POST"
-                                    // action='/success'
                                     netlify
                                     data-netlify="true"
                                     netlify-honeypot="bot-field"
@@ -109,8 +117,6 @@ export default function Contact() {
                                         </button>
                                     </div>
                                 </form>
-
-                                {/* <Lists type={"contact"} linkText={"none"} link={""} /> */}
                             </article>
                         </section>
                     </>

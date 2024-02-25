@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from 'react-router-dom';
-import { createPortal } from 'react-dom';
-
 
 import Image from '../components/Image';
 
@@ -14,25 +12,6 @@ const CaseStudy = () => {
     const { projectId } = useParams();
 
     const parentRef = useRef(null);
-    const [outlineOpen, setOutlineOpen] = useState(false);
-
-    const handleOutlineOpen = () => {
-        setOutlineOpen(true);
-    };
-
-    const handleOutlineOpenClose = () => {
-        setOutlineOpen(false);
-    };
-
-    const outline = (e) => {
-        var classer = e.currentTarget.textContent;
-        var goToSection = classer.charAt(0).toLowerCase() + classer.slice(1).replaceAll(' ', '_');
-        const targetDiv = document.querySelector(`.${goToSection}`);
-        if (targetDiv) {
-            targetDiv.scrollIntoView({ behavior: 'smooth' });
-        }
-        setOutlineOpen(false);
-    };
 
     const project = Projects.filter(project => project.uniqueid === projectId);
 
@@ -50,11 +29,11 @@ const CaseStudy = () => {
 
     const projectDetails = ProjectData.find(projects => projects.uniqueId === projectId);
     const projectOutline = Object.keys(projectDetails)
-    projectOutline.splice(0,2)
+    projectOutline.splice(0, 2)
 
     return (
         <>
-            <header className={`landing w-full flex flex-col items-center project-head intro ${outlineOpen ? ' case__overlayed' : ''}`}>
+            <header className={`landing w-full flex flex-col items-center project-head intro`}>
                 <div className="head w-full flex flex-col items-start justify-start">
                     {
                         project.length > 0 ? (
@@ -86,45 +65,9 @@ const CaseStudy = () => {
                     }
                 </div>
             </header>
-            <section className={`main w-full flex flex-col items-center${outlineOpen ? ' case__overlayed' : ''}`}>
+            <section className={`main w-full flex flex-col items-center`}>
                 {project.length > 0 && (
                     <>
-                        {createPortal(
-                            <div className={`casestudy-outline${outlineOpen ? ' opened' : ''}`}>
-                                <div className="casestudy-outline-opening flex flex-col justify-center items-center">
-                                    <div className="half-top flex flex-row justify-center items-center" onClick={handleOutlineOpen}>
-                                        <div className="casestudy-outline-opening-bars flex flex-col items-start justify-center">
-                                            <span className="casestudy-outline-opening-bars-span top"></span>
-                                            <span className="casestudy-outline-opening-bars-span mid"></span>
-                                            <span className="casestudy-outline-opening-bars-span last"></span>
-                                        </div>
-                                        <p className="p2">Outline</p>
-                                    </div>
-                                    <div className="half-bottom flex flex-row justify-center items-center" onClick={handleOutlineOpenClose}>
-                                        <div className="casestudy-outline-opening-minimize-bars flex flex-col items-start justify-center">
-                                            <span className="casestudy-outline-opening-minimize-bars-span left"></span>
-                                            <span className="casestudy-outline-opening-minimize-bars-span right"></span>
-                                        </div>
-                                        <p className="p2">Minimize</p>
-                                    </div>
-                                </div>
-                                <ul>
-                                    <li onClick={outline}>
-                                        <p className="p2">
-                                            Intro
-                                        </p>
-                                    </li>
-                                    {Object.keys(projectOutline).map((className, index) => (
-                                        <li key={index} onClick={outline}>
-                                            <p className="p2">
-                                                {projectOutline[className].split(' ').pop().replace(/_/g, ' ').replace(/^\w/, c => c.toUpperCase())}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>,
-                            document.body
-                        )}
                         <article className={`project-details idea w-full flex flex-col ${project[0].name.toLowerCase()}`}>
                             <div className="grouper project-details-description flex flex-col justify-start items-start" ref={parentRef}>
                                 <div className="details-section project-details-home flex flex-col">
@@ -551,17 +494,36 @@ const CaseStudy = () => {
                                                     <div className="flex flex-col full-images-section" key={imager__i}>
                                                         <p>{projectDetails.final_wireframes.images[imager].title}</p>
                                                         <div className="flex flex-row full-images-section-images" key={imager__i}>
-                                                            {Object.keys(projectDetails.final_wireframes.images[imager].img).map((image, image__i) => (
-                                                                <div className="full-images-section-images-holder flex flex-col" key={image__i}>
-                                                                    <Image
-                                                                        key={image__i}
-                                                                        src={projectDetails.final_wireframes.images[imager].img[image].image}
-                                                                        hash={projectDetails.final_wireframes.images[imager].img[image].hash}
-                                                                        alt={`${projectDetails.final_wireframes.images[imager].img[image]} image`}
-                                                                    />
-                                                                    <p className="p2">{projectDetails.final_wireframes.images[imager].img[image].sub}</p>
-                                                                </div>
-                                                            ))}
+                                                            {(() => {
+                                                                const imgData = projectDetails.final_wireframes.images[imager].img;
+                                                                const columnLimit = 3;
+                                                                const columns = Array.from({ length: columnLimit }, () => []);
+
+                                                                const imgValues = Object.values(imgData);
+                                                                for (let i = 0; i < imgValues.length; i++) {
+                                                                    columns[i % columnLimit].push(imgValues[i]);
+                                                                }
+
+                                                                return (
+                                                                    <>
+                                                                        {columns.map((column, columnIndex) => (
+                                                                            <div key={columnIndex} className="column flex flex-col">
+                                                                                {column.map((imageArray, imageArray__i) => (
+                                                                                    <div className="full-images-section-images-holder flex flex-col" key={imageArray__i}>
+                                                                                    {/* {console.log(imageArray.image)} */}
+                                                                                        <Image
+                                                                                            src={imageArray.image}
+                                                                                            hash={imageArray.hash}
+                                                                                            alt={`${imageArray} image`}
+                                                                                        />
+                                                                                        <p className="p2">{imageArray.sub}</p>
+                                                                                    </div>
+                                                                                ))}
+                                                                            </div>
+                                                                        ))}
+                                                                    </>
+                                                                )
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 </>

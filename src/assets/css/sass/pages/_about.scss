@@ -30,6 +30,7 @@
                 height: 720px;
                 overflow: hidden;
                 transform: skew(2deg);
+                background-color: var(--disabled-primary);
 
                 @include devices(sm-laptop) {
                     height: 656px;

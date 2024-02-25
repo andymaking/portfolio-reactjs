@@ -7,7 +7,7 @@ const OtherProjects = ({ projectId }) => {
 
     const data = Projects.filter((project) => project.uniqueid !== projectId);
 
-    const shuffledData = data.sort(() => Math.random() - 0.5);
+    const shuffledData = data.sort(() => Math.random() - 0.4);
 
     const limitedData = shuffledData.slice(0, 2);
 
