@@ -13,7 +13,7 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                     position: "absolute",
                     width: "100%",
                     height: "100%",
-                    display: "none"
+                    opacity: "0.3"
                 }}
             >
                 <Blurhash
@@ -34,7 +34,6 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                         className={"lazyload object-cover"}
                         alt={alt}
                         effect="blur"
-                        loading="lazy"
                     />
                 </>
             ) : (
@@ -44,7 +43,6 @@ const ImageContainer = ({ src, hash, alt, imageType }) => {
                     className={"lazyload object-cover"}
                     alt={alt}
                     effect="blur"
-                    loading="lazy"
                 />
             )}
         </>
