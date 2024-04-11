@@ -133,7 +133,7 @@ const NavBar = ({ currentPage, noPage }) => {
                     {/* <span onClick={menuOut} className={`menuLink ${currentPage === '/pricing' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"/pricing"}>Pricing</Link>
                     </span> */}
-                    <span onClick={menuOut} className={`menuLink`}>
+                    <span onClick={menuOut} className={`menuLink ${currentPage === '/pricing' ? 'active' : ''}`}>
                         <Link type={"primary"} href={"https://thejudejoshua.gumroad.com/"} target="_blank">
                             Resources
                             <ArrowSquareIn />

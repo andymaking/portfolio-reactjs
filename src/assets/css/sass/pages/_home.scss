@@ -40,10 +40,11 @@
                             position: absolute;
                             border-radius: 100%;
                             border: 2px solid var(--active-primary);
-                            padding: 2px var(--box-elements-gap) 4px;
-                            left: 45%;
+                            padding: 0px var(--has-button-gap) 1px;
+                            left: 40%;
                             top: -40%;
                             line-height: 1;
+                            z-index: 1;
 
                             @include devices(sm-laptop) {
                                 top: -50%;
@@ -126,21 +127,24 @@
                             }
 
                             @include devices(phone) {
-                                width: 64px;
-                                height: 64px;
+                                display: none;
                             }
 
                         }
 
                         &-grab {
-                            width: 296px;
+                            width: 384px;
 
                             @include devices(sm-laptop) {
-                                width: 272px;
+                                width: 320px;
+                            }
+
+                            @include devices(tablet) {
+                                width: 304px;
                             }
 
                             @include devices(phone) {
-                                width: 80%;
+                                width: 100%;
                                 @include p1;
                             }
 
@@ -275,6 +279,7 @@
                                     height: auto;
                                     overflow: hidden;
                                     max-height: 504px;
+                                    border: 1px solid var(--active-secondary);
 
                                     & img {
                                         height: 100%;
@@ -388,38 +393,47 @@
         .client-logos {
             padding-top: var(--element-block-padding);
             padding-inline: 0;
+            padding-bottom: var(--padding-none);
 
             @include devices(tablet) {
                 padding-top: var(--box-padding);
             }
 
             & .scrolling_text {
-                transform: scale(3.2);
+                border-top: 1.5px solid;
+                border-bottom: 1.5px solid;
+                padding-block: var(--paragraphs);
 
                 @include devices(tablet) {
-                    transform: scale(4.2);
+                    border-top: 1.2px solid;
+                    border-bottom: 1.2px solid;
                 }
 
                 @include devices(phone) {
-                    transform: scale(9.2);
+                    border-top: 1px solid;
+                    border-bottom: 1px solid;
                 }
 
                 & span {
-                    margin: 0 20px;
+                    margin: 0 80px;
                     transform: translate3d(0, 0, 0);
                     backface-visibility: hidden;
                     -webkit-perspective: 1000;
+                    perspective: 1000;
+                    width: 120px;
 
                     @include devices(sm-laptop) {
-                        margin: 0 10px;
+                        margin: 0 60px;
                     }
 
                     @include devices(tablet) {
-                        margin: 0 7px;
+                        margin: 0 45px;
+                        width: 80px;
                     }
 
                     @include devices(phone) {
-                        margin: 0 4px;
+                        margin: 0 20px;
+                        width: 64px;
                     }
                 }
             }

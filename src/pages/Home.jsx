@@ -134,7 +134,7 @@ export default function Home() {
                                     <p className='p2'>About</p>
                                 </div>
                                 <p className="p2 aboute-grab">
-                                    Design generalist driving business growth by crafting digital experiences that users love to use.
+                                    Design generalist driving business growth for Service and Product businesses by crafting digital experiences that users love to use.
                                     <Links href={'about'} extra={'highlight-link'}>Learn more<ArrowSquareOut /></Links>
                                 </p>
                             </div>
@@ -223,16 +223,6 @@ export default function Home() {
 
                 <article className='client-logos scrolling-container w-full flex flex-row'>
                     <div className="scrolling_text w-full flex flex-row">
-                        <div className="text flex flex-row items-center justfiy-center">
-                            {clientLogos.map((logo, index) => (
-                                <span key={index}>
-                                    <img
-                                        src={logo}
-                                        alt={`clientImage${index + 1}`}
-                                    />
-                                </span>
-                            ))}
-                        </div>
                         <div className="text flex flex-row items-center justfiy-center">
                             {clientLogos.map((logo, index) => (
                                 <span key={index}>

@@ -38,31 +38,43 @@ const List = ({ type, linkText, link }) => {
                     copy: '',
                 }
             ],
-            about: [
+            career: [
                 {
                     hinge: '2020 - 2023',
                     title: "Product Designer",
                     copy: 'FirstMedtrade Africa',
                 },
                 {
-                    hinge: '2021 - 2022',
-                    title: "UI Designer (contract)",
-                    copy: 'The Victoria Nwaeke Cancer Foundation',
-                },
-                {
-                    hinge: '2021',
-                    title: "UX Designer (contract)",
-                    copy: 'Thrive.Nig',
-                },
-                {
                     hinge: '2017 - 2020',
-                    title: "Web Designer",
+                    title: "Web Designer / Administrator",
                     copy: 'FirstMedtrade Africa',
                 },
                 {
                     hinge: '2017',
                     title: "Web Design Intern",
                     copy: 'Ministry of Science, Akwa Ibom State',
+                }
+            ],
+            projects: [
+                {
+                    hinge: '2023',
+                    title: "UX Designer",
+                    copy: 'Thompson & Grace Investments',
+                },
+                {
+                    hinge: '2022',
+                    title: "UI Designer",
+                    copy: 'Lunar Luxury',
+                },
+                {
+                    hinge: '2021 - 2022',
+                    title: "UI Designer",
+                    copy: 'The Victoria Nwaeke Cancer Foundation',
+                },
+                {
+                    hinge: '2021',
+                    title: "UX Designer",
+                    copy: 'Thrive.Nig',
                 }
             ],
             pricing: [
@@ -105,20 +117,20 @@ const List = ({ type, linkText, link }) => {
         }
     ];
 
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            const t1 = gsap.timeline()
+    // useLayoutEffect(() => {
+    //     let ctx = gsap.context(() => {
+    //         const t1 = gsap.timeline()
 
-            t1.from(['.listnime', '.listnime_p'], {
-                top: "+=50",
-                opacity: 0,
-                duration: 0.5,
-                delay: 0.2,
-                stagger: 0.2,
-            })
-        })
-        return () => ctx.revert()
-    }, []);
+    //         t1.from(['.listnime', '.listnime_p'], {
+    //             top: "+=50",
+    //             opacity: 0,
+    //             duration: 0.5,
+    //             delay: 0.2,
+    //             stagger: 0.2,
+    //         })
+    //     })
+    //     return () => ctx.revert()
+    // }, []);
 
     const isValidEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -178,31 +190,37 @@ const List = ({ type, linkText, link }) => {
                     </Links>
                 )
             } else {
-                if (type === 'about') {
-                    return (
-                        <Links target="_blank" type={"primary"} href={link}>
-                            <div className="icon-hold flex items-center justify-center">
-                                <ArrowRight size={24} weight="regular" />
-                            </div>
-                            <span className='linkContent'>
-                                <span>
-                                    {linkText}
+                if (type !== 'career') {
+                    if (type === 'projects'){
+                        return (
+                            <Links target="_blank" type={"primary"} href={link}>
+                                <div className="icon-hold flex items-center justify-center">
+                                    <ArrowRight size={24} weight="regular" />
+                                </div>
+                                <span className='linkContent'>
+                                    <span>
+                                        {linkText}
+                                    </span>
                                 </span>
-                            </span>
-                        </Links>
-                    )
+                            </Links>
+                        )
+                    }else{
+                        return (
+                            <Links target="_self" type={"primary"} href={`/` + link}>
+                                <div className="icon-hold flex items-center justify-center">
+                                    <ArrowRight size={24} weight="regular" />
+                                </div>
+                                <span className='linkContent'>
+                                    <span>
+                                        {linkText}
+                                    </span>
+                                </span>
+                            </Links>
+                        )
+                    }
                 } else {
                     return (
-                        <Links target="_self" type={"primary"} href={`/` + link}>
-                            <div className="icon-hold flex items-center justify-center">
-                                <ArrowRight size={24} weight="regular" />
-                            </div>
-                            <span className='linkContent'>
-                                <span>
-                                    {linkText}
-                                </span>
-                            </span>
-                        </Links>
+                        ""
                     )
                 }
             }

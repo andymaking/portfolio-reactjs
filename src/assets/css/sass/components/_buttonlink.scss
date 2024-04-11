@@ -34,8 +34,12 @@ button {
     &.highlight-link {
         @include p2;
         display: inline-flex;
-        margin-left: 12px;
+        margin-left: 10px;
         gap: var(--caption-columns);
+
+        @include devices(phone) {
+            margin-left: 6px;
+        }
     }
 
     & span.linkContent {

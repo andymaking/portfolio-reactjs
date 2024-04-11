@@ -370,6 +370,7 @@
 
                             & .image-push {
                                 padding-inline: var(--page-padding);
+                                width: 100%;
 
                                 &>div {
                                     overflow: hidden;
@@ -595,7 +596,7 @@
 
                     &-info {
                         gap: var(--has-button-gap);
-                        width: 50%;
+                        width: 48%;
 
                         @include devices(phone) {
                             width: 100%;
@@ -628,7 +629,7 @@
             &-ideas {
                 &-section {
                     width: 100%;
-                    gap: var(--box-elements-gap);
+                    // gap: var(--box-elements-gap);
 
                     ol li:nth-child(1) {
                         padding-top: 0;
@@ -639,6 +640,7 @@
             &-flow {
                 &-image {
                     gap: var(--element-block-gap);
+                    width: 100%;
 
                     .classImage {
                         overflow: hidden;
@@ -652,13 +654,26 @@
                         img {
                             height: 100%;
                             width: 100%;
-                            // object-position: 0px -148px;
+                        }
+                    }
+                }
+
+                &.sitemap {
+                    .classImage {
+                        height: auto;
+                        overflow: hidden;
+                        border: none;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
                         }
                     }
                 }
             }
 
             &-sketches {
+
                 &.details-section {
                     gap: var(--element-block-gap);
                     padding-inline: 0;
@@ -674,6 +689,20 @@
                     &-details {
                         overflow: hidden;
                         background-color: var(--disabled-primary);
+
+                        &.calme{
+                            padding: var(--body-top-padding) var(--page-padding);
+                            gap: var(--has-button-gap);
+        
+                            & .project-details-sketches-image-holder{
+                                width: 30%;
+                                gap: var(--paragraphs);
+
+                                img{
+                                    border: 2px solid;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -780,7 +809,7 @@
                         @include devices(tablet) {
                             width: 100%;
                         }
-                        
+
                         img {
                             width: 100%;
                             max-width: 100%;
@@ -841,12 +870,25 @@
     }
 
     .titler {
-
+        width: 100%;
         gap: var(--parents-elements-gap);
 
         @include devices(tablet) {
             flex-direction: column;
             gap: var(--paragraphs);
+        }
+
+        .h5 {
+            width: 44%;
+        }
+
+        .fisher {
+            width: 44%;
+            gap: var(--caption-columns);
+
+            .h5 {
+                width: 100%;
+            }
         }
 
         div {
@@ -856,19 +898,29 @@
                 justify-content: space-between;
 
                 h3 {
-                    width: 48%;
+                    width: 48% !important;
 
                     @include devices(tablet) {
-                        width: 100%;
+                        width: 100% !important;
                     }
                 }
 
                 p {
-                    width: 48%;
+                    width: 48% !important;
 
                     @include devices(tablet) {
-                        width: 100%;
+                        width: 100% !important;
                     }
+                }
+            }
+        }
+
+        .filler{
+            .describer{
+                width: 56% !important;
+
+                @include devices(tablet) {
+                    width: 100% !important;
                 }
             }
         }
@@ -959,165 +1011,88 @@
 
 .casestudy-outline {
     gap: var(--buttons-links);
+    display: none;
     flex-wrap: wrap;
     z-index: 17;
     position: fixed;
-    bottom: var(--box-padding);
-    right: var(--box-padding);
     top: unset;
     left: unset;
-    background: var(--active-primary-blur);
+    background: var(--active-accent);
+    color: var(--active-secondary);
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    color: var(--active-neutral);
-    box-shadow: -7px 5px 20px 10px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px -8px 20px 10px rgba(0, 0, 0, 0.12);
+    border-top: 1.2px solid;
+
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--active-neutral);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--active-primary);
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--active-primary);
+    }
 
     @include devices(phone) {
         align-items: center;
     }
 
-    &-opening {
-        cursor: pointer;
-        overflow: hidden;
-
-        .half-top {
-            display: inline-flex;
-            position: absolute;
-            gap: var(--buttons-links);
-            transition: all 0.5s ease;
-            padding: var(--siblings) var(--element-block-padding);
-            width: 100%;
-            left: 0;
-        }
-
-        .half-bottom {
-            padding: var(--siblings) var(--element-block-padding);
-            display: inline-flex;
-            transition: 500ms ease;
-            position: relative;
-            top: 0;
-            left: 0;
-            opacity: 1;
-            width: 100%;
-            gap: var(--buttons-links);
-            transform: translate(0, 200%);
-            transition: all 0.5s ease;
-        }
-
-        &-bars {
-            width: 18px;
-            height: 16px;
-            gap: var(--caption-columns);
-            transform: scale(0.8);
-
-            & span {
-                width: 100%;
-                height: 2px;
-                border-radius: 12px;
-                background: var(--active-neutral);
-
-                &.top {
-                    top: 0;
-                    left: 0;
-                }
-
-                &.last {
-                    bottom: 0;
-                    right: 0;
-                }
-
-                @include devices(phone) {
-                    height: 1.5px;
-                }
-            }
-        }
-
-        &-minimize {
-            &-bars {
-                width: 13px;
-                height: 16px;
-                gap: var(--caption-columns);
-                transform: scale(0.8);
-
-                & span {
-                    width: 100%;
-                    height: 2px;
-                    border-radius: 12px;
-                    background: var(--active-neutral);
-
-                    &.left {
-                        transform: rotate(56deg);
-                        top: 3px;
-                        left: -3px;
-                    }
-
-                    &.right {
-                        top: -3px;
-                        left: 3px;
-                        transform: rotate(-56deg);
-                    }
-
-                    @include devices(phone) {
-                        height: 1.5px;
-                    }
-                }
-            }
-        }
-
-        p {
-            width: auto;
-            overflow: hidden;
+    @include devices(tablet) {
+        &::-webkit-scrollbar {
+            height: 0;
         }
     }
 
+
     ul {
-        overflow: hidden;
-        position: absolute;
-        height: 0;
-        max-height: 0;
-        bottom: 105%;
-        right: 0;
-        top: unset;
-        left: unset;
         padding: 0;
-        background: var(--active-neutral);
-        box-shadow: none;
-        transition: 0.3s linear;
-        width: 248px;
         border-radius: 0;
+        height: auto;
+        padding: var(--siblings) var(--has-button-gap);
+        gap: var(--siblings);
+
+
+        @include devices(tablet) {
+            padding-block: var(--paragraphs);
+        }
 
         li {
-            padding: var(--buttons-links);
-            border-radius: 7px;
+            padding: var(--buttons-links) var(--paragraphs);
+            border-radius: 50px;
+            border: 1.2px solid var(--active-secondary);
             transition: 0.5s ease;
             cursor: pointer;
-            color: var(--active-secondary);
+            min-width: 304px;
+            text-align: center;
 
             &:hover {
                 background: var(--disabled-primary);
+                border-color: var(--disabled-primary);
+                color: var(--active-secondary);
             }
+
+
+            @include devices(tablet) {
+                min-width: 200px;
+            }
+
+            @include devices(phone) {
+                min-width: 160px;
+            }
+
         }
     }
 
-    &.opened {
-        & .casestudy-outline-opening {
-            .half-top {
-                opacity: 0;
-                transform: translate(0, -200%);
-            }
-
-            .half-bottom {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        ul {
-            max-height: 500px;
-            height: auto;
-            overflow-y: scroll;
-            padding: var(--siblings);
-            border: 1px solid var(--active-secondary);
-            box-shadow: -7px 5px 20px 10px rgba(0, 0, 0, 0.24);
-        }
-    }
 }

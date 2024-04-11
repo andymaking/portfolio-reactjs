@@ -27,6 +27,15 @@ const CaseStudy = () => {
         }
     }, [project]);
 
+    const outline = (e) => {
+        var classer = e.currentTarget.textContent;
+        var goToSection = classer.charAt(0).toLowerCase() + classer.slice(1).replaceAll(' ', '_');
+        const targetDiv = document.querySelector(`.${goToSection}`);
+        if (targetDiv) {
+            targetDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     const projectDetails = ProjectData.find(projects => projects.uniqueId === projectId);
     const projectOutline = Object.keys(projectDetails)
     projectOutline.splice(0, 2)
@@ -90,10 +99,14 @@ const CaseStudy = () => {
                                             <div className="project-details-description-checker-context-describe">
                                                 <p className="p1">{project[0].description}</p>
                                             </div>
-                                            <div className="project-details-description-checker-context-roles flex flex-col items-start justify-between">
+                                            <div className="project-details-description-checker-context-roles flex flex-col items-start justify-start">
                                                 <div className="project-details-description-checker-roles-section flex flex-col">
                                                     <h4 className="p1">Project Type</h4>
                                                     <p className="p2">{project[0].type}</p>
+                                                </div>
+                                                <div className="project-details-description-checker-roles-section flex flex-col">
+                                                    <h4 className="p1">Industry</h4>
+                                                    <p className="p2">{project[0].industry}</p>
                                                 </div>
                                                 {projectDetails.people &&
                                                     Object.keys(projectDetails.people).map((roles, roles__i) => (
@@ -121,24 +134,51 @@ const CaseStudy = () => {
                                         </div>
                                         <div className="details-section problem project-details-problem flex flex-col justify-start items-start project_problem">
                                             <div className="title flex flex-col">
+                                                <p className="c1">The problem:</p>
                                                 <div className="titler flex flex-row justify-between">
-                                                    <p className="h5">{projectDetails.problem['why']['title']}</p>
+                                                    <div className="fisher w-full flex flex-col">
+                                                        <p className="h5">{projectDetails.problem['why']['title']}</p>
+                                                    </div>
                                                     <p className="p1 describer">{projectDetails.problem['why']['details']}</p>
                                                 </div>
                                             </div>
-                                            <div className="images-image flex flex-col">
-                                                {Object.keys(projectDetails.problem['images']).map((state, state__i) => (
-                                                    <React.Fragment key={state__i}>
-                                                        <div className="images-image-self flex flex-col">
-                                                            <Image
-                                                                className="project-details-cover-image image"
-                                                                src={projectDetails.problem['images'][state].image}
-                                                                hash={projectDetails.problem['images'][state].hash}
-                                                                alt={`problem images ` + (state__i + 1)}
-                                                            />
-                                                        </div>
-                                                    </React.Fragment>
-                                                ))}
+                                            {projectDetails.problem['images'] && (
+                                                <div className="images-image flex flex-col">
+                                                    {Object.keys(projectDetails.problem['images']).map((state, state__i) => (
+                                                        <React.Fragment key={state__i}>
+                                                            <div className="images-image-self flex flex-col">
+                                                                <Image
+                                                                    className="project-details-cover-image image"
+                                                                    src={projectDetails.problem['images'][state].image}
+                                                                    hash={projectDetails.problem['images'][state].hash}
+                                                                    alt={`problem images ` + (state__i + 1)}
+                                                                />
+                                                            </div>
+                                                        </React.Fragment>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </>
+                                )}
+                                {projectDetails.challenges && (
+                                    <>
+                                        {/* <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div> */}
+                                        <div className="details-section titler insights project-details-insights flex flex-row justify-start items-start initial_analysis">
+                                            <p className="h5">
+                                                {projectDetails.challenges.title}
+                                            </p>
+                                            <div className={`w-full flex flex-col complaints describer`}>
+                                                <p className="p1">{projectDetails.challenges.details}</p>
+                                                <ol>
+                                                    {Object.keys(projectDetails.challenges['painpoints']).map((painpoint, painpoint_i) => (
+                                                        <li className="p1" key={painpoint_i}>
+                                                            {projectDetails.challenges['painpoints'][painpoint]}
+                                                        </li>
+                                                    ))}
+                                                </ol>
                                             </div>
                                         </div>
                                     </>
@@ -212,7 +252,7 @@ const CaseStudy = () => {
                                         </div>
                                         <div className="details-section understand project-details-understand flex flex-col justify-start items-start inquiries">
                                             <div className={`flex flex-row justify-between w-full items-center project-details-understand-section constraints`}>
-                                                <h4 className="h4">{projectDetails.understand['hmws']['title']}</h4>
+                                                <h4 className="h4">{projectDetails.understand['constraints']['title']}</h4>
                                                 <ol>
                                                     {Object.keys(projectDetails.understand['constraints']['complaints']).map((list, list__i) => (
                                                         <li className={`p2`} key={list__i}>
@@ -221,17 +261,21 @@ const CaseStudy = () => {
                                                     ))}
                                                 </ol>
                                             </div>
-                                            <span className="liner"></span>
-                                            <div className="titler flex flex-row justify-between">
-                                                <p className="h5">Leaning into the HMWs:</p>
-                                                <ol className="describer">
-                                                    {Object.keys(projectDetails.understand['hmws']['complaints']).map((list, list__i) => (
-                                                        <li className={`p1`} key={list__i}>
-                                                            {projectDetails.understand['hmws']['complaints'][list]}
-                                                        </li>
-                                                    ))}
-                                                </ol>
-                                            </div>
+                                            {projectDetails.understand['hmws'] && (
+                                                <>
+                                                    <span className="liner"></span>
+                                                    <div className="titler flex flex-row justify-between">
+                                                        <p className="h5">{projectDetails.understand['hmws']['title']}</p>
+                                                        <ol className="describer">
+                                                            {Object.keys(projectDetails.understand['hmws']['complaints']).map((list, list__i) => (
+                                                                <li className={`p1`} key={list__i}>
+                                                                    {projectDetails.understand['hmws']['complaints'][list]}
+                                                                </li>
+                                                            ))}
+                                                        </ol>
+                                                    </div>
+                                                </>
+                                            )}
                                         </div>
                                     </>
                                 )}
@@ -243,7 +287,7 @@ const CaseStudy = () => {
                                         <div className="details-section competition project-details-competition flex flex-col justify-start items-center competitive_pointers">
                                             <h4 className="h4 details-section-title text-center">{projectDetails.competition['title']}</h4>
                                             <span className="liner"></span>
-                                            <div className={`w-full flex competitors`}>
+                                            <div className={`w-full flex competitors flex-wrap`}>
                                                 {Object.keys(projectDetails.competition['competitors']).map((competitor, competitor__i) => (
 
                                                     <div className="competitors-info flex flex-col" key={competitor__i}>
@@ -301,6 +345,29 @@ const CaseStudy = () => {
                                         </div>
                                     </>
                                 )}
+                                {projectDetails.sitemap && (
+                                    <>
+                                        <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div>
+                                        <div className="details-section inital_user_flows project-details-flow sitemap flex flex-row justify-start items-start initial_flows">
+                                            {Object.keys(projectDetails.sitemap).map((map, map__i) => (
+                                                <div className="project-details-flow-image flex flex-col" key={map__i}>
+                                                    <h5 className="h5">{projectDetails.sitemap[map].title}</h5>
+                                                    {Object.keys(projectDetails.sitemap[map].images).map((image, image__i) => (
+                                                        <div className="classImage">
+                                                            <Image
+                                                                className='flowImage'
+                                                                hash={projectDetails.sitemap[map].images[image__i + 1].hash}
+                                                                src={projectDetails.sitemap[map].images[image__i + 1].image}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
                                 {projectDetails.inital_user_flows && (
                                     <>
                                         <div className="details-section divider">
@@ -310,71 +377,98 @@ const CaseStudy = () => {
                                             {Object.keys(projectDetails.inital_user_flows).map((flows, flows__i) => (
                                                 <div className="project-details-flow-image flex flex-col" key={flows__i}>
                                                     <h5 className="h5">{projectDetails.inital_user_flows[flows].title}</h5>
-                                                    <div className="classImage">
-                                                        <Image
-                                                            className='flowImage'
-                                                            hash={projectDetails.inital_user_flows[flows].hash}
-                                                            src={projectDetails.inital_user_flows[flows].image}
-                                                            alt={`Flow step ` + (flows__i + 1)}
-                                                        />
-                                                    </div>
+                                                    {Object.keys(projectDetails.inital_user_flows[flows].images).map((image, image__i) => (
+                                                        <div className="classImage">
+                                                            <Image
+                                                                className='flowImage'
+                                                                hash={projectDetails.inital_user_flows[flows].images[image__i + 1].hash}
+                                                                src={projectDetails.inital_user_flows[flows].images[image__i + 1].image}
+                                                            />
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             ))}
                                         </div>
                                     </>
                                 )}
-                                {projectDetails.sketches && (
-                                    <div className="details-section sketches project-details-sketches flex flex-col justify-start items-start sketches">
-                                        <div className="titler">
-                                            <p className="h5 details-section-title">{projectDetails.sketches['title']}</p>
-                                        </div>
-                                        {Object.keys(projectDetails.sketches).map((section, section__i) => (
-                                            <React.Fragment key={section__i}>
-                                                {typeof projectDetails.sketches[section] === 'object' && (
-                                                    <>
-                                                        <div className="project-details-sketches-images-details flex flex-col">
-                                                            <Image
-                                                                src={projectDetails.sketches[section].sketch}
-                                                                hash={projectDetails.sketches[section].hash}
-                                                                alt={`${section}` + (section__i)}
-                                                            />
-                                                        </div>
-                                                    </>
-                                                )}
-                                            </React.Fragment>
-                                        ))}
-                                    </div>
-                                )}
-                                {projectDetails.wireframes && (
-                                    <div className="details-section wireframes project-details-wireframes flex flex-col justify-start items-start initial_wireframes">
-                                        <div className="titler">
-                                            <h5 className="h5 details-section-title">{projectDetails.wireframes.title}</h5>
-                                        </div>
-                                        <div className="screens-holder flex flex-col">
-                                            {Object.keys(projectDetails.wireframes).map((size, size__i) => (
-                                                (size !== 'title') && (
-                                                    <div className={`wireframes-holder flex flex-col ${size}`} key={size__i}>
-                                                        <div className={`w-full flex flex-wrap project-details-wireframes-images ${size}`}>
-                                                            <p className="p2" id="round">{projectDetails.wireframes[size].sub}</p>
-                                                            <div className="project-details-wireframes-images-details flex flex-col">
-                                                                <Image
-                                                                    src={projectDetails.wireframes[size].design}
-                                                                    hash={projectDetails.wireframes[size].hash}
-                                                                    alt={`${size}wireframe` + (size__i + 1)}
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                )
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                                {projectDetails.testing && (
+                                {projectDetails.user_base && (
                                     <>
                                         <div className="details-section divider">
                                             <span className="liner"></span>
                                         </div>
+                                        <div className="details-section ideas project-details-ideas flex flex-col justify-start items-start ideas">
+                                            <div className="titler w-full flex flex-row justify-between project-details-ideas-section">
+                                                <p className="h5">{projectDetails.user_base['title']}</p>
+                                                <div className="describer flex flex-col">
+                                                    <p className="p1">{projectDetails.user_base['details']}</p>
+                                                    <ol>
+                                                        {Object.keys(projectDetails.user_base['userList']).map((idea, idea__i) => (
+                                                            <li className="p1" key={idea__i}>
+                                                                {projectDetails.user_base['userList'][idea]}
+                                                            </li>
+                                                        ))}
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                                {projectDetails.sketches && (
+                                    <>
+                                        <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div>
+                                        <div className="details-section sketches project-details-sketches flex flex-col justify-start items-start sketches">
+                                            <div className="titler">
+                                                <p className="h5 details-section-title">{projectDetails.sketches['title']}</p>
+                                            </div>
+                                            <div className={`project-details-sketches-images-details w-full flex flex-row flex-wrap ${(Object.keys(projectDetails.sketches['image']).length > 1) ? 'calme' : ''}`}>
+                                                {Object.keys(projectDetails.sketches['image']).map((image, image__i) => (
+                                                    <div className={`project-details-sketches-image-holder flex flex-col`} key={image__i}>
+                                                        <Image
+                                                            src={projectDetails.sketches['image'][image].sketch}
+                                                            hash={projectDetails.sketches['image'][image].hash}
+                                                            alt={`${image} ${image__i}`}
+                                                        />
+                                                        <p className="p2">{projectDetails.sketches['image'][image].sub}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                                {projectDetails.wireframes && (
+                                    <>
+                                        <div className="details-section wireframes project-details-wireframes flex flex-col justify-start items-start initial_wireframes">
+                                            <div className="titler">
+                                                <h5 className="h5 details-section-title">{projectDetails.wireframes.title}</h5>
+                                            </div>
+                                            <div className="screens-holder flex flex-col">
+                                                {Object.keys(projectDetails.wireframes).map((size, size__i) => (
+                                                    (size !== 'title') && (
+                                                        <div className={`wireframes-holder flex flex-col ${size}`} key={size__i}>
+                                                            <div className={`w-full flex flex-wrap project-details-wireframes-images ${size}`}>
+                                                                <p className="p2" id="round">{projectDetails.wireframes[size].sub}</p>
+                                                                <div className="project-details-wireframes-images-details flex flex-col">
+                                                                    <Image
+                                                                        src={projectDetails.wireframes[size].design}
+                                                                        hash={projectDetails.wireframes[size].hash}
+                                                                        alt={`${size}wireframe` + (size__i + 1)}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div>
+                                    </>
+                                )}
+                                {projectDetails.testing && (
+                                    <>
                                         <div className="details-section testing project-details-insights testing flex flex-col justify-start items-start testing_101">
                                             <div className={`w-full flex complaints flex-row justify-between`}>
                                                 <h5 className="h5">{projectDetails.testing.title}</h5>
@@ -401,13 +495,13 @@ const CaseStudy = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div>
                                     </>
                                 )}
                                 {projectDetails.final_user_flows && (
                                     <>
-                                        <div className="details-section divider">
-                                            <span className="liner"></span>
-                                        </div>
                                         <div className="details-section final_user_flows final_user_flows project-details-updates flex flex-col justify-start items-start idea_updates">
                                             {Object.keys(projectDetails.final_user_flows).map((section, section__i) => (
                                                 <React.Fragment key={section__i}>
@@ -425,16 +519,16 @@ const CaseStudy = () => {
                                                 </React.Fragment>
                                             ))}
                                         </div>
+                                        <div className="details-section divider">
+                                            <span className="liner"></span>
+                                        </div>
                                     </>
                                 )}
                                 {projectDetails.branding && (
                                     <>
-                                        <div className="details-section divider">
-                                            <span className="liner"></span>
-                                        </div>
                                         <div className="details-section branding components project-details-branding flex flex-col justify-start items-start components_&_branding">
                                             <div className="titler flex flex-row justify-between">
-                                                <p className="p2">The Brand:</p>
+                                                <p className="h5">The Brand:</p>
                                                 <p className="p1 describer">{projectDetails.branding.describe}</p>
                                             </div>
                                             <div className="brand-component flex flex-col">
@@ -510,7 +604,7 @@ const CaseStudy = () => {
                                                                             <div key={columnIndex} className="column flex flex-col">
                                                                                 {column.map((imageArray, imageArray__i) => (
                                                                                     <div className="full-images-section-images-holder flex flex-col" key={imageArray__i}>
-                                                                                    {/* {console.log(imageArray.image)} */}
+                                                                                        {/* {console.log(imageArray.image)} */}
                                                                                         <Image
                                                                                             src={imageArray.image}
                                                                                             hash={imageArray.hash}
@@ -532,46 +626,48 @@ const CaseStudy = () => {
                                     </div>
                                 )}
                                 {projectDetails.final_tests && (
-                                    <div className="details-section final_tests project-details-insights testing flex flex-col justify-start items-start final_testing">
-                                        <div className="titler flex flex-row justify-between">
-                                            <div className="flex flex-row">
-                                                <p className="h5">{projectDetails.final_tests.title}</p>
-                                                <ol className="describer">
-                                                    {Object.keys(projectDetails.final_tests.list).map((rdata, rdata__i) => (
-                                                        <li className="p1" key={rdata__i}>
-                                                            {projectDetails.final_tests.list[rdata]}
-                                                        </li>
-                                                    ))}
-                                                </ol>
-                                            </div>
-                                        </div>
-                                        {projectDetails.final_tests.describe && (
-                                            <div className="titler flex flex-col justify-between">
-                                                <span className="liner"></span>
-                                                <div className="filler flex flex-row justify-between">
-                                                    <p className="p2">Key Insights</p>
-                                                    <p className="p1 describer">{projectDetails.final_tests.describe}</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {projectDetails.final_tests.img && (
-                                            <div className="image-push">
-                                                <div className="w-full">
-                                                    <Image
-                                                        src={projectDetails.final_tests.img.image}
-                                                        hash={projectDetails.final_tests.img.hash}
-                                                        alt={`testing image`}
-                                                    />
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-                                {projectDetails.stakeholder_constraints && (
                                     <>
+                                        <div className="details-section final_tests project-details-insights testing flex flex-col justify-start items-start final_testing">
+                                            <div className="titler flex flex-row justify-between">
+                                                <div className="flex flex-row">
+                                                    <p className="h5">{projectDetails.final_tests.title}</p>
+                                                    <ol className="describer">
+                                                        {Object.keys(projectDetails.final_tests.list).map((rdata, rdata__i) => (
+                                                            <li className="p1" key={rdata__i}>
+                                                                {projectDetails.final_tests.list[rdata]}
+                                                            </li>
+                                                        ))}
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            {projectDetails.final_tests.describe && (
+                                                <div className="titler flex flex-col justify-between">
+                                                    <span className="liner"></span>
+                                                    <div className="filler flex flex-row justify-between">
+                                                        <p className="p2">Key Insights</p>
+                                                        <p className="p1 describer">{projectDetails.final_tests.describe}</p>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {projectDetails.final_tests.img && (
+                                                <div className="image-push">
+                                                    <div className="w-full">
+                                                        <Image
+                                                            src={projectDetails.final_tests.img.image}
+                                                            hash={projectDetails.final_tests.img.hash}
+                                                            alt={`testing image`}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
                                         <div className="details-section divider">
                                             <span className="liner"></span>
                                         </div>
+                                    </>
+                                )}
+                                {projectDetails.stakeholder_constraints && (
+                                    <>
                                         <div className="details-section stakeholder_constraints project-details-insights review flex flex-row justify-start items-start stakeholder_review">
                                             <div className="title flex flex-col">
                                                 <h5 className="h5">{projectDetails.stakeholder_constraints.title}</h5>
@@ -649,7 +745,7 @@ const CaseStudy = () => {
                                         <div className="title flex flex-col">
                                             <h5 className="h5">{projectDetails.conclusion.title}</h5>
                                         </div>
-                                        <div className={`w-full flex flex-col list`}>
+                                        <div className={`w-full describer flex flex-col list`}>
                                             <p className="p1">{projectDetails.conclusion.describe}</p>
                                         </div>
                                     </div>
@@ -673,8 +769,24 @@ const CaseStudy = () => {
                         </article>
                     </div>
                 </div>
+                <div className="casestudy-outline w-full flex fixed bottom-0">
+                    <ul className="flex flex-row justify-center items-center">
+                        <li onClick={outline}>
+                            <p className="p2">
+                                Intro
+                            </p>
+                        </li>
+                        {Object.keys(projectOutline).map((className, index) => (
+                            <li key={index} onClick={outline}>
+                                <p className="p2">
+                                    {projectOutline[className].split(' ').pop().replace(/_/g, ' ').replace(/^\w/, c => c.toUpperCase())}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-            </section >
+            </section>
 
         </>
     );

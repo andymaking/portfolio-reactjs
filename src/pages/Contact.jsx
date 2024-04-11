@@ -104,7 +104,7 @@ export default function Contact() {
                                         <label className='h5'>Message</label>
                                         <textarea placeholder='E.g. Hi, I would like to enquire about...' className='contact-form-control area' name='message'></textarea>
                                     </div>
-                                    <div className='contact-form-group flex flex-col items-end'>
+                                    <div className='contact-form-group flex flex-col items-start'>
                                         <button type="submit" className='flex flex-row content-end items-center justify-start'>
                                             <div className="icon-hold flex items-center justify-center">
                                                 <ArrowRight size={24} weight="regular" />
