@@ -4,7 +4,7 @@
 
 @import "./variables/breakpoints", "./variables/colors", "./variables/spacings", "./variables/general",
 "./variables/animations", "./components/loader", "./variables/type", "./pages/home", "./pages/about",
-"./pages/contact", "./pages/work", "./pages/case_study", "./pages/pricing", "./components/nav",
+"./pages/contact", "./pages/portfolio", "./pages/case_study", "./pages/pricing", "./components/nav",
 "./components/buttonlink", "./components/tab", "./components/footer";
 
 *,
@@ -37,7 +37,7 @@ canvas {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--active-accent);
+    background: var(--active-neutral);
 }
 
 /* Handle */
@@ -68,6 +68,10 @@ canvas {
 
 .h4 {
     @include h4;
+}
+
+.h5 {
+    @include h5;
 }
 
 .s1 {
@@ -113,6 +117,7 @@ main {
     background-color: var(--active-neutral);
     gap: var(--gap-none);
     padding-top: 0;
+    overflow: hidden;
 }
 
 ol {
@@ -127,15 +132,12 @@ ol {
 #root {
     position: relative;
     height: 100vh;
-    -webkit-perspective: 1500px;
-    perspective: 1500px;
 }
 
 .liner {
     width: 100%;
     display: inline-block;
-    height: 1.6px;
-    flex: 1;
+    height: 1.2px;
     background-color: var(--active-secondary);
 
     &.secondary {
@@ -148,7 +150,7 @@ ol {
     padding: 0px var(--page-padding);
     gap: var(--header-gap);
 
-    @include devices(tablet) {
+    @include devices(sm-laptop) {
         padding: 0;
     }
 
@@ -177,19 +179,16 @@ ol {
 }
 
 .cursor {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     pointer-events: none;
     position: fixed;
     padding: 6px;
     transform: translate(-50%, -50%);
-    // background-color: var(--active-neutral);
-    // color: var(--active-primary);
-    background-color: #006a5d91;
-    color: var(--active-neutral);
+    border: 1.5px solid var(--active-secondary);
+    background-color: var(--active-neutral);
     border-radius: 50%;
     z-index: 100000;
-    // mix-blend-mode: difference;
     text-align: center;
     transition: all 0.2s linear;
     backdrop-filter: blur(12px);
@@ -199,10 +198,12 @@ ol {
     }
 
     &.linked {
-        background-color: var(--active-primary);
+        background-color: var(--active-accent-blur);
         width: 64px;
         height: 64px;
-        opacity: 0.5;
+        opacity: 0.7;
+        backdrop-filter: blur(12px);
+
     }
 
     &.projector {
@@ -211,7 +212,8 @@ ol {
         width: auto;
         height: auto;
         padding: 16px;
-        background-color: #006a5d91;
+        background-color: var(--active-primary-blur);
+        border-color: var(--active-primary-blur);
         color: var(--active-neutral);
 
         * {
@@ -226,10 +228,6 @@ ol {
     }
 }
 
-.case__overlayed {
-    filter: blur(8px);
-}
-
 .not-found {
     gap: var(--has-button-gap);
 
@@ -237,7 +235,7 @@ ol {
         width: 104px;
         fill: var(--active-secondary);
 
-        @include devices(tablet) {
+        @include devices(sm-laptop) {
             width: 72px;
         }
 
@@ -246,7 +244,43 @@ ol {
         }
     }
 
-    .head-text {
-        gap: var(--paragraphs);
+    .head-text-top {
+        gap: var(--box-elements-gap) !important;
+    }
+
+    p{
+        width: 56%;
+        margin: 0 auto;
+
+        @include devices(sm-laptop) {
+            width: 72%;
+        }
+        @include devices(tablet){
+            width: 80%;
+        }
+
+        @include devices(phone){
+            width: 100%;
+        }
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+#round {
+    border-radius: 100%;
+    border: 2px solid var(--active-primary);
+    padding: var(--padding-none) var(--elements-inline-padding);
+    display: inline-block;
+
+    &.rufu {
+        padding-inline: var(--page-padding);
+    }
+
+    @include devices(tablet) {
+        text-wrap: wrap;
+        border-width: 1.5px;
     }
 }

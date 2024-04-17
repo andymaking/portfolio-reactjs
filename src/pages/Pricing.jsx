@@ -39,6 +39,22 @@ export default function Pricing() {
                 <article className="process-container w-full flex flex-col items-start">
                     <Lists type={"pricing"} linkText={"none"} link={""} />
                 </article>
+                <article className="journey-container w-full flex flex-col items-start">
+                    <div className="title w-full flex flex-row items-center justify-start">
+                        <h2 className="h2" id='round'>Frequently Asked</h2>
+                    </div>
+                    <Lists type={"career"} linkText={"none"} link={""}/>
+                    <div className="title w-full flex flex-row items-center justify-start">
+                        <h2 className="h2" id='round'>Services</h2>
+                    </div>
+                    <Lists type={"projects"} linkText={"none"} link={""}/>
+                </article>
+                <article className="journey-container w-full flex flex-col items-start">
+                    <div className="title w-full flex flex-row items-center justify-start">
+                        <h2 className="h2" id='round'>Pricing Guide</h2>
+                    </div>
+                    <Lists type={"pricing"} linkText={"none"} link={""} />
+                </article>
             </section>
         </>
     )

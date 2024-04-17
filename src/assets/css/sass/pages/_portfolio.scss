@@ -1,0 +1,44 @@
+.portfolio {
+    .landing {
+        @include devices(phone) {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .head {
+            padding-bottom: var(--page-padding);
+
+            &-text {
+                gap: var(--has-button-gap);
+
+                @include devices(sm-laptop) {
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+
+                .tagger {
+                    gap: 16px;
+                    padding: 0 var(--page-padding);
+
+                    @include devices(sm-laptop) {
+                        gap: var(--buttons-links);
+                        overflow-x: scroll;
+                        padding-bottom: var(--paragraphs);
+                    }
+                    @include devices(phone) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        article {
+            padding-top: var(--padding-none);
+
+            @include devices(phone) {
+            }
+        }
+    }
+}

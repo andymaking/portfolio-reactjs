@@ -3,20 +3,85 @@
         padding: var(--padding-none)var(--page-padding);
 
         .head {
-            padding-bottom: var(--header-gap);
+            padding-bottom: var(--parents-elements-gap);
+            text-wrap: nowrap;
         }
     }
 
     .main {
         article {
             padding-top: var(--padding-none);
+            gap: var(--header-gap);
+
+            @include devices(tablet) {
+                flex-direction: column;
+                gap: var(--element-block-gap);
+            }
+
+            .contact-info {
+                width: 45%;
+                gap: var(--paragraphs);
+
+                & p {
+                    gap: var(--buttons-links);
+
+                    & a {
+                        gap: var(--buttons-links);
+                    }
+                }
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
+            }
+
+            .contact-form {
+                width: 55%;
+                align-self: center;
+
+                @include devices(tablet) {
+                    width: 100%;
+                }
+
+                &-group {
+                    padding-bottom: var(--element-block-padding);
+                    gap: var(--buttons-links);
+                    width: 100%;
+
+                    &.message {
+                        padding-bottom: var(--page-padding);
+                    }
+
+                    &:last-child {
+                        padding-bottom: var(--padding-none);
+                    }
+                }
+
+                &-control {
+                    background-color: unset;
+                    border-bottom: 1px solid var(--active-secondary);
+                    padding: var(--siblings) var(--padding-none) var(--padding-none);
+                    font-size: 16px;
+                    border-radius: unset;
+
+                    &.area {
+                        height: 128px;
+                        resize: none;
+                    }
+                }
+            }
 
             .lister {
                 .listing {
+                    @include devices(phone) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
                     p {
                         margin-bottom: var(--buttons-links);
 
-                        @include devices(tablet) {
+                        @include devices(sm-laptop) {
                             margin-bottom: 0;
                         }
                     }
@@ -43,7 +108,7 @@
             }
         }
     }
-    
+
     footer {
         .copyright {
             @include devices(phone) {

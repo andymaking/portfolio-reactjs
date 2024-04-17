@@ -1,224 +1,179 @@
 .home {
-    .head-text {
-        padding-bottom: var(--page-padding);
-
-        @include devices(tablet) {
-            padding-bottom: 160px;
-        }
+    .landing {
+        min-height: calc(100vh - 88px);
+        height: calc(100vh - 88px);
 
         @include devices(phone) {
-            padding-bottom: 96px;
+            min-height: calc(96vh - 88px);
+            height: calc(96vh - 88px);
         }
 
-        h1 {
-            line-height: 0.9;
+        .head {
+            height: 100%;
 
-            @include devices(phone) {
-                line-height: 1;
-            }
+            &-text {
+                height: 100%;
+                padding-bottom: var(--box-padding);
 
-            @media only screen and(max-width: 400px) {
-                text-align: left;
-            }
-
-            .lighter {
-                position: absolute;
-                border-radius: 48px;
-                border: 2px solid var(--active-secondary);
-                transform: rotate(-16deg);
-                padding: 2px var(--box-elements-gap) 6px;
-                left: 47%;
-                top: -56%;
-                line-height: 1;
-
-                @include devices(tablet) {
-                    top: -80%;
-                }
-
-                @media only screen and(max-width: 700px) {
-                    left: 50%;
-                    top: 36%;
-                    transform: rotate(-12deg) scale(0.4);
-                    background: var(--active-secondary);
-                    color: var(--active-neutral);
+                @include devices(sm-laptop) {
+                    padding-bottom: 0;
                 }
 
                 @include devices(phone) {
-                    top: 37%;
-                    left: 50%;
-                    padding: 2px var(--paragraphs) 6px;
-                    transform: rotate(-12deg) scale(0.5);
+                    justify-content: flex-start;
+                    gap: 32px;
                 }
 
-                @media only screen and(max-width: 400px) {
-                    left: 63%;
-                    top: 14%;
-                    padding: 2px var(--paragraphs) 6px;
-                    transform: rotate(0deg) scale(1);
-                }
-
-                @media only screen and(max-width: 365px) {
-                    left: 67%;
-                }
-
-                @media only screen and(max-width: 350px) {
-                    left: 71%;
-                }
-            }
-
-            &.highlight {
-                border-radius: 160px;
-                padding: 16px 88px 24px;
-                color: var(--active-neutral);
-                overflow: hidden;
-                white-space: nowrap;
-
-                & #highlight-background {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background: var(--active-secondary);
-                    left: 0;
-                    top: 0;
-                }
-
-                & #highlight-reel {
-                    z-index: 1;
-                }
-
-                @media only screen and(max-width: 850px) {
-                    padding-left: var(--elements-inline-padding);
-                    padding-right: var(--elements-inline-padding);
-                }
-
-                @media only screen and(max-width: 700px) {
-                    top: -6px;
-                    width: 100%;
-                    background: none;
-                    color: inherit;
-                    padding: 0;
-                    white-space: unset;
-                    border-radius: unset;
-                    overflow: unset;
-                }
-
-                @media only screen and(max-width: 400px) {
-                    text-align: left;
-                }
-            }
-        }
-
-        &-club {
-            padding: 0 var(--body-top-padding);
-            gap: var(--paragraphs);
-
-            @include devices(tablet) {
-                padding: 0;
-                justify-content: center;
-                align-items: center;
-            }
-
-            @media only screen and(max-width: 400px) {
-                justify-content: flex-start;
-            }
-
-            .more {
-                position: absolute;
-                top: 50%;
-                right: 48%;
-                width: 144px;
-
-                path {
-                    stroke-dasharray: 400;
-                    stroke-dashoffset: 400;
-                    animation: dash 5s linear infinite;
-                    animation-delay: 2s;
-                }
-
-                @include devices(tablet) {
-                    display: none;
-                }
-
-                &.phone {
-                    display: none;
-                    right: unset;
-                    top: unset;
-                    width: auto;
-                    position: absolute;
-                    justify-self: center;
-
+                &-top {
                     @include devices(tablet) {
-                        display: block;
-                        left: 48%;
-                        bottom: -332%;
-                        height: 144px;
+                        align-items: flex-start;
                     }
 
-                    @media only screen and(max-width: 700px) {
-                        left: 30%;
-                        bottom: -222%;
-                    }
+                    h1 {
+                        line-height: 0.9;
 
+                        @include devices(phone) {
+                            line-height: 1;
+                        }
+
+                        .lighter {
+                            position: absolute;
+                            border-radius: 100%;
+                            border: 2px solid var(--active-primary);
+                            padding: 0px var(--has-button-gap) 1px;
+                            left: 40%;
+                            top: -40%;
+                            line-height: 1;
+                            z-index: 1;
+
+                            @include devices(sm-laptop) {
+                                top: -50%;
+                                left: 41%;
+                                padding-block: 0px var(--caption-columns);
+                            }
+
+                            @include devices(tablet) {
+                                top: 15%;
+                                left: 296px;
+                                border-width: 1.5px;
+                            }
+
+                            @include devices(phone) {
+                                left: 242px;
+                                top: 20%;
+                            }
+                        }
+
+                        &.highlight {
+                            border-radius: 100%;
+                            padding: var(--siblings) 88px var(--paragraphs);
+                            color: var(--active-secondary);
+                            border: 2px solid var(--active-primary);
+                            white-space: nowrap;
+
+                            & #highlight-reel {
+                                z-index: 1;
+                            }
+
+                            @include devices(sm-laptop) {
+                                text-align: left;
+                            }
+
+                            @include devices(tablet) {
+                                width: 100%;
+                                white-space: normal;
+                                padding-inline: 0;
+                                border-width: 1.5px;
+                            }
+
+                            @include devices(phone) {
+                                border-width: 1.2px;
+                                text-align: center;
+                                width: 140%;
+                                left: -18%;
+                                text-align: left;
+                                padding-left: 18%;
+                                padding-block: 0;
+                            }
+                        }
+                    }
+                }
+
+
+                &-club {
                     @include devices(phone) {
-                        left: 36%;
-                        height: 104px;
-                        bottom: -190%;
+                        flex-direction: column;
+                        height: 100%;
                     }
 
-                    @media only screen and(max-width: 400px) {
-                        left: 28%;
+                    & .aboute {
+                        gap: var(--siblings);
+
+                        @include devices(phone) {
+                            align-items: center;
+                        }
+
+                        &-blob {
+                            height: 72px;
+                            width: 72px;
+                            border-radius: 100%;
+                            overflow: hidden;
+                            background-color: var(--active-secondary);
+                            color: var(--active-accent);
+
+                            @include devices(sm-laptop) {
+                                width: 64px;
+                                height: 64px;
+                            }
+
+                            @include devices(phone) {
+                                display: none;
+                            }
+
+                        }
+
+                        &-grab {
+                            width: 384px;
+
+                            @include devices(sm-laptop) {
+                                width: 320px;
+                            }
+
+                            @include devices(tablet) {
+                                width: 304px;
+                            }
+
+                            @include devices(phone) {
+                                width: 100%;
+                                @include p1;
+                            }
+
+                        }
                     }
-                }
-            }
 
-            &-image {
-                height: 90px;
-                width: 90px;
-                border-radius: 1000px;
-                border: 2px solid var(--active-primary);
-                overflow: hidden;
+                    & .scroller {
+                        transform: rotate(-90deg);
+                        transform-origin: right;
+                        gap: var(--buttons-links);
+                        top: -44px;
 
-                @include devices(tablet) {
-                    width: 48px;
-                    height: 48px;
-                    border-width: 2px;
-                }
+                        @include devices(phone) {
+                            transform-origin: unset;
+                            bottom: 60px;
+                            left: -24px;
+                        }
 
-                @include devices(phone) {
-                    width: 56px;
-                    height: 56px;
-                    border-width: 2px;
-                }
+                        & p {
+                            @include devices(phone) {
+                                width: 80px;
+                            }
+                        }
+                    }
 
-                img {
-                    object-fit: cover;
-                    object-position: center;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            &-grab {
-                max-width: 34%;
-
-                @include devices(tablet) {
-                    max-width: 38%;
-                }
-
-                @media only screen and(max-width: 850px) {
-                    max-width: 60%;
-                }
-
-                @include devices(phone) {
-                    max-width: 58.5%;
-                }
-
-                @media only screen and(max-width: 400px) {
-                    max-width: 68%;
                 }
             }
         }
+
     }
 
     .main {
@@ -230,210 +185,204 @@
             }
         }
 
-        .process-container {
-            padding-top: 0 !important;
-            .lister {
-                .listing {
-                    @include devices(phone) {
-                        flex-direction: row;
-                    }
-                }
-            }
-        }
-
         .testimonials-container {
-            padding: var(--main-gap) var(--page-padding);
-            background: var(--active-secondary);
-            color: var(--active-accent);
-
-            @include devices(tablet) {
-                overflow: hidden;
-            }
+            padding-top: 0;
+            gap: var(--main-gap);
 
             & .title {
-                @include devices(phone) {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--buttons-links);
+                width: 100%;
+                border-radius: 100%;
+                border: 2px solid var(--active-primary);
+
+                @include devices(tablet) {
+                    border-width: 1.5px;
+                    padding-inline: var(--paragraphs);
                 }
 
-                .liner {
-                    flex: 1;
-                    width: 24px;
-
-                    @media only screen and(max-width: 850px) {
-                        flex: unset;
-                        // top: -24px;
-                    }
-
-                    @include devices(phone) {
-                        display: none;
-                    }
+                @include devices(phone) {
+                    width: 140%;
+                    text-align: left;
+                    padding-inline: 80px;
+                    left: -20%;
                 }
             }
 
-            .data {
-                gap: var(--header-gap);
-
-                &-results {
-                    gap: var(--has-button-gap);
-                    width: 100%;
-
-                    @media only screen and(max-width: 850px) {
-                        flex-direction: column;
-                    }
-
-                    &-left {
-                        width: 50%;
-
-                        @include devices(tablet) {
-                            width: 88%;
-                        }
-
-                        @media only screen and(max-width: 850px) {
-                            width: 100%;
-                            justify-content: space-between;
-                        }
-
-                        @include devices(phone) {
-                            gap: 24px;
-                        }
-
-                        &-plug {
-                            gap: var(--paragraphs);
-                            width: 44%;
-
-                            &-title {
-                                gap: var(--paragraphs);
-
-                                @include devices(phone) {
-                                    gap: var(--buttons-links);
-                                }
-
-                                svg {
-                                    width: 24px;
-                                    height: auto;
-                                }
-                            }
-
-                            &-description {
-                                padding-left: var(--has-button-gap);
-
-                                @include devices(phone) {
-                                    padding-left: var(--buttons-links);
-                                }
-                            }
-                        }
-                    }
-
-                    &-right {
-                        width: 50%;
-
-                        @media only screen and(max-width: 850px) {
-                            width: 100%;
-                            // justify-content: space-between;
-                        }
-
-                        @include devices(phone) {
-                            width: 100%;
-                        }
-
-                        .questionsContainer {
-                            gap: var(--paragraphs);
-
-                            .questions {
-                                background-color: var(--active-accent);
-                                color: var(--active-secondary);
-                                border: 1px solid var(--active-secondary);
-                                box-shadow: 24px 16px 40px 0px rgba(0, 106, 93, 0.32);
-                                width: 256px;
-                                padding: var(--box-elements-gap);
-                                text-align: center;
-
-                                &:first-child {
-                                    transform: rotate(-7deg);
-                                    left: 144px;
-                                    top: 56px;
-                                }
-                                &:nth-child(2) {
-                                    transform: rotate(20deg);
-                                    z-index: 1;
-                                }
-                            }
-
-                            img {
-                                pointer-events: none;
-                                width: 32px;
-                                height: auto;
-                                position: absolute;
-
-                                &.rocket {
-                                    left: 20%;
-                                    top: 65%;
-                                    transform: rotate(-45deg);
-                                }
-
-                                &.smile {
-                                    right: 16%;
-                                    top: 50%;
-                                }
-
-                                &.smileHeart {
-                                    transform: rotate(7deg);
-                                    top: -28%;
-                                }
-
-                                &.smileTear {
-                                    right: 7%;
-                                    bottom: 17%;
-                                }
-                            }
-                        }
-                    }
-                }
+            @include devices(sm-laptop) {
+                overflow: hidden;
             }
 
             .client-responses {
                 gap: var(--parents-elements-gap);
 
-                & .title {
-                    width: 40%;
-
-                    @include devices(tablet) {
-                        width: 80%;
-                    }
-
-                    @include devices(phone) {
-                        width: 100%;
-                    }
-                }
-
                 .talk {
-                    gap: var(--box-elements-gap);
+                    gap: var(--header-gap);
 
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         flex-direction: column;
                     }
 
                     .review {
-                        padding: var(--element-block-padding) var(--elements-inline-padding);
-                        gap: var(--element-block-padding);
-                        border-radius: 32px;
-                        border: 1px solid var(--active-accent);
+                        gap: var(--parents-elements-gap);
+                        padding: var(--padding-none) var(--header-gap);
+                        background-color: var(--active-neutral);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        transition: 1s ease;
+
+                        @include devices(sm-laptop) {
+                            padding-inline: var(--padding-none) var(--paragraphs);
+                        }
+
+                        @include devices(tablet) {
+                            padding-inline: var(--box-padding);
+                        }
+
+                        &-container {
+                            gap: var(--header-gap);
+                            height: 509px;
+                            width: 100%;
+
+                            @include devices(tablet) {
+                                height: 354px;
+                            }
+                        }
 
                         &-details {
-                            gap: var(--paragraphs);
+                            gap: var(--box-elements-gap);
+                            width: 50%;
+
+                            @include devices(tablet) {
+                                width: 100%;
+                            }
+
+                            .clave {
+                                gap: var(--siblings);
+                            }
 
                             &-image {
-                                width: 56px;
-                                height: 56px;
-                                border-radius: 100px;
-                                overflow: hidden;
+                                width: 50%;
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    width: 104%;
+                                    height: 105%;
+                                    border: 1.5px solid var(--active-primary);
+                                    left: -3%;
+                                    top: -3%;
+                                    transform: rotate(-9deg);
+                                }
+
+                                &-holder {
+                                    height: auto;
+                                    overflow: hidden;
+                                    max-height: 504px;
+                                    border: 1px solid var(--active-secondary);
+
+                                    & img {
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+
+                                    &-mobile {
+                                        width: 48px;
+                                        height: 48px;
+                                        overflow: hidden;
+                                        border-radius: 100%;
+                                        display: none;
+
+                                        @include devices(tablet) {
+                                            display: block;
+                                        }
+                                    }
+                                }
+
+
+                                .hello-reviewer {
+                                    position: absolute;
+                                    z-index: 10;
+                                    bottom: 5%;
+                                    left: 5%;
+                                    background: var(--active-primary-blur);
+                                    color: var(--active-accent);
+                                    padding: var(--caption-columns) var(--buttons-links);
+                                    backdrop-filter: blur(14px);
+                                }
 
                                 @include devices(tablet) {
-                                    width: 48px;
-                                    height: 48px;
+                                    display: none;
                                 }
+                            }
+                        }
+
+                        &.forward {
+                            left: 100%;
+
+                            @include devices(sm-laptop) {
+                                left: 120%;
+                            }
+                        }
+
+                        &.active {
+                            opacity: 1;
+                            left: 0;
+                        }
+
+                        &.back {
+                            left: -100%;
+
+                            @include devices(sm-laptop) {
+                                left: -120%;
+                            }
+                        }
+
+                    }
+
+                    .navigate {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 100%;
+                        z-index: 10;
+
+                        @include devices(tablet) {
+                            top: 35%;
+                        }
+
+
+                        & span {
+                            font-size: 48px;
+                            border: 1px solid var(--active-primary);
+                            border-radius: 100%;
+                            padding: var(--box-padding);
+                            cursor: pointer;
+                            left: -5%;
+                            position: absolute;
+                            background-color: var(--active-accent-blur);
+                            backdrop-filter: blur(4px);
+
+                            @include devices(sm-laptop) {
+                                font-size: 32px;
+                            }
+
+                            @include devices(tablet) {
+                                font-size: 24px;
+                            }
+
+                            @include devices(phone) {
+                                font-size: 16px;
+                                left: -10%;
+                            }
+
+                            &.next {
+                                right: -5%;
+                                left: unset;
+                            }
+
+                            &.showing {
+                                display: inline-block;
                             }
                         }
                     }
@@ -441,59 +390,54 @@
             }
         }
 
-        .sales-container {
-            padding-top: var(--main-gap);
-            align-items: center;
+        .client-logos {
+            padding-top: var(--element-block-padding);
+            padding-inline: 0;
+            padding-bottom: var(--padding-none);
 
             @include devices(tablet) {
-                gap: var(--has-button-gap);
-                flex-direction: column;
+                padding-top: var(--box-padding);
             }
 
-            @include devices(phone) {
-                // border-radius: 0 48px;
-            }
-
-            .title {
-                width: 50%;
+            & .scrolling_text {
+                border-top: 1.5px solid;
+                border-bottom: 1.5px solid;
+                padding-block: var(--paragraphs);
 
                 @include devices(tablet) {
-                    width: 100%;
-                }
-            }
-
-            &-call {
-                width: 50%;
-                gap: var(--has-button-gap);
-
-                @include devices(tablet) {
-                    flex-direction: row;
-                    width: 100%;
+                    border-top: 1.2px solid;
+                    border-bottom: 1.2px solid;
                 }
 
                 @include devices(phone) {
-                    flex-direction: column;
-                    gap: var(--has-button-gap);
+                    border-top: 1px solid;
+                    border-bottom: 1px solid;
                 }
 
-                &-objects {
-                    // width: 28%;
-                    gap: var(--buttons-links);
+                & span {
+                    margin: 0 80px;
+                    transform: translate3d(0, 0, 0);
+                    backface-visibility: hidden;
+                    -webkit-perspective: 1000;
+                    perspective: 1000;
+                    width: 120px;
+
+                    @include devices(sm-laptop) {
+                        margin: 0 60px;
+                    }
 
                     @include devices(tablet) {
-                        width: 50%;
+                        margin: 0 45px;
+                        width: 80px;
                     }
 
                     @include devices(phone) {
-                        width: 100%;
-                        gap: var(--buttons-links);
-                    }
-
-                    h4 {
-                        opacity: 0.48;
+                        margin: 0 20px;
+                        width: 64px;
                     }
                 }
             }
         }
+
     }
 }

@@ -6,6 +6,7 @@ const Loading = ({ children, className }) => {
         <div className={`loader-div flex flex-col items-center justify-center ${className}`}>
             <img
                 src={Loader}
+                alt={'loading animation'}
             />
             <p className="h3 text-center">{children}</p>
         </div>
