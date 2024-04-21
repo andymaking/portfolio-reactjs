@@ -439,9 +439,11 @@ const ProjectsList = [
             }
         }
     },
+    //-----------------------------------Lunar Luxury
     {
         uniqueId: "jwfe0431",
     },
+    //-----------------------------------Thrive
     {
         uniqueId: "jw39204a",
     },
@@ -495,238 +497,241 @@ const ProjectsList = [
             },
         },
     },
+    //-----------------------------------TGIT
     {
         uniqueId: "jwcd04r1",
     },
+    //-----------------------------------TVNR
     {
         uniqueId: "jw032qa1",
     },
+    //-----------------------------------Hotel Capricorn
     {
         uniqueId: "jwa4ed01",
     },
     //-----------------------------------The Food Mag
     {
         uniqueId: "jwacery1",
-        people: {
-            role: "Product designer",
-        },
-        problem: {
-            why: {
-                title: "Poor discovery of street food vendors in travel locations",
-                details: "Inadequate content discovery mechanisms, a lack of visual appeal, and difficulty in showcasing the cultural significance of street food within various communities present significant challenges for a tourist-focused food magazine landing page.\n\nTourists often struggle to find authentic street food experiences in new locations due to the absence of effective websites focused on food, outdated information, and a failure to convey the rich cultural tapestry of street food culture. These challenges hinder tourists' ability to fully immerse themselves in the culinary experiences of different communities and result in missed opportunities for meaningful culinary exploration.",
-            },
-            images: {
-                1: {
-                    image: "/images/jwacery1/strt.webp",
-                    hash: "LBN-ZZ-o.lENNGofxuR*KdIpIA%1",
-                    details: "Image of street food"
-                }
-            }
-        },
-        challenges: {
-            title: "Finding food related community content outside of social media was hard.",
-            details: "So much importance and priority was put into finding hotels, travel destinations, and flights. But, less attention was paid to finding the right food content. This lack of focus on food content meant that many travelers were left feeling disappointed and eager to find better food options to ensure they had an enjoyable experience.",
-            painpoints: {
-                1: "Users struggled to find information about street food in new locations, hindering their ability to explore and experience local culinary delights.",
-                2: "Existing websites lacked personalized food content. Content were usually either outdated or never carrying the right information. The pages also lacked visual appeal and would fail to capture the attention of visitors.",
-                3: "Establishing a connection between street food and the communities where it's found posed a challenge, as users were not able to easily access relevant content highlighting this aspect.",
-            }
-        },
-        understand: {
-            constraints: {
-                title: "But first, I needed to understand if this was a good problem to tackle.",
-                complaints: {
-                    1: "Cooking Enthusiasts had a need for the idea.",
-                    2: "Foodies wanted to see new cuisines to explore on their next trip.",
-                    3: "Health-consious tourists prioritized convenience and authenticity when seeking street food.",
-                }
-            },
-            hmws: {
-                title: "So I started to ask questions:",
-                complaints: {
-                    1: "How might we design a user-friendly website that allows Cooking Enthusiasts to find new recipes, cuisine types and cooking methods?",
-                    2: "How might we design an immersive food community interface that inspires Foodies and ignites their culinary curiosity?",
-                    3: "How might we help Health-consious Tourists to satisfy their street food cravings without feeling unhealthy?",
-                }
-            }
-        },
-        competition: {
-            title: "I went on to study other online magazines to better understand their design trends and most importantly, the user expectations.",
-            competitors: {
-                "Trip Advisor": {
-                    screenshot: "/images/jwacery1/tripadvisor.webp",
-                    hash: "L3I;}D-V00%#iKVt%zX400N@_NH@",
-                },
-                "America's Test Kitchen": {
-                    screenshot: "/images/jwacery1/americastestkitchen.webp",
-                    hash: "LAJvEo-p0BM|?bRjM{of03Rk~8s:",
-                },
-                "The Guardian": {
-                    screenshot: "/images/jwacery1/guardian-1.webp",
-                    hash: "L3I;}D-V00%#iKVt%zX400N@_NH@",
-                },
-                "CBS News": {
-                    screenshot: "/images/jwacery1/cbs.webp",
-                    hash: "LAJvEo-p0BM|?bRjM{of03Rk~8s:",
-                }
-            }
-        },
-        sitemap: {
-            1: {
-                title: "A common theme with all of them was their play with magazine-styled layouts with important information appearing above. This really cleared out the site structure and made things easy going forward.",
-                images: {
-                    1: {
-                        image: "/images/jwacery1/imm.webp",
-                        hash: "LBN-ZZ-o.lENNGofxuR*KdIpIA%1",
-                        details: "Image of street food"
-                    }
-                }
-            },
-        },
-        user_base: {
-            title: "Knowing what layout worked was most important.",
-            details: "It was important to keep the links and the layout simple and unclusteredas seen on \"America's Test Kitchen\". This was to ensure that users would see what they wanted easily and quicky without having to think too much about where a link or element was located.\n\nUltimately, a challenge was deciding which link was important and which link wasn't. But by going through the data of most clicked links on Magazine websites, it was easy to maintain the link for 3 categories of viewers:",
-            userList: {
-                1: "The Job Seeker - Has a flaire for working on a team that serves users good products.",
-                2: "The Investor - Studies the company, finding details about the business to know more and see possible investment options.",
-                3: "The Food Enthusiast - Comes on the website to see information and tips about food.",
-            }
-        },
-        sketches: {
-            title: "Usually, my first set of sketches are crucial in establishing the tone and style of the layout. And this did just that by helping me gain a better understanding of the desired aesthetic.",
-            image: {
-                img01: {
-                    sketch: "/images/jwacery1/food-stories.webp",
-                    hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
-                    sub: "Food stories section"
-                },
-                img02: {
-                    sketch: "/images/jwacery1/community.webp",
-                    hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
-                    sub: "Join community section"
-                },
-                img03: {
-                    sketch: "/images/jwacery1/recipes.webp",
-                    hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
-                    sub: "Recipes section"
-                },
-                img04: {
-                    sketch: "/images/jwacery1/Hero.webp",
-                    hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
-                    sub: "Hero section"
-                },
-                img05: {
-                    sketch: "/images/jwacery1/subscribe.webp",
-                    hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
-                    sub: "Subscribe to newsletter section"
-                }
-            }
-        },
-        branding: {
-            title: "When it comes to branding, keeping things in line with what users already know, is the best way to go.",
-            describe: "However, these alone dont make the design. I had to work on a brand tone that matche the values by selecing colors, typography and images which told the right story and sparked the right emotions.",
-            colors: {
-                base: "FEFEFE",
-                primary: "02DC32",
-                secondary: "006616",
-                tertiary: "010C03",
-            },
-            typography: {
-                image: "/images/jwacery1/typography.webp",
-                hash: "L342y8?wIAD%-=xuRjRj8^ITxuxv",
-            }
-        },
-        components: {
-            images: {
-                1: {
-                    image: "/images/jwacery1/comp.webp",
-                    hash: "L9SigSMd~Ux^R-NGkCj[t-b_M|iw",
-                },
-                2: {
-                    image: "/images/jwacery1/log.webp",
-                    hash: "L3S~x6RS_2tS_3xaWBM|%NRkD*sp",
-                }
-            }
-        },
-        final_wireframes: {
-            title: "Putting all of this together, it was easier to create an interface that was both visually appealing and focused on streamlining the unnecessary parts of the flow.",
-            images: {
-                1: {
-                    title: "Page sections",
-                    img: {
-                        1: {
-                            image: "/images/jwacery1/hero-des.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Hero section"
-                        },
-                        2: {
-                            image: "/images/jwacery1/recipes-des.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Recipes section"
-                        },
-                        3: {
-                            image: "/images/jwacery1/culture.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Food community section"
-                        },
-                        4: {
-                            image: "/images/jwacery1/footer.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Footer"
-                        },
-                        5: {
-                            image: "/images/jwacery1/streetf00d.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Food stories section"
-                        },
-                        6: {
-                            image: "/images/jwacery1/must-know.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Must know facts"
-                        },
-                        7: {
-                            image: "/images/jwacery1/newsletter.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Newsletter section"
-                        }
-                    }
-                },
-                2: {
-                    title: "Pages",
-                    img: {
-                        1: {
-                            image: "/images/jwacery1/home.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Article Page"
-                        },
-                        2: {
-                            image: "/images/jwacery1/article.webp",
-                            hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
-                            sub: "Home Page"
-                        },
-                    }
-                }
-            }
-        },
-        final_tests: {
-            title: "Tesing Analytics & Impacts.",
-            describe: "While some test participants loved the design, others had mixed feelings about it. It was however, interesting to see that they valued the bright green combination that provided a sense of excitement with black that gave a sense of mystery.\n\nParticipants also expressed how this would be useful if they were travelling to a location, as they could easily read up on the location and find recipes and street food to try out in that location.",
-            list: {
-                1: "The visual appeal of this design is incredible! The vibrant imagery and intuitive layout is an absolute delight.",
-                2: "I like a lot of information when reading my magazines. But this one seems to have few information about the important stuff.",
-                3: "It seems like this is focused on popular tourist destinations, neglecting lesser-known street food gems.",
-                4: "This would be my go-to resource for planning food-focused travel itineraries.",
-                5: "As someone who loves to explore different cuisines while travelling, the design is simply stunning. I love how intuitive it is!",
-            },
-            img: {
-                image: "/images/jwacery1/conversions-gif.gif",
-                hash: "L6RDK4M,M}tjjfX6oet3}8TFR-Vv",
-            }
-        },
-        conclusion: {
-            title: "Mission accomplished?",
-            describe: "I think there is still a bit of work to be done, especially as this was just the landing pages. It would be interesting to see what the ther pages would look like, and consequently how users would respond to it.\n\nOne of the challenges that I encountered was the decision to make the website look luxurious without taking out the street value or vibe. This meant that certain types of images could not be used with the design. They all had to be colorful in a way that fitted into the storytelling.\n\nHowbeit, with more research, it was easier to approach these challenges. It would be interesting to see which company takes this on as a project to design a personalized food blog for getaway tourists. We see a lot of \"book your trip\", \"hotel\", and \"flight booking\" services and it would be nice to see more of food-based service platforms for travellers.",
-        }
+        // people: {
+        //     role: "Product designer",
+        // },
+        // problem: {
+        //     why: {
+        //         title: "Poor discovery of street food vendors in travel locations",
+        //         details: "Inadequate content discovery mechanisms, a lack of visual appeal, and difficulty in showcasing the cultural significance of street food within various communities present significant challenges for a tourist-focused food magazine landing page.\n\nTourists often struggle to find authentic street food experiences in new locations due to the absence of effective websites focused on food, outdated information, and a failure to convey the rich cultural tapestry of street food culture. These challenges hinder tourists' ability to fully immerse themselves in the culinary experiences of different communities and result in missed opportunities for meaningful culinary exploration.",
+        //     },
+        //     images: {
+        //         1: {
+        //             image: "/images/jwacery1/strt.webp",
+        //             hash: "LBN-ZZ-o.lENNGofxuR*KdIpIA%1",
+        //             details: "Image of street food"
+        //         }
+        //     }
+        // },
+        // challenges: {
+        //     title: "Finding food related community content outside of social media was hard.",
+        //     details: "So much importance and priority was put into finding hotels, travel destinations, and flights. But, less attention was paid to finding the right food content. This lack of focus on food content meant that many travelers were left feeling disappointed and eager to find better food options to ensure they had an enjoyable experience.",
+        //     painpoints: {
+        //         1: "Users struggled to find information about street food in new locations, hindering their ability to explore and experience local culinary delights.",
+        //         2: "Existing websites lacked personalized food content. Content were usually either outdated or never carrying the right information. The pages also lacked visual appeal and would fail to capture the attention of visitors.",
+        //         3: "Establishing a connection between street food and the communities where it's found posed a challenge, as users were not able to easily access relevant content highlighting this aspect.",
+        //     }
+        // },
+        // understand: {
+        //     constraints: {
+        //         title: "But first, I needed to understand if this was a good problem to tackle.",
+        //         complaints: {
+        //             1: "Cooking Enthusiasts had a need for the idea.",
+        //             2: "Foodies wanted to see new cuisines to explore on their next trip.",
+        //             3: "Health-consious tourists prioritized convenience and authenticity when seeking street food.",
+        //         }
+        //     },
+        //     hmws: {
+        //         title: "So I started to ask questions:",
+        //         complaints: {
+        //             1: "How might we design a user-friendly website that allows Cooking Enthusiasts to find new recipes, cuisine types and cooking methods?",
+        //             2: "How might we design an immersive food community interface that inspires Foodies and ignites their culinary curiosity?",
+        //             3: "How might we help Health-consious Tourists to satisfy their street food cravings without feeling unhealthy?",
+        //         }
+        //     }
+        // },
+        // competition: {
+        //     title: "I went on to study other online magazines to better understand their design trends and most importantly, the user expectations.",
+        //     competitors: {
+        //         "Trip Advisor": {
+        //             screenshot: "/images/jwacery1/tripadvisor.webp",
+        //             hash: "L3I;}D-V00%#iKVt%zX400N@_NH@",
+        //         },
+        //         "America's Test Kitchen": {
+        //             screenshot: "/images/jwacery1/americastestkitchen.webp",
+        //             hash: "LAJvEo-p0BM|?bRjM{of03Rk~8s:",
+        //         },
+        //         "The Guardian": {
+        //             screenshot: "/images/jwacery1/guardian-1.webp",
+        //             hash: "L3I;}D-V00%#iKVt%zX400N@_NH@",
+        //         },
+        //         "CBS News": {
+        //             screenshot: "/images/jwacery1/cbs.webp",
+        //             hash: "LAJvEo-p0BM|?bRjM{of03Rk~8s:",
+        //         }
+        //     }
+        // },
+        // sitemap: {
+        //     1: {
+        //         title: "A common theme with all of them was their play with magazine-styled layouts with important information appearing above. This really cleared out the site structure and made things easy going forward.",
+        //         images: {
+        //             1: {
+        //                 image: "/images/jwacery1/imm.webp",
+        //                 hash: "LBN-ZZ-o.lENNGofxuR*KdIpIA%1",
+        //                 details: "Image of street food"
+        //             }
+        //         }
+        //     },
+        // },
+        // user_base: {
+        //     title: "Knowing what layout worked was most important.",
+        //     details: "It was important to keep the links and the layout simple and unclusteredas seen on \"America's Test Kitchen\". This was to ensure that users would see what they wanted easily and quicky without having to think too much about where a link or element was located.\n\nUltimately, a challenge was deciding which link was important and which link wasn't. But by going through the data of most clicked links on Magazine websites, it was easy to maintain the link for 3 categories of viewers:",
+        //     userList: {
+        //         1: "The Job Seeker - Has a flaire for working on a team that serves users good products.",
+        //         2: "The Investor - Studies the company, finding details about the business to know more and see possible investment options.",
+        //         3: "The Food Enthusiast - Comes on the website to see information and tips about food.",
+        //     }
+        // },
+        // sketches: {
+        //     title: "Usually, my first set of sketches are crucial in establishing the tone and style of the layout. And this did just that by helping me gain a better understanding of the desired aesthetic.",
+        //     image: {
+        //         img01: {
+        //             sketch: "/images/jwacery1/food-stories.webp",
+        //             hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
+        //             sub: "Food stories section"
+        //         },
+        //         img02: {
+        //             sketch: "/images/jwacery1/community.webp",
+        //             hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
+        //             sub: "Join community section"
+        //         },
+        //         img03: {
+        //             sketch: "/images/jwacery1/recipes.webp",
+        //             hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
+        //             sub: "Recipes section"
+        //         },
+        //         img04: {
+        //             sketch: "/images/jwacery1/Hero.webp",
+        //             hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
+        //             sub: "Hero section"
+        //         },
+        //         img05: {
+        //             sketch: "/images/jwacery1/subscribe.webp",
+        //             hash: "L3A,]{RQ0Lt7~pWCRjof00W:-:oL",
+        //             sub: "Subscribe to newsletter section"
+        //         }
+        //     }
+        // },
+        // branding: {
+        //     title: "When it comes to branding, keeping things in line with what users already know, is the best way to go.",
+        //     describe: "However, these alone dont make the design. I had to work on a brand tone that matche the values by selecing colors, typography and images which told the right story and sparked the right emotions.",
+        //     colors: {
+        //         base: "FEFEFE",
+        //         primary: "02DC32",
+        //         secondary: "006616",
+        //         tertiary: "010C03",
+        //     },
+        //     typography: {
+        //         image: "/images/jwacery1/typography.webp",
+        //         hash: "L342y8?wIAD%-=xuRjRj8^ITxuxv",
+        //     }
+        // },
+        // components: {
+        //     images: {
+        //         1: {
+        //             image: "/images/jwacery1/comp.webp",
+        //             hash: "L9SigSMd~Ux^R-NGkCj[t-b_M|iw",
+        //         },
+        //         2: {
+        //             image: "/images/jwacery1/log.webp",
+        //             hash: "L3S~x6RS_2tS_3xaWBM|%NRkD*sp",
+        //         }
+        //     }
+        // },
+        // final_wireframes: {
+        //     title: "Putting all of this together, it was easier to create an interface that was both visually appealing and focused on streamlining the unnecessary parts of the flow.",
+        //     images: {
+        //         1: {
+        //             title: "Page sections",
+        //             img: {
+        //                 1: {
+        //                     image: "/images/jwacery1/hero-des.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Hero section"
+        //                 },
+        //                 2: {
+        //                     image: "/images/jwacery1/recipes-des.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Recipes section"
+        //                 },
+        //                 3: {
+        //                     image: "/images/jwacery1/culture.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Food community section"
+        //                 },
+        //                 4: {
+        //                     image: "/images/jwacery1/footer.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Footer"
+        //                 },
+        //                 5: {
+        //                     image: "/images/jwacery1/streetf00d.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Food stories section"
+        //                 },
+        //                 6: {
+        //                     image: "/images/jwacery1/must-know.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Must know facts"
+        //                 },
+        //                 7: {
+        //                     image: "/images/jwacery1/newsletter.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Newsletter section"
+        //                 }
+        //             }
+        //         },
+        //         2: {
+        //             title: "Pages",
+        //             img: {
+        //                 1: {
+        //                     image: "/images/jwacery1/home.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Article Page"
+        //                 },
+        //                 2: {
+        //                     image: "/images/jwacery1/article.webp",
+        //                     hash: "LcPs|-RPxtW;tQt7R,jY~ptRR+s:",
+        //                     sub: "Home Page"
+        //                 },
+        //             }
+        //         }
+        //     }
+        // },
+        // final_tests: {
+        //     title: "Tesing Analytics & Impacts.",
+        //     describe: "While some test participants loved the design, others had mixed feelings about it. It was however, interesting to see that they valued the bright green combination that provided a sense of excitement with black that gave a sense of mystery.\n\nParticipants also expressed how this would be useful if they were travelling to a location, as they could easily read up on the location and find recipes and street food to try out in that location.",
+        //     list: {
+        //         1: "The visual appeal of this design is incredible! The vibrant imagery and intuitive layout is an absolute delight.",
+        //         2: "I like a lot of information when reading my magazines. But this one seems to have few information about the important stuff.",
+        //         3: "It seems like this is focused on popular tourist destinations, neglecting lesser-known street food gems.",
+        //         4: "This would be my go-to resource for planning food-focused travel itineraries.",
+        //         5: "As someone who loves to explore different cuisines while travelling, the design is simply stunning. I love how intuitive it is!",
+        //     },
+        //     img: {
+        //         image: "/images/jwacery1/conversions-gif.gif",
+        //         hash: "L6RDK4M,M}tjjfX6oet3}8TFR-Vv",
+        //     }
+        // },
+        // conclusion: {
+        //     title: "Mission accomplished?",
+        //     describe: "I think there is still a bit of work to be done, especially as this was just the landing pages. It would be interesting to see what the ther pages would look like, and consequently how users would respond to it.\n\nOne of the challenges that I encountered was the decision to make the website look luxurious without taking out the street value or vibe. This meant that certain types of images could not be used with the design. They all had to be colorful in a way that fitted into the storytelling.\n\nHowbeit, with more research, it was easier to approach these challenges. It would be interesting to see which company takes this on as a project to design a personalized food blog for getaway tourists. We see a lot of \"book your trip\", \"hotel\", and \"flight booking\" services and it would be nice to see more of food-based service platforms for travellers.",
+        // }
     },
 
 ];

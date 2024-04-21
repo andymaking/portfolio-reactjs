@@ -40,6 +40,11 @@ const List = ({ type, linkText, link }) => {
             ],
             career: [
                 {
+                    hinge: '2021 - Present',
+                    title: "UX/UI Design Mentor",
+                    copy: 'Designlab',
+                },
+                {
                     hinge: '2020 - 2023',
                     title: "Product Designer",
                     copy: 'FirstMedtrade Africa',
@@ -52,7 +57,7 @@ const List = ({ type, linkText, link }) => {
                 {
                     hinge: '2017',
                     title: "Web Design Intern",
-                    copy: 'Ministry of Science, Akwa Ibom State',
+                    copy: 'AKS Dept. of Science & Technological Advancement',
                 }
             ],
             projects: [
