@@ -1,27 +1,67 @@
 .tab {
-    padding: var(--buttons-links) var(--elements-inline-padding);
+    padding: var(--buttons-links) var(--paragraphs);
     gap: var(--buttons-links);
-    border-radius: 64px;
-    border: 2px solid var(--active-secondary);
-    transition: 0.3s;
+    transition: 0.6s;
     cursor: pointer;
     text-align: center;
 
-    &:hover {
-        border-color: var(--disabled-primary);
-        background: var(--disabled-primary);
-    }
-
     &:focus,
     &.active {
-        border-color: var(--active-secondary);
-        background: var(--active-secondary);
-        color: var(--active-accent);
         cursor: default;
     }
 
-    p{
+    p {
         text-wrap: nowrap;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        vertical-align: bottom;
+        white-space: nowrap;
+
+        & svg.link-svgline {
+            position: absolute;
+            top: 100%;
+            left: -5%;
+            overflow: hidden;
+            margin: 0;
+            width: 110%;
+            height: 20px;
+            transition: stroke-dashoffset 0.3s ease-in-out;
+            transform: translateY(-90%);
+            fill: none;
+            stroke: var(--active-secondary);
+            stroke-width: 1.5;
+            stroke-dasharray: 400px;
+            stroke-dashoffset: 400px;
+        }
+
+        &:hover {
+            color: var(--active-primary);
+
+            svg.link-svgline {
+                stroke-dashoffset: 0px;
+                stroke: var(--active-primary);
+            }
+        }
     }
 
+    &.active {
+        p {
+            color: var(--active-secondary);
+            & svg.link-svgline {
+                stroke: var(--active-secondary);
+                stroke-dashoffset: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+}
+
+.svg-wrap {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
 }

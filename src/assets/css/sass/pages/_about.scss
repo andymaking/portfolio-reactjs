@@ -4,7 +4,7 @@
             padding-left: var(--padding-none);
             padding-bottom: var(--header-gap);
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 padding-bottom: var(--element-block-padding);
             }
         }
@@ -15,19 +15,27 @@
             gap: var(--parents-elements-gap);
             padding-top: var(--padding-none);
 
+            @include devices(sm-laptop) {
+                gap: var(--has-button-gap);
+            }
+
             @include devices(tablet) {
                 flex-direction: column;
             }
 
             .dol {
                 width: 45%;
-                height: auto;
+                height: 100%;
                 align-self: stretch;
-                height: 564px;
-                border-radius: 24px;
-                overflow: hidden;
+                height: 720px;
+
+                @include devices(sm-laptop) {
+                    height: 656px;
+                    width: 40%;
+                }
 
                 @include devices(tablet) {
+                    height: 456px;
                     width: 100%;
                 }
 
@@ -39,12 +47,19 @@
                     width: 100%;
                     object-fit: cover;
                     height: 100%;
-                }
+                    transform: skew(2deg);
+                    background-color: var(--disabled-primary);
+                border: 1.5px solid var(--active-secondary);
+            }
             }
 
             .content {
                 width: 50%;
                 gap: var(--has-button-gap);
+
+                @include devices(sm-laptop) {
+                    width: 60%;
+                }
 
                 @include devices(tablet) {
                     width: 100%;
@@ -58,30 +73,26 @@
         }
 
         .journey-container {
-            padding-top: var(--main-gap);
 
-            @include devices(tablet) {
+            @include devices(sm-laptop) {
                 flex-direction: column;
             }
 
             .title {
-                position: sticky;
-                align-self: flex-start;
-                top: 200px;
 
-                @include devices(tablet) {
+                @include devices(sm-laptop) {
                     top: 0;
                     position: relative;
+                }
+
+                @include devices(phone) {
+                    left: -28px;
                 }
             }
 
             .lister {
-                padding-left: var(--padding-none);
-                padding-right: var(--padding-none);
-                padding-top: var(--page-padding);
-
                 .listing {
-                    @include devices(tablet) {
+                    @include devices(sm-laptop) {
                         flex-direction: row;
                         align-items: flex-start;
                     }
@@ -89,7 +100,7 @@
 
                 .clover {
                     text-align: right;
-                    gap: var(--paragraphs);
+                    gap: var(--caption-columns);
                 }
             }
         }

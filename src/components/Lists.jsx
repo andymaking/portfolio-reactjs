@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import gsap  from 'gsap';
+import gsap from 'gsap';
 
 import { ArrowLeft } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -19,12 +19,12 @@ const List = ({ type, linkText, link }) => {
                 },
                 {
                     hinge: '02',
-                    title: "User Research",
+                    title: "Product Research",
                     copy: '',
                 },
                 {
                     hinge: '03',
-                    title: "User Interface Design",
+                    title: "Product Design",
                     copy: '',
                 },
                 {
@@ -38,31 +38,43 @@ const List = ({ type, linkText, link }) => {
                     copy: '',
                 }
             ],
-            about: [
+            career: [
                 {
                     hinge: '2020 - 2023',
                     title: "Product Designer",
                     copy: 'FirstMedtrade Africa',
                 },
                 {
-                    hinge: '2021 - 2022',
-                    title: "UI Designer (contract)",
-                    copy: 'The Victoria Nwaeke Cancer Foundation',
-                },
-                {
-                    hinge: '2021',
-                    title: "UX Designer (contract)",
-                    copy: 'Thrive',
-                },
-                {
                     hinge: '2017 - 2020',
-                    title: "Web Designer",
+                    title: "Web Designer / Administrator",
                     copy: 'FirstMedtrade Africa',
                 },
                 {
                     hinge: '2017',
                     title: "Web Design Intern",
                     copy: 'Ministry of Science, Akwa Ibom State',
+                }
+            ],
+            projects: [
+                {
+                    hinge: '2023',
+                    title: "UX Designer",
+                    copy: 'Thompson & Grace Investments',
+                },
+                {
+                    hinge: '2022',
+                    title: "UI Designer",
+                    copy: 'Lunar Luxury',
+                },
+                {
+                    hinge: '2021 - 2022',
+                    title: "UI Designer",
+                    copy: 'The Victoria Nwaeke Cancer Foundation',
+                },
+                {
+                    hinge: '2021',
+                    title: "UX Designer",
+                    copy: 'Thrive.Nig',
                 }
             ],
             pricing: [
@@ -77,7 +89,7 @@ const List = ({ type, linkText, link }) => {
                     copy: '',
                 },
                 {
-                    hinge: 'Website + admin',
+                    hinge: 'Dynamic Website + admin',
                     title: "$5,500 - above",
                     copy: '',
                 },
@@ -98,31 +110,27 @@ const List = ({ type, linkText, link }) => {
                     details: 'thejudejoshua@gmail.com',
                 },
                 {
-                    title: "Call:",
+                    title: "Let's talk:",
                     details: 'Schedule a call',
-                },
-                {
-                    title: "Phone:",
-                    details: '+234 904 113 4407',
                 }
             ]
         }
     ];
 
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            const t1 = gsap.timeline()
+    // useLayoutEffect(() => {
+    //     let ctx = gsap.context(() => {
+    //         const t1 = gsap.timeline()
 
-            t1.from(['.listnime', '.listnime_p'], {
-                top: "+=50",
-                opacity: 0,
-                duration: 0.5,
-                delay: 0.2,
-                stagger: 0.2,
-            })
-        })
-        return () => ctx.revert()
-    }, []);
+    //         t1.from(['.listnime', '.listnime_p'], {
+    //             top: "+=50",
+    //             opacity: 0,
+    //             duration: 0.5,
+    //             delay: 0.2,
+    //             stagger: 0.2,
+    //         })
+    //     })
+    //     return () => ctx.revert()
+    // }, []);
 
     const isValidEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -140,7 +148,7 @@ const List = ({ type, linkText, link }) => {
                     <p className="h4">{listing.title}</p>
                     <div className="clover flex flex-col">
                         {isValidEmail(listing.details) ? (
-                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:${listing.details}`}>
+                            <Links target={"_blank"} extra={"h4 e-mail flex flex-row content-end items-center justify-start"} href={`mailto:Jude%20Joshua<${listing.details}>`}>
                                 {listing.details}
                                 <ArrowSquareIn />
                             </Links>
@@ -182,23 +190,37 @@ const List = ({ type, linkText, link }) => {
                     </Links>
                 )
             } else {
-                if (type === 'about') {
-                    return (
-                        <Links target="_blank" type={"primary"} href={link}>
-                            <div className="icon-hold flex items-center justify-center">
-                                <ArrowRight size={24} weight="regular" />
-                            </div>
-                            <span>{linkText}</span>
-                        </Links>
-                    )
+                if (type !== 'career') {
+                    if (type === 'projects'){
+                        return (
+                            <Links target="_blank" type={"primary"} href={link}>
+                                <div className="icon-hold flex items-center justify-center">
+                                    <ArrowRight size={24} weight="regular" />
+                                </div>
+                                <span className='linkContent'>
+                                    <span>
+                                        {linkText}
+                                    </span>
+                                </span>
+                            </Links>
+                        )
+                    }else{
+                        return (
+                            <Links target="_self" type={"primary"} href={`/` + link}>
+                                <div className="icon-hold flex items-center justify-center">
+                                    <ArrowRight size={24} weight="regular" />
+                                </div>
+                                <span className='linkContent'>
+                                    <span>
+                                        {linkText}
+                                    </span>
+                                </span>
+                            </Links>
+                        )
+                    }
                 } else {
                     return (
-                        <Links target="_self" type={"primary"} href={`/` + link}>
-                            <div className="icon-hold flex items-center justify-center">
-                                <ArrowRight size={24} weight="regular" />
-                            </div>
-                            <span>{linkText}</span>
-                        </Links>
+                        ""
                     )
                 }
             }

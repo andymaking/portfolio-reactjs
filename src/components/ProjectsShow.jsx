@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Link from "./Links";
-import Image from "./Image";
 
 const ProjectsShow = ({ show, category }) => {
 
@@ -25,6 +24,7 @@ const ProjectsShow = ({ show, category }) => {
         projectPairs.push(pair);
     }
 
+    
     const projectElement = (
         projectPairs.map((projectPair, index) => (
             <div className="projekt-pair w-full flex flex-row" key={index}>
@@ -36,27 +36,26 @@ const ProjectsShow = ({ show, category }) => {
                         extra="projekt w-full"
                     >
                         <div className="projekt-container w-full flex flex-col">
-                            <div className="projekt-container-image">
-                                <Image
-                                    src={project.imageSrc}
-                                    hash={project.coverhash}
-                                    alt={`${project.name} case study`}
-                                    imageType={'project'}
-                                />
-                            </div>
-                            <div className="projekt-container-details w-full flex flex-col justify-end items-start">
-                                <div className="clave flex w-full flex-col items-center justify-between">
-                                    {category === "" ? (
-                                        <>
-                                            <h2 className="h3">{project.name}</h2>
-                                            <p className="p2 text-center">{project.title}</p>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <h2 className="h3">{project.name}</h2>
-                                            <p className="p2 text-center">{project.title}</p>
-                                        </>
-                                    )}
+                            <div className="projekt-container-image"
+                                style={{
+                                    backgroundImage: `url(/${project.imageSrc})`,
+                                }}
+                            >
+                                <div className="projekt-container-details w-full flex flex-col justify-end items-start">
+                                    <div className="clave flex w-full flex-col items-start justify-start">
+                                        {category === "" ? (
+                                            <>
+                                                <h2 className="h3">{project.name}</h2>
+                                                <p className="p2 text-left">{project.title}</p>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <h2 className="h3">{project.name}</h2>
+                                                <p className="p2 text-left">{project.title}</p>
+                                            </>
+                                        )}
+                                    </div>
+                                    <p className="c1 text-left">{project.type}</p>
                                 </div>
                             </div>
                         </div>
