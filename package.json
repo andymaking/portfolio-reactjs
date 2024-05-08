@@ -54,7 +54,8 @@
         "path-browserify": "^1.0.1",
         "postcss": "^8.4.30",
         "react-app-rewired": "^2.2.1",
-        "tailwindcss": "^3.3.3"
+        "tailwindcss": "^3.3.3",
+        "@babel/plugin-proposal-private-property-in-object": "^7.18.0"
     },
     "browser": {
         "fs": false,
