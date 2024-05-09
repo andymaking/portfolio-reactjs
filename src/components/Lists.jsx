@@ -1,5 +1,4 @@
-import React, { useLayoutEffect } from 'react';
-import gsap from 'gsap';
+import React from 'react';
 
 import { ArrowLeft } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
